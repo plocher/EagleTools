@@ -65,7 +65,7 @@ This ULP creates a SCRipt file that will be used in the next steps to create a p
 
 6. Run the SCRipt we created earlier to create a panelized version of the singleton board
 
-   SCRIPT Detector_panel
+   SCRIPT Detector_array
 
 7. Save this design in the newly created Detector/1.0-Array/ directory
 
