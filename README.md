@@ -28,7 +28,7 @@ Add ulp/make-panel.ulp to your OPTIONS->DIRECTORIES->User Languane Programs dire
 Add the SPCoast*.cam files to your OPTIONS->DIRECTORIES->CAM Jobs directory
 
 
-Before you can panelize a design, you need to have a singleton design to replicate.
+1. Before you can panelize a design, you need to have a singleton design to replicate.
 
 Create such a design, using Eagle's schematic and board editors, with the following design rules:
   * Use layer 20 (Dimension layer) to mark the rectangular outline of the design.  Complex board outlines are much harder to panelize because they can't be delimited by simple V-Score actions on the Milling layer, and so are not candidates for these instructions.
@@ -44,35 +44,35 @@ Save this singleton project.  For my projects, I create a directory structure fo
    Detector/1.0/Detector.sch<br>
    Detector/1.0/Detector.brd
 
-1. Invoke the Eagle-provided ULP that copies the [tb]Names layers content to new unused ones (125 126, _tNames, _bNames).  
+2. Invoke the Eagle-provided ULP that copies the [tb]Names layers content to new unused ones (125 126, _tNames, _bNames).  
 Press OK in the popup dialog; it doesn't look like it does anything, but a look at the layers list / content will show the new layers with the old content copied into them:
 
    run panelize
    DISPLAY -25 -27
 
-2. Invoke the (new) make-panel ULP script from the singleton's BRD editor.  Its popup asks for the number of copies it should create, in a 2-dimensional array.
+3. Invoke the (new) make-panel ULP script from the singleton's BRD editor.  Its popup asks for the number of copies it should create, in a 2-dimensional array.
 This ULP creates a SCRipt file that will be used in the next steps to create a panelized design.  This SCRipt defaults to the same name as the singleton design, byt with a ".scr" extention.
 
    run make-board
 
-3. Create a new directory for the panelized design using the Eagle Control Panel
+4. Create a new directory for the panelized design using the Eagle Control Panel
 
    Detector/1.0-Array/
 
-4. Create a new empty BRD instance in this new panel folder using the Eagle Control panel - and open it in EagleCad's board editor
+5. Create a new empty BRD instance in this new panel folder using the Eagle Control panel - and open it in EagleCad's board editor
 
    Detector/1.0-panel/Detector.brd
 
-5. Run the SCRipt we created earlier to create a panelized version of the singleton board
+6. Run the SCRipt we created earlier to create a panelized version of the singleton board
 
    SCRIPT Detector_panel
 
-6. Save this design in the newly created Detector/1.0-Array/ directory
+7. Save this design in the newly created Detector/1.0-Array/ directory
 
 The layer 20 DIMension lines in the original design are now on the new Hidden layer 101, and there are Milling layer 46 v-score lines and instructions for the board fab that will be used to split the panel into its subcomponent pieces.
 You will want to add a new layer20 DIMension box around the outside of the panel, and delete any unnecessary layer 46 Milling V-Scores.
 
-7. The final step is to create Gerber files from this panel design.  Because you will want all the silkscreen part names to be the same on every board, change all references to layer 25 to the new layer 125, and 27 to 127 in your CAM job file before you run it.  The SPCoast Panel CAM job files in this project do this.
+8. The final step is to create Gerber files from this panel design.  Because you will want all the silkscreen part names to be the same on every board, change all references to layer 25 to the new layer 125, and 27 to 127 in your CAM job file before you run it.  The SPCoast Panel CAM job files in this project do this.
 
 
 
