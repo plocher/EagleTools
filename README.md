@@ -21,8 +21,7 @@ layer ?? -255;
 
 Save this singleton project.  For my projects, I create a directory structure for each project, with the top level bearing the name of the project and subdirectories for each version: 
 
-   Detector/1.0/Detector.sch
-
+   Detector/1.0/Detector.sch<br>
    Detector/1.0/Detector.brd
 
 Invoke the Eagle-provided ULP that copies the [tb]Names layers content to new unused ones (125 126, _tNames, _bNames).  
@@ -40,7 +39,7 @@ Create a new directory for the panelized design using the Eagle Control Panel
 
    Detector/1.0-Array/
 
-Create a new empty BRD instance in this new panel folder using the Eagle Control panel
+Create a new empty BRD instance in this new panel folder using the Eagle Control panel - and open it in EagleCad's board editor
 
    Detector/1.0-panel/Detector.brd
 
@@ -48,10 +47,12 @@ Run the SCRipt we created earlier to create a panelized version of the singleton
 
    SCRIPT Detector_panel
 
+Save this design in the newly created Detector/1.0-Array/ directory
+
 The layer 20 DIMension lines in the original design are now on the new Hidden layer 101, and there are Milling layer 46 v-score lines and instructions for the board fab that will be used to split the panel into its subcomponent pieces.
 You will want to add a new layer20 DIMension box around the outside of the panel, and delete any unnecessary layer 46 Milling V-Scores.
 
-The final step is to create Gerber files from this panel design.  Because you will want all the silkscreen part names to be the same on every board, change all references to layer 25 to the new layer 125, and 27 to 127 in your CAM job file before you run it.  The CAM file in this project does this.
+The final step is to create Gerber files from this panel design.  Because you will want all the silkscreen part names to be the same on every board, change all references to layer 25 to the new layer 125, and 27 to 127 in your CAM job file before you run it.  The SPCoast Panel CAM job files in this project do this.
 
 
 
