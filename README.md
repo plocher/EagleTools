@@ -48,7 +48,7 @@ layer ?? -255;
 2. Invoke the Eagle-provided ULP that copies the [tb]Names layers content to new unused ones (125 126, _tNames, _bNames).  
 Press OK in the popup dialog; it doesn't look like it does anything, but a look at the layers list / content will show the new layers with the old content copied into them:
 
-  * run panelize; DISPLAY -25 -27
+  * run panelize; DISPLAY -25 -26
 
 3. Save your EagleCad Design
   * File / Save ...
@@ -72,7 +72,7 @@ The ULP creates a SCRipt file that will be used next to create a panelized desig
 The layer 20 DIMension lines in the original design are now on the new Hidden layer 101, and there are Milling layer 46 v-score lines and instructions for the board fab that will be used to split the panel into its subcomponent pieces.
 You will want to add a new layer20 DIMension box around the outside of the panel, and delete any unnecessary layer 46 Milling V-Scores.
 
-8. The final step is to create Gerber files from this panel design.  Because you will want all the silkscreen part names to be the same on every board, change all references to layer 25 to the new layer 125, and 27 to 127 in your CAM job file before you run it.  The SPCoast Panel CAM job files in this project do this.
+8. The final step is to create Gerber files from this panel design.  Because you will want all the silkscreen part names to be the same on every board, change all references to layer 25 to the new layer 125, and 26 to 126 in your CAM job file before you run it.  The SPCoast Panel CAM job files in this project do this.
 
 
 ----
