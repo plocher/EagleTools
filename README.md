@@ -1,4 +1,4 @@
-Making a panelized PCB design in EagleCAD
+Making a panelized PCB design in EagleCAD 7.7
 =========================================
 
 
@@ -75,4 +75,6 @@ You will want to add a new layer20 DIMension box around the outside of the panel
 8. The final step is to create Gerber files from this panel design.  Because you will want all the silkscreen part names to be the same on every board, change all references to layer 25 to the new layer 125, and 27 to 127 in your CAM job file before you run it.  The SPCoast Panel CAM job files in this project do this.
 
 
+----
+EagleCAD 9.* changed the "WIRE" command to "LINE"; the make-panel.ulp program uses "WIRE".  AutoDesk may, at some time, start genrating errors when the WIRE command is used; if so, the fix is easy.  Unfortunately, that fix would break older versions that don't know about "LINE"...
 
