@@ -47,7 +47,7 @@ Save this singleton project.  For my projects, I create a directory structure fo
 2. Invoke the Eagle-provided ULP that copies the [tb]Names layers content to new unused ones (125 126, _tNames, _bNames).  
 Press OK in the popup dialog; it doesn't look like it does anything, but a look at the layers list / content will show the new layers with the old content copied into them:
 
-   run panelize
+   run panelize;
    DISPLAY -25 -27
 
 3. Save the EagleCad Design (File / Save)
