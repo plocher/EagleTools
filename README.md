@@ -50,24 +50,20 @@ Press OK in the popup dialog; it doesn't look like it does anything, but a look 
    run panelize
    DISPLAY -25 -27
 
-3. Invoke the (new) make-panel ULP script from the singleton's BRD editor.  Its popup asks for the number of copies it should create, in a 2-dimensional array.
+3. Save the EagleCad Design (File / Save)
+4. Invoke the (new) make-panel ULP script from the singleton's BRD editor.  Its popup asks for the number of copies it should create, in a 2-dimensional array.
 This ULP creates a SCRipt file that will be used in the next steps to create a panelized design.  This SCRipt defaults to the same name as the singleton design, byt with a ".scr" extention.
 
    run make-board
 
-4. Create a new directory for the panelized design using the Eagle Control Panel
-
-   Detector/1.0-Array/
-
-5. Create a new empty BRD instance in this new panel folder using the Eagle Control panel - and open it in EagleCad's board editor
-
-   Detector/1.0-panel/Detector.brd
+5. Start a new empty board design:
+  * File->New (click "yes" to the warning message...)
 
 6. Run the SCRipt we created earlier to create a panelized version of the singleton board
 
-   SCRIPT Detector_panel
+   SCRIPT Detector_array
 
-7. Save this design in the newly created Detector/1.0-Array/ directory
+7. Save this design as Detector_array.brd in the Detector/1.0/ directory.
 
 The layer 20 DIMension lines in the original design are now on the new Hidden layer 101, and there are Milling layer 46 v-score lines and instructions for the board fab that will be used to split the panel into its subcomponent pieces.
 You will want to add a new layer20 DIMension box around the outside of the panel, and delete any unnecessary layer 46 Milling V-Scores.
