@@ -57,7 +57,8 @@ This ULP creates a SCRipt file that will be used in the next steps to create a p
    run make-board
 
 5. Start a new empty board design:
-  * File->New (click "yes" to the warning message...)
+  * File->New
+    * click "OK" to the warning message "No forward-/backannotation will be performed!"
 
 6. Run the SCRipt we created earlier to create a panelized version of the singleton board
 
