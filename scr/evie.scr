@@ -1,0 +1,83 @@
+# Changes the layer colors
+# 1 Top               Leiterbahnen oben
+SET COLOR_LAYER 1 4;
+SET FILL_LAYER 1 1;
+
+# 17 Pads             Pads (bedrahtete Bauteile)
+SET COLOR_LAYER 17 2;
+SET FILL_LAYER 17 1;
+
+# 18 Vias             Vias (durchgehend)
+SET COLOR_LAYER 18 3;
+SET FILL_LAYER 18 1;
+
+# 20 Dimension        Platinen-Umrisse (und Kreise für Holes)
+SET COLOR_LAYER 20 15;
+SET FILL_LAYER 20 1;
+
+# 21 tPlace           Bestückungsdruck oben
+SET COLOR_LAYER 21 7;
+SET FILL_LAYER 21 1;
+
+# 25 tNames           Servicedruck oben (Bauteile-Namen, NAME)
+SET COLOR_LAYER 25 7;
+SET FILL_LAYER 25 1;
+
+# 29 tStop            Lötstopmaske oben (automatisch generiert)
+SET COLOR_LAYER 29 5;
+SET FILL_LAYER 29 1;
+
+# 31 tCream           Lotpaste oben
+SET COLOR_LAYER 31 2;
+SET FILL_LAYER 31 1;
+
+# 33 tFinish          Veredelung oben
+SET COLOR_LAYER 33 6;
+SET FILL_LAYER 33 3;
+
+# 44 Drills           Bohrungen, durchkontaktiert
+SET COLOR_LAYER 44 2;
+SET FILL_LAYER 44 1;
+
+# 46 Milling          CNC-Fräser-Daten zum Schneiden der Plat.
+SET COLOR_LAYER 46 1;
+SET FILL_LAYER 46 1;
+
+# 49 Reference        Passermarken
+SET COLOR_LAYER 49 7;
+SET FILL_LAYER 49 1;
+
+# 100 DrillBG         Hintergrund in Bohrungen
+SET COLOR_LAYER 100 0;
+SET FILL_LAYER 100 1;
+
+set palette colored;
+# background
+set palette  0 0xFF3A3A3A;
+# milling
+set palette  1 0xEE333333;
+# pads and cream
+set palette  2 0xFFFFD700;
+# vias
+set palette  3 0xFF387d00;
+# top layer
+set palette  4 0xFF006400;
+# tStop (bare pcb)
+set palette  5 0xFFB5B34D;
+# silk screen, passermarken
+set palette  7 0xA0FFFFFF;
+# umriss
+set palette 15 0xFF000000;
+
+# free
+set palette  6 0xFFFF0000;
+set palette  8 0xFFFF0000;
+set palette  9 0xFFFF0000;
+set palette 10 0xFFFF0000;
+set palette 11 0xFFFF0000;
+set palette 12 0xFFFF0000;
+set palette 13 0xFFFF0000;
+set palette 14 0xFFFF0000;
+
+window;
+

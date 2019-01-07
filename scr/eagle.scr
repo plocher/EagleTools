@@ -1,0 +1,63 @@
+# Configuration Script
+#
+# SPCoast convenience settings
+
+# GENERAL:
+# DIM grid matches Seeed Studio Fusion board sizes (5cm grid)
+GRID = DIM  mm   10 5 lines on alt mm 1;
+GRID = BRD  mil  50 2 dots on alt mil 25;
+GRID = SCH  mil 100 1 dots on alt mil 50;
+GRID = FINE mil  50 2 dots on alt mil 1;
+
+SET OPTIMIZING ON;
+SET Option.AutoLoadMatchingDrawingFile 1;
+SET Option.RepositionMouseCursorAfterContextMenu 1;
+
+
+BRD:
+GRID BRD;
+Display = Normal    NONE 1 16 17 18 19 20 21    23    25    27                     44 45 46 47 48 49 51    ?? 101 102 104;
+Display = Reverse   NONE   16 17 18 19 20    22    24    26    28                  44 45 46 47          52;
+Display = TopSilk   NONE      17 18    20 21                27                                 48    51;
+Display = BotSilk   NONE      17 18    20    22                28                                       52;
+Display = Unrouted  NONE      17    19 20;
+Set WIRE_BEND 1;      # Route with 45 degree angles
+Set Drill 0.015;      # Make vias 0.02"
+Change Shape Round;   # Make vias round
+Change Width 0.01;    # Routing width default to 10mil
+Change Isolate 0.012; # Change polygon isolate to 12mil
+Change Font Vector;   # Make text on board in vector font
+Change Ratio 10;
+
+
+MENU 'Settings { SPCoast Colors   : script SPCoastcolors.scr; set palette Black; window;\
+		 | Eagle Colors   : script defaultcolors.scr; set palette Black; window;\
+		 | Evie Colors    : script evie.scr;          set palette Black; window;\
+		 | Sparkfun       : script sparkfun.scr;      set palette Black; window;\
+		 | Layers         : script SPCoastlayers.scr; \
+		 | reload SPCoast : script SPCoast.scr; \
+		 | Black          : set palette Black; window; \
+		 | White          : set palette White; window; \
+		 | Colored        : set palette Colored; window; };'\
+     'CopySilk    : run panelize;' \
+     'MakePanel   : run make-panel;'
+
+SCH:
+Grid SCH;
+Change Width 0.006;
+
+LBR:
+Grid BRD;
+
+DEV:
+Grid BRD;
+
+SYM:
+Grid BRD;
+
+PAC:
+Grid BRD;
+Change Width 0.005;
+Change Size 0.050;
+
+

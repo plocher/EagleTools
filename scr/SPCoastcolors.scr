@@ -1,0 +1,259 @@
+set palette Black;
+
+set palette 0 0xFF000000;
+set palette 1 0xB43232C8;
+set palette 2 0xB432C832;
+set palette 3 0xB432C8C8;
+set palette 4 0xB4C83232;
+set palette 5 0xB4C832C8;
+set palette 6 0xB4C8C832;
+set palette 7 0xB4C8C8C8;
+
+set palette 8 0xB4646464;
+set palette 9 0xB40000FF;
+set palette 10 0xB427F124;
+set palette 11 0xB400FFFF;
+set palette 12 0xB4FF0000;
+set palette 13 0xB4FF00FF;
+set palette 14 0xB4FFFF00;
+set palette 15 0xB4FFFFFF;
+
+
+set palette 16 0xB4FFED73;
+set palette 17 0xB417E4FF;
+set palette 18 0xB4C8FF13;
+set palette 19 0xFA3316F4;
+set palette 20 0xBEFA1638;
+set palette 21 0xFAFC501B;
+set palette 22 0xFAF5FAAF;
+set palette 23 0xB4FF9849;
+
+set palette 24 0xB4FFFF00;
+set palette 25 0xB428F8FF;
+set palette 26 0xB4E0FF9C;
+set palette 27 0xB45894D5;
+set palette 28 0xC8FC4F24;
+set palette 29 0xFFFC7146;
+set palette 30 0xF0FFFD4F;
+set palette 31 0xB4D9981F;
+
+
+set palette 32 0xB4787878;
+set palette 33 0xB4B8B8B8;
+set palette 34 0xB4FFFFFF;
+set palette 35 0xD2FFFFFF;
+set palette 36 0xF0FFFFFF;
+set palette 37 0xB40A31CE;
+set palette 38 0xB4D7F2AF;
+set palette 39 0xB4000000;
+
+set palette 40 0xB4969696;
+set palette 41 0xB4D7D7D7;
+set palette 42 0xBEE1E1E1;
+set palette 43 0xD2EBEBEB;
+set palette 44 0xF0F5F5F5;
+set palette 45 0xB40D3DFD;
+set palette 46 0xB4DDFFA9;
+set palette 47 0xB4000000;
+
+
+set palette 48 0xB4FD0106;
+set palette 49 0xD4B700FF;
+set palette 50 0xB4FFEA00;
+set palette 51 0xD3FF9306;
+set palette 52 0xB4FFFEA4;
+set palette 53 0xB4C6ECFF;
+set palette 54 0xDEFFFB00;
+set palette 55 0xB4000000;
+
+set palette 56 0xB4FD5b5e;
+set palette 57 0xB4FF00EE;
+set palette 58 0xDEFFFB00;
+set palette 59 0xB4ff9306;
+set palette 60 0xB4FFFEA4;
+set palette 61 0xB4C6ECFF;
+set palette 62 0xDEFFFB00;
+set palette 63 0xB4000000;
+
+set palette White;
+
+set palette 1 0xB43232C8;
+# Bottom, vRestrict
+set palette 2 0xB419960E;
+# bKeepout, bRestrict
+set palette 3 0xD3FC9C38;
+# Top, tKeepout, tRestrict
+set palette 4 0xB4BF1421;
+set palette 5 0xB4C832C8;
+# Unrouted
+set palette 6 0xB4C8C832;
+# bValues
+# generic grey, bDocu
+set palette 7 0xB4C8C8C8;
+
+set palette 8 0xB4646464;
+set palette 9 0xB40000FF;
+set palette 10 0xB427F124;
+set palette 11 0xB400FFFF;
+set palette 12 0xB4FF0000;
+# Vscore
+set palette 13 0xB4FF00FF;
+set palette 14 0xB4FFFF00;
+# Dimension, bOrigins
+set palette 15 0xB4CC9E0A;
+
+# Drills
+set palette 16 0xB4FFED73;
+# bPlace
+set palette 17 0xB417E4FF;
+set palette 18 0xB4C8FF13;
+# tPlace
+set palette 19 0xFA3316F4;
+set palette 20 0xBEFA1638;
+# Measures
+set palette 21 0xFAFC501B;
+# tValues
+set palette 22 0xFA0F5984;
+# Pads
+set palette 23 0xB4FF9849;
+
+# Document, tDocu
+set palette 24 0xFAB6B6B6;
+set palette 25 0xB428F8FF;
+set palette 26 0xB4E0FF9C;
+set palette 27 0xB45894D5;
+set palette 28 0xC8FC4F24;
+# Vias
+set palette 29 0xFFFC7146;
+# tOrigins
+set palette 30 0xF0FFFD4F;
+set palette 31 0xB4D9981F;
+
+
+set palette 32 0xB4787878;
+# tFinish, bFinish
+set palette 33 0xB4B8B8B8;
+# bNames
+set palette 34 0xB40F5984;
+# Holes, Milling
+set palette 35 0xD2FC62ED;
+set palette 36 0xF0FFFFFF;
+set palette 37 0xB40A31CE;
+set palette 38 0xB4D7F2AF;
+set palette 39 0xB4000000;
+
+set palette 40 0xB4969696;
+set palette 41 0xB4D7D7D7;
+set palette 42 0xBEE1E1E1;
+set palette 43 0xD2EBEBEB;
+set palette 44 0xF0F5F5F5;
+set palette 45 0xB40D3DFD;
+set palette 46 0xB4DDFFA9;
+set palette 47 0xB4000000;
+
+# Reference
+set palette 48 0xB4FD0106;
+set palette 49 0xD4B700FF;
+# tNames
+set palette 50 0xB41AC5B6;
+set palette 51 0xD3FF9306;
+set palette 52 0xB4FFFEA4;
+set palette 53 0xB4C6ECFF;
+set palette 54 0xDEFFFB00;
+set palette 55 0xB4000000;
+
+set palette 56 0xB4FD5b5e;
+set palette 57 0xB4FF00EE;
+set palette 58 0xDEFFFB00;
+set palette 59 0xB4ff9306;
+set palette 60 0xB4FFFEA4;
+set palette 61 0xB4C6ECFF;
+set palette 62 0xDEFFFB00;
+set palette 63 0xB4000000;
+
+
+set palette Colored;
+
+set palette 0 0xFAFBEBC2;
+set palette 1 0xB43232C8;
+set palette 2 0xB432C832;
+set palette 3 0xB432C8C8;
+set palette 4 0xB4C83232;
+set palette 5 0xB4C832C8;
+set palette 6 0xB4C8C832;
+set palette 7 0xB4C8C8C8;
+
+set palette 8 0xB4646464;
+set palette 9 0xB40000FF;
+set palette 10 0xB427F124;
+set palette 11 0xB400FFFF;
+set palette 12 0xB4FF0000;
+set palette 13 0xB4FF00FF;
+set palette 14 0xB4FFFF00;
+# Dimension, bOrigins
+set palette 15 0xB490B20F;
+
+
+set palette 16 0xB4FFED73;
+set palette 17 0xB417E4FF;
+set palette 18 0xB4C8FF13;
+set palette 19 0xFA3316F4;
+set palette 20 0xBEFA1638;
+set palette 21 0xFAFC501B;
+# tValues
+set palette 22 0xFA0D6FD9;
+set palette 23 0xB4FF9849;
+
+# Document, tDocu
+set palette 24 0xB48600A5;
+set palette 25 0xB428F8FF;
+set palette 26 0xB4E0FF9C;
+set palette 27 0xB45894D5;
+set palette 28 0xC8FC4F24;
+set palette 29 0xFFFC7146;
+set palette 30 0xF0FFFD4F;
+set palette 31 0xB4D9981F;
+
+
+set palette 32 0xB4787878;
+set palette 33 0xB4B8B8B8;
+set palette 34 0xB4FFFFFF;
+set palette 35 0xD2FFFFFF;
+set palette 36 0xF0FFFFFF;
+set palette 37 0xB40A31CE;
+set palette 38 0xB4D7F2AF;
+set palette 39 0xB4000000;
+
+set palette 40 0xB4969696;
+set palette 41 0xB4D7D7D7;
+set palette 42 0xBEE1E1E1;
+set palette 43 0xD2EBEBEB;
+set palette 44 0xF0F5F5F5;
+set palette 45 0xB40D3DFD;
+set palette 46 0xB4DDFFA9;
+set palette 47 0xB4000000;
+
+
+set palette 48 0xB4FD0106;
+set palette 49 0xD4B700FF;
+# tNames
+set palette 50 0xB4139BD9;
+set palette 51 0xD3FF9306;
+set palette 52 0xB4FFFEA4;
+set palette 53 0xB4C6ECFF;
+set palette 54 0xDEFFFB00;
+set palette 55 0xB4000000;
+
+set palette 56 0xB4FD5b5e;
+set palette 57 0xB4FF00EE;
+set palette 58 0xDEFFFB00;
+set palette 59 0xB4ff9306;
+set palette 60 0xB4FFFEA4;
+set palette 61 0xB4C6ECFF;
+set palette 62 0xDEFFFB00;
+set palette 63 0xB4000000;
+
+set palette Black;
+
+set palette White;
+window;
