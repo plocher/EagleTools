@@ -56,7 +56,7 @@ Press OK in the popup dialog; it doesn't look like it does anything, but a look 
 4. Invoke the (new) make-panel ULP script from the singleton's BRD editor.  Its popup asks for the number of copies it should create, in a 2-dimensional array.
 The ULP creates a SCRipt file that will be used next to create a panelized design.  This SCRipt defaults to the same name as the singleton design, but with a ".scr" extention.
 
-  * run make-board
+  * run make-panel
 
 5. Start a new empty board design:
   * File->New
