@@ -19,10 +19,21 @@
        "<author>Edited By: Todd Beyer (USA) tbeyer74@hotmail.com</author>"
        "<p>"
        "<author>Edited By: Thomas M. Sasala (USA) (cyberreefguru)</author>"
+       "<p>"
+       "<author>Edited By: John Plocher (USA) (SPCoast)</author>"
+       "<ul>"
+       "<li>Minor cleanup - removed unused, commented out old code"
+       "<li>Populate array size default with board dimensions"
+       "<li>Made confirmation dialog optional"
+       "<li>Reverted LINE command (new in 9.x) to original WIRE for backward compatibility"
+       "<li>Move DIM layer 20 content to HIDDEN"
+       "<li>Add V-SCORE lines and notation to MILLING layer between boards"
+       "<li>Remove existing empty layers above 100 before (re)creating them to eliminate script errors"
+       "</ul>"
 
 // THIS PROGRAM IS PROVIDED AS IS AND WITHOUT WARRANTY OF ANY KIND, EXPRESSED OR IMPLIED
 
-int NeedConfirmation = 0;
+int NeedConfirmation = 0;  // set to '1' to enable confirmation dialog popup
 
 //int nb_sig_cmn=0;
 int b=0;
@@ -280,7 +291,7 @@ pour[1]="hatch";
 
 output(fileLocation) 
 {
-    printf("Grid mil;\n");
+    printf("Grid mil;\n");   // Protect against boards with non-mil default grid
     printf("Set wire_bend 2;\n");
     printf("Layer %d '%s';\n",layer_numbers[selectedTopLayer], layer_names[selectedTopLayer]);
     printf("Layer %d '%s';\n",layer_numbers[selectedBottomLayer], layer_names[selectedBottomLayer]);
@@ -292,7 +303,7 @@ output(fileLocation)
         B.layers(E)
         {
             if(E.number<100) continue;
-            printf("layer ?? -%d;\n",E.number);
+            printf("layer ?? -%d;\n",E.number);  // if layer exists, the next line's command will fail, so remove it first.
             printf("layer %d '%s';\n",E.number, E.name);
             printf("set color_layer %d %d;\n",E.number, E.color);
 
@@ -304,7 +315,7 @@ output(fileLocation)
 
     for(i=1;i<=nx;i++)
     {
-	vw=deltax * nx + 200;
+	vw=deltax * nx + 200;  // make V-Score milling lines extend beyond the array top/bottom/sides...
 	vh=deltay * ny + 200;
 
         for(j=1;j<=ny;j++) 
@@ -312,7 +323,7 @@ output(fileLocation)
             dx=orgx + (i-1)*deltax;
             dy=orgy + (j-1)*deltay;
 
-	    // V-Score vertical
+	    // V-Score vertical - only between board instances
 		if (j == 1 && i > 1 && nx > 1)
 	    {
 		printf("change layer %d;\n",46); // Milling
@@ -322,7 +333,7 @@ output(fileLocation)
 		printf("text 'V-Score' R%f (%f %f);\n", 180.0, orgx + (i-1)*deltax,  orgy - 100);
 	    }
 
-	    // V-Score Horizontal
+	    // V-Score Horizontal - only between board instances
 	    //if (i == 1 && j > 1 && ny > 1)
 	    if (i == 1)
 	    {
@@ -332,7 +343,7 @@ output(fileLocation)
 		printf("change size 40;\n");
 		printf("text 'V-Score' R%f (%f %f);\n", 90.0, orgx - 100, orgy + (j-1)*deltay);
 	    }
-	    if (i == nx)
+	    if (i == nx) // add a final one at the top of the array - not everyone will want this...
 	    {
 		printf("change layer %d;\n",46); // Milling
 		printf("change style %s;\n","CONTINUOUS");
@@ -498,10 +509,10 @@ output(fileLocation)
                 {
                     if(!w.arc)
                     {
-			dimlayer = w.layer;
-			if (dimlayer == 20) 
+			dimlayer = w.layer;  
+			if (dimlayer == 20)  // force all DIMENSION layer lines to be on the HIDDEN layer
 			{
-			    dimlayer = 101;
+			    dimlayer = 101;  // change to "20" if you don't want this behavior
 			}
 
                         wid= u2mil(w.width);
@@ -519,9 +530,9 @@ output(fileLocation)
                     if(w.arc)
                     {
 			dimlayer = w.arc.layer;
-			if (dimlayer == 20) 
+			if (dimlayer == 20)  // force all DIMENSION layer lines to be on the HIDDEN layer
 			{
-			    dimlayer = 101;
+			    dimlayer = 101;  // change to "20" if you don't want this behavior
 			}
 
                         wid= u2mil(w.arc.width);
@@ -649,8 +660,6 @@ output(fileLocation)
     printf("display -28;\n");
     printf("display -37;\n");
     printf("display -38;\n");
-    
-
-
+  
 }
 

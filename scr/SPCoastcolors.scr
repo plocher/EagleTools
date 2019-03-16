@@ -64,7 +64,7 @@ set palette 51 0xD3FF9306;
 set palette 52 0xB4FFFEA4;
 set palette 53 0xB4C6ECFF;
 set palette 54 0xDEFFFB00;
-set palette 55 0xB4000000;
+set palette 55 0xDEFFFB00;
 
 set palette 56 0xB4FD5b5e;
 set palette 57 0xB4FF00EE;
@@ -73,7 +73,7 @@ set palette 59 0xB4ff9306;
 set palette 60 0xB4FFFEA4;
 set palette 61 0xB4C6ECFF;
 set palette 62 0xDEFFFB00;
-set palette 63 0xB4000000;
+set palette 63 0xB4FFEA00;
 
 set palette White;
 
