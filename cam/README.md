@@ -1,6 +1,8 @@
 CAM files for use with EagleCAD
 ===============================
-These CAM jobs create the files needed to have a PCB created.  These files, zipped together, are the only files you need to have a PCB made at nearly any fab house.
+These CAM jobs create the files needed to have a PCB created.  
+ When run as a CAM Processor job in EAGLE-CAD, they will produce a set of files that, when zipped together, 
+ are everything you need to have a PCB made at nearly any fab house.
 
 
   * SPCoast-gerb274x-PanelSilk.cam
@@ -13,9 +15,9 @@ These CAM jobs create the files needed to have a PCB created.  These files, zipp
     *  For use with singleton or panelized designs, when component values are desired INSTEAD of component names. 
 
   * SPCoast-gerb274x-noPartInfo.cam
-    *  For use with Singleton or panelized designs that do not desire component names OR values to show up on the PCB. 
+    *  For use with Singleton or panelized designs that do not want component names OR values to show up on the PCB. 
 
-You will get 10 RS274-x format gerber files:</b>
+You should get 10x RS274-x format gerber files:</b>
   * Top Layer: pcbname.GTL
   * Silk Top:  pcbname.GTO
   * SolderMask Top: pcbname.GTS
