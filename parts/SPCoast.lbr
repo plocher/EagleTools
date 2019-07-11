@@ -158,7 +158,7 @@
 <library>
 <packages>
 <package name="UD-10X10_NICHICON">
-<description>&lt;b&gt;ALUMINUM ELECTROLYTIC CAPACITORS&lt;/b&gt; UD Series 10 x 10 mm&lt;p&gt;
+<description>ALUMINUM ELECTROLYTIC CAPACITORS UD Series 10 x 10 mm
 Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <wire x1="-5.1" y1="5.1" x2="4.3" y2="5.1" width="0.1016" layer="51"/>
 <wire x1="4.3" y1="5.1" x2="5.1" y2="4.3" width="0.1016" layer="51"/>
@@ -185,7 +185,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </polygon>
 </package>
 <package name="PANASONIC_A">
-<description>&lt;b&gt;Panasonic Aluminium Electrolytic Capacitor VS-Serie Package A&lt;/b&gt;</description>
+<description>Panasonic Aluminium Electrolytic Capacitor VS-Serie Package A</description>
 <wire x1="-1.6" y1="1.6" x2="0.8" y2="1.6" width="0.1016" layer="51"/>
 <wire x1="0.8" y1="1.6" x2="1.6" y2="0.8" width="0.1016" layer="51"/>
 <wire x1="1.6" y1="0.8" x2="1.6" y2="-0.8" width="0.1016" layer="51"/>
@@ -219,7 +219,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </polygon>
 </package>
 <package name="PANASONIC_B">
-<description>&lt;b&gt;Panasonic Aluminium Electrolytic Capacitor VS-Serie Package B&lt;/b&gt;</description>
+<description>Panasonic Aluminium Electrolytic Capacitor VS-Serie Package B</description>
 <wire x1="-2.1" y1="2.1" x2="1" y2="2.1" width="0.1016" layer="51"/>
 <wire x1="1" y1="2.1" x2="2.1" y2="1" width="0.1016" layer="51"/>
 <wire x1="2.1" y1="1" x2="2.1" y2="-1" width="0.1016" layer="51"/>
@@ -253,7 +253,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </polygon>
 </package>
 <package name="PANASONIC_C">
-<description>&lt;b&gt;Panasonic Aluminium Electrolytic Capacitor VS-Serie Package C&lt;/b&gt;</description>
+<description>Panasonic Aluminium Electrolytic Capacitor VS-Serie Package C</description>
 <wire x1="-2.6" y1="2.6" x2="1.25" y2="2.6" width="0.1016" layer="51"/>
 <wire x1="1.25" y1="2.6" x2="2.6" y2="1.25" width="0.1016" layer="51"/>
 <wire x1="2.6" y1="1.25" x2="2.6" y2="-1.25" width="0.1016" layer="51"/>
@@ -289,7 +289,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </polygon>
 </package>
 <package name="PANASONIC_D">
-<description>&lt;b&gt;Panasonic Aluminium Electrolytic Capacitor VS-Serie Package D&lt;/b&gt;</description>
+<description>Panasonic Aluminium Electrolytic Capacitor VS-Serie Package D</description>
 <wire x1="-3.25" y1="3.25" x2="1.55" y2="3.25" width="0.1016" layer="51"/>
 <wire x1="1.55" y1="3.25" x2="3.25" y2="1.55" width="0.1016" layer="51"/>
 <wire x1="3.25" y1="1.55" x2="3.25" y2="-1.55" width="0.1016" layer="51"/>
@@ -326,7 +326,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </polygon>
 </package>
 <package name="PANASONIC_E">
-<description>&lt;b&gt;Panasonic Aluminium Electrolytic Capacitor VS-Serie Package E&lt;/b&gt;</description>
+<description>Panasonic Aluminium Electrolytic Capacitor VS-Serie Package E</description>
 <wire x1="-4.1" y1="4.1" x2="1.8" y2="4.1" width="0.1016" layer="51"/>
 <wire x1="1.8" y1="4.1" x2="4.1" y2="1.8" width="0.1016" layer="51"/>
 <wire x1="4.1" y1="1.8" x2="4.1" y2="-1.8" width="0.1016" layer="51"/>
@@ -364,7 +364,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </polygon>
 </package>
 <package name="PANASONIC_F">
-<description>&lt;b&gt;Panasonic Aluminium Electrolytic Capacitor VS-Serie Package F&lt;/b&gt;</description>
+<description>Panasonic Aluminium Electrolytic Capacitor VS-Serie Package F</description>
 <wire x1="-4.1" y1="4.1" x2="1.8" y2="4.1" width="0.1016" layer="51"/>
 <wire x1="1.8" y1="4.1" x2="4.1" y2="1.8" width="0.1016" layer="51"/>
 <wire x1="4.1" y1="1.8" x2="4.1" y2="-1.8" width="0.1016" layer="51"/>
@@ -403,7 +403,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 </polygon>
 </package>
 <package name="PANASONIC_G">
-<description>&lt;b&gt;Panasonic Aluminium Electrolytic Capacitor VS-Serie Package G&lt;/b&gt;</description>
+<description>Panasonic Aluminium Electrolytic Capacitor VS-Serie Package G</description>
 <wire x1="-5.1" y1="5.1" x2="2.8" y2="5.1" width="0.1016" layer="51"/>
 <wire x1="2.8" y1="5.1" x2="5.1" y2="2.8" width="0.1016" layer="51"/>
 <wire x1="5.1" y1="2.8" x2="5.1" y2="-2.8" width="0.1016" layer="51"/>
@@ -1112,7 +1112,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <text x="8.89" y="-1.27" size="2.54" layer="21" ratio="12">-</text>
 </package>
 <package name="BATTERY">
-<description>&lt;B&gt;BATTERY&lt;/B&gt;&lt;p&gt;
+<description>BATTERY
 22 mm</description>
 <wire x1="0.635" y1="2.54" x2="0.635" y2="0" width="0.1524" layer="21"/>
 <wire x1="-2.54" y1="0" x2="-0.635" y2="0" width="0.1524" layer="21"/>
@@ -1337,8 +1337,7 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <rectangle x1="-2" y1="-2" x2="2" y2="2" layer="31"/>
 </package>
 <package name="BATTERY-AA-KIT">
-<description>&lt;h3&gt;BATTERY-AA-KIT&lt;/h3&gt;
-&lt;b&gt;Warning:&lt;/b&gt; This is the KIT version of this package. This package has a smaller diameter top stop mask, which doesn't cover the diameter of the pad. This means only the bottom side of the pads' copper will be exposed. You'll only be able to solder to the bottom side.</description>
+<description>BATTERY-AA-KIT Warning: This is the KIT version of this package. This package has a smaller diameter top stop mask, which doesn't cover the diameter of the pad. This means only the bottom side of the pads' copper will be exposed. You'll only be able to solder to the bottom side.</description>
 <wire x1="-17.526" y1="-4.826" x2="-27.051" y2="-4.826" width="0.254" layer="41"/>
 <wire x1="-27.051" y1="-4.826" x2="-27.051" y2="4.826" width="0.254" layer="41"/>
 <wire x1="-27.051" y1="4.826" x2="-17.526" y2="4.826" width="0.254" layer="41"/>
@@ -1501,8 +1500,8 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <text x="-5.08" y="-5.08" size="1.778" layer="27">&gt;VALUE</text>
 </package>
 <package name="BOARD-DINRAIL-2.7IN">
-<description>Board template for 2.75" wide Grey Fast Trac panel mounting&lt;p&gt;
-This board fits in the Seeed Studio Fusion 10cmx10cm board size range&lt;p&gt;
+<description>Board template for 2.75" wide Grey Fast Trac panel mounting
+This board fits in the Seeed Studio Fusion 10cmx10cm board size range
 Use a 1.6mm board thickness for a firm snap, 1.2mm for a more slippery mount.</description>
 <wire x1="7" y1="0" x2="97.179971875" y2="0" width="0" layer="20"/>
 <wire x1="97.179971875" y1="0" x2="99.822" y2="2.5" width="0" layer="20" curve="90"/>
@@ -1566,8 +1565,8 @@ Use a 1.6mm board thickness for a firm snap, 1.2mm for a more slippery mount.</d
 </polygon>
 </package>
 <package name="BOARD-SEEED10X10">
-<description>Board template for 2.75" wide Grey Fast Trac panel mounting&lt;p&gt;
-This board fits in the Seeed Studio Fusion 10cmx10cm board size range&lt;p&gt;
+<description>Board template for 2.75" wide Grey Fast Trac panel mounting
+This board fits in the Seeed Studio Fusion 10cmx10cm board size range
 Use a 1.6mm board thickness for a firm snap, 1.2mm for a more slippery mount.</description>
 <wire x1="7" y1="0" x2="97.179971875" y2="0" width="0" layer="20"/>
 <wire x1="97.179971875" y1="0" x2="100" y2="2.5" width="0" layer="20" curve="90"/>
@@ -1591,8 +1590,8 @@ Use a 1.6mm board thickness for a firm snap, 1.2mm for a more slippery mount.</d
 <text x="103.7" y="52" size="1.016" layer="47" rot="R90">mm</text>
 </package>
 <package name="BOARD-SEEED5X5">
-<description>Board template for 2.75" wide Grey Fast Trac panel mounting&lt;p&gt;
-This board fits in the Seeed Studio Fusion 10cmx10cm board size range&lt;p&gt;
+<description>Board template for 2.75" wide Grey Fast Trac panel mounting
+This board fits in the Seeed Studio Fusion 10cmx10cm board size range
 Use a 1.6mm board thickness for a firm snap, 1.2mm for a more slippery mount.</description>
 <wire x1="7" y1="0" x2="47.179971875" y2="0" width="0" layer="20"/>
 <wire x1="47.179971875" y1="0" x2="50" y2="2.5" width="0" layer="20" curve="90"/>
@@ -1940,7 +1939,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <text x="0.3175" y="1.5875" size="1.27" layer="51" rot="R90">+</text>
 </package>
 <package name="SM-T4">
-<description>SMD WIDEBAND &lt;B&gt;TRANSFORMER&lt;/B&gt;&lt;p&gt;
+<description>SMD WIDEBAND TRANSFORMER
 50 Ohm, turn ratio 1:1, 4.5 x 4.5 mm</description>
 <wire x1="-2.15" y1="-1.5" x2="-2.15" y2="1.5" width="0.2032" layer="21"/>
 <wire x1="-2.15" y1="1.5" x2="-1.75" y2="1.5" width="0.2032" layer="51"/>
@@ -2008,7 +2007,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <pad name="P2" x="2.54" y="-7.62" drill="1.6" rot="R90"/>
 </package>
 <package name="RJ25-PANEL">
-<description>&lt;b&gt;Modular Jack&lt;/b&gt;&lt;p&gt;with Panel Stops</description>
+<description>Modular Jackwith Panel Stops</description>
 <wire x1="6.562" y1="11.044" x2="6.562" y2="-6.9215" width="0.2032" layer="21"/>
 <wire x1="6.562" y1="-6.9215" x2="6.562" y2="-9.538" width="0.2032" layer="49"/>
 <wire x1="-6.562" y1="-9.538" x2="-6.562" y2="-6.9215" width="0.2032" layer="49"/>
@@ -2057,7 +2056,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <hole x="5.08" y="0" drill="3.2512"/>
 </package>
 <package name="RJ25">
-<description>&lt;b&gt;RJ11 Low Profile&lt;/b&gt; No Shield&lt;/b&gt;&lt;p&gt;
+<description>RJ11 Low Profile No Shield
 For all RJ11 N and Z Series Models&lt;br&gt;
 Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</description>
 <wire x1="-6.877" y1="10.819" x2="6.877" y2="10.819" width="0.2032" layer="21"/>
@@ -2155,7 +2154,7 @@ Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</descriptio
 <text x="-4.826" y="1.778" size="1.4224" layer="49">6</text>
 </package>
 <package name="RJ45-NO-SHIELD">
-<description>&lt;b&gt;RJ45 Low Profile&lt;/b&gt; panel mount, no shield&lt;p&gt;
+<description>RJ45 Low Profile panel mount, no shield
 For all RJ45 N and Z Series Models&lt;br&gt;
 Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</description>
 <wire x1="-7.527" y1="10.819" x2="7.527" y2="10.819" width="0.2032" layer="21"/>
@@ -2473,7 +2472,7 @@ Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</descriptio
 <text x="-1.905" y="3.175" size="0.635" layer="27" font="vector" ratio="10">&gt;VALUE</text>
 </package>
 <package name="DCJ0202">
-<description>&lt;b&gt;DC POWER JACK&lt;/b&gt;&lt;p&gt;
+<description>DC POWER JACK
 Source: DCJ0202.pdf</description>
 <wire x1="-4.3" y1="-10.4" x2="4.3" y2="-10.4" width="0.2032" layer="21"/>
 <wire x1="4.3" y1="-10.4" x2="4.3" y2="3.9" width="0.2032" layer="51"/>
@@ -2518,7 +2517,7 @@ Source: DCJ0202.pdf</description>
 <pad name="P$1" x="4.9" y="-0.1" drill="3.5" diameter="4.5" shape="octagon" rot="R90"/>
 </package>
 <package name="2POL254">
-<description>&lt;b&gt;PHOENIX CONNECTOR&lt;/b&gt;
+<description>PHOENIX CONNECTOR
 
 Standard 2-pin 0.1" header. Use with 
 - straight break away headers ( PRT-00116)
@@ -3016,7 +3015,7 @@ Black</text>
 <wire x1="0.3048" y1="-0.3302" x2="0.5334" y2="-0.3302" width="0.127" layer="21"/>
 </package>
 <package name="0402-CAP">
-<description>&lt;b&gt;CAPACITOR&lt;/b&gt;&lt;p&gt;
+<description>CAPACITOR
 chip</description>
 <wire x1="-0.245" y1="0.224" x2="0.245" y2="0.224" width="0.1524" layer="51"/>
 <wire x1="0.245" y1="-0.224" x2="-0.245" y2="-0.224" width="0.1524" layer="51"/>
@@ -3087,7 +3086,7 @@ chip</description>
 <rectangle x1="0.67945" y1="-0.4699" x2="1.17955" y2="0.4801" layer="49"/>
 </package>
 <package name="J3-254">
-<description>&lt;b&gt;JUMPER&lt;/b&gt;</description>
+<description>JUMPER</description>
 <wire x1="-3.81" y1="-1.016" x2="-3.81" y2="1.016" width="0.1524" layer="21"/>
 <wire x1="3.556" y1="1.27" x2="1.524" y2="1.27" width="0.1524" layer="21"/>
 <wire x1="1.27" y1="1.016" x2="1.524" y2="1.27" width="0.1524" layer="21"/>
@@ -3123,7 +3122,7 @@ chip</description>
 <wire x1="1.016" y1="-1.016" x2="1.016" y2="1.016" width="0.4064" layer="51"/>
 </package>
 <package name="04C">
-<description>&lt;b&gt;JUMPER&lt;/b&gt;</description>
+<description>JUMPER</description>
 <wire x1="-2.4572" y1="0" x2="-1.5428" y2="0" width="0.6096" layer="21"/>
 <wire x1="-0.095" y1="0" x2="-1.365" y2="0" width="0.6096" layer="51"/>
 <wire x1="-3.905" y1="0" x2="-2.635" y2="0" width="0.6096" layer="51"/>
@@ -3137,7 +3136,7 @@ chip</description>
 <text x="-0.1001" y="0" size="0.02" layer="27">&gt;VALUE</text>
 </package>
 <package name="05C">
-<description>&lt;b&gt;JUMPER&lt;/b&gt;</description>
+<description>JUMPER</description>
 <wire x1="-1.0922" y1="0" x2="1.0922" y2="0" width="0.6096" layer="21"/>
 <wire x1="2.54" y1="0" x2="1.27" y2="0" width="0.6096" layer="51"/>
 <wire x1="-2.54" y1="0" x2="-1.27" y2="0" width="0.6096" layer="51"/>
@@ -3151,9 +3150,7 @@ chip</description>
 <text x="2.5001" y="0" size="0.02" layer="27">&gt;VALUE</text>
 </package>
 <package name="0805-LED">
-<description>&lt;b&gt;Hyper CHIPLED Hyper-Bright LED&lt;/b&gt;&lt;p&gt;
-LB R99A&lt;br&gt;
-Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
+<description>OSRAM Hyper CHIPLED Hyper-Bright LED LB R99A</description>
 <smd name="C" x="1.05" y="0" dx="1.2" dy="1.2" layer="1" rot="R270"/>
 <smd name="A" x="-1.05" y="0" dx="1.2" dy="1.2" layer="1" rot="R270"/>
 <text x="-1.27" y="1.27" size="1.27" layer="25">&gt;NAME</text>
@@ -3194,8 +3191,7 @@ Source: http://www.osram.convergy.de/ ... lb_r99a.pdf</description>
 </polygon>
 </package>
 <package name="0603-LED">
-<description>&lt;b&gt;CHIPLED&lt;/b&gt;&lt;p&gt;
-Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
+<description>OSRAM CHIPLED</description>
 <wire x1="0.8" y1="0.3" x2="0.8" y2="-0.3" width="0.1016" layer="49" curve="170.055574"/>
 <wire x1="-0.825" y1="0.275" x2="-0.825" y2="-0.275" width="0.0508" layer="49" curve="-180"/>
 <wire x1="0.375" y1="0.4" x2="-0.35" y2="0.4" width="0.1016" layer="49"/>
@@ -3235,8 +3231,7 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <wire x1="-0.1524" y1="0.1524" x2="-0.1524" y2="-0.127" width="0.127" layer="51"/>
 </package>
 <package name="LED3MM">
-<description>&lt;B&gt;LED&lt;/B&gt;&lt;p&gt;
-3 mm, round</description>
+<description>LED 3 mm, round</description>
 <wire x1="1.5748" y1="-1.27" x2="1.5748" y2="1.27" width="0.254" layer="51"/>
 <wire x1="-1.524" y1="0" x2="-1.1708" y2="0.9756" width="0.1524" layer="51" curve="-39.80361"/>
 <wire x1="-1.524" y1="0" x2="-1.1391" y2="-1.0125" width="0.1524" layer="51" curve="41.633208"/>
@@ -3262,8 +3257,7 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <text x="1.905" y="-1.651" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="LED5MM">
-<description>&lt;B&gt;LED&lt;/B&gt;&lt;p&gt;
-5 mm, round</description>
+<description>LED 5 mm, round</description>
 <wire x1="2.54" y1="-1.905" x2="2.54" y2="1.905" width="0.2032" layer="21"/>
 <wire x1="2.54" y1="-1.905" x2="2.54" y2="1.905" width="0.254" layer="21" curve="-286.260205"/>
 <wire x1="-1.143" y1="0" x2="0" y2="1.143" width="0.1524" layer="51" curve="-90"/>
@@ -3279,8 +3273,7 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <text x="3.2004" y="-1.8034" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="LED10MM">
-<description>&lt;B&gt;LED&lt;/B&gt;&lt;p&gt;
-10 mm, round</description>
+<description>LED 10 mm, round</description>
 <wire x1="5.08" y1="-2.54" x2="5.08" y2="2.54" width="0.254" layer="21" curve="-306.869898"/>
 <wire x1="4.445" y1="0" x2="0" y2="-4.445" width="0.127" layer="21" curve="-90"/>
 <wire x1="3.81" y1="0" x2="0" y2="-3.81" width="0.127" layer="21" curve="-90"/>
@@ -3298,8 +3291,7 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <text x="6.35" y="-1.27" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="1206-LED">
-<description>&lt;b&gt;CHICAGO MINIATURE LAMP, INC.&lt;/b&gt;&lt;p&gt;
-7022X Series SMT LEDs 1206 Package Size</description>
+<description>CHICAGO MINIATURE LAMP 7022X Series SMT LEDs 1206 Package Size</description>
 <wire x1="1.55" y1="-0.75" x2="-1.55" y2="-0.75" width="0.1016" layer="49"/>
 <wire x1="-1.55" y1="-0.75" x2="-1.55" y2="0.75" width="0.1016" layer="49"/>
 <wire x1="-1.55" y1="0.75" x2="1.55" y2="0.75" width="0.1016" layer="49"/>
@@ -3334,8 +3326,7 @@ Source: http://www.osram.convergy.de/ ... LG_LY Q971.pdf</description>
 <wire x1="0.381" y1="0.4318" x2="0.381" y2="-0.4572" width="0.127" layer="51"/>
 </package>
 <package name="LED-SIDE">
-<description>&lt;b&gt;Hyper Micro SIDELED®&lt;/b&gt;&lt;p&gt;
-Source: http://www.osram.convergy.de/ ... LA_LO_LS_LY Y876.pdf</description>
+<description>Hyper Micro SIDELED</description>
 <wire x1="-1.0922" y1="0.635" x2="-1.0922" y2="-0.1016" width="0.1016" layer="51"/>
 <wire x1="-1.0922" y1="-0.1016" x2="-0.873" y2="-0.477" width="0.1016" layer="51"/>
 <wire x1="-0.873" y1="-0.477" x2="0.9" y2="-0.477" width="0.1016" layer="51"/>
@@ -3376,8 +3367,7 @@ Source: http://www.osram.convergy.de/ ... LA_LO_LS_LY Y876.pdf</description>
 <wire x1="-0.1778" y1="-0.2032" x2="-0.0508" y2="-0.0508" width="0.127" layer="51"/>
 </package>
 <package name="LED-REVERSEMOUNT">
-<description>&lt;b&gt;Mini TOPLED Santana®&lt;/b&gt;&lt;p&gt;
-Source: http://www.osram.convergy.de/ ... LG M470.pdf</description>
+<description>Mini TOPLED Santana</description>
 <wire x1="1" y1="0.7" x2="1" y2="0.35" width="0.1016" layer="21"/>
 <wire x1="1" y1="0.35" x2="1" y2="-0.7" width="0.1016" layer="21"/>
 <wire x1="1" y1="-0.7" x2="-1" y2="-0.7" width="0.1016" layer="21"/>
@@ -3513,8 +3503,7 @@ Source: http://www.osram.convergy.de/ ... LG M470.pdf</description>
 <wire x1="-0.226059375" y1="0" x2="0.226059375" y2="0.002540625" width="0.127" layer="21"/>
 </package>
 <package name="0402-RES">
-<description>&lt;b&gt;CAPACITOR&lt;/b&gt;&lt;p&gt;
-chip</description>
+<description>CAPACITOR 0402 chip</description>
 <wire x1="-1.092" y1="0.483" x2="1.092" y2="0.483" width="0.0508" layer="39"/>
 <wire x1="1.092" y1="0.483" x2="1.092" y2="-0.483" width="0.0508" layer="39"/>
 <wire x1="1.092" y1="-0.483" x2="-1.092" y2="-0.483" width="0.0508" layer="39"/>
@@ -3547,9 +3536,7 @@ chip</description>
 <text x="-1.423" y="-0.4286" size="0.8128" layer="21" ratio="15">&gt;VALUE</text>
 </package>
 <package name="0810-CAP">
-<description>&lt;b&gt;Aluminum electrolytic capacitors SMD (Chip)&lt;/b&gt;&lt;p&gt;
-Long life base plate, High temperature 140 CLH&lt;p&gt;
-http://www.bccomponents.com/</description>
+<description>Vishay Aluminum electrolytic capacitor SMD (Chip) Long life base plate, High temperature 140 CLH</description>
 <wire x1="-4.85" y1="4.2" x2="3.4" y2="4.2" width="0.2032" layer="21"/>
 <wire x1="4.85" y1="2.75" x2="4.85" y2="1.45" width="0.2032" layer="21"/>
 <wire x1="4.85" y1="1.45" x2="4.85" y2="-1.45" width="0.2032" layer="51"/>
@@ -3570,7 +3557,7 @@ http://www.bccomponents.com/</description>
 <text x="0.635" y="-3.175" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
 </package>
 <package name="SOT23">
-<description>&lt;B&gt;DIODE&lt;/B&gt;</description>
+<description>DIODE</description>
 <wire x1="0.3302" y1="-0.6604" x2="-0.3302" y2="-0.6604" width="0.1524" layer="21"/>
 <wire x1="-1.4224" y1="-0.1524" x2="-1.4224" y2="0.6604" width="0.1524" layer="21"/>
 <wire x1="-1.4224" y1="0.6604" x2="-0.6096" y2="0.6604" width="0.1524" layer="21"/>
@@ -3583,8 +3570,7 @@ http://www.bccomponents.com/</description>
 <text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="R1206-8">
-<description>&lt;b&gt;BOURNS&lt;/b&gt; Chip Resistor Array&lt;p&gt;
-Source: RS Component / BUORNS</description>
+<description>BOURNS Chip Resistor Array</description>
 <wire x1="-1.55" y1="0.75" x2="-1.4064" y2="0.75" width="0.1016" layer="51"/>
 <wire x1="-1.0064" y1="0.75" x2="-0.581" y2="0.75" width="0.1016" layer="51"/>
 <wire x1="1.4064" y1="0.75" x2="1.55" y2="0.75" width="0.1016" layer="51"/>
@@ -3622,8 +3608,7 @@ Source: RS Component / BUORNS</description>
 <wire x1="-0.5938" y1="-0.75" x2="-0.9938" y2="-0.75" width="0.1016" layer="51"/>
 </package>
 <package name="TO-252">
-<description>&lt;b&gt;SMALL OUTLINE TRANSISTOR&lt;/b&gt;&lt;p&gt;
-TS-003</description>
+<description>SMALL OUTLINE TRANSISTOR TS-003</description>
 <wire x1="3.2766" y1="3.8354" x2="3.277" y2="-2.159" width="0.2032" layer="21"/>
 <wire x1="3.277" y1="-2.159" x2="-3.277" y2="-2.159" width="0.2032" layer="21"/>
 <wire x1="-3.277" y1="-2.159" x2="-3.2766" y2="3.8354" width="0.2032" layer="21"/>
@@ -3656,7 +3641,7 @@ TS-003</description>
 </polygon>
 </package>
 <package name="SOT223-ORIG">
-<description>&lt;b&gt;SMALL OUTLINE TRANSISTOR&lt;/b&gt;</description>
+<description>SMALL OUTLINE TRANSISTOR</description>
 <wire x1="3.277" y1="1.778" x2="3.277" y2="-1.778" width="0.2032" layer="21"/>
 <wire x1="3.277" y1="-1.778" x2="-3.277" y2="-1.778" width="0.2032" layer="21"/>
 <wire x1="-3.277" y1="-1.778" x2="-3.277" y2="1.778" width="0.2032" layer="21"/>
@@ -3697,7 +3682,7 @@ TS-003</description>
 <rectangle x1="1.26" y1="-2.23" x2="1.74" y2="-1.27" layer="51"/>
 </package>
 <package name="TO-220">
-<description>&lt;b&gt;VOLTAGE REGULATOR&lt;/b&gt;</description>
+<description>VOLTAGE REGULATOR</description>
 <wire x1="-5.207" y1="-1.27" x2="5.207" y2="-1.27" width="0.1524" layer="21"/>
 <wire x1="5.207" y1="14.605" x2="-5.207" y2="14.605" width="0.1524" layer="21"/>
 <wire x1="5.207" y1="-1.27" x2="5.207" y2="11.176" width="0.1524" layer="21"/>
@@ -3735,6 +3720,7 @@ TS-003</description>
 <hole x="0" y="11.176" drill="3.302"/>
 </package>
 <package name="TO-220-RA-SINK">
+<description>VOLTAGE REGULATOR with heatsink</description>
 <wire x1="5.08" y1="-1.905" x2="-5.08" y2="-1.905" width="0.2032" layer="21"/>
 <wire x1="-5.08" y1="-1.905" x2="-5.08" y2="1.905" width="0.2032" layer="21"/>
 <wire x1="-5.08" y1="1.905" x2="-5.08" y2="2.54" width="0.2032" layer="21"/>
@@ -3756,7 +3742,6 @@ TS-003</description>
 <pad name="OUT" x="2.54" y="0" drill="1" diameter="1.8796"/>
 </package>
 <package name="TO-92">
-<description>&lt;b&gt;TO 92&lt;/b&gt;</description>
 <wire x1="-2.0946" y1="-1.651" x2="-0.7863" y2="2.5485" width="0.2032" layer="21" curve="-111.098957" cap="flat"/>
 <wire x1="0.7863" y1="2.5484" x2="2.0945" y2="-1.651" width="0.2032" layer="21" curve="-111.09954" cap="flat"/>
 <wire x1="-2.0945" y1="-1.651" x2="2.0945" y2="-1.651" width="0.2032" layer="21"/>
@@ -3827,7 +3812,6 @@ TS-003</description>
 <pad name="OUT" x="2.54" y="0" drill="1" diameter="1.8796"/>
 </package>
 <package name="SOT223">
-<description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;</description>
 <wire x1="3.277" y1="1.778" x2="3.277" y2="-1.778" width="0.2032" layer="21"/>
 <wire x1="3.277" y1="-1.778" x2="-3.277" y2="-1.778" width="0.2032" layer="21"/>
 <wire x1="-3.277" y1="-1.778" x2="-3.277" y2="1.778" width="0.2032" layer="21"/>
@@ -3848,6 +3832,7 @@ TS-003</description>
 <rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
 </package>
 <package name="1X02">
+<description>Jumper 2-position</description>
 <wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.2032" layer="21"/>
 <wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.2032" layer="21"/>
 <wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.2032" layer="21"/>
@@ -3886,6 +3871,7 @@ TS-003</description>
 <rectangle x1="-1.2192" y1="-1.143" x2="1.2192" y2="1.143" layer="31"/>
 </package>
 <package name="1X02_LOCK">
+<description>Jumper 2-position, locking</description>
 <wire x1="-0.635" y1="1.27" x2="0.635" y2="1.27" width="0.2032" layer="21"/>
 <wire x1="0.635" y1="1.27" x2="1.27" y2="0.635" width="0.2032" layer="21"/>
 <wire x1="1.27" y1="-0.635" x2="0.635" y2="-1.27" width="0.2032" layer="21"/>
@@ -3937,6 +3923,7 @@ TS-003</description>
 <text x="-1.27" y="-1.905" size="0.4064" layer="27">&gt;VALUE</text>
 </package>
 <package name="1X03">
+<description>Jumper 3-position</description>
 <wire x1="3.81" y1="0.635" x2="4.445" y2="1.27" width="0.2032" layer="21"/>
 <wire x1="4.445" y1="1.27" x2="5.715" y2="1.27" width="0.2032" layer="21"/>
 <wire x1="5.715" y1="1.27" x2="6.35" y2="0.635" width="0.2032" layer="21"/>
@@ -4001,7 +3988,7 @@ TS-003</description>
 <rectangle x1="-0.4826" y1="-0.9398" x2="1.4478" y2="0.9398" layer="31"/>
 </package>
 <package name="DIL16">
-<description>&lt;b&gt;Dual In Line Package&lt;/b&gt;</description>
+<description>Dual In Line Package</description>
 <wire x1="10.16" y1="2.921" x2="-10.16" y2="2.921" width="0.1524" layer="21"/>
 <wire x1="-10.16" y1="-2.921" x2="10.16" y2="-2.921" width="0.1524" layer="21"/>
 <wire x1="10.16" y1="2.921" x2="10.16" y2="-2.921" width="0.1524" layer="21"/>
@@ -4028,7 +4015,7 @@ TS-003</description>
 <text x="-7.493" y="-0.635" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="SO16">
-<description>&lt;b&gt;Small Outline package&lt;/b&gt; 150 mil</description>
+<description>Small Outline package 150 mil</description>
 <wire x1="4.699" y1="1.9558" x2="-4.699" y2="1.9558" width="0.1524" layer="21"/>
 <wire x1="4.699" y1="-1.9558" x2="5.08" y2="-1.5748" width="0.1524" layer="21" curve="90"/>
 <wire x1="-5.08" y1="1.5748" x2="-4.699" y2="1.9558" width="0.1524" layer="21" curve="-90"/>
@@ -4077,7 +4064,7 @@ TS-003</description>
 <rectangle x1="4.191" y1="1.9558" x2="4.699" y2="3.0988" layer="51"/>
 </package>
 <package name="SO16L">
-<description>&lt;b&gt;Small Outline Package&lt;/b&gt;</description>
+<description>Small Outline Package</description>
 <wire x1="4.8768" y1="3.7338" x2="-4.8768" y2="3.7338" width="0.1524" layer="21"/>
 <wire x1="4.8768" y1="-3.7338" x2="5.2578" y2="-3.3528" width="0.1524" layer="21" curve="90"/>
 <wire x1="-5.2578" y1="3.3528" x2="-4.8768" y2="3.7338" width="0.1524" layer="21" curve="-90"/>
@@ -4142,7 +4129,7 @@ TS-003</description>
 <rectangle x1="4.191" y1="3.8608" x2="4.699" y2="5.334" layer="51"/>
 </package>
 <package name="SO-16DW">
-<description>&lt;b&gt;Small Outline Integrated Circuit&lt;/b&gt; wide</description>
+<description>Small Outline Integrated Circuit wide</description>
 <wire x1="-5.395" y1="5.9" x2="5.395" y2="5.9" width="0.2" layer="39"/>
 <wire x1="5.395" y1="-5.9" x2="-5.395" y2="-5.9" width="0.2" layer="39"/>
 <wire x1="-5.395" y1="-5.9" x2="-5.395" y2="5.9" width="0.2" layer="39"/>
@@ -4210,8 +4197,7 @@ You may notice that each hole has been shifted either up or down by 0.005 of an 
 This slight alteration caused the pins (the squares in the middle) to touch the edges of the holes.  Because they are alternating, it causes a "brace" 
 to hold the component in place.  0.005 has proven to be the perfect amount of "off-center" position when using our standard breakaway headers.
 Although looks a little odd when you look at the bare footprint, once you have a header in there, the alteration is very hard to notice.  Also,
-if you push a header all the way into place, it is covered up entirely on the bottom side.  This idea of altering the position of holes to aid alignment 
-will be further integrated into the Sparkfun Library for other footprints.  It can help hold any component with 3 or more connection pins.</description>
+if you push a header all the way into place, it is covered up entirely on the bottom side.  This idea of altering the position of holes to aid alignment can help hold any component with 3 or more connection pins.</description>
 <wire x1="-1.27" y1="0.508" x2="-0.635" y2="1.143" width="0.2032" layer="21"/>
 <wire x1="-0.635" y1="1.143" x2="0.635" y2="1.143" width="0.2032" layer="21"/>
 <wire x1="0.635" y1="1.143" x2="1.27" y2="0.508" width="0.2032" layer="21"/>
@@ -4367,7 +4353,7 @@ This slight alteration caused the pins (the squares in the middle) to touch the 
 to hold the component in place.  0.005 has proven to be the perfect amount of "off-center" position when using our standard breakaway headers.
 Although looks a little odd when you look at the bare footprint, once you have a header in there, the alteration is very hard to notice.  Also,
 if you push a header all the way into place, it is covered up entirely on the bottom side.  This idea of altering the position of holes to aid alignment 
-will be further integrated into the Sparkfun Library for other footprints.  It can help hold any component with 3 or more connection pins.</description>
+ can help hold any component with 3 or more connection pins.</description>
 <wire x1="1.524" y1="-0.127" x2="1.016" y2="-0.127" width="0.2032" layer="21"/>
 <wire x1="4.064" y1="-0.127" x2="3.556" y2="-0.127" width="0.2032" layer="21"/>
 <wire x1="6.604" y1="-0.127" x2="6.096" y2="-0.127" width="0.2032" layer="21"/>
@@ -4405,7 +4391,7 @@ This slight alteration caused the pins (the squares in the middle) to touch the 
 to hold the component in place.  0.005 has proven to be the perfect amount of "off-center" position when using our standard breakaway headers.
 Although looks a little odd when you look at the bare footprint, once you have a header in there, the alteration is very hard to notice.  Also,
 if you push a header all the way into place, it is covered up entirely on the bottom side.  This idea of altering the position of holes to aid alignment 
-will be further integrated into the Sparkfun Library for other footprints.  It can help hold any component with 3 or more connection pins.</description>
+can help hold any component with 3 or more connection pins.</description>
 <wire x1="-1.27" y1="3.048" x2="-1.27" y2="-2.54" width="0.127" layer="21"/>
 <wire x1="13.97" y1="3.048" x2="13.97" y2="-2.54" width="0.127" layer="21"/>
 <wire x1="13.97" y1="3.048" x2="-1.27" y2="3.048" width="0.127" layer="21"/>
@@ -4456,7 +4442,7 @@ This slight alteration caused the pins (the squares in the middle) to touch the 
 to hold the component in place.  0.005 has proven to be the perfect amount of "off-center" position when using our standard breakaway headers.
 Although looks a little odd when you look at the bare footprint, once you have a header in there, the alteration is very hard to notice.  Also,
 if you push a header all the way into place, it is covered up entirely on the bottom side.  This idea of altering the position of holes to aid alignment 
-will be further integrated into the Sparkfun Library for other footprints.  It can help hold any component with 3 or more connection pins.</description>
+can help hold any component with 3 or more connection pins.</description>
 <wire x1="11.43" y1="0.635" x2="12.065" y2="1.27" width="0.2032" layer="21"/>
 <wire x1="12.065" y1="1.27" x2="13.335" y2="1.27" width="0.2032" layer="21"/>
 <wire x1="13.335" y1="1.27" x2="13.97" y2="0.635" width="0.2032" layer="21"/>
@@ -4630,7 +4616,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <smd name="A6" x="6.35" y="4.62" dx="1.02" dy="2.16" layer="1"/>
 </package>
 <package name="1X06-SMD-FEMALE-V2">
-<description>Package for 4UCONN part #19686 *UNPROVEN*</description>
+<description>4UCONN part #19686 *UNPROVEN*</description>
 <wire x1="-7.5" y1="0.45" x2="-7.5" y2="-8.05" width="0.127" layer="21"/>
 <wire x1="7.5" y1="0.45" x2="-7.5" y2="0.45" width="0.127" layer="21"/>
 <wire x1="7.5" y1="-8.05" x2="7.5" y2="0.45" width="0.127" layer="21"/>
@@ -4859,8 +4845,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <wire x1="13.97" y1="1.25" x2="13.335" y2="1.25" width="0.1778" layer="21"/>
 </package>
 <package name="E5-10,5">
-<description>&lt;b&gt;ELECTROLYTIC CAPACITOR&lt;/b&gt;&lt;p&gt;
-grid 5.08 mm, diameter 10.5 mm</description>
+<description>ELECTROLYTIC CAPACITOR grid 5.08 mm, diameter 10.5 mm</description>
 <wire x1="-1.143" y1="0" x2="-0.889" y2="0" width="0.1524" layer="21"/>
 <wire x1="-0.889" y1="0" x2="-0.889" y2="-1.143" width="0.1524" layer="21"/>
 <wire x1="-0.889" y1="-1.143" x2="-0.254" y2="-1.143" width="0.1524" layer="21"/>
@@ -4884,8 +4869,7 @@ grid 5.08 mm, diameter 10.5 mm</description>
 <wire x1="4.571" y1="1.27" x2="3.809" y2="1.27" width="0.1524" layer="21"/>
 </package>
 <package name="C050-024X044">
-<description>&lt;b&gt;CAPACITOR&lt;/b&gt;&lt;p&gt;
-grid 5 mm, outline 2.4 x 4.4 mm</description>
+<description>CAPACITOR grid 5 mm, outline 2.4 x 4.4 mm</description>
 <wire x1="-2.159" y1="-0.635" x2="-2.159" y2="0.635" width="0.1524" layer="51"/>
 <wire x1="-2.159" y1="0.635" x2="-1.651" y2="1.143" width="0.1524" layer="21" curve="-90"/>
 <wire x1="-2.159" y1="-0.635" x2="-1.651" y2="-1.143" width="0.1524" layer="21" curve="90"/>
@@ -4908,8 +4892,7 @@ grid 5 mm, outline 2.4 x 4.4 mm</description>
 <rectangle x1="-2.54" y1="-0.381" x2="-2.159" y2="0.381" layer="51"/>
 </package>
 <package name="E2-5">
-<description>&lt;b&gt;ELECTROLYTIC CAPACITOR&lt;/b&gt;&lt;p&gt;
-grid 2.032 mm, diameter 5 mm</description>
+<description>ELECTROLYTIC CAPACITOR grid 2.032 mm, diameter 5 mm</description>
 <wire x1="-1.524" y1="0" x2="-0.762" y2="0" width="0.1524" layer="51"/>
 <wire x1="-0.762" y1="0" x2="-0.762" y2="-1.016" width="0.1524" layer="51"/>
 <wire x1="-0.762" y1="-1.016" x2="-0.254" y2="-1.016" width="0.1524" layer="51"/>
@@ -4939,7 +4922,7 @@ grid 2.032 mm, diameter 5 mm</description>
 <text x="-1.016" y="-0.1905" size="0.4064" layer="27">&gt;VALUE</text>
 </package>
 <package name="TO220">
-<description>&lt;b&gt;TO 220 horizontal&lt;/b&gt;</description>
+<description>TO 220 horizontal</description>
 <wire x1="-5.207" y1="-1.27" x2="5.207" y2="-1.27" width="0.127" layer="21"/>
 <wire x1="5.207" y1="14.605" x2="-5.207" y2="14.605" width="0.127" layer="21"/>
 <wire x1="5.207" y1="-1.27" x2="5.207" y2="11.176" width="0.127" layer="21"/>
@@ -4980,7 +4963,7 @@ grid 2.032 mm, diameter 5 mm</description>
 <hole x="0" y="11.176" drill="3.302"/>
 </package>
 <package name="TO220CS">
-<description>&lt;b&gt;TO 220 C&lt;/b&gt; vertical (Cathode; Anode; Gate)</description>
+<description>TO 220 C vertical (Cathode; Anode; Gate)</description>
 <wire x1="5.08" y1="-1.143" x2="5.08" y2="-4.064" width="0.1524" layer="21"/>
 <wire x1="4.826" y1="-4.318" x2="5.08" y2="-4.064" width="0.1524" layer="21"/>
 <wire x1="4.826" y1="-4.318" x2="-4.826" y2="-4.318" width="0.1524" layer="21"/>
@@ -5002,8 +4985,7 @@ grid 2.032 mm, diameter 5 mm</description>
 <rectangle x1="1.651" y1="-1.27" x2="3.429" y2="-0.635" layer="51"/>
 </package>
 <package name="SMA-DIODE">
-<description>&lt;B&gt;Diode&lt;/B&gt;&lt;p&gt;
-Basic SMA packaged diode. Good for reverse polarization protection. Common part #: MBRA140</description>
+<description>Diode - Basic SMA packaged diode. Good for reverse polarization protection. Common part #: MBRA140</description>
 <wire x1="-2.3" y1="1" x2="-2.3" y2="1.45" width="0.2032" layer="21"/>
 <wire x1="-2.3" y1="1.45" x2="2.3" y2="1.45" width="0.2032" layer="21"/>
 <wire x1="2.3" y1="1.45" x2="2.3" y2="1" width="0.2032" layer="21"/>
@@ -5060,8 +5042,7 @@ Basic SMA packaged diode. Good for reverse polarization protection. Common part 
 <text x="-2.032" y="-0.508" size="0.8128" layer="21">&gt;Value</text>
 </package>
 <package name="SMB-DIODE">
-<description>&lt;b&gt;Diode&lt;/b&gt;&lt;p&gt;
-Basic small signal diode good up to 200mA. SMB footprint. Common part #: BAS16</description>
+<description>Diode - Basic small signal diode good up to 200mA. SMB footprint. Common part #: BAS16</description>
 <wire x1="-3.973" y1="1.983" x2="3.973" y2="1.983" width="0.0508" layer="39"/>
 <wire x1="3.973" y1="-1.983" x2="-3.973" y2="-1.983" width="0.0508" layer="39"/>
 <wire x1="-3.973" y1="-1.983" x2="-3.973" y2="1.983" width="0.0508" layer="39"/>
@@ -5102,7 +5083,7 @@ Basic small signal diode good up to 200mA. SMB footprint. Common part #: BAS16</
 <rectangle x1="2.2606" y1="-1.0922" x2="2.794" y2="1.0922" layer="51"/>
 </package>
 <package name="SOD523">
-<description>&lt;B&gt;DIODE&lt;/B&gt;</description>
+<description>DIODE</description>
 <wire x1="-0.59" y1="0.4" x2="0.59" y2="0.4" width="0.1016" layer="51"/>
 <wire x1="0.59" y1="0.4" x2="0.59" y2="-0.4" width="0.1016" layer="51"/>
 <wire x1="0.59" y1="-0.4" x2="-0.59" y2="-0.4" width="0.1016" layer="51"/>
@@ -5116,7 +5097,7 @@ Basic small signal diode good up to 200mA. SMB footprint. Common part #: BAS16</
 <rectangle x1="-0.482" y1="-0.4" x2="-0.192" y2="0.4" layer="51"/>
 </package>
 <package name="DIL08">
-<description>&lt;b&gt;Dual In Line Package&lt;/b&gt;</description>
+<description>Dual In Line Package</description>
 <wire x1="5.08" y1="2.921" x2="-5.08" y2="2.921" width="0.1524" layer="21"/>
 <wire x1="-5.08" y1="-2.921" x2="5.08" y2="-2.921" width="0.1524" layer="21"/>
 <wire x1="5.08" y1="2.921" x2="5.08" y2="-2.921" width="0.1524" layer="21"/>
@@ -5135,7 +5116,7 @@ Basic small signal diode good up to 200mA. SMB footprint. Common part #: BAS16</
 <text x="-3.556" y="-0.635" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="SM8">
-<description>&lt;b&gt;SM8 Package&lt;/b&gt;</description>
+<description>SM8 Package</description>
 <wire x1="3.177" y1="1.778" x2="3.177" y2="-1.778" width="0.2032" layer="21"/>
 <wire x1="3.177" y1="-1.778" x2="-3.177" y2="-1.778" width="0.2032" layer="21"/>
 <wire x1="-3.177" y1="-1.778" x2="-3.177" y2="1.778" width="0.2032" layer="21"/>
@@ -5161,7 +5142,7 @@ Basic small signal diode good up to 200mA. SMB footprint. Common part #: BAS16</
 <rectangle x1="-2.636" y1="1.9" x2="-1.936" y2="3.65" layer="51"/>
 </package>
 <package name="B3F-10XX">
-<description>&lt;b&gt;OMRON SWITCH&lt;/b&gt;</description>
+<description>OMRON SWITCH</description>
 <wire x1="3.302" y1="-0.762" x2="3.048" y2="-0.762" width="0.1524" layer="21"/>
 <wire x1="3.302" y1="-0.762" x2="3.302" y2="0.762" width="0.1524" layer="21"/>
 <wire x1="3.048" y1="0.762" x2="3.302" y2="0.762" width="0.1524" layer="21"/>
@@ -5263,7 +5244,7 @@ Basic small signal diode good up to 200mA. SMB footprint. Common part #: BAS16</
 <text x="-1.27" y="-1.27" size="0.4064" layer="27">&gt;VALUE</text>
 </package>
 <package name="SO08">
-<description>&lt;b&gt;Small Outline Package&lt;/b&gt; Fits JEDEC packages (narrow SOIC-8)</description>
+<description>Small Outline Package (narrow SOIC-8)</description>
 <circle x="-2.0193" y="-0.6858" radius="0.1436" width="0.2032" layer="21"/>
 <wire x1="2.362" y1="-1.803" x2="2.362" y2="1.803" width="0.1524" layer="21"/>
 <wire x1="-2.362" y1="1.803" x2="-2.362" y2="-1.803" width="0.1524" layer="21"/>
@@ -5294,8 +5275,7 @@ Basic small signal diode good up to 200mA. SMB footprint. Common part #: BAS16</
 <wire x1="-1.422" y1="-1.981" x2="-1.118" y2="-1.981" width="0.1524" layer="21"/>
 </package>
 <package name="DIL18">
-<description>&lt;B&gt;Dual In Line&lt;/B&gt;&lt;p&gt;
-package type P</description>
+<description>Dual In Line package type P</description>
 <wire x1="-11.43" y1="-0.635" x2="-11.43" y2="-2.2225" width="0.1524" layer="21"/>
 <wire x1="-11.43" y1="-0.635" x2="-11.43" y2="0.635" width="0.1524" layer="21" curve="180"/>
 <wire x1="11.43" y1="-2.2225" x2="11.43" y2="2.2225" width="0.1524" layer="21"/>
@@ -5333,8 +5313,7 @@ package type P</description>
 <text x="10.795" y="-0.635" size="1.27" layer="51" rot="R90">M3</text>
 </package>
 <package name="SO-18W">
-<description>&lt;B&gt;Small Outline Wide Plastic Gull Wing&lt;/B&gt;&lt;p&gt;
-300-mil body, package type SO</description>
+<description>Small Outline Wide Plastic Gull Wing 300-mil body, package type SO</description>
 <wire x1="-5.6642" y1="-3.6957" x2="5.6388" y2="-3.6957" width="0.1524" layer="21"/>
 <wire x1="5.6388" y1="-3.6957" x2="5.6388" y2="3.6703" width="0.1524" layer="21"/>
 <wire x1="5.6388" y1="3.6703" x2="-5.6642" y2="3.6703" width="0.1524" layer="21"/>
@@ -5380,8 +5359,7 @@ package type P</description>
 <rectangle x1="4.8768" y1="-5.0927" x2="5.2832" y2="-3.7465" layer="51"/>
 </package>
 <package name="TSSOP20">
-<description>&lt;b&gt;Thin Shrink Small Outline Plastic 20&lt;/b&gt;&lt;p&gt;
-MAX3223-MAX3243.pdf</description>
+<description>Thin Shrink Small Outline Plastic 20 MAX3223-MAX3243.pdf</description>
 <wire x1="-3.1646" y1="-2.2828" x2="3.1646" y2="-2.2828" width="0.1524" layer="21"/>
 <wire x1="3.1646" y1="2.2828" x2="3.1646" y2="-2.2828" width="0.1524" layer="21"/>
 <wire x1="3.1646" y1="2.2828" x2="-3.1646" y2="2.2828" width="0.1524" layer="21"/>
@@ -5435,8 +5413,7 @@ MAX3223-MAX3243.pdf</description>
 <rectangle x1="-3.0266" y1="2.2828" x2="-2.8234" y2="3.121" layer="51"/>
 </package>
 <package name="SO-08">
-<description>&lt;B&gt;Small Outline Narrow Plastic Gull Wing&lt;/B&gt;&lt;p&gt;
-150-mil body, package type SN</description>
+<description>Small Outline Narrow Plastic Gull Wing 150-mil body, package type SN</description>
 <wire x1="-2.9" y1="3.9" x2="2.9" y2="3.9" width="0.1998" layer="39"/>
 <wire x1="2.9" y1="3.9" x2="2.9" y2="-3.9" width="0.1998" layer="39"/>
 <wire x1="2.9" y1="-3.9" x2="-2.9" y2="-3.9" width="0.1998" layer="39"/>
@@ -5481,7 +5458,7 @@ MAX3223-MAX3243.pdf</description>
 <text x="-1.905" y="4.175" size="0.3048" layer="49">JEDEC MS-012 AA</text>
 </package>
 <package name="PT-10">
-<description>&lt;b&gt;Trimm Potentiometer&lt;/b&gt;</description>
+<description>Trimm Potentiometer</description>
 <wire x1="-3.175" y1="-4.064" x2="3.175" y2="-4.064" width="0.127" layer="21" curve="-288.924644"/>
 <wire x1="3.175" y1="-4.064" x2="3.175" y2="-5.715" width="0.127" layer="51"/>
 <wire x1="-3.175" y1="-5.715" x2="-3.175" y2="-4.064" width="0.127" layer="51"/>
@@ -5515,7 +5492,7 @@ MAX3223-MAX3243.pdf</description>
 <text x="-3.048" y="-7.62" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="PT-10S">
-<description>&lt;b&gt;Trimm Potentiometer&lt;/b&gt;</description>
+<description>Trimm Potentiometer</description>
 <wire x1="-1.905" y1="-1.27" x2="-1.27" y2="-1.905" width="0.127" layer="51"/>
 <wire x1="-1.27" y1="-1.905" x2="1.27" y2="-1.905" width="0.127" layer="21"/>
 <wire x1="1.27" y1="-1.905" x2="1.905" y2="-1.27" width="0.127" layer="51"/>
@@ -5538,7 +5515,7 @@ MAX3223-MAX3243.pdf</description>
 <text x="-2.54" y="-4.2164" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="PT-SPIN">
-<description>&lt;b&gt;Trimm Potentiometer&lt;/b&gt;</description>
+<description>Trimm Potentiometer</description>
 <wire x1="-8.89" y1="-2.54" x2="8.89" y2="-2.54" width="0.127" layer="21"/>
 <wire x1="8.89" y1="-2.54" x2="8.89" y2="2.54" width="0.127" layer="21"/>
 <wire x1="8.89" y1="2.54" x2="-8.89" y2="2.54" width="0.127" layer="21"/>
@@ -5631,8 +5608,7 @@ MAX3223-MAX3243.pdf</description>
 <text x="-3.81" y="-9.525" size="1.778" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="AYZ0202">
-<description>&lt;b&gt;DPDT Slide Switch SMD&lt;/b&gt;
-www.SparkFun.com SKU : Comp-SMDS</description>
+<description>DPDT Slide Switch SMD www.SparkFun.com SKU : Comp-SMDS</description>
 <wire x1="-3.6" y1="1.75" x2="-3.6" y2="-1.75" width="0.2032" layer="21"/>
 <wire x1="-3.6" y1="-1.75" x2="3.6" y2="-1.75" width="0.2032" layer="21"/>
 <wire x1="3.6" y1="-1.75" x2="3.6" y2="1.75" width="0.2032" layer="21"/>
@@ -5820,7 +5796,7 @@ www.SparkFun.com SKU : Comp-SMDS</description>
 <text x="-2.3368" y="-0.508" size="1.016" layer="21">&gt;VALUE</text>
 </package>
 <package name="CURRENT_PROVIDE">
-<description>Vector drawn version</description>
+<description>Marking for LCB devices</description>
 <wire x1="3.302" y1="-1.4224" x2="3.302" y2="-1.5494" width="0.4064" layer="21"/>
 <wire x1="3.302" y1="-1.5494" x2="2.794" y2="-1.9304" width="0.4064" layer="21" curve="-90"/>
 <wire x1="2.794" y1="-1.9304" x2="-2.667" y2="-1.9304" width="0.4064" layer="21"/>
@@ -5838,8 +5814,7 @@ www.SparkFun.com SKU : Comp-SMDS</description>
 <text x="-2.8194" y="-0.508" size="1.016" layer="21">&gt;VALUE</text>
 </package>
 <package name="ALPS_EC12E_SW">
-<description>ALPS rotary encoder&lt;br&gt;
-EC12E series with push-on switch</description>
+<description>ALPS rotary encoder EC12E series with push-on switch</description>
 <wire x1="-6.2" y1="-6.6" x2="6.2" y2="-6.6" width="0.127" layer="21"/>
 <wire x1="6.2" y1="-6.6" x2="6.2" y2="6.6" width="0.127" layer="21"/>
 <wire x1="6.2" y1="6.6" x2="-6.2" y2="6.6" width="0.127" layer="21"/>
@@ -5857,8 +5832,7 @@ EC12E series with push-on switch</description>
 <text x="3.5" y="-9" size="1.27" layer="27" rot="R180">&gt;VALUE</text>
 </package>
 <package name="STAND-OFF">
-<description>&lt;b&gt;Stand Off&lt;/b&gt;&lt;p&gt;
-This is the mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components. SKU : PRT-00447</description>
+<description>Stand Off - mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components. SKU : PRT-00447</description>
 <wire x1="0" y1="1.8542" x2="0" y2="-1.8542" width="0.2032" layer="41" curve="-180"/>
 <wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="41" curve="-180"/>
 <wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="180"/>
@@ -5867,8 +5841,7 @@ This is the mechanical footprint for a #4 phillips button head screw. Use the ke
 <hole x="0" y="0" drill="3.302"/>
 </package>
 <package name="STAND-OFF-TIGHT">
-<description>&lt;b&gt;Stand Off&lt;/b&gt;&lt;p&gt;
-This is the mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components. SKU : PRT-00447</description>
+<description>Stand Off - mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components. SKU : PRT-00447</description>
 <wire x1="0" y1="1.8542" x2="0" y2="-1.8542" width="0.2032" layer="41" curve="-180"/>
 <wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="41" curve="-180"/>
 <wire x1="0" y1="-1.8542" x2="0" y2="1.8542" width="0.2032" layer="42" curve="180"/>
@@ -5877,7 +5850,7 @@ This is the mechanical footprint for a #4 phillips button head screw. Use the ke
 <hole x="0" y="0" drill="3.048"/>
 </package>
 <package name="4P-PTH-6.0X6.0X5.0H">
-<description>&lt;b&gt;OMRON SWITCH&lt;/b&gt;</description>
+<description>OMRON SWITCH</description>
 <wire x1="3.302" y1="-0.762" x2="3.048" y2="-0.762" width="0.1524" layer="21"/>
 <wire x1="3.302" y1="-0.762" x2="3.302" y2="0.762" width="0.1524" layer="21"/>
 <wire x1="3.048" y1="0.762" x2="3.302" y2="0.762" width="0.1524" layer="21"/>
@@ -6022,8 +5995,7 @@ This is the mechanical footprint for a #4 phillips button head screw. Use the ke
 <wire x1="0.0762" y1="-1.2192" x2="-1.0922" y2="-1.2192" width="0.127" layer="49"/>
 </package>
 <package name="B25P">
-<description>&lt;b&gt;POTENTIOMETER&lt;/b&gt;&lt;p&gt;
-Beckman Helitrim 25</description>
+<description>POTENTIOMETER Beckman Helitrim 25</description>
 <wire x1="3.175" y1="3.429" x2="-3.175" y2="3.429" width="0.1524" layer="51"/>
 <wire x1="-3.175" y1="-3.429" x2="-2.54" y2="-3.429" width="0.1524" layer="51"/>
 <wire x1="3.175" y1="3.429" x2="3.429" y2="3.175" width="0.1524" layer="51"/>
@@ -6084,8 +6056,7 @@ Beckman Helitrim 25</description>
 <text x="-2.921" y="-2.794" size="0.9906" layer="21" ratio="12">1</text>
 </package>
 <package name="B25U">
-<description>&lt;b&gt;POTENTIOMETER&lt;/b&gt;&lt;p&gt;
-Beckman Helitrim 25</description>
+<description>POTENTIOMETER Beckman Helitrim 25</description>
 <wire x1="3.175" y1="3.429" x2="-3.175" y2="3.429" width="0.1524" layer="21"/>
 <wire x1="-3.175" y1="-3.429" x2="-2.54" y2="-3.429" width="0.1524" layer="21"/>
 <wire x1="3.175" y1="3.429" x2="3.429" y2="3.175" width="0.1524" layer="21"/>
@@ -6141,8 +6112,7 @@ Beckman Helitrim 25</description>
 <text x="2.413" y="1.016" size="0.9906" layer="21" ratio="12">2</text>
 </package>
 <package name="B25V">
-<description>&lt;b&gt;POTENTIOMETER&lt;/b&gt;&lt;p&gt;
-Beckman Helitrim 25</description>
+<description>POTENTIOMETER Beckman Helitrim 25</description>
 <wire x1="3.429" y1="3.556" x2="3.429" y2="1.27" width="0.1524" layer="21"/>
 <wire x1="1.143" y1="2.413" x2="1.016" y2="2.286" width="0.1524" layer="21"/>
 <wire x1="1.143" y1="2.413" x2="1.016" y2="2.54" width="0.1524" layer="21"/>
@@ -6187,8 +6157,7 @@ Beckman Helitrim 25</description>
 <rectangle x1="-0.254" y1="3.556" x2="0.254" y2="3.81" layer="21"/>
 </package>
 <package name="B25X">
-<description>&lt;b&gt;POTENTIOMETER&lt;/b&gt;&lt;p&gt;
-Beckman Helitrim 25</description>
+<description>POTENTIOMETER Beckman Helitrim 25</description>
 <wire x1="-3.429" y1="-3.048" x2="-3.429" y2="-2.54" width="0.1524" layer="21"/>
 <wire x1="-3.429" y1="-2.54" x2="-3.429" y2="-1.27" width="0.1524" layer="51"/>
 <wire x1="-3.429" y1="-1.27" x2="-3.429" y2="1.143" width="0.1524" layer="21"/>
@@ -6233,8 +6202,7 @@ Beckman Helitrim 25</description>
 <rectangle x1="-0.254" y1="3.556" x2="0.254" y2="3.81" layer="21"/>
 </package>
 <package name="P-3319">
-<description>&lt;b&gt;POTENTIOMETER&lt;/b&gt;&lt;p&gt;
-Beckman Helitrim 25</description>
+<description>POTENTIOMETER Beckman Helitrim 25</description>
 <wire x1="-3.429" y1="-3.048" x2="-3.429" y2="-0.9525" width="0.1524" layer="21"/>
 <wire x1="-3.429" y1="-0.9525" x2="-3.429" y2="0.3175" width="0.1524" layer="51"/>
 <wire x1="-3.429" y1="0.3175" x2="-3.429" y2="1.143" width="0.1524" layer="21"/>
@@ -6279,7 +6247,7 @@ Beckman Helitrim 25</description>
 <rectangle x1="-0.254" y1="-3.1115" x2="0.254" y2="-2.8575" layer="21"/>
 </package>
 <package name="SIL5">
-<description>&lt;b&gt;Single In Line&lt;/b&gt;</description>
+<description>Single In Line resistor pack</description>
 <wire x1="5.842" y1="1.016" x2="-5.842" y2="1.016" width="0.1524" layer="21"/>
 <wire x1="-5.842" y1="0.762" x2="-4.318" y2="0.762" width="0.1524" layer="51"/>
 <wire x1="-4.318" y1="0.762" x2="-4.318" y2="-0.762" width="0.1524" layer="51"/>
@@ -6314,8 +6282,7 @@ Beckman Helitrim 25</description>
 <text x="-7.366" y="-0.508" size="0.9906" layer="21" ratio="12">1</text>
 </package>
 <package name="G2R2">
-<description>&lt;b&gt;RELAY&lt;/b&gt;&lt;p&gt;
-2 x switch, Omron</description>
+<description>RELAY 2 x switch, Omron</description>
 <wire x1="-13.589" y1="-6.604" x2="15.494" y2="-6.604" width="0.1524" layer="21"/>
 <wire x1="15.494" y1="6.477" x2="15.494" y2="-6.604" width="0.1524" layer="21"/>
 <wire x1="15.494" y1="6.477" x2="-13.589" y2="6.477" width="0.1524" layer="21"/>
@@ -6357,7 +6324,7 @@ Beckman Helitrim 25</description>
 <text x="-5.08" y="-5.08" size="1.778" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
 </package>
 <package name="MSTBA2">
-<description>&lt;b&gt;PHOENIX&lt;/b&gt;</description>
+<description>PHOENIX</description>
 <wire x1="-6.096" y1="7.112" x2="-6.096" y2="-1.905" width="0.1524" layer="21"/>
 <wire x1="-6.096" y1="7.112" x2="-3.175" y2="7.112" width="0.1524" layer="21"/>
 <wire x1="-3.175" y1="7.112" x2="-1.905" y2="7.112" width="0.1524" layer="51"/>
@@ -6387,7 +6354,7 @@ Beckman Helitrim 25</description>
 <text x="0.254" y="4.445" size="1.27" layer="21" ratio="10">2</text>
 </package>
 <package name="DIL14">
-<description>&lt;b&gt;Dual In Line Package&lt;/b&gt;</description>
+<description>Dual In Line Package</description>
 <wire x1="8.89" y1="2.921" x2="-8.89" y2="2.921" width="0.1524" layer="21"/>
 <wire x1="-8.89" y1="-2.921" x2="8.89" y2="-2.921" width="0.1524" layer="21"/>
 <wire x1="8.89" y1="2.921" x2="8.89" y2="-2.921" width="0.1524" layer="21"/>
@@ -6412,7 +6379,7 @@ Beckman Helitrim 25</description>
 <text x="-6.731" y="-0.635" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="SO14">
-<description>&lt;b&gt;Small Outline package&lt;/b&gt; 150 mil</description>
+<description>Small Outline package 150 mil</description>
 <wire x1="4.064" y1="1.9558" x2="-4.064" y2="1.9558" width="0.1524" layer="21"/>
 <wire x1="4.064" y1="-1.9558" x2="4.445" y2="-1.5748" width="0.1524" layer="21" curve="90"/>
 <wire x1="-4.445" y1="1.5748" x2="-4.064" y2="1.9558" width="0.1524" layer="21" curve="-90"/>
@@ -6457,8 +6424,7 @@ Beckman Helitrim 25</description>
 <rectangle x1="3.556" y1="-3.0988" x2="4.064" y2="-1.9558" layer="51"/>
 </package>
 <package name="DIL6-SMD">
-<description>&lt;b&gt;DIL 6 SMD&lt;/b&gt;&lt;p&gt;
-Source: http://www.fairchildsemi.com/pf/4N/4N35-M.html</description>
+<description>DIL 6 SMD - 4N35-M</description>
 <wire x1="4.36" y1="3.18" x2="4.36" y2="-2.664" width="0.1524" layer="21"/>
 <wire x1="4.36" y1="-2.664" x2="4.36" y2="-3.18" width="0.1524" layer="21"/>
 <wire x1="-4.385" y1="3.18" x2="4.36" y2="3.18" width="0.1524" layer="21"/>
@@ -6482,7 +6448,7 @@ Source: http://www.fairchildsemi.com/pf/4N/4N35-M.html</description>
 <rectangle x1="-3.16" y1="3.2" x2="-1.935" y2="4.95" layer="51" rot="R180"/>
 </package>
 <package name="DIL06">
-<description>&lt;b&gt;Dual In Line Package&lt;/b&gt;</description>
+<description>Dual In Line Package</description>
 <wire x1="3.81" y1="2.921" x2="-3.81" y2="2.921" width="0.1524" layer="21"/>
 <wire x1="-3.81" y1="-2.921" x2="3.81" y2="-2.921" width="0.1524" layer="21"/>
 <wire x1="3.81" y1="2.921" x2="3.81" y2="-2.921" width="0.1524" layer="21"/>
@@ -6499,8 +6465,7 @@ Source: http://www.fairchildsemi.com/pf/4N/4N35-M.html</description>
 <text x="-4.064" y="-2.921" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
 </package>
 <package name="DIL6-04">
-<description>&lt;b&gt;DIL 6 0.4 Inch&lt;/b&gt;&lt;p&gt;
-Source: http://www.fairchildsemi.com/pf/4N/4N35-M.html</description>
+<description>DIL 6 0.4 Inch 4N35-M.html</description>
 <wire x1="3.81" y1="2.921" x2="-3.81" y2="2.921" width="0.1524" layer="21"/>
 <wire x1="-3.81" y1="-2.921" x2="3.81" y2="-2.921" width="0.1524" layer="21"/>
 <wire x1="3.81" y1="2.921" x2="3.81" y2="-2.921" width="0.1524" layer="21"/>
@@ -6529,7 +6494,7 @@ Source: http://www.fairchildsemi.com/pf/4N/4N35-M.html</description>
 <rectangle x1="-2.915" y1="2.975" x2="-2.165" y2="4.2" layer="21" rot="R180"/>
 </package>
 <package name="LCC20">
-<description>&lt;b&gt;Leadless Chip Carrier&lt;/b&gt;&lt;p&gt; Ceramic Package</description>
+<description>Leadless Chip Carrier Ceramic Package</description>
 <wire x1="-0.4001" y1="4.4" x2="-0.87" y2="4.4" width="0.2032" layer="51"/>
 <wire x1="-3.3" y1="4.4" x2="-4.4" y2="3.3" width="0.2032" layer="51"/>
 <wire x1="-0.4001" y1="4.3985" x2="0.4001" y2="4.3985" width="0.2032" layer="51" curve="180"/>
@@ -6600,7 +6565,7 @@ Source: http://www.fairchildsemi.com/pf/4N/4N35-M.html</description>
 <text x="-3.9751" y="-7.6871" size="1.778" layer="27">&gt;VALUE</text>
 </package>
 <package name="DIL20">
-<description>&lt;b&gt;Dual In Line Package&lt;/b&gt;</description>
+<description>Dual In Line Package</description>
 <wire x1="12.7" y1="2.921" x2="-12.7" y2="2.921" width="0.1524" layer="21"/>
 <wire x1="-12.7" y1="-2.921" x2="12.7" y2="-2.921" width="0.1524" layer="21"/>
 <wire x1="12.7" y1="2.921" x2="12.7" y2="-2.921" width="0.1524" layer="21"/>
@@ -6631,7 +6596,7 @@ Source: http://www.fairchildsemi.com/pf/4N/4N35-M.html</description>
 <text x="-9.779" y="-0.381" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="SO20W">
-<description>&lt;b&gt;Wide Small Outline package&lt;/b&gt; 300 mil</description>
+<description>Wide Small Outline package 300 mil</description>
 <wire x1="6.1214" y1="3.7338" x2="-6.1214" y2="3.7338" width="0.1524" layer="51"/>
 <wire x1="6.1214" y1="-3.7338" x2="6.5024" y2="-3.3528" width="0.1524" layer="21" curve="90"/>
 <wire x1="-6.5024" y1="3.3528" x2="-6.1214" y2="3.7338" width="0.1524" layer="21" curve="-90"/>
@@ -6708,7 +6673,7 @@ Source: http://www.fairchildsemi.com/pf/4N/4N35-M.html</description>
 <rectangle x1="5.461" y1="-5.334" x2="5.969" y2="-3.8608" layer="51"/>
 </package>
 <package name="DIL24-6">
-<description>&lt;b&gt;Dual In Line&lt;/b&gt;</description>
+<description>Dual In Line</description>
 <wire x1="-15.113" y1="-1.27" x2="-15.113" y2="-6.604" width="0.1524" layer="21"/>
 <wire x1="-15.113" y1="1.27" x2="-15.113" y2="-1.27" width="0.1524" layer="21" curve="-180"/>
 <wire x1="15.113" y1="-6.604" x2="15.113" y2="6.604" width="0.1524" layer="21"/>
@@ -6743,7 +6708,7 @@ Source: http://www.fairchildsemi.com/pf/4N/4N35-M.html</description>
 <text x="-11.43" y="-2.54" size="1.778" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="SO24">
-<description>&lt;b&gt;Small Outline Package&lt;/b&gt; 7.6 x 15.74 mm</description>
+<description>Small Outline Package 7.6 x 15.74 mm</description>
 <wire x1="7.78" y1="-3.7" x2="-7.78" y2="-3.7" width="0.2032" layer="51"/>
 <wire x1="-7.78" y1="-3.7" x2="-7.78" y2="-3.2" width="0.2032" layer="21"/>
 <wire x1="-7.78" y1="-3.2" x2="-7.78" y2="3.7" width="0.2032" layer="21"/>
@@ -6803,8 +6768,7 @@ Source: http://www.fairchildsemi.com/pf/4N/4N35-M.html</description>
 <rectangle x1="-7.23" y1="3.8" x2="-6.74" y2="5.32" layer="51"/>
 </package>
 <package name="SSOP24">
-<description>&lt;b&gt;Small Shrink Outline Package&lt;/b&gt;&lt;p&gt;
-SOT340-1 / JEDEC MO-150AG</description>
+<description>Small Shrink Outline Package SOT340-1 / JEDEC MO-150AG</description>
 <wire x1="-4.128" y1="-2.536" x2="4.128" y2="-2.536" width="0.1524" layer="21"/>
 <wire x1="4.128" y1="-2.536" x2="4.128" y2="2.536" width="0.1524" layer="21"/>
 <wire x1="4.128" y1="2.536" x2="-4.128" y2="2.536" width="0.1524" layer="21"/>
@@ -6866,9 +6830,7 @@ SOT340-1 / JEDEC MO-150AG</description>
 <rectangle x1="-3.725" y1="2.6" x2="-3.425" y2="3.8" layer="51"/>
 </package>
 <package name="HVQFN24">
-<description>&lt;b&gt;plastic thermal enhanced very thin quad flat package&lt;/b&gt; SOT616-1&lt;p&gt;
-no leads; 24 terminals; body 4 x 4 x 0.85 mm&lt;br&gt;
-Source: PCA9555_5.pdf</description>
+<description>plastic thermal enhanced very thin quad flat package SOT616-1, no leads; 24 terminals; body 4 x 4 x 0.85 mm: PCA9555_5.pdf</description>
 <wire x1="-1.7" y1="1.2" x2="-1.7" y2="1.3" width="0.15" layer="51" curve="180"/>
 <wire x1="-1.7" y1="0.7" x2="-1.7" y2="0.8" width="0.15" layer="51" curve="180"/>
 <wire x1="-1.7" y1="0.2" x2="-1.7" y2="0.3" width="0.15" layer="51" curve="180"/>
@@ -6951,8 +6913,7 @@ Source: PCA9555_5.pdf</description>
 <rectangle x1="-1.375" y1="1.7" x2="-1.125" y2="2.05" layer="51"/>
 </package>
 <package name="TSSOP24">
-<description>&lt;b&gt;Thin Shrink Small Outline Plastic 24&lt;/b&gt;&lt;p&gt;
-Source: MAX3223-MAX3243.pdf</description>
+<description>Thin Shrink Small Outline Plastic 24  MAX3223-MAX3243.pdf</description>
 <wire x1="-3.8146" y1="-2.2828" x2="3.8146" y2="-2.2828" width="0.1524" layer="21"/>
 <wire x1="3.8146" y1="2.2828" x2="3.8146" y2="-2.2828" width="0.1524" layer="21"/>
 <wire x1="3.8146" y1="2.2828" x2="-3.8146" y2="2.2828" width="0.1524" layer="21"/>
@@ -7014,8 +6975,7 @@ Source: MAX3223-MAX3243.pdf</description>
 <rectangle x1="-3.6766" y1="2.2828" x2="-3.4734" y2="3.121" layer="51"/>
 </package>
 <package name="DPACK">
-<description>&lt;b&gt;DPAK&lt;/b&gt;&lt;p&gt;
-(Motorola)</description>
+<description>DPAK (Motorola)</description>
 <wire x1="3.2766" y1="3.8354" x2="3.277" y2="-2.159" width="0.2032" layer="21"/>
 <wire x1="3.277" y1="-2.159" x2="-3.277" y2="-2.159" width="0.2032" layer="21"/>
 <wire x1="-3.277" y1="-2.159" x2="-3.2766" y2="3.8354" width="0.2032" layer="21"/>
@@ -7044,7 +7004,7 @@ Source: MAX3223-MAX3243.pdf</description>
 </polygon>
 </package>
 <package name="TO220V">
-<description>&lt;b&gt;TO 200 vertical&lt;/b&gt;</description>
+<description>TO 200 vertical</description>
 <wire x1="5.08" y1="-1.143" x2="4.953" y2="-4.064" width="0.127" layer="21"/>
 <wire x1="4.699" y1="-4.318" x2="4.953" y2="-4.064" width="0.127" layer="21"/>
 <wire x1="4.699" y1="-4.318" x2="-4.699" y2="-4.318" width="0.127" layer="21"/>
@@ -7069,7 +7029,7 @@ Source: MAX3223-MAX3243.pdf</description>
 <rectangle x1="1.651" y1="-1.27" x2="3.429" y2="-0.762" layer="51"/>
 </package>
 <package name="DIL28-3">
-<description>&lt;B&gt;Dual In Line&lt;/B&gt; 0.3 inch</description>
+<description>Dual In Line 0.3 inch</description>
 <wire x1="-18.542" y1="-0.635" x2="-18.542" y2="-2.794" width="0.1524" layer="21"/>
 <wire x1="-18.542" y1="0.635" x2="-18.542" y2="-0.635" width="0.1524" layer="21" curve="-180"/>
 <wire x1="-18.542" y1="-2.794" x2="18.542" y2="-2.794" width="0.1524" layer="21"/>
@@ -7173,7 +7133,7 @@ Source: MAX3223-MAX3243.pdf</description>
 <text x="-1.27" y="1.27" size="1.016" layer="27">&gt;VALUE</text>
 </package>
 <package name="MSTB2">
-<description>&lt;b&gt;PHOENIX&lt;/b&gt;</description>
+<description>PHOENIX</description>
 <wire x1="-5.08" y1="-3.556" x2="-5.08" y2="-4.572" width="0.1524" layer="21"/>
 <wire x1="-3.683" y1="-0.127" x2="-1.397" y2="2.159" width="0.254" layer="21"/>
 <wire x1="1.397" y1="-0.127" x2="3.683" y2="2.159" width="0.254" layer="21"/>
@@ -7193,15 +7153,7 @@ Source: MAX3223-MAX3243.pdf</description>
 <pad name="2" x="2.667" y="1.016" drill="1.5" diameter="2.54"/>
 </package>
 <package name="1751248">
-<description>&lt;b&gt;MKDS 1/ 2-3,5&lt;/b&gt; Printklemme&lt;p&gt;
-Nennstrom: 10 A&lt;br&gt;
-Bemessungsspannung: 160 V&lt;br&gt;
-Raster: 3,5 mm&lt;br&gt;
-Polzahl: 2&lt;br&gt;
-Montageart: Löten&lt;br&gt;
-Anschlussart: Schraubanschluss&lt;br&gt;
-Anschlussrichtung vom Leiter zur Platine: 0°&lt;br&gt;
-Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
+<description>Phoenix MKDS 1/ 2-3,5</description>
 <wire x1="-3.75" y1="3.65" x2="3.75" y2="3.65" width="0.1016" layer="21"/>
 <wire x1="-3.75" y1="3.65" x2="-3.75" y2="1.9123" width="0.1016" layer="21"/>
 <wire x1="3.75" y1="-2.0993" x2="-3.75" y2="-2.0993" width="0.1016" layer="21"/>
@@ -7245,15 +7197,7 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 </polygon>
 </package>
 <package name="1751251">
-<description>&lt;b&gt;MKDS 1/ 3-3,5&lt;/b&gt; Printklemme&lt;p&gt;
-Nennstrom: 10 A&lt;br&gt;
-Bemessungsspannung: 160 V&lt;br&gt;
-Raster: 3,5 mm&lt;br&gt;
-Polzahl: 3&lt;br&gt;
-Montageart: Löten&lt;br&gt;
-Anschlussart: Schraubanschluss&lt;br&gt;
-Anschlussrichtung vom Leiter zur Platine: 0°&lt;br&gt;
-Source: http://eshop.phoenixcontact.com .. 1751251.pdf</description>
+<description>Phoenix MKDS 1/ 3-3,5 </description>
 <wire x1="-5.5" y1="3.75" x2="5.5" y2="3.75" width="0.1016" layer="21"/>
 <wire x1="-5.5" y1="3.75" x2="-5.5" y2="2.0123" width="0.1016" layer="21"/>
 <wire x1="5.5" y1="-1.9993" x2="-5.5" y2="-1.9993" width="0.1016" layer="21"/>
@@ -7303,7 +7247,7 @@ Source: http://eshop.phoenixcontact.com .. 1751251.pdf</description>
 </polygon>
 </package>
 <package name="3POL254">
-<description>&lt;b&gt;PHOENIX CONNECTOR&lt;/b&gt;</description>
+<description>PHOENIX CONNECTOR</description>
 <wire x1="-3.94" y1="-1.45" x2="3.94" y2="-1.45" width="0.254" layer="21"/>
 <wire x1="3.94" y1="-1.45" x2="3.94" y2="1.45" width="0.254" layer="21"/>
 <wire x1="3.94" y1="1.45" x2="-3.94" y2="1.45" width="0.254" layer="21"/>
@@ -7322,7 +7266,7 @@ Source: http://eshop.phoenixcontact.com .. 1751251.pdf</description>
 <text x="-4.064" y="-3.048" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="MSTB3">
-<description>&lt;b&gt;PHOENIX&lt;/b&gt;</description>
+<description>PHOENIX</description>
 <wire x1="-7.62" y1="-4.572" x2="-7.62" y2="-5.588" width="0.1524" layer="21"/>
 <wire x1="-6.223" y1="-1.143" x2="-3.937" y2="1.143" width="0.254" layer="21"/>
 <wire x1="-1.143" y1="-1.143" x2="1.143" y2="1.143" width="0.254" layer="21"/>
@@ -7562,7 +7506,7 @@ This slight alteration caused the pins (the squares in the middle) to touch the 
 to hold the component in place.  0.005 has proven to be the perfect amount of "off-center" position when using our standard breakaway headers.
 Although looks a little odd when you look at the bare footprint, once you have a header in there, the alteration is very hard to notice.  Also,
 if you push a header all the way into place, it is covered up entirely on the bottom side.  This idea of altering the position of holes to aid alignment 
-will be further integrated into the Sparkfun Library for other footprints.  It can help hold any component with 3 or more connection pins.</description>
+can help hold any component with 3 or more connection pins.</description>
 <wire x1="1.524" y1="-0.127" x2="1.016" y2="-0.127" width="0.2032" layer="21"/>
 <wire x1="4.064" y1="-0.127" x2="3.556" y2="-0.127" width="0.2032" layer="21"/>
 <wire x1="6.604" y1="-0.127" x2="6.096" y2="-0.127" width="0.2032" layer="21"/>
@@ -7879,7 +7823,7 @@ This slight alteration caused the pins (the squares in the middle) to touch the 
 to hold the component in place.  0.005 has proven to be the perfect amount of "off-center" position when using our standard breakaway headers.
 Although looks a little odd when you look at the bare footprint, once you have a header in there, the alteration is very hard to notice.  Also,
 if you push a header all the way into place, it is covered up entirely on the bottom side.  This idea of altering the position of holes to aid alignment 
-will be further integrated into the Sparkfun Library for other footprints.  It can help hold any component with 3 or more connection pins.</description>
+ can help hold any component with 3 or more connection pins.</description>
 <wire x1="1.524" y1="-0.127" x2="1.016" y2="-0.127" width="0.2032" layer="21"/>
 <wire x1="4.064" y1="-0.127" x2="3.556" y2="-0.127" width="0.2032" layer="21"/>
 <wire x1="6.604" y1="-0.127" x2="6.096" y2="-0.127" width="0.2032" layer="21"/>
@@ -9459,7 +9403,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <text x="2.794" y="1.524" size="0.8128" layer="21" font="vector" ratio="15">CTS</text>
 </package>
 <package name="AVR_ICSP">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<description>PIN HEADER</description>
 <wire x1="-1.905" y1="6.35" x2="-2.54" y2="5.715" width="0.1524" layer="21"/>
 <wire x1="-2.54" y1="4.445" x2="-1.905" y2="3.81" width="0.1524" layer="21"/>
 <wire x1="-1.905" y1="3.81" x2="-2.54" y2="3.175" width="0.1524" layer="21"/>
@@ -9715,7 +9659,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <text x="6.715" y="-4.826" size="0.4064" layer="51">*3mm diameter x 2mm tab at 6 o'clock (from front)</text>
 </package>
 <package name="ENCODER_LED_2">
-<description>&lt;h3&gt;2-color Illuminated Rotary Encoder&lt;/h3&gt;</description>
+<description>2-color Illuminated Rotary Encoder</description>
 <wire x1="-3.9" y1="6.7" x2="3.9" y2="6.7" width="0.2032" layer="51"/>
 <wire x1="-6.2" y1="1.7" x2="-6.2" y2="5.8938" width="0.2032" layer="21"/>
 <wire x1="-6.2" y1="5.8938" x2="-5.3938" y2="6.7" width="0.2032" layer="21" curve="-90"/>
@@ -10480,8 +10424,7 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 <text x="8.89" y="17.78" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="SOT323R">
-<description>&lt;b&gt;Small Outline Transistor&lt;/b&gt; Reflow soldering&lt;p&gt;
-INFINEON, www.infineon.com/cmc_upload/0/000/010/257/eh_db_5b.pdf</description>
+<description>Small Outline Transistor Reflow soldering, INFINEON</description>
 <wire x1="0.9224" y1="0.4604" x2="0.9224" y2="-0.4604" width="0.1524" layer="51"/>
 <wire x1="0.9224" y1="-0.4604" x2="-0.9224" y2="-0.4604" width="0.1524" layer="51"/>
 <wire x1="-0.9224" y1="-0.4604" x2="-0.9224" y2="0.4604" width="0.1524" layer="51"/>
@@ -10528,8 +10471,7 @@ INFINEON, www.infineon.com/cmc_upload/0/000/010/257/eh_db_5b.pdf</description>
 <wire x1="-0.0508" y1="2.667" x2="0.3302" y2="2.667" width="0.2024" layer="21"/>
 </package>
 <package name="CK10">
-<description>&lt;b&gt;ROTARY SWITCH&lt;/b&gt;&lt;p&gt;
-C&amp;K</description>
+<description>ROTARY SWITCH - CK</description>
 <wire x1="5.5372" y1="-11.8618" x2="7.4886" y2="-10.719" width="0.1524" layer="21" curve="126.162725"/>
 <wire x1="-7.493" y1="-10.7188" x2="-5.535" y2="-11.8652" width="0.1524" layer="21" curve="126.169754"/>
 <wire x1="-7.4889" y1="10.719" x2="-5.5371" y2="11.862" width="0.1524" layer="21" curve="-126.162869"/>
@@ -10608,8 +10550,7 @@ C&amp;K</description>
 <circle x="0" y="0" radius="12.04159375" width="0.127" layer="104"/>
 </package>
 <package name="KK-156-8-F">
-<description>&lt;b&gt;KK 156 HEADER&lt;/b&gt;&lt;p&gt;
-Source: http://www.molex.com/pdm_docs/sd/026604100_sd.pdf</description>
+<description>KK 156 HEADER</description>
 <wire x1="15.69" y1="7.8075" x2="13.89" y2="7.8075" width="0.2032" layer="21"/>
 <wire x1="13.89" y1="7.8075" x2="-13.865" y2="7.8075" width="0.2032" layer="21"/>
 <wire x1="-13.865" y1="7.8075" x2="-15.665" y2="7.8075" width="0.2032" layer="21"/>
@@ -10643,8 +10584,7 @@ Source: http://www.molex.com/pdm_docs/sd/026604100_sd.pdf</description>
 <wire x1="-0.3175" y1="7.9375" x2="-0.3175" y2="5.08" width="0.127" layer="21"/>
 </package>
 <package name="ELMA-01-4X3">
-<description>&lt;b&gt;ELMA Rotary Switsh Type 01&lt;/b&gt;&lt;p&gt;
-Source: rotary_switches_type_01_001.pdf</description>
+<description>ELMA Rotary Switsh Type 01</description>
 <wire x1="-7.3" y1="5.075" x2="-5.925" y2="6.625" width="0.2032" layer="21" curve="-13.369398"/>
 <wire x1="-8.8594" y1="0.745" x2="-8.4437" y2="2.7749" width="0.2032" layer="21" curve="-13.369957"/>
 <wire x1="-8.045" y1="-3.7844" x2="-8.6999" y2="-1.8187" width="0.2032" layer="21" curve="-13.36905"/>
@@ -10683,9 +10623,7 @@ Source: rotary_switches_type_01_001.pdf</description>
 <text x="-8.255" y="-11.43" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="SRRM265900">
-<description>&lt;b&gt;12-position General-purpose Vertical Type Rotary Switch&lt;/b&gt;&lt;p&gt;
-1 Pole 12 Positions&lt;br&gt;
-Source: SRRM.pdf</description>
+<description>12-position General-purpose Vertical Type Rotary Switch 1 Pole 12 Positions</description>
 <wire x1="-12.15" y1="1.475" x2="-13.475" y2="1.475" width="0.2032" layer="21"/>
 <wire x1="-13.475" y1="1.475" x2="-13.475" y2="-1.475" width="0.2032" layer="21"/>
 <wire x1="-13.475" y1="-1.475" x2="-12.1" y2="-1.475" width="0.2032" layer="21"/>
@@ -11169,8 +11107,7 @@ Source: SRRM.pdf</description>
 <rectangle x1="13.97" y1="-12.7" x2="21.59" y2="12.7" layer="41"/>
 </package>
 <package name="KK-156-5">
-<description>&lt;b&gt;KK 156 HEADER&lt;/b&gt;&lt;p&gt;
-Source: http://www.molex.com/pdm_docs/sd/026604100_sd.pdf</description>
+<description>KK 156 HEADER</description>
 <wire x1="9.75" y1="4.95" x2="7.95" y2="4.95" width="0.2032" layer="21"/>
 <wire x1="7.95" y1="4.95" x2="-7.925" y2="4.95" width="0.2032" layer="21"/>
 <wire x1="-7.925" y1="4.95" x2="-9.725" y2="4.95" width="0.2032" layer="21"/>
@@ -11697,8 +11634,7 @@ Source: http://www.molex.com/pdm_docs/sd/026604100_sd.pdf</description>
    Systems</text>
 </package>
 <package name="KK-156-16">
-<description>&lt;b&gt;KK 156 HEADER&lt;/b&gt;&lt;p&gt;
-Source: http://www.molex.com/pdm_docs/sd/026604100_sd.pdf</description>
+<description>KK 156 HEADER</description>
 <wire x1="31.53" y1="4.95" x2="29.73" y2="4.95" width="0.2032" layer="21"/>
 <wire x1="29.73" y1="4.95" x2="-29.705" y2="4.95" width="0.2032" layer="21"/>
 <wire x1="-29.705" y1="4.95" x2="-31.505" y2="4.95" width="0.2032" layer="21"/>
@@ -11728,8 +11664,7 @@ Source: http://www.molex.com/pdm_docs/sd/026604100_sd.pdf</description>
 <text x="33.47" y="-4.445" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
 </package>
 <package name="KK-156-4">
-<description>&lt;b&gt;KK 156 HEADER&lt;/b&gt;&lt;p&gt;
-Source: http://www.molex.com/pdm_docs/sd/026604100_sd.pdf</description>
+<description>KK 156 HEADER</description>
 <pad name="1" x="-5.94" y="0" drill="1.7" diameter="2.1844" shape="long" rot="R90"/>
 <pad name="2" x="-1.98" y="0" drill="1.7" diameter="2.1844" shape="long" rot="R90"/>
 <pad name="3" x="1.98" y="0" drill="1.7" diameter="2.1844" shape="long" rot="R90"/>
@@ -11756,7 +11691,7 @@ Source: http://www.molex.com/pdm_docs/sd/026604100_sd.pdf</description>
 <wire x1="-6.985" y1="6.985" x2="6.985" y2="6.985" width="0.127" layer="21" style="shortdash"/>
 </package>
 <package name="CT3216">
-<description>&lt;b&gt;TANTALUM CAPACITOR&lt;/b&gt;</description>
+<description>TANTALUM CAPACITOR</description>
 <wire x1="-2.973" y1="1.483" x2="2.973" y2="1.483" width="0.0508" layer="39"/>
 <wire x1="2.973" y1="-1.483" x2="-2.973" y2="-1.483" width="0.0508" layer="39"/>
 <wire x1="-2.973" y1="-1.483" x2="-2.973" y2="1.483" width="0.0508" layer="39"/>
@@ -12006,15 +11941,7 @@ Source: http://www.molex.com/pdm_docs/sd/026604100_sd.pdf</description>
 <text x="-34.29" y="15.24" size="1.016" layer="51" ratio="15">1</text>
 </package>
 <package name="LCD-8X2">
-<description>&lt;h3&gt;8x2 Character LCD w/ Backlight&lt;/h3&gt;
-Outer Dimensions: 40.0 x 35.4mm&lt;br&gt;
-Viewing Area: 26.4 x 13.9mm&lt;br&gt;
-Character Size: 2.95 x 4.75mm&lt;br&gt;
-&lt;br&gt;
-For Reference, see Amotec Display part ADM0802A (http://amotec-display.com/pdf/ADM0802A.pdf).
-&lt;br&gt;
-&lt;br&gt;
-&lt;B&gt;***Footprint Unproven***&lt;/b&gt;</description>
+<description>Amotec-display ADM0802A 8x2 Character LCD w/ Backlight **Unproven**</description>
 <wire x1="-20" y1="-11.6" x2="-20" y2="18.4" width="0.2032" layer="21"/>
 <wire x1="-20" y1="18.4" x2="20" y2="18.4" width="0.2032" layer="21"/>
 <wire x1="20" y1="18.4" x2="20" y2="-11.6" width="0.2032" layer="21"/>
@@ -12121,10 +12048,7 @@ For Reference, see Amotec Display part ADM0802A (http://amotec-display.com/pdf/A
 <hole x="18" y="-15" drill="2"/>
 </package>
 <package name="LCD-8X2-KIT">
-<description>&lt;h3&gt;LCD-8X2-KIT&lt;/h3&gt;
-8x2 LCD&lt;br&gt;
-&lt;br&gt;
-&lt;b&gt;Warning:&lt;/b&gt; This is the KIT version of this package. This package has a smaller diameter top stop mask, which doesn't cover the diameter of the pad. This means only the bottom side of the pads' copper will be exposed. You'll only be able to solder to the bottom side.</description>
+<description>LCD-8X2-KIT Warning: This is the KIT version of this package. This package has a smaller diameter top stop mask, which doesn't cover the diameter of the pad. This means only the bottom side of the pads' copper will be exposed. You'll only be able to solder to the bottom side.</description>
 <wire x1="-20" y1="-11.6" x2="-20" y2="18.4" width="0.2032" layer="51"/>
 <wire x1="-20" y1="18.4" x2="20" y2="18.4" width="0.2032" layer="51"/>
 <wire x1="20" y1="18.4" x2="20" y2="-11.6" width="0.2032" layer="51"/>
@@ -12475,7 +12399,7 @@ For Reference, see Amotec Display part ADM0802A (http://amotec-display.com/pdf/A
 <hole x="47" y="-28" drill="3.4"/>
 </package>
 <package name="MSTBA3">
-<description>&lt;b&gt;PHOENIX&lt;/b&gt;</description>
+<description>PHOENIX</description>
 <wire x1="-8.636" y1="7.112" x2="-8.636" y2="-1.905" width="0.1524" layer="21"/>
 <wire x1="-8.636" y1="7.112" x2="-5.715" y2="7.112" width="0.1524" layer="21"/>
 <wire x1="-5.715" y1="7.112" x2="-4.445" y2="7.112" width="0.1524" layer="51"/>
@@ -12659,8 +12583,7 @@ For Reference, see Amotec Display part ADM0802A (http://amotec-display.com/pdf/A
 <package name="PCA9629PW">
 </package>
 <package name="TSSOP16">
-<description>&lt;b&gt;Thin Shrink Small Outline Plastic 16&lt;/b&gt;&lt;p&gt;
-MAX3223-MAX3243.pdf</description>
+<description>Thin Shrink Small Outline Plastic 16 MAX3223-MAX3243.pdf</description>
 <wire x1="-2.5146" y1="-2.2828" x2="2.5146" y2="-2.2828" width="0.1524" layer="21"/>
 <wire x1="2.5146" y1="2.2828" x2="2.5146" y2="-2.2828" width="0.1524" layer="21"/>
 <wire x1="2.5146" y1="2.2828" x2="-2.5146" y2="2.2828" width="0.1524" layer="21"/>
@@ -12846,8 +12769,7 @@ MAX3223-MAX3243.pdf</description>
 <text x="-3.4544" y="-6.985" size="2.0828" layer="27" ratio="10" rot="SR0">&gt;VALUE</text>
 </package>
 <package name="SO20">
-<description>&lt;b&gt;SMALL OUTLINE INTEGRATED CIRCUIT&lt;/b&gt;&lt;p&gt;
-wide body 7.5 mm/JEDEC MS-013AC</description>
+<description>SMALL OUTLINE INTEGRATED CIRCUIT wide body 7.5 mm/JEDEC MS-013AC</description>
 <wire x1="6.46" y1="-3.7" x2="-6.46" y2="-3.7" width="0.2032" layer="51"/>
 <wire x1="-6.46" y1="-3.7" x2="-6.46" y2="-3.2" width="0.2032" layer="51"/>
 <wire x1="-6.46" y1="-3.2" x2="-6.46" y2="3.7" width="0.2032" layer="51"/>
@@ -12920,8 +12842,7 @@ wide body 7.5 mm/JEDEC MS-013AC</description>
 <pad name="P$1" x="0" y="0" drill="0.6"/>
 </package>
 <package name="PICOFUSE">
-<description>&lt;B&gt;PICOFUSE&lt;/B&gt;&lt;p&gt;
-Picofuse, 19275 Wickmann</description>
+<description>Picofuse, 19275 Wickmann</description>
 <wire x1="5.08" y1="0" x2="4.064" y2="0" width="0.1524" layer="51"/>
 <wire x1="-5.08" y1="0" x2="-4.064" y2="0" width="0.6096" layer="51"/>
 <wire x1="-2.794" y1="1.27" x2="-1.524" y2="1.27" width="0.1524" layer="21"/>
@@ -12986,7 +12907,7 @@ Picofuse, 19275 Wickmann</description>
 <rectangle x1="-1.9431" y1="-0.3048" x2="-1.5875" y2="0.3048" layer="21"/>
 </package>
 <package name="ECQ-E2225KB">
-<description>&lt;B&gt;Blocking Cap&lt;/B&gt;, 19 x 8 mm, grid 18 mm</description>
+<description>Blocking Cap, 19 x 8 mm, grid 18 mm</description>
 <wire x1="-5.08" y1="1.27" x2="-5.08" y2="0" width="0.4064" layer="21"/>
 <wire x1="-5.08" y1="0" x2="-5.08" y2="-1.27" width="0.4064" layer="21"/>
 <wire x1="-4.191" y1="1.27" x2="-4.191" y2="0" width="0.4064" layer="21"/>
@@ -13151,7 +13072,7 @@ DC 4.0~40 1.3-37V</text>
 <text x="-17.78" y="-8.89" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 <package name="LDH-5R">
-<description>&lt;B&gt;LED HOLDER&lt;/B&gt;</description>
+<description>LED HOLDER</description>
 <wire x1="-1.27" y1="4.445" x2="0.635" y2="4.445" width="0.1524" layer="21"/>
 <wire x1="-0.635" y1="5.207" x2="-0.635" y2="3.683" width="0.1524" layer="21"/>
 <wire x1="-0.635" y1="3.683" x2="0.635" y2="4.445" width="0.1524" layer="21"/>
@@ -13604,7 +13525,7 @@ reproductive harm.</text>
 <rectangle x1="17.4625" y1="-0.1905" x2="18.0975" y2="0.1905" layer="51"/>
 </package>
 <package name="MA04-2">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<description>PIN HEADER</description>
 <wire x1="-4.445" y1="2.54" x2="-3.175" y2="2.54" width="0.1524" layer="21"/>
 <wire x1="-3.175" y1="2.54" x2="-2.54" y2="1.905" width="0.1524" layer="21"/>
 <wire x1="-2.54" y1="1.905" x2="-1.905" y2="2.54" width="0.1524" layer="21"/>
@@ -13653,8 +13574,7 @@ reproductive harm.</text>
 <rectangle x1="3.556" y1="1.016" x2="4.064" y2="1.524" layer="51"/>
 </package>
 <package name="QSOP24">
-<description>&lt;b&gt;QSOP 24&lt;/b&gt;&lt;p&gt;
-Source: http://datasheets.maxim-ic.com/en/ds/MAX7313.pdf</description>
+<description>QSOP 24 MAX7313</description>
 <wire x1="-4.26" y1="-1.85" x2="-4.26" y2="1.85" width="0.2032" layer="21"/>
 <wire x1="4.26" y1="1.85" x2="4.26" y2="-1.85" width="0.2032" layer="21"/>
 <wire x1="-4.26" y1="-1.85" x2="-4.1175" y2="-1.85" width="0.2032" layer="21"/>
@@ -13740,8 +13660,7 @@ Source: http://datasheets.maxim-ic.com/en/ds/MAX7313.pdf</description>
 <rectangle x1="-3.745" y1="1.9" x2="-3.245" y2="3.475" layer="29" rot="R180"/>
 </package>
 <package name="TQFN24-EP">
-<description>&lt;b&gt;24 TQFN-EP 24&lt;/b&gt; T2444-4&lt;p&gt;
-Source: http://datasheets.maxim-ic.com/en/ds/MAX4947-MAX4948.pdf</description>
+<description>24 TQFN-EP 24 T2444-4 MAX4947-MAX4948</description>
 <wire x1="-1.95" y1="1.95" x2="1.95" y2="1.95" width="0.2032" layer="51"/>
 <wire x1="1.95" y1="1.95" x2="1.95" y2="-1.95" width="0.2032" layer="51"/>
 <wire x1="1.95" y1="-1.95" x2="-1.95" y2="-1.95" width="0.2032" layer="51"/>
@@ -13925,8 +13844,7 @@ SPCoast</text>
 <text x="78.74" y="96.52" size="1.27" layer="51" font="vector">(3.5, 3.5)</text>
 </package>
 <package name="DO35Z10">
-<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
-diameter 2 mm, horizontal, grid 10.16mm</description>
+<description>DIODE diameter 2 mm, horizontal, grid 10.16mm</description>
 <wire x1="5.08" y1="0" x2="4.191" y2="0" width="0.508" layer="51"/>
 <wire x1="-5.08" y1="0" x2="-4.191" y2="0" width="0.508" layer="51"/>
 <wire x1="-0.635" y1="0" x2="0" y2="0" width="0.1524" layer="21"/>
@@ -13954,8 +13872,7 @@ diameter 2 mm, horizontal, grid 10.16mm</description>
 <rectangle x1="-4.191" y1="-0.254" x2="-2.286" y2="0.254" layer="21"/>
 </package>
 <package name="DO41Z10">
-<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
-diameter 2.54 mm, horizontal, grid 10.16 mm</description>
+<description>DIODE diameter 2.54 mm, horizontal, grid 10.16 mm</description>
 <wire x1="2.032" y1="-1.27" x2="-2.032" y2="-1.27" width="0.1524" layer="21"/>
 <wire x1="2.032" y1="-1.27" x2="2.032" y2="1.27" width="0.1524" layer="21"/>
 <wire x1="-2.032" y1="1.27" x2="2.032" y2="1.27" width="0.1524" layer="21"/>
@@ -13979,8 +13896,7 @@ diameter 2.54 mm, horizontal, grid 10.16 mm</description>
 <rectangle x1="-3.937" y1="-0.381" x2="-2.032" y2="0.381" layer="21"/>
 </package>
 <package name="C1702-15">
-<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
-diameter 3.5 mm, horizontal, grid 15.24 mm</description>
+<description>DIODE diameter 3.5 mm, horizontal, grid 15.24 mm</description>
 <wire x1="-4.572" y1="-1.778" x2="-4.572" y2="1.778" width="0.1524" layer="21"/>
 <wire x1="4.572" y1="1.778" x2="-4.572" y2="1.778" width="0.1524" layer="21"/>
 <wire x1="4.572" y1="1.778" x2="4.572" y2="-1.778" width="0.1524" layer="21"/>
@@ -13996,8 +13912,7 @@ diameter 3.5 mm, horizontal, grid 15.24 mm</description>
 <rectangle x1="-5.9436" y1="-0.5334" x2="-4.572" y2="0.5334" layer="21"/>
 </package>
 <package name="DO13M">
-<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
-diameter 6.35 mm metall, horizontal, grid 20.32 mm</description>
+<description>DIODE diameter 6.35 mm metall, horizontal, grid 20.32 mm</description>
 <wire x1="-7.239" y1="3.175" x2="-7.239" y2="-3.175" width="0.1524" layer="21"/>
 <wire x1="-7.239" y1="-3.175" x2="1.905" y2="-3.175" width="0.1524" layer="21"/>
 <wire x1="1.905" y1="3.175" x2="-7.239" y2="3.175" width="0.1524" layer="21"/>
@@ -14033,8 +13948,7 @@ diameter 6.35 mm metall, horizontal, grid 20.32 mm</description>
 <rectangle x1="-6.731" y1="-3.175" x2="-6.096" y2="3.175" layer="21"/>
 </package>
 <package name="SOD57Z10">
-<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
-diameter 4 mm, vertical, grid 10.16 mm</description>
+<description>DIODE diameter 4 mm, vertical, grid 10.16 mm</description>
 <wire x1="5.08" y1="0" x2="3.81" y2="0" width="0.8128" layer="51"/>
 <wire x1="-5.08" y1="0" x2="-3.81" y2="0" width="0.8128" layer="51"/>
 <wire x1="-1.143" y1="0" x2="-0.508" y2="0" width="0.1524" layer="21"/>
@@ -14062,8 +13976,7 @@ diameter 4 mm, vertical, grid 10.16 mm</description>
 <rectangle x1="2.286" y1="-0.4064" x2="3.8354" y2="0.4064" layer="21"/>
 </package>
 <package name="DO34Z7">
-<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
-diameter 1.8 mm, horizontal, grid 7.62 mm</description>
+<description>DIODE diameter 1.8 mm, horizontal, grid 7.62 mm</description>
 <wire x1="-1.524" y1="-0.889" x2="1.524" y2="-0.889" width="0.1524" layer="21"/>
 <wire x1="1.524" y1="0.889" x2="-1.524" y2="0.889" width="0.1524" layer="21"/>
 <wire x1="1.524" y1="-0.889" x2="1.524" y2="0.889" width="0.1524" layer="21"/>
@@ -14087,8 +14000,7 @@ diameter 1.8 mm, horizontal, grid 7.62 mm</description>
 <rectangle x1="-2.921" y1="-0.254" x2="-1.524" y2="0.254" layer="21"/>
 </package>
 <package name="SOD64Z10">
-<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
-diameter 4.8 mm, vertical, grid 10.16 mm</description>
+<description>DIODE diameter 4.8 mm, vertical, grid 10.16 mm</description>
 <wire x1="5.08" y1="0" x2="3.556" y2="0" width="1.3716" layer="51"/>
 <wire x1="-5.08" y1="0" x2="-3.556" y2="0" width="1.3716" layer="51"/>
 <wire x1="-1.143" y1="0" x2="-0.508" y2="0" width="0.1524" layer="21"/>
@@ -14116,8 +14028,7 @@ diameter 4.8 mm, vertical, grid 10.16 mm</description>
 <rectangle x1="-3.3274" y1="-0.6604" x2="-2.54" y2="0.6604" layer="21"/>
 </package>
 <package name="SOD64Z12">
-<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
-diameter 4.8 mm, vertical, grid 12.7 mm</description>
+<description>DIODE diameter 4.8 mm, vertical, grid 12.7 mm</description>
 <wire x1="6.35" y1="0" x2="4.826" y2="0" width="1.3716" layer="51"/>
 <wire x1="-6.35" y1="0" x2="-4.826" y2="0" width="1.3716" layer="51"/>
 <wire x1="-1.143" y1="0" x2="-0.508" y2="0" width="0.1524" layer="21"/>
@@ -14145,8 +14056,7 @@ diameter 4.8 mm, vertical, grid 12.7 mm</description>
 <rectangle x1="-4.572" y1="-0.6604" x2="-2.54" y2="0.6604" layer="21"/>
 </package>
 <package name="TO236">
-<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
-3-lead smd</description>
+<description>DIODE 3-lead smd</description>
 <wire x1="-1.4" y1="1.15" x2="-0.7" y2="1.15" width="0.2032" layer="21"/>
 <wire x1="-1.4" y1="1.15" x2="-1.4" y2="-0.2" width="0.2032" layer="21"/>
 <wire x1="-0.3" y1="-1.15" x2="0.3" y2="-1.15" width="0.2032" layer="21"/>
@@ -14167,8 +14077,7 @@ diameter 4.8 mm, vertical, grid 12.7 mm</description>
 <rectangle x1="0.8" y1="-1.25" x2="1.2" y2="-0.6" layer="51"/>
 </package>
 <package name="F126Z10">
-<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
-diameter 3 mm, horizontal, grid 10.16 mm</description>
+<description>DIODE diameter 3 mm, horizontal, grid 10.16 mm</description>
 <wire x1="-3.175" y1="-1.524" x2="3.175" y2="-1.524" width="0.1524" layer="21"/>
 <wire x1="3.175" y1="1.524" x2="-3.175" y2="1.524" width="0.1524" layer="21"/>
 <wire x1="3.175" y1="-1.524" x2="3.175" y2="1.524" width="0.1524" layer="21"/>
@@ -14192,8 +14101,7 @@ diameter 3 mm, horizontal, grid 10.16 mm</description>
 <rectangle x1="-3.7338" y1="-0.4064" x2="-3.175" y2="0.4064" layer="21"/>
 </package>
 <package name="F126Z12">
-<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
-diameter 3 mm, horizontal, grid 12.7 mm</description>
+<description>DIODE diameter 3 mm, horizontal, grid 12.7 mm</description>
 <wire x1="-3.175" y1="-1.524" x2="3.175" y2="-1.524" width="0.1524" layer="21"/>
 <wire x1="3.175" y1="1.524" x2="-3.175" y2="1.524" width="0.1524" layer="21"/>
 <wire x1="3.175" y1="-1.524" x2="3.175" y2="1.524" width="0.1524" layer="21"/>
@@ -14217,7 +14125,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <rectangle x1="3.175" y1="-0.4064" x2="4.8514" y2="0.4064" layer="21"/>
 </package>
 <package name="ZDIO-10">
-<description>&lt;b&gt;Z DIODE&lt;/b&gt;</description>
+<description>Z DIODE</description>
 <wire x1="0" y1="1.27" x2="-1.27" y2="1.27" width="0.254" layer="21"/>
 <wire x1="-1.27" y1="0" x2="1.27" y2="1.27" width="0.254" layer="21"/>
 <wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="21"/>
@@ -14234,7 +14142,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <text x="-2.54" y="-3.048" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="ZDIO-2.5">
-<description>&lt;b&gt;Z DIODE&lt;/b&gt;</description>
+<description>Z DIODE</description>
 <wire x1="-0.254" y1="0.762" x2="-0.508" y2="0.762" width="0.254" layer="21"/>
 <wire x1="-0.508" y1="0" x2="0.762" y2="0.762" width="0.254" layer="21"/>
 <wire x1="0.762" y1="-0.762" x2="-0.508" y2="0" width="0.254" layer="21"/>
@@ -14251,7 +14159,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <text x="-1.27" y="-2.286" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="ZDIO-5">
-<description>&lt;b&gt;Z DIODE&lt;/b&gt;</description>
+<description>Z DIODE</description>
 <wire x1="0" y1="1.27" x2="-1.27" y2="1.27" width="0.254" layer="21"/>
 <wire x1="-1.27" y1="0" x2="1.27" y2="1.27" width="0.254" layer="21"/>
 <wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="21"/>
@@ -14268,7 +14176,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <text x="-2.54" y="-3.048" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="ZDIO-7.5">
-<description>&lt;b&gt;Z DIODE&lt;/b&gt;</description>
+<description>Z DIODE</description>
 <wire x1="0" y1="1.27" x2="-1.27" y2="1.27" width="0.254" layer="21"/>
 <wire x1="-1.27" y1="0" x2="1.27" y2="1.27" width="0.254" layer="21"/>
 <wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="21"/>
@@ -14285,7 +14193,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <text x="-2.54" y="-3.048" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="ZDIO12.5">
-<description>&lt;b&gt;Z DIODE&lt;/b&gt;</description>
+<description>Z DIODE</description>
 <wire x1="0" y1="1.27" x2="-1.27" y2="1.27" width="0.254" layer="21"/>
 <wire x1="-1.27" y1="0" x2="1.27" y2="1.27" width="0.254" layer="21"/>
 <wire x1="1.27" y1="1.27" x2="1.27" y2="0" width="0.254" layer="21"/>
@@ -14302,8 +14210,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <text x="-2.667" y="-3.048" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 </package>
 <package name="P1Z12">
-<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
-diameter 3 mm, horizontal, grid 12.7 mm</description>
+<description>DIODE diameter 3 mm, horizontal, grid 12.7 mm</description>
 <wire x1="-3.175" y1="-1.524" x2="3.175" y2="-1.524" width="0.1524" layer="21"/>
 <wire x1="3.175" y1="1.524" x2="-3.175" y2="1.524" width="0.1524" layer="21"/>
 <wire x1="3.175" y1="-1.524" x2="3.175" y2="1.524" width="0.1524" layer="21"/>
@@ -14327,7 +14234,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <rectangle x1="-5.207" y1="-0.381" x2="-3.175" y2="0.381" layer="21"/>
 </package>
 <package name="SOD80C">
-<description>&lt;B&gt;DIODE&lt;/B&gt;</description>
+<description>DIODE</description>
 <wire x1="1.3208" y1="0.7874" x2="-1.3208" y2="0.7874" width="0.1524" layer="51"/>
 <wire x1="1.3208" y1="-0.7874" x2="-1.3208" y2="-0.7874" width="0.1524" layer="51"/>
 <wire x1="0.627" y1="0.6" x2="-0.373" y2="0" width="0.2032" layer="21"/>
@@ -14342,7 +14249,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <rectangle x1="-0.8636" y1="-0.7874" x2="-0.254" y2="0.7874" layer="21"/>
 </package>
 <package name="SMB">
-<description>&lt;B&gt;DIODE&lt;/B&gt;</description>
+<description>DIODE</description>
 <wire x1="-2.2606" y1="1.905" x2="2.2606" y2="1.905" width="0.1016" layer="21"/>
 <wire x1="-2.2606" y1="-1.905" x2="2.2606" y2="-1.905" width="0.1016" layer="21"/>
 <wire x1="-2.2606" y1="-1.905" x2="-2.2606" y2="1.905" width="0.1016" layer="51"/>
@@ -14359,7 +14266,7 @@ diameter 3 mm, horizontal, grid 12.7 mm</description>
 <rectangle x1="-1.35" y1="-1.9" x2="-0.8" y2="1.9" layer="51"/>
 </package>
 <package name="DIL-08">
-<description>&lt;b&gt;Dual In Line Package&lt;/b&gt;</description>
+<description>Dual In Line Package</description>
 <wire x1="5.08" y1="2.921" x2="-5.08" y2="2.921" width="0.1524" layer="21"/>
 <wire x1="-5.08" y1="-2.921" x2="5.08" y2="-2.921" width="0.1524" layer="21"/>
 <wire x1="5.08" y1="2.921" x2="5.08" y2="-2.921" width="0.1524" layer="21"/>
@@ -14468,8 +14375,7 @@ ESP32 + OLED</text>
 <circle x="30.48" y="-12.065" radius="1.419903125" width="0.127" layer="21"/>
 </package>
 <package name="SOT-23-5">
-<description>&lt;b&gt;SOT-23-5 - DBV (R-PDSO-G5)&lt;/b&gt; PLASTIC SMALL-OUTLINE PACKAGE&lt;p&gt;
-Source: http://www.ti.com .. tl331.pdf</description>
+<description>SOT-23-5 - DBV (R-PDSO-G5) PLASTIC SMALL-OUTLINE PACKAGE</description>
 <wire x1="-1.419" y1="0.788" x2="1.419" y2="0.788" width="0.1524" layer="51"/>
 <wire x1="1.419" y1="0.788" x2="1.419" y2="-0.787" width="0.1524" layer="21"/>
 <wire x1="1.419" y1="-0.787" x2="-1.419" y2="-0.787" width="0.1524" layer="51"/>
@@ -14569,7 +14475,7 @@ Source: http://www.ti.com .. tl331.pdf</description>
 <wire x1="94.615" y1="92.71" x2="100" y2="92.71" width="0.127" layer="20"/>
 </package>
 <package name="MSTBA5">
-<description>&lt;b&gt;PHOENIX&lt;/b&gt;</description>
+<description>PHOENIX</description>
 <wire x1="-13.716" y1="7.112" x2="-13.716" y2="-1.905" width="0.1524" layer="21"/>
 <wire x1="-13.716" y1="7.112" x2="-10.795" y2="7.112" width="0.1524" layer="21"/>
 <wire x1="-10.795" y1="7.112" x2="-9.525" y2="7.112" width="0.1524" layer="51"/>
@@ -15028,7 +14934,7 @@ v1.0              John Plocher</text>
 <hole x="63.98" y="3.81" drill="3.1"/>
 </package>
 <package name="SSOP16">
-<description>&lt;b&gt;Small Shrink Outline Package&lt;/b&gt;</description>
+<description>Small Shrink Outline Package</description>
 <wire x1="-2.568" y1="2.145" x2="2.568" y2="2.145" width="0.2032" layer="21"/>
 <wire x1="2.568" y1="2.145" x2="2.568" y2="-2.145" width="0.2032" layer="21"/>
 <wire x1="2.568" y1="-2.145" x2="-2.568" y2="-2.145" width="0.2032" layer="21"/>
@@ -15070,7 +14976,7 @@ v1.0              John Plocher</text>
 <rectangle x1="-2.4375" y1="2.2425" x2="-2.1125" y2="3.315" layer="51"/>
 </package>
 <package name="SOP14">
-<description>&lt;b&gt;SMALL OUTLINE PACKAGE&lt;/b&gt;</description>
+<description>SMALL OUTLINE PACKAGE</description>
 <wire x1="-5.9" y1="3.9" x2="5.9" y2="3.9" width="0.1998" layer="39"/>
 <wire x1="5.9" y1="3.9" x2="5.9" y2="-3.9" width="0.1998" layer="39"/>
 <wire x1="-5.9" y1="-3.9" x2="-5.9" y2="3.9" width="0.1998" layer="39"/>
@@ -15112,7 +15018,7 @@ v1.0              John Plocher</text>
 <rectangle x1="-4.0599" y1="2.3599" x2="-3.5601" y2="3.49" layer="51"/>
 </package>
 <package name="MSTBA4">
-<description>&lt;b&gt;PHOENIX&lt;/b&gt;</description>
+<description>PHOENIX</description>
 <wire x1="-11.176" y1="7.112" x2="-11.176" y2="-1.905" width="0.1524" layer="21"/>
 <wire x1="-11.176" y1="7.112" x2="-8.255" y2="7.112" width="0.1524" layer="21"/>
 <wire x1="-8.255" y1="7.112" x2="-6.985" y2="7.112" width="0.1524" layer="51"/>
@@ -15379,7 +15285,7 @@ defects, or other reproductive harm.</text>
 <text x="-2.54" y="0" size="0.8128" layer="21">Light-It</text>
 </package>
 <package name="SO8">
-<description>&lt;b&gt;SMALL OUTLINE INTEGRATED CIRCUIT&lt;/b&gt;</description>
+<description>SMALL OUTLINE INTEGRATED CIRCUIT</description>
 <wire x1="2.4" y1="1.9" x2="2.4" y2="-1.4" width="0.2032" layer="51"/>
 <wire x1="2.4" y1="-1.4" x2="2.4" y2="-1.9" width="0.2032" layer="51"/>
 <wire x1="2.4" y1="-1.9" x2="-2.4" y2="-1.9" width="0.2032" layer="51"/>
@@ -15407,8 +15313,7 @@ defects, or other reproductive harm.</text>
 <rectangle x1="-2.1501" y1="2" x2="-1.6599" y2="3.1001" layer="51"/>
 </package>
 <package name="TSSOP28">
-<description>&lt;b&gt;Thin Shrink Small Outline Plastic 28&lt;/b&gt;&lt;p&gt;
-MAX3223-MAX3243.pdf</description>
+<description>Thin Shrink Small Outline Plastic 28</description>
 <wire x1="-4.7896" y1="-2.2828" x2="4.7896" y2="-2.2828" width="0.1524" layer="21"/>
 <wire x1="4.7896" y1="2.2828" x2="4.7896" y2="-2.2828" width="0.1524" layer="21"/>
 <wire x1="4.7896" y1="2.2828" x2="-4.7896" y2="2.2828" width="0.1524" layer="21"/>
@@ -15495,8 +15400,7 @@ MAX3223-MAX3243.pdf</description>
 <wire x1="-0.9" y1="-1.35" x2="-0.9" y2="1.35" width="0.254" layer="21"/>
 </package>
 <package name="APA102">
-<description>&lt;b&gt;COM-14608&lt;/b&gt;&lt;br&gt;
-</description>
+<description>COM-14608</description>
 <smd name="1" x="-0.9" y="0.75" dx="0.95" dy="0.4" layer="1"/>
 <smd name="2" x="-0.9" y="0" dx="0.95" dy="0.4" layer="1"/>
 <smd name="3" x="-0.9" y="-0.75" dx="0.95" dy="0.4" layer="1"/>
@@ -23244,17 +23148,16 @@ Driver</text>
 </devices>
 </deviceset>
 <deviceset name="CONNECTOR-AUDIO" prefix="CON" uservalue="yes">
-<description>&lt;b&gt;3.5mm Audio Jack&lt;/b&gt;
-Simple 3.5mm common PCB mount audio jack. SKU: PRT-08032</description>
+<description>3.5mm Audio Jack PCB mount SKU: PRT-08032</description>
 <gates>
-<gate name="G$1" symbol="AUDIO-JACK" x="0" y="0"/>
+<gate name="J" symbol="AUDIO-JACK" x="0" y="0"/>
 </gates>
 <devices>
 <device name="PTH" package="AUDIO-JACK">
 <connects>
-<connect gate="G$1" pin="RING" pad="RING"/>
-<connect gate="G$1" pin="SLEEVE" pad="SLEEVE"/>
-<connect gate="G$1" pin="TIP" pad="TIP"/>
+<connect gate="J" pin="RING" pad="RING"/>
+<connect gate="J" pin="SLEEVE" pad="SLEEVE"/>
+<connect gate="J" pin="TIP" pad="TIP"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23262,9 +23165,9 @@ Simple 3.5mm common PCB mount audio jack. SKU: PRT-08032</description>
 </device>
 <device name="2.5MM" package="AUDIO-JACK-2.5MM_STEREO">
 <connects>
-<connect gate="G$1" pin="RING" pad="TIP"/>
-<connect gate="G$1" pin="SLEEVE" pad="RING1"/>
-<connect gate="G$1" pin="TIP" pad="SHIELD"/>
+<connect gate="J" pin="RING" pad="TIP"/>
+<connect gate="J" pin="SLEEVE" pad="RING1"/>
+<connect gate="J" pin="TIP" pad="SHIELD"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23272,9 +23175,9 @@ Simple 3.5mm common PCB mount audio jack. SKU: PRT-08032</description>
 </device>
 <device name="3.5MM-ADAMTECH" package="AUDIO-JACK-3.5MM_STEREO">
 <connects>
-<connect gate="G$1" pin="RING" pad="RING"/>
-<connect gate="G$1" pin="SLEEVE" pad="GND"/>
-<connect gate="G$1" pin="TIP" pad="TIP"/>
+<connect gate="J" pin="RING" pad="RING"/>
+<connect gate="J" pin="SLEEVE" pad="GND"/>
+<connect gate="J" pin="TIP" pad="TIP"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23283,17 +23186,15 @@ Simple 3.5mm common PCB mount audio jack. SKU: PRT-08032</description>
 </devices>
 </deviceset>
 <deviceset name="BATTERY" prefix="BATTERY" uservalue="yes">
-<description>&lt;b&gt;Battery Holders&lt;/b&gt;&lt;br&gt;
-Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
-20MM_4LEGS, BATT-10373</description>
+<description>Battery Holders Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell. 20MM_4LEGS, BATT-10373</description>
 <gates>
-<gate name="G$1" symbol="BATTERY" x="0" y="0"/>
+<gate name="J" symbol="BATTERY" x="0" y="0"/>
 </gates>
 <devices>
 <device name="AAA" package="BATTERY-AAA">
 <connects>
-<connect gate="G$1" pin="+" pad="PWR@1"/>
-<connect gate="G$1" pin="-" pad="GND@1"/>
+<connect gate="J" pin="+" pad="PWR@1"/>
+<connect gate="J" pin="-" pad="GND@1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23301,8 +23202,8 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </device>
 <device name="20PTH2" package="BATTERY">
 <connects>
-<connect gate="G$1" pin="+" pad="+"/>
-<connect gate="G$1" pin="-" pad="-"/>
+<connect gate="J" pin="+" pad="+"/>
+<connect gate="J" pin="-" pad="-"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23310,8 +23211,8 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </device>
 <device name="AA" package="BATTERY-AA">
 <connects>
-<connect gate="G$1" pin="+" pad="PWR@1"/>
-<connect gate="G$1" pin="-" pad="GND@1"/>
+<connect gate="J" pin="+" pad="PWR@1"/>
+<connect gate="J" pin="-" pad="GND@1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23319,8 +23220,8 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </device>
 <device name="12PTH" package="BATTCON_12MM_PTH">
 <connects>
-<connect gate="G$1" pin="+" pad="VCC@1"/>
-<connect gate="G$1" pin="-" pad="GND"/>
+<connect gate="J" pin="+" pad="VCC@1"/>
+<connect gate="J" pin="-" pad="GND"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23328,8 +23229,8 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </device>
 <device name="20SMD" package="BATTCON_20MM">
 <connects>
-<connect gate="G$1" pin="+" pad="1"/>
-<connect gate="G$1" pin="-" pad="2"/>
+<connect gate="J" pin="+" pad="1"/>
+<connect gate="J" pin="-" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23337,8 +23238,8 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </device>
 <device name="245MM" package="BATTCON_245MM">
 <connects>
-<connect gate="G$1" pin="+" pad="1"/>
-<connect gate="G$1" pin="-" pad="2"/>
+<connect gate="J" pin="+" pad="1"/>
+<connect gate="J" pin="-" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23346,8 +23247,8 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </device>
 <device name="20PTH" package="BATTCOM_20MM_PTH">
 <connects>
-<connect gate="G$1" pin="+" pad="1"/>
-<connect gate="G$1" pin="-" pad="2"/>
+<connect gate="J" pin="+" pad="1"/>
+<connect gate="J" pin="-" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23355,8 +23256,8 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </device>
 <device name="245PTH" package="BATTCON_245MM_PTH">
 <connects>
-<connect gate="G$1" pin="+" pad="3"/>
-<connect gate="G$1" pin="-" pad="2"/>
+<connect gate="J" pin="+" pad="3"/>
+<connect gate="J" pin="-" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23364,8 +23265,8 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </device>
 <device name="1100" package="LIPO-1100MAH">
 <connects>
-<connect gate="G$1" pin="+" pad="+"/>
-<connect gate="G$1" pin="-" pad="-"/>
+<connect gate="J" pin="+" pad="+"/>
+<connect gate="J" pin="-" pad="-"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23373,8 +23274,8 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </device>
 <device name="AA-PANEL" package="BATTERY-AA-PANEL">
 <connects>
-<connect gate="G$1" pin="+" pad="+"/>
-<connect gate="G$1" pin="-" pad="-"/>
+<connect gate="J" pin="+" pad="+"/>
+<connect gate="J" pin="-" pad="-"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23382,8 +23283,8 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </device>
 <device name="FOB" package="BATTERY_20MM_PTH_COMPACT">
 <connects>
-<connect gate="G$1" pin="+" pad="1"/>
-<connect gate="G$1" pin="-" pad="2"/>
+<connect gate="J" pin="+" pad="1"/>
+<connect gate="J" pin="-" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23391,8 +23292,8 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </device>
 <device name="12MM" package="BATTCON_12MM">
 <connects>
-<connect gate="G$1" pin="+" pad="PWR@1"/>
-<connect gate="G$1" pin="-" pad="GND"/>
+<connect gate="J" pin="+" pad="PWR@1"/>
+<connect gate="J" pin="-" pad="GND"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23400,8 +23301,8 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </device>
 <device name="20MM_4LEGS" package="BATTCON_20MM_4LEGS">
 <connects>
-<connect gate="G$1" pin="+" pad="1"/>
-<connect gate="G$1" pin="-" pad="2"/>
+<connect gate="J" pin="+" pad="1"/>
+<connect gate="J" pin="-" pad="2"/>
 </connects>
 <technologies>
 <technology name="">
@@ -23412,8 +23313,8 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </device>
 <device name="AA-KIT" package="BATTERY-AA-KIT">
 <connects>
-<connect gate="G$1" pin="+" pad="PWR@1"/>
-<connect gate="G$1" pin="-" pad="GND@1"/>
+<connect gate="J" pin="+" pad="PWR@1"/>
+<connect gate="J" pin="-" pad="GND@1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23421,8 +23322,8 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </device>
 <device name="LIPO-TABS" package="LIPO-110-TABS">
 <connects>
-<connect gate="G$1" pin="+" pad="+"/>
-<connect gate="G$1" pin="-" pad="-"/>
+<connect gate="J" pin="+" pad="+"/>
+<connect gate="J" pin="-" pad="-"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23430,8 +23331,8 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </device>
 <device name="9V" package="BATTCON_9V">
 <connects>
-<connect gate="G$1" pin="+" pad="+"/>
-<connect gate="G$1" pin="-" pad="-"/>
+<connect gate="J" pin="+" pad="+"/>
+<connect gate="J" pin="-" pad="-"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23439,8 +23340,8 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </device>
 <device name="20MM_4LEGS_OVERPASTE" package="BATTCON_20MM_4LEGS_OVERPASTE">
 <connects>
-<connect gate="G$1" pin="+" pad="1"/>
-<connect gate="G$1" pin="-" pad="2"/>
+<connect gate="J" pin="+" pad="1"/>
+<connect gate="J" pin="-" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23448,8 +23349,8 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </device>
 <device name="CONNECTOR" package="BATTERY-CONNECTOR">
 <connects>
-<connect gate="G$1" pin="+" pad="1"/>
-<connect gate="G$1" pin="-" pad="2"/>
+<connect gate="J" pin="+" pad="1"/>
+<connect gate="J" pin="-" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23459,7 +23360,7 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </deviceset>
 <deviceset name="BOARD" prefix="BOARD">
 <gates>
-<gate name="G$1" symbol="BOARD-DIN27X40" x="0" y="0"/>
+<gate name="B" symbol="BOARD-DIN27X40" x="0" y="0"/>
 </gates>
 <devices>
 <device name="69X100" package="BOARD-DINRAIL-2.7IN">
@@ -23650,8 +23551,7 @@ Various common sizes : AA, AAA, 20mm coin cell and 12mm coin cell.&lt;br&gt;
 </devices>
 </deviceset>
 <deviceset name="DOC-FRAME-LETTER" prefix="FRAME">
-<description>&lt;b&gt;Schematic Frame&lt;/b&gt;&lt;p&gt;
-Standard 8.5x11 US Letter frame</description>
+<description>Schematic Frame Standard 8.5x11 US Letter frame</description>
 <gates>
 <gate name="FRAME" symbol="LETTER_L" x="0" y="0"/>
 <gate name="FRAME_CONTENT" symbol="DOCFIELD" x="147.32" y="0" addlevel="must"/>
@@ -23666,17 +23566,17 @@ Standard 8.5x11 US Letter frame</description>
 </deviceset>
 <deviceset name="CONNECTOR-FTDI-SERIAL" prefix="CON" uservalue="yes">
 <gates>
-<gate name="G$1" symbol="ARDUINO_SERIAL_PROGRAM" x="0" y="-2.54"/>
+<gate name="J" symbol="ARDUINO_SERIAL_PROGRAM" x="0" y="-2.54"/>
 </gates>
 <devices>
 <device name="SMD" package="1X06-SMD">
 <connects>
-<connect gate="G$1" pin="CTS" pad="5"/>
-<connect gate="G$1" pin="DTR" pad="1"/>
-<connect gate="G$1" pin="GND" pad="6"/>
-<connect gate="G$1" pin="RXI" pad="2"/>
-<connect gate="G$1" pin="TXO" pad="3"/>
-<connect gate="G$1" pin="VCC" pad="4"/>
+<connect gate="J" pin="CTS" pad="5"/>
+<connect gate="J" pin="DTR" pad="1"/>
+<connect gate="J" pin="GND" pad="6"/>
+<connect gate="J" pin="RXI" pad="2"/>
+<connect gate="J" pin="TXO" pad="3"/>
+<connect gate="J" pin="VCC" pad="4"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23684,12 +23584,12 @@ Standard 8.5x11 US Letter frame</description>
 </device>
 <device name="PTH-LOCK" package="1X06-PTH">
 <connects>
-<connect gate="G$1" pin="CTS" pad="5"/>
-<connect gate="G$1" pin="DTR" pad="1"/>
-<connect gate="G$1" pin="GND" pad="6"/>
-<connect gate="G$1" pin="RXI" pad="2"/>
-<connect gate="G$1" pin="TXO" pad="3"/>
-<connect gate="G$1" pin="VCC" pad="4"/>
+<connect gate="J" pin="CTS" pad="5"/>
+<connect gate="J" pin="DTR" pad="1"/>
+<connect gate="J" pin="GND" pad="6"/>
+<connect gate="J" pin="RXI" pad="2"/>
+<connect gate="J" pin="TXO" pad="3"/>
+<connect gate="J" pin="VCC" pad="4"/>
 </connects>
 <technologies>
 <technology name="">
@@ -23699,12 +23599,12 @@ Standard 8.5x11 US Letter frame</description>
 </device>
 <device name="SPARKFUN-1" package="FTDI_BASIC">
 <connects>
-<connect gate="G$1" pin="CTS" pad="CTS"/>
-<connect gate="G$1" pin="DTR" pad="DTR"/>
-<connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="RXI" pad="RXI"/>
-<connect gate="G$1" pin="TXO" pad="TXO"/>
-<connect gate="G$1" pin="VCC" pad="VCC"/>
+<connect gate="J" pin="CTS" pad="CTS"/>
+<connect gate="J" pin="DTR" pad="DTR"/>
+<connect gate="J" pin="GND" pad="GND"/>
+<connect gate="J" pin="RXI" pad="RXI"/>
+<connect gate="J" pin="TXO" pad="TXO"/>
+<connect gate="J" pin="VCC" pad="VCC"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23712,12 +23612,12 @@ Standard 8.5x11 US Letter frame</description>
 </device>
 <device name="SPARKFUN-2" package="FTDI_DEVICE_SIDE">
 <connects>
-<connect gate="G$1" pin="CTS" pad="CTS"/>
-<connect gate="G$1" pin="DTR" pad="DTR"/>
-<connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="RXI" pad="RXI"/>
-<connect gate="G$1" pin="TXO" pad="TXO"/>
-<connect gate="G$1" pin="VCC" pad="VCC"/>
+<connect gate="J" pin="CTS" pad="CTS"/>
+<connect gate="J" pin="DTR" pad="DTR"/>
+<connect gate="J" pin="GND" pad="GND"/>
+<connect gate="J" pin="RXI" pad="RXI"/>
+<connect gate="J" pin="TXO" pad="TXO"/>
+<connect gate="J" pin="VCC" pad="VCC"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -23777,35 +23677,10 @@ Standard 8.5x11 US Letter frame</description>
 </devices>
 </deviceset>
 <deviceset name="DOC-OSHW-LOGO-" prefix="OSHW">
-<description>&lt;b&gt;Open Source Hardware Logo&lt;/b&gt; This logo indicates the piece of hardware it is found on incorporates a OSHW license and/or adheres to the definition of open source hardware found here: http://freedomdefined.org/OSHW
-&lt;p&gt;
-Creative Commons - Attribution - ShareAlike 3.0
-&lt;/p&gt;
-
-&lt;p&gt;
-&lt;b&gt;Creative Commons - Attribution - ShareAlike 3.0&lt;/b&gt;
-
-You are free:
-&lt;ul&gt;
-&lt;li&gt; to Share—to copy, distribute and transmit the work, and
-&lt;li&gt; to Remix—to adapt the work
-&lt;p&gt;
-Under the following conditions:
-&lt;ul&gt;
-&lt;li&gt; Attribution—You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work.)
-&lt;li&gt; Share Alike—If you alter, transform, or build upon this work, you may distribute the resulting work only under the same, similar or a compatible license.
-&lt;/ul&gt;
-With the understanding that:
-&lt;ul&gt;
-&lt;li&gt; Waiver—Any of the above conditions can be waived if you get permission from the copyright holder.
-&lt;li&gt; Other Rights—In no way are any of the following rights affected by the license:
-&lt;ul&gt;
-&lt;li&gt; your fair dealing or fair use rights;
-&lt;li&gt; the author's moral rights; and
-&lt;li&gt; rights other persons may have either in the work itself or in how the work is used, such as publicity or privacy rights.
-&lt;/ul&gt;
-&lt;li&gt; Notice—For any reuse or distribution, you must make clear to others the license terms of this work. The best way to do that is with a link to http://creativecommons.org/licenses/by-sa/3.0/
-&lt;/ul&gt;</description>
+<description>Open Source Hardware Logo
+This logo indicates the piece of hardware it is found on incorporates a OSHW license and/or adheres to the definition of open source hardware
+http://freedomdefined.org/OSHW   Creative Commons - Attribution - ShareAlike 3.0
+</description>
 <gates>
 <gate name="DOC-OSHW-LOGO" symbol="OSHW-LOGO" x="-5.08" y="-5.08"/>
 </gates>
@@ -23840,8 +23715,7 @@ With the understanding that:
 </devices>
 </deviceset>
 <deviceset name="PULSE-TRANSFORMER" prefix="X" uservalue="yes">
-<description>&lt;b&gt;TRANSFORMER&lt;/b&gt;&lt;p&gt;
-SMD wideband transformer</description>
+<description>TRANSFORMER SMD wideband transformer</description>
 <gates>
 <gate name="X1" symbol="TRANSF" x="0" y="0"/>
 </gates>
@@ -23898,7 +23772,7 @@ SMD wideband transformer</description>
 </devices>
 </deviceset>
 <deviceset name="CONNECTOR-RJ25" prefix="CON" uservalue="yes">
-<description>&lt;b&gt;AMP connector&lt;/b&gt;</description>
+<description>AMP connector</description>
 <gates>
 <gate name="J" symbol="JACK6" x="0" y="0"/>
 </gates>
@@ -23961,8 +23835,7 @@ SMD wideband transformer</description>
 </devices>
 </deviceset>
 <deviceset name="CONNECTOR-RJ45" prefix="CON" uservalue="yes">
-<description>&lt;b&gt;CORCOM Modular RJ Jacks&lt;/b&gt; No Shield&lt;p&gt;
-Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</description>
+<description>Tyco CORCOM Modular RJ Jacks No Shield</description>
 <gates>
 <gate name="J" symbol="JACK8-1" x="0" y="0"/>
 </gates>
@@ -24054,17 +23927,16 @@ Source: www.tycoelectronics.com .. ENG_DS_1654001_1099_RJ_L_0507.pdf</descriptio
 </devices>
 </deviceset>
 <deviceset name="CONNECTOR-DC-POWER" prefix="CON" uservalue="yes">
-<description>&lt;b&gt;DC POWER JACK&lt;/b&gt;&lt;p&gt;
-Source: DCJ0202.pdf</description>
+<description>DC POWER JACK</description>
 <gates>
-<gate name="G$1" symbol="DC-JACK-SWITCH" x="0" y="0"/>
+<gate name="J" symbol="DC-JACK-SWITCH" x="0" y="0"/>
 </gates>
 <devices>
 <device name="-RA" package="DCJ0202">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="J" pin="1" pad="1"/>
+<connect gate="J" pin="2" pad="2"/>
+<connect gate="J" pin="3" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24072,9 +23944,9 @@ Source: DCJ0202.pdf</description>
 </device>
 <device name="-V" package="DCJ202V">
 <connects>
-<connect gate="G$1" pin="1" pad="P$1"/>
-<connect gate="G$1" pin="2" pad="P$2"/>
-<connect gate="G$1" pin="3" pad="P$3"/>
+<connect gate="J" pin="1" pad="P$1"/>
+<connect gate="J" pin="2" pad="P$2"/>
+<connect gate="J" pin="3" pad="P$3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24083,15 +23955,15 @@ Source: DCJ0202.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="CONNECTOR-M02" prefix="CON" uservalue="yes">
-<description>&lt;b&gt;PHOENIX CONNECTOR&lt;/b&gt;</description>
+<description>PHOENIX CONNECTOR</description>
 <gates>
-<gate name="G$1" symbol="M02" x="0" y="0" swaplevel="1"/>
+<gate name="J" symbol="M02" x="0" y="0" swaplevel="1"/>
 </gates>
 <devices>
 <device name="254-LOCK" package="2POL254">
 <connects>
-<connect gate="G$1" pin="A" pad="1"/>
-<connect gate="G$1" pin="B" pad="2"/>
+<connect gate="J" pin="A" pad="1"/>
+<connect gate="J" pin="B" pad="2"/>
 </connects>
 <technologies>
 <technology name="">
@@ -24104,8 +23976,8 @@ Source: DCJ0202.pdf</description>
 </device>
 <device name="1X02-LOCK" package="1X02_LOCK">
 <connects>
-<connect gate="G$1" pin="A" pad="1"/>
-<connect gate="G$1" pin="B" pad="2"/>
+<connect gate="J" pin="A" pad="1"/>
+<connect gate="J" pin="B" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24113,8 +23985,8 @@ Source: DCJ0202.pdf</description>
 </device>
 <device name="XL" package="1X02_XTRA_BIG">
 <connects>
-<connect gate="G$1" pin="A" pad="1"/>
-<connect gate="G$1" pin="B" pad="2"/>
+<connect gate="J" pin="A" pad="1"/>
+<connect gate="J" pin="B" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24122,8 +23994,8 @@ Source: DCJ0202.pdf</description>
 </device>
 <device name="MOLEX-1X02-LOCK" package="MOLEX-1X2_LOCK">
 <connects>
-<connect gate="G$1" pin="A" pad="1"/>
-<connect gate="G$1" pin="B" pad="2"/>
+<connect gate="J" pin="A" pad="1"/>
+<connect gate="J" pin="B" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24131,8 +24003,8 @@ Source: DCJ0202.pdf</description>
 </device>
 <device name="3.5MM-LOCK" package="SCREWTERMINAL-3.5MM-2_LOCK">
 <connects>
-<connect gate="G$1" pin="A" pad="1"/>
-<connect gate="G$1" pin="B" pad="2"/>
+<connect gate="J" pin="A" pad="1"/>
+<connect gate="J" pin="B" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24140,8 +24012,8 @@ Source: DCJ0202.pdf</description>
 </device>
 <device name="5MM-LOCK" package="SCREWTERMINAL-5MM-2">
 <connects>
-<connect gate="G$1" pin="A" pad="1"/>
-<connect gate="G$1" pin="B" pad="2"/>
+<connect gate="J" pin="A" pad="1"/>
+<connect gate="J" pin="B" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24149,8 +24021,8 @@ Source: DCJ0202.pdf</description>
 </device>
 <device name="508-LOCK" package="MSTB2">
 <connects>
-<connect gate="G$1" pin="A" pad="1"/>
-<connect gate="G$1" pin="B" pad="2"/>
+<connect gate="J" pin="A" pad="1"/>
+<connect gate="J" pin="B" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24158,8 +24030,8 @@ Source: DCJ0202.pdf</description>
 </device>
 <device name="350-LOCK" package="1751248">
 <connects>
-<connect gate="G$1" pin="A" pad="1"/>
-<connect gate="G$1" pin="B" pad="2"/>
+<connect gate="J" pin="A" pad="1"/>
+<connect gate="J" pin="B" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24167,8 +24039,8 @@ Source: DCJ0202.pdf</description>
 </device>
 <device name="MSTBA2" package="MSTBA2">
 <connects>
-<connect gate="G$1" pin="A" pad="1"/>
-<connect gate="G$1" pin="B" pad="2"/>
+<connect gate="J" pin="A" pad="1"/>
+<connect gate="J" pin="B" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24178,36 +24050,36 @@ Source: DCJ0202.pdf</description>
 </deviceset>
 <deviceset name="ARDUINO-BBB" prefix="ARDUINO">
 <gates>
-<gate name="G$1" symbol="ARDUINO-BBB" x="0" y="0"/>
+<gate name="A" symbol="ARDUINO-BBB" x="0" y="0"/>
 </gates>
 <devices>
 <device name="" package="ARDUINO-BBB">
 <connects>
-<connect gate="G$1" pin="5V" pad="+5"/>
-<connect gate="G$1" pin="A0" pad="A0"/>
-<connect gate="G$1" pin="A1" pad="A1"/>
-<connect gate="G$1" pin="A2" pad="A2"/>
-<connect gate="G$1" pin="A3" pad="A3"/>
-<connect gate="G$1" pin="A4" pad="A4"/>
-<connect gate="G$1" pin="A5" pad="A5"/>
-<connect gate="G$1" pin="AREF" pad="AREF"/>
-<connect gate="G$1" pin="D10" pad="D10"/>
-<connect gate="G$1" pin="D11" pad="D11"/>
-<connect gate="G$1" pin="D12" pad="D12"/>
-<connect gate="G$1" pin="D13" pad="D13"/>
-<connect gate="G$1" pin="D2" pad="D2"/>
-<connect gate="G$1" pin="D3" pad="D3"/>
-<connect gate="G$1" pin="D4" pad="D4"/>
-<connect gate="G$1" pin="D5" pad="D5"/>
-<connect gate="G$1" pin="D6" pad="D6"/>
-<connect gate="G$1" pin="D7" pad="D7"/>
-<connect gate="G$1" pin="D8" pad="D8"/>
-<connect gate="G$1" pin="D9" pad="D9"/>
-<connect gate="G$1" pin="GND" pad="GND@0 GND@1 GND@2"/>
-<connect gate="G$1" pin="RES" pad="RST"/>
-<connect gate="G$1" pin="RX" pad="D0"/>
-<connect gate="G$1" pin="TX" pad="D1"/>
-<connect gate="G$1" pin="VIN" pad="VIN"/>
+<connect gate="A" pin="5V" pad="+5"/>
+<connect gate="A" pin="A0" pad="A0"/>
+<connect gate="A" pin="A1" pad="A1"/>
+<connect gate="A" pin="A2" pad="A2"/>
+<connect gate="A" pin="A3" pad="A3"/>
+<connect gate="A" pin="A4" pad="A4"/>
+<connect gate="A" pin="A5" pad="A5"/>
+<connect gate="A" pin="AREF" pad="AREF"/>
+<connect gate="A" pin="D10" pad="D10"/>
+<connect gate="A" pin="D11" pad="D11"/>
+<connect gate="A" pin="D12" pad="D12"/>
+<connect gate="A" pin="D13" pad="D13"/>
+<connect gate="A" pin="D2" pad="D2"/>
+<connect gate="A" pin="D3" pad="D3"/>
+<connect gate="A" pin="D4" pad="D4"/>
+<connect gate="A" pin="D5" pad="D5"/>
+<connect gate="A" pin="D6" pad="D6"/>
+<connect gate="A" pin="D7" pad="D7"/>
+<connect gate="A" pin="D8" pad="D8"/>
+<connect gate="A" pin="D9" pad="D9"/>
+<connect gate="A" pin="GND" pad="GND@0 GND@1 GND@2"/>
+<connect gate="A" pin="RES" pad="RST"/>
+<connect gate="A" pin="RX" pad="D0"/>
+<connect gate="A" pin="TX" pad="D1"/>
+<connect gate="A" pin="VIN" pad="VIN"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24217,17 +24089,17 @@ Source: DCJ0202.pdf</description>
 </deviceset>
 <deviceset name="CONNECTOR-IO4" prefix="CON">
 <gates>
-<gate name="G$1" symbol="IO4-RJ12" x="0" y="0"/>
+<gate name="J" symbol="IO4-RJ12" x="0" y="0"/>
 </gates>
 <devices>
 <device name="STD" package="IO4-RJ12">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
-<connect gate="G$1" pin="4" pad="4"/>
-<connect gate="G$1" pin="5" pad="5"/>
-<connect gate="G$1" pin="6" pad="6"/>
+<connect gate="J" pin="1" pad="1"/>
+<connect gate="J" pin="2" pad="2"/>
+<connect gate="J" pin="3" pad="3"/>
+<connect gate="J" pin="4" pad="4"/>
+<connect gate="J" pin="5" pad="5"/>
+<connect gate="J" pin="6" pad="6"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24235,12 +24107,12 @@ Source: DCJ0202.pdf</description>
 </device>
 <device name="INV" package="RJ25-INVERTED">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
-<connect gate="G$1" pin="4" pad="4"/>
-<connect gate="G$1" pin="5" pad="5"/>
-<connect gate="G$1" pin="6" pad="6"/>
+<connect gate="J" pin="1" pad="1"/>
+<connect gate="J" pin="2" pad="2"/>
+<connect gate="J" pin="3" pad="3"/>
+<connect gate="J" pin="4" pad="4"/>
+<connect gate="J" pin="5" pad="5"/>
+<connect gate="J" pin="6" pad="6"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24248,12 +24120,12 @@ Source: DCJ0202.pdf</description>
 </device>
 <device name="PNL" package="RJ25-PANEL">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
-<connect gate="G$1" pin="4" pad="4"/>
-<connect gate="G$1" pin="5" pad="5"/>
-<connect gate="G$1" pin="6" pad="6"/>
+<connect gate="J" pin="1" pad="1"/>
+<connect gate="J" pin="2" pad="2"/>
+<connect gate="J" pin="3" pad="3"/>
+<connect gate="J" pin="4" pad="4"/>
+<connect gate="J" pin="5" pad="5"/>
+<connect gate="J" pin="6" pad="6"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24261,12 +24133,12 @@ Source: DCJ0202.pdf</description>
 </device>
 <device name="TOP" package="RJ25-TOP">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
-<connect gate="G$1" pin="4" pad="4"/>
-<connect gate="G$1" pin="5" pad="5"/>
-<connect gate="G$1" pin="6" pad="6"/>
+<connect gate="J" pin="1" pad="1"/>
+<connect gate="J" pin="2" pad="2"/>
+<connect gate="J" pin="3" pad="3"/>
+<connect gate="J" pin="4" pad="4"/>
+<connect gate="J" pin="5" pad="5"/>
+<connect gate="J" pin="6" pad="6"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24278,12 +24150,12 @@ Source: DCJ0202.pdf</description>
 <description>Slide-type potentiometer- COM-9119</description>
 <gates>
 <gate name="P1" symbol="POT" x="0" y="0"/>
-<gate name="G$1" symbol="AGND" x="15.24" y="-2.54"/>
+<gate name="G1" symbol="AGND" x="15.24" y="-2.54"/>
 </gates>
 <devices>
 <device name="-XL" package="SLIDER-XL">
 <connects>
-<connect gate="G$1" pin="AGND" pad="AGND"/>
+<connect gate="G1" pin="AGND" pad="AGND"/>
 <connect gate="P1" pin="A" pad="3"/>
 <connect gate="P1" pin="E" pad="1"/>
 <connect gate="P1" pin="S" pad="2A"/>
@@ -24294,7 +24166,7 @@ Source: DCJ0202.pdf</description>
 </device>
 <device name="-45MM" package="SLIDER-45MM">
 <connects>
-<connect gate="G$1" pin="AGND" pad="AGND@0 AGND@1"/>
+<connect gate="G1" pin="AGND" pad="AGND@0 AGND@1"/>
 <connect gate="P1" pin="A" pad="A"/>
 <connect gate="P1" pin="E" pad="E"/>
 <connect gate="P1" pin="S" pad="S"/>
@@ -24307,37 +24179,37 @@ Source: DCJ0202.pdf</description>
 </deviceset>
 <deviceset name="ARDUINO-PRO-MINI" prefix="ARDUINO">
 <gates>
-<gate name="G$1" symbol="ARDUINO-PRO-MINI" x="0" y="0"/>
+<gate name="A" symbol="ARDUINO-PRO-MINI" x="0" y="0"/>
 </gates>
 <devices>
 <device name="SPARKFUN" package="ARDUINO-SPARKFUN-V1-PRO-MINI">
 <connects>
-<connect gate="G$1" pin="5V" pad="5V 5V@0 5V@1"/>
-<connect gate="G$1" pin="A0" pad="AD0"/>
-<connect gate="G$1" pin="A1" pad="AD1"/>
-<connect gate="G$1" pin="A2" pad="AD2"/>
-<connect gate="G$1" pin="A3" pad="AD3"/>
-<connect gate="G$1" pin="A4" pad="AD4"/>
-<connect gate="G$1" pin="A5" pad="AD5"/>
-<connect gate="G$1" pin="A6" pad="AD6"/>
-<connect gate="G$1" pin="A7" pad="AD7"/>
-<connect gate="G$1" pin="D10" pad="D10"/>
-<connect gate="G$1" pin="D11" pad="D11"/>
-<connect gate="G$1" pin="D12" pad="D12"/>
-<connect gate="G$1" pin="D13" pad="D13"/>
-<connect gate="G$1" pin="D2" pad="D2"/>
-<connect gate="G$1" pin="D3" pad="D3"/>
-<connect gate="G$1" pin="D4" pad="D4"/>
-<connect gate="G$1" pin="D5" pad="D5"/>
-<connect gate="G$1" pin="D6" pad="D6"/>
-<connect gate="G$1" pin="D7" pad="D7 IO7@0"/>
-<connect gate="G$1" pin="D8" pad="D8"/>
-<connect gate="G$1" pin="D9" pad="D9"/>
-<connect gate="G$1" pin="GND" pad="GND@0 GND@1 GND@3 GND@4"/>
-<connect gate="G$1" pin="RES" pad="RES RES@1"/>
-<connect gate="G$1" pin="RX" pad="RX RX@0"/>
-<connect gate="G$1" pin="TX" pad="TX@0 TX@1"/>
-<connect gate="G$1" pin="VIN" pad="VIN"/>
+<connect gate="A" pin="5V" pad="5V 5V@0 5V@1"/>
+<connect gate="A" pin="A0" pad="AD0"/>
+<connect gate="A" pin="A1" pad="AD1"/>
+<connect gate="A" pin="A2" pad="AD2"/>
+<connect gate="A" pin="A3" pad="AD3"/>
+<connect gate="A" pin="A4" pad="AD4"/>
+<connect gate="A" pin="A5" pad="AD5"/>
+<connect gate="A" pin="A6" pad="AD6"/>
+<connect gate="A" pin="A7" pad="AD7"/>
+<connect gate="A" pin="D10" pad="D10"/>
+<connect gate="A" pin="D11" pad="D11"/>
+<connect gate="A" pin="D12" pad="D12"/>
+<connect gate="A" pin="D13" pad="D13"/>
+<connect gate="A" pin="D2" pad="D2"/>
+<connect gate="A" pin="D3" pad="D3"/>
+<connect gate="A" pin="D4" pad="D4"/>
+<connect gate="A" pin="D5" pad="D5"/>
+<connect gate="A" pin="D6" pad="D6"/>
+<connect gate="A" pin="D7" pad="D7 IO7@0"/>
+<connect gate="A" pin="D8" pad="D8"/>
+<connect gate="A" pin="D9" pad="D9"/>
+<connect gate="A" pin="GND" pad="GND@0 GND@1 GND@3 GND@4"/>
+<connect gate="A" pin="RES" pad="RES RES@1"/>
+<connect gate="A" pin="RX" pad="RX RX@0"/>
+<connect gate="A" pin="TX" pad="TX@0 TX@1"/>
+<connect gate="A" pin="VIN" pad="VIN"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24345,32 +24217,32 @@ Source: DCJ0202.pdf</description>
 </device>
 <device name="DAVESROBOT" package="ARDUINO_PRO_MINI_DAVEK">
 <connects>
-<connect gate="G$1" pin="5V" pad="5V"/>
-<connect gate="G$1" pin="A0" pad="AD0"/>
-<connect gate="G$1" pin="A1" pad="AD1"/>
-<connect gate="G$1" pin="A2" pad="AD2"/>
-<connect gate="G$1" pin="A3" pad="AD3"/>
-<connect gate="G$1" pin="A4" pad="AD4"/>
-<connect gate="G$1" pin="A5" pad="AD5"/>
-<connect gate="G$1" pin="A6" pad="AD6"/>
-<connect gate="G$1" pin="A7" pad="AD7"/>
-<connect gate="G$1" pin="D10" pad="D10"/>
-<connect gate="G$1" pin="D11" pad="D11"/>
-<connect gate="G$1" pin="D12" pad="D12"/>
-<connect gate="G$1" pin="D13" pad="D13"/>
-<connect gate="G$1" pin="D2" pad="D2"/>
-<connect gate="G$1" pin="D3" pad="D3"/>
-<connect gate="G$1" pin="D4" pad="D4"/>
-<connect gate="G$1" pin="D5" pad="D5"/>
-<connect gate="G$1" pin="D6" pad="D6"/>
-<connect gate="G$1" pin="D7" pad="D7"/>
-<connect gate="G$1" pin="D8" pad="D8"/>
-<connect gate="G$1" pin="D9" pad="D9"/>
-<connect gate="G$1" pin="GND" pad="GND@1 GND@2 GND@4"/>
-<connect gate="G$1" pin="RES" pad="RES RES@1"/>
-<connect gate="G$1" pin="RX" pad="RX"/>
-<connect gate="G$1" pin="TX" pad="TX@1" route="any"/>
-<connect gate="G$1" pin="VIN" pad="VIN"/>
+<connect gate="A" pin="5V" pad="5V"/>
+<connect gate="A" pin="A0" pad="AD0"/>
+<connect gate="A" pin="A1" pad="AD1"/>
+<connect gate="A" pin="A2" pad="AD2"/>
+<connect gate="A" pin="A3" pad="AD3"/>
+<connect gate="A" pin="A4" pad="AD4"/>
+<connect gate="A" pin="A5" pad="AD5"/>
+<connect gate="A" pin="A6" pad="AD6"/>
+<connect gate="A" pin="A7" pad="AD7"/>
+<connect gate="A" pin="D10" pad="D10"/>
+<connect gate="A" pin="D11" pad="D11"/>
+<connect gate="A" pin="D12" pad="D12"/>
+<connect gate="A" pin="D13" pad="D13"/>
+<connect gate="A" pin="D2" pad="D2"/>
+<connect gate="A" pin="D3" pad="D3"/>
+<connect gate="A" pin="D4" pad="D4"/>
+<connect gate="A" pin="D5" pad="D5"/>
+<connect gate="A" pin="D6" pad="D6"/>
+<connect gate="A" pin="D7" pad="D7"/>
+<connect gate="A" pin="D8" pad="D8"/>
+<connect gate="A" pin="D9" pad="D9"/>
+<connect gate="A" pin="GND" pad="GND@1 GND@2 GND@4"/>
+<connect gate="A" pin="RES" pad="RES RES@1"/>
+<connect gate="A" pin="RX" pad="RX"/>
+<connect gate="A" pin="TX" pad="TX@1" route="any"/>
+<connect gate="A" pin="VIN" pad="VIN"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24378,32 +24250,32 @@ Source: DCJ0202.pdf</description>
 </device>
 <device name="SPARKFUN-V2" package="ARDUINO-SPARKFUN-V2-PRO-MINI">
 <connects>
-<connect gate="G$1" pin="5V" pad="VCC"/>
-<connect gate="G$1" pin="A0" pad="A0"/>
-<connect gate="G$1" pin="A1" pad="A1"/>
-<connect gate="G$1" pin="A2" pad="A2"/>
-<connect gate="G$1" pin="A3" pad="A3"/>
-<connect gate="G$1" pin="A4" pad="A4"/>
-<connect gate="G$1" pin="A5" pad="A5"/>
-<connect gate="G$1" pin="A6" pad="A6"/>
-<connect gate="G$1" pin="A7" pad="A7"/>
-<connect gate="G$1" pin="D10" pad="D10"/>
-<connect gate="G$1" pin="D11" pad="D11"/>
-<connect gate="G$1" pin="D12" pad="D12"/>
-<connect gate="G$1" pin="D13" pad="D13"/>
-<connect gate="G$1" pin="D2" pad="D2"/>
-<connect gate="G$1" pin="D3" pad="D3"/>
-<connect gate="G$1" pin="D4" pad="D4"/>
-<connect gate="G$1" pin="D5" pad="D5"/>
-<connect gate="G$1" pin="D6" pad="D6"/>
-<connect gate="G$1" pin="D7" pad="D7"/>
-<connect gate="G$1" pin="D8" pad="D8"/>
-<connect gate="G$1" pin="D9" pad="D9"/>
-<connect gate="G$1" pin="GND" pad="GND GND@2"/>
-<connect gate="G$1" pin="RES" pad="RST RST@2"/>
-<connect gate="G$1" pin="RX" pad="RX"/>
-<connect gate="G$1" pin="TX" pad="TX"/>
-<connect gate="G$1" pin="VIN" pad="VIN"/>
+<connect gate="A" pin="5V" pad="VCC"/>
+<connect gate="A" pin="A0" pad="A0"/>
+<connect gate="A" pin="A1" pad="A1"/>
+<connect gate="A" pin="A2" pad="A2"/>
+<connect gate="A" pin="A3" pad="A3"/>
+<connect gate="A" pin="A4" pad="A4"/>
+<connect gate="A" pin="A5" pad="A5"/>
+<connect gate="A" pin="A6" pad="A6"/>
+<connect gate="A" pin="A7" pad="A7"/>
+<connect gate="A" pin="D10" pad="D10"/>
+<connect gate="A" pin="D11" pad="D11"/>
+<connect gate="A" pin="D12" pad="D12"/>
+<connect gate="A" pin="D13" pad="D13"/>
+<connect gate="A" pin="D2" pad="D2"/>
+<connect gate="A" pin="D3" pad="D3"/>
+<connect gate="A" pin="D4" pad="D4"/>
+<connect gate="A" pin="D5" pad="D5"/>
+<connect gate="A" pin="D6" pad="D6"/>
+<connect gate="A" pin="D7" pad="D7"/>
+<connect gate="A" pin="D8" pad="D8"/>
+<connect gate="A" pin="D9" pad="D9"/>
+<connect gate="A" pin="GND" pad="GND GND@2"/>
+<connect gate="A" pin="RES" pad="RST RST@2"/>
+<connect gate="A" pin="RX" pad="RX"/>
+<connect gate="A" pin="TX" pad="TX"/>
+<connect gate="A" pin="VIN" pad="VIN"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24475,14 +24347,14 @@ Source: DCJ0202.pdf</description>
 <deviceset name="JUMPER-3-DEFAULT" prefix="J" uservalue="yes">
 <description>Jumper switch 2 x 2.5 mm</description>
 <gates>
-<gate name="G$1" symbol="JUMPER-3-PIN" x="0" y="0"/>
+<gate name="J" symbol="JUMPER-3-PIN" x="0" y="0"/>
 </gates>
 <devices>
 <device name="X2MM" package="04C">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="J" pin="1" pad="1"/>
+<connect gate="J" pin="2" pad="2"/>
+<connect gate="J" pin="3" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24490,9 +24362,9 @@ Source: DCJ0202.pdf</description>
 </device>
 <device name="X5MM" package="05C">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="J" pin="1" pad="1"/>
+<connect gate="J" pin="2" pad="2"/>
+<connect gate="J" pin="3" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24500,9 +24372,9 @@ Source: DCJ0202.pdf</description>
 </device>
 <device name="2.54MM" package="J3-254">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="J" pin="1" pad="1"/>
+<connect gate="J" pin="2" pad="2"/>
+<connect gate="J" pin="3" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24590,7 +24462,7 @@ Source: DCJ0202.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="R*" prefix="R" uservalue="yes">
-<description>&lt;b&gt;Resistor&lt;/b&gt;
+<description>Resistor
 Basic schematic elements and footprints for 0603, 1206, and PTH 1/10th watt (small) resistors.</description>
 <gates>
 <gate name="R" symbol="RESISTOR" x="0" y="0"/>
@@ -24680,8 +24552,7 @@ Basic schematic elements and footprints for 0603, 1206, and PTH 1/10th watt (sma
 </devices>
 </deviceset>
 <deviceset name="MOSFET-N-*-?" prefix="Q" uservalue="yes">
-<description>CJ2302：SMD MOSFET N-CH 20V-2.1A&lt;br&gt;
-DMN4468 - SO8 30v/10A</description>
+<description>CJ2302：SMD MOSFET N-CH 20V-2.1A DMN4468 - SO8 30v/10A</description>
 <gates>
 <gate name="Q" symbol="MOSFET-N" x="0" y="0"/>
 </gates>
@@ -24756,19 +24627,19 @@ DMN4468 - SO8 30v/10A</description>
 </devices>
 </deviceset>
 <deviceset name="VREG-?-*" prefix="VR" uservalue="yes">
-<description>&lt;b&gt;Voltage Regulator&lt;/b&gt;
-Standard linear regulator.&lt;p&gt;
-7805 uses IGO pinout&lt;p&gt;
-LM1117 uses GOI pinout&lt;p&gt;</description>
+<description>Voltage Regulator
+Standard linear regulator.
+7805 uses IGO pinout
+LM1117 uses GOI pinout</description>
 <gates>
-<gate name="G$1" symbol="78XX" x="0" y="0"/>
+<gate name="VR" symbol="78XX" x="0" y="0"/>
 </gates>
 <devices>
 <device name="PTH-FLAT" package="TO-220">
 <connects>
-<connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="IN" pad="IN"/>
-<connect gate="G$1" pin="OUT" pad="OUT"/>
+<connect gate="VR" pin="GND" pad="GND"/>
+<connect gate="VR" pin="IN" pad="IN"/>
+<connect gate="VR" pin="OUT" pad="OUT"/>
 </connects>
 <technologies>
 <technology name="12"/>
@@ -24778,9 +24649,9 @@ LM1117 uses GOI pinout&lt;p&gt;</description>
 </device>
 <device name="PTH-RA" package="TO-220-RA-SINK">
 <connects>
-<connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="IN" pad="IN"/>
-<connect gate="G$1" pin="OUT" pad="OUT"/>
+<connect gate="VR" pin="GND" pad="GND"/>
+<connect gate="VR" pin="IN" pad="IN"/>
+<connect gate="VR" pin="OUT" pad="OUT"/>
 </connects>
 <technologies>
 <technology name="12"/>
@@ -24790,9 +24661,9 @@ LM1117 uses GOI pinout&lt;p&gt;</description>
 </device>
 <device name="TO-92" package="TO-92">
 <connects>
-<connect gate="G$1" pin="GND" pad="1"/>
-<connect gate="G$1" pin="IN" pad="2"/>
-<connect gate="G$1" pin="OUT" pad="3"/>
+<connect gate="VR" pin="GND" pad="1"/>
+<connect gate="VR" pin="IN" pad="2"/>
+<connect gate="VR" pin="OUT" pad="3"/>
 </connects>
 <technologies>
 <technology name="12"/>
@@ -24802,9 +24673,9 @@ LM1117 uses GOI pinout&lt;p&gt;</description>
 </device>
 <device name="DPAK" package="TO-252">
 <connects>
-<connect gate="G$1" pin="GND" pad="2"/>
-<connect gate="G$1" pin="IN" pad="1"/>
-<connect gate="G$1" pin="OUT" pad="3"/>
+<connect gate="VR" pin="GND" pad="2"/>
+<connect gate="VR" pin="IN" pad="1"/>
+<connect gate="VR" pin="OUT" pad="3"/>
 </connects>
 <technologies>
 <technology name="12"/>
@@ -24814,9 +24685,9 @@ LM1117 uses GOI pinout&lt;p&gt;</description>
 </device>
 <device name="IGO" package="SOT223">
 <connects>
-<connect gate="G$1" pin="GND" pad="2 4"/>
-<connect gate="G$1" pin="IN" pad="1"/>
-<connect gate="G$1" pin="OUT" pad="3"/>
+<connect gate="VR" pin="GND" pad="2 4"/>
+<connect gate="VR" pin="IN" pad="1"/>
+<connect gate="VR" pin="OUT" pad="3"/>
 </connects>
 <technologies>
 <technology name="3.3"/>
@@ -24825,9 +24696,9 @@ LM1117 uses GOI pinout&lt;p&gt;</description>
 </device>
 <device name="LM2596" package="LM2596-MODULE">
 <connects>
-<connect gate="G$1" pin="GND" pad="GND@1 GND@2 GND@3 GND@4"/>
-<connect gate="G$1" pin="IN" pad="IN+@1 IN+@2"/>
-<connect gate="G$1" pin="OUT" pad="OUT+@1 OUT+@2"/>
+<connect gate="VR" pin="GND" pad="GND@1 GND@2 GND@3 GND@4"/>
+<connect gate="VR" pin="IN" pad="IN+@1 IN+@2"/>
+<connect gate="VR" pin="OUT" pad="OUT+@1 OUT+@2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24835,9 +24706,9 @@ LM1117 uses GOI pinout&lt;p&gt;</description>
 </device>
 <device name="23" package="SOT23">
 <connects>
-<connect gate="G$1" pin="GND" pad="3"/>
-<connect gate="G$1" pin="IN" pad="2"/>
-<connect gate="G$1" pin="OUT" pad="1"/>
+<connect gate="VR" pin="GND" pad="3"/>
+<connect gate="VR" pin="IN" pad="2"/>
+<connect gate="VR" pin="OUT" pad="1"/>
 </connects>
 <technologies>
 <technology name="3.3"/>
@@ -24846,9 +24717,9 @@ LM1117 uses GOI pinout&lt;p&gt;</description>
 </device>
 <device name="GOI" package="SOT223">
 <connects>
-<connect gate="G$1" pin="GND" pad="1"/>
-<connect gate="G$1" pin="IN" pad="3"/>
-<connect gate="G$1" pin="OUT" pad="2 4"/>
+<connect gate="VR" pin="GND" pad="1"/>
+<connect gate="VR" pin="IN" pad="3"/>
+<connect gate="VR" pin="OUT" pad="2 4"/>
 </connects>
 <technologies>
 <technology name="3.3"/>
@@ -24858,18 +24729,18 @@ LM1117 uses GOI pinout&lt;p&gt;</description>
 </devices>
 </deviceset>
 <deviceset name="VREG_LM1117" prefix="VR" uservalue="yes">
-<description>&lt;b&gt;Voltage Regulator LM1117&lt;/b&gt;
+<description>Voltage Regulator LM1117
 Standard adjustable voltage regulator but in SMD form. Spark Fun Electronics SKU : COM-00595</description>
 <gates>
-<gate name="G$1" symbol="78ADJ" x="0" y="0"/>
+<gate name="VR" symbol="78ADJ" x="0" y="0"/>
 </gates>
 <devices>
 <device name="SOT223" package="SOT223">
 <connects>
-<connect gate="G$1" pin="ADJ" pad="1"/>
-<connect gate="G$1" pin="IN" pad="3"/>
-<connect gate="G$1" pin="OUT" pad="2"/>
-<connect gate="G$1" pin="OUT@1" pad="4"/>
+<connect gate="VR" pin="ADJ" pad="1"/>
+<connect gate="VR" pin="IN" pad="3"/>
+<connect gate="VR" pin="OUT" pad="2"/>
+<connect gate="VR" pin="OUT@1" pad="4"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24878,7 +24749,7 @@ Standard adjustable voltage regulator but in SMD form. Spark Fun Electronics SKU
 </devices>
 </deviceset>
 <deviceset name="JUMPER-2" prefix="JP" uservalue="yes">
-<description>&lt;b&gt;Jumper&lt;/b&gt;
+<description>Jumper
 Basic 0.1" spaced jumper. Use with breakaway headers.</description>
 <gates>
 <gate name="A" symbol="JUMPER-2" x="2.54" y="0"/>
@@ -24924,14 +24795,14 @@ Basic 0.1" spaced jumper. Use with breakaway headers.</description>
 </deviceset>
 <deviceset name="JUMPER-3" prefix="JP" uservalue="yes">
 <gates>
-<gate name="G$1" symbol="JUMPER-3" x="-2.54" y="0"/>
+<gate name="J" symbol="JUMPER-3" x="-2.54" y="0"/>
 </gates>
 <devices>
 <device name="SMD" package="SJ_3">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="J" pin="1" pad="1"/>
+<connect gate="J" pin="2" pad="2"/>
+<connect gate="J" pin="3" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24939,9 +24810,9 @@ Basic 0.1" spaced jumper. Use with breakaway headers.</description>
 </device>
 <device name="PTH-LOCK" package="1X03">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="J" pin="1" pad="1"/>
+<connect gate="J" pin="2" pad="2"/>
+<connect gate="J" pin="3" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24949,9 +24820,9 @@ Basic 0.1" spaced jumper. Use with breakaway headers.</description>
 </device>
 <device name="1-2" package="SJ_3_PASTE1&amp;2">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="J" pin="1" pad="1"/>
+<connect gate="J" pin="2" pad="2"/>
+<connect gate="J" pin="3" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24959,9 +24830,9 @@ Basic 0.1" spaced jumper. Use with breakaway headers.</description>
 </device>
 <device name="2-3" package="SJ_3_PASTE2&amp;3">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="J" pin="1" pad="1"/>
+<connect gate="J" pin="2" pad="2"/>
+<connect gate="J" pin="3" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -24973,27 +24844,27 @@ Basic 0.1" spaced jumper. Use with breakaway headers.</description>
 <description>Remote 8-Bit I/O Expander for I²C Bus</description>
 <gates>
 <gate name="PWR" symbol="PWRN" x="0" y="27.94" addlevel="request"/>
-<gate name="G$1" symbol="PCF8574" x="0" y="0"/>
+<gate name="U" symbol="PCF8574" x="0" y="0"/>
 </gates>
 <devices>
 <device name="P" package="DIL16">
 <connects>
-<connect gate="G$1" pin="/INT" pad="13"/>
-<connect gate="G$1" pin="A0" pad="1"/>
-<connect gate="G$1" pin="A1" pad="2"/>
-<connect gate="G$1" pin="A2" pad="3"/>
-<connect gate="G$1" pin="P0" pad="4"/>
-<connect gate="G$1" pin="P1" pad="5"/>
-<connect gate="G$1" pin="P2" pad="6"/>
-<connect gate="G$1" pin="P3" pad="7"/>
-<connect gate="G$1" pin="P4" pad="9"/>
-<connect gate="G$1" pin="P5" pad="10"/>
-<connect gate="G$1" pin="P6" pad="11"/>
-<connect gate="G$1" pin="P7" pad="12"/>
-<connect gate="G$1" pin="SCL" pad="14"/>
-<connect gate="G$1" pin="SDA" pad="15"/>
 <connect gate="PWR" pin="GND" pad="8"/>
 <connect gate="PWR" pin="VCC" pad="16"/>
+<connect gate="U" pin="/INT" pad="13"/>
+<connect gate="U" pin="A0" pad="1"/>
+<connect gate="U" pin="A1" pad="2"/>
+<connect gate="U" pin="A2" pad="3"/>
+<connect gate="U" pin="P0" pad="4"/>
+<connect gate="U" pin="P1" pad="5"/>
+<connect gate="U" pin="P2" pad="6"/>
+<connect gate="U" pin="P3" pad="7"/>
+<connect gate="U" pin="P4" pad="9"/>
+<connect gate="U" pin="P5" pad="10"/>
+<connect gate="U" pin="P6" pad="11"/>
+<connect gate="U" pin="P7" pad="12"/>
+<connect gate="U" pin="SCL" pad="14"/>
+<connect gate="U" pin="SDA" pad="15"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25001,22 +24872,22 @@ Basic 0.1" spaced jumper. Use with breakaway headers.</description>
 </device>
 <device name="AP" package="DIL16">
 <connects>
-<connect gate="G$1" pin="/INT" pad="13"/>
-<connect gate="G$1" pin="A0" pad="1"/>
-<connect gate="G$1" pin="A1" pad="2"/>
-<connect gate="G$1" pin="A2" pad="3"/>
-<connect gate="G$1" pin="P0" pad="4"/>
-<connect gate="G$1" pin="P1" pad="5"/>
-<connect gate="G$1" pin="P2" pad="6"/>
-<connect gate="G$1" pin="P3" pad="7"/>
-<connect gate="G$1" pin="P4" pad="9"/>
-<connect gate="G$1" pin="P5" pad="10"/>
-<connect gate="G$1" pin="P6" pad="11"/>
-<connect gate="G$1" pin="P7" pad="12"/>
-<connect gate="G$1" pin="SCL" pad="14"/>
-<connect gate="G$1" pin="SDA" pad="15"/>
 <connect gate="PWR" pin="GND" pad="8"/>
 <connect gate="PWR" pin="VCC" pad="16"/>
+<connect gate="U" pin="/INT" pad="13"/>
+<connect gate="U" pin="A0" pad="1"/>
+<connect gate="U" pin="A1" pad="2"/>
+<connect gate="U" pin="A2" pad="3"/>
+<connect gate="U" pin="P0" pad="4"/>
+<connect gate="U" pin="P1" pad="5"/>
+<connect gate="U" pin="P2" pad="6"/>
+<connect gate="U" pin="P3" pad="7"/>
+<connect gate="U" pin="P4" pad="9"/>
+<connect gate="U" pin="P5" pad="10"/>
+<connect gate="U" pin="P6" pad="11"/>
+<connect gate="U" pin="P7" pad="12"/>
+<connect gate="U" pin="SCL" pad="14"/>
+<connect gate="U" pin="SDA" pad="15"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25024,22 +24895,22 @@ Basic 0.1" spaced jumper. Use with breakaway headers.</description>
 </device>
 <device name="T" package="SO16">
 <connects>
-<connect gate="G$1" pin="/INT" pad="13"/>
-<connect gate="G$1" pin="A0" pad="1"/>
-<connect gate="G$1" pin="A1" pad="2"/>
-<connect gate="G$1" pin="A2" pad="3"/>
-<connect gate="G$1" pin="P0" pad="4"/>
-<connect gate="G$1" pin="P1" pad="5"/>
-<connect gate="G$1" pin="P2" pad="6"/>
-<connect gate="G$1" pin="P3" pad="7"/>
-<connect gate="G$1" pin="P4" pad="9"/>
-<connect gate="G$1" pin="P5" pad="10"/>
-<connect gate="G$1" pin="P6" pad="11"/>
-<connect gate="G$1" pin="P7" pad="12"/>
-<connect gate="G$1" pin="SCL" pad="14"/>
-<connect gate="G$1" pin="SDA" pad="15"/>
 <connect gate="PWR" pin="GND" pad="8"/>
 <connect gate="PWR" pin="VCC" pad="16"/>
+<connect gate="U" pin="/INT" pad="13"/>
+<connect gate="U" pin="A0" pad="1"/>
+<connect gate="U" pin="A1" pad="2"/>
+<connect gate="U" pin="A2" pad="3"/>
+<connect gate="U" pin="P0" pad="4"/>
+<connect gate="U" pin="P1" pad="5"/>
+<connect gate="U" pin="P2" pad="6"/>
+<connect gate="U" pin="P3" pad="7"/>
+<connect gate="U" pin="P4" pad="9"/>
+<connect gate="U" pin="P5" pad="10"/>
+<connect gate="U" pin="P6" pad="11"/>
+<connect gate="U" pin="P7" pad="12"/>
+<connect gate="U" pin="SCL" pad="14"/>
+<connect gate="U" pin="SDA" pad="15"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25047,22 +24918,22 @@ Basic 0.1" spaced jumper. Use with breakaway headers.</description>
 </device>
 <device name="AT" package="SO16">
 <connects>
-<connect gate="G$1" pin="/INT" pad="13"/>
-<connect gate="G$1" pin="A0" pad="1"/>
-<connect gate="G$1" pin="A1" pad="2"/>
-<connect gate="G$1" pin="A2" pad="3"/>
-<connect gate="G$1" pin="P0" pad="4"/>
-<connect gate="G$1" pin="P1" pad="5"/>
-<connect gate="G$1" pin="P2" pad="6"/>
-<connect gate="G$1" pin="P3" pad="7"/>
-<connect gate="G$1" pin="P4" pad="9"/>
-<connect gate="G$1" pin="P5" pad="10"/>
-<connect gate="G$1" pin="P6" pad="11"/>
-<connect gate="G$1" pin="P7" pad="12"/>
-<connect gate="G$1" pin="SCL" pad="14"/>
-<connect gate="G$1" pin="SDA" pad="15"/>
 <connect gate="PWR" pin="GND" pad="8"/>
 <connect gate="PWR" pin="VCC" pad="16"/>
+<connect gate="U" pin="/INT" pad="13"/>
+<connect gate="U" pin="A0" pad="1"/>
+<connect gate="U" pin="A1" pad="2"/>
+<connect gate="U" pin="A2" pad="3"/>
+<connect gate="U" pin="P0" pad="4"/>
+<connect gate="U" pin="P1" pad="5"/>
+<connect gate="U" pin="P2" pad="6"/>
+<connect gate="U" pin="P3" pad="7"/>
+<connect gate="U" pin="P4" pad="9"/>
+<connect gate="U" pin="P5" pad="10"/>
+<connect gate="U" pin="P6" pad="11"/>
+<connect gate="U" pin="P7" pad="12"/>
+<connect gate="U" pin="SCL" pad="14"/>
+<connect gate="U" pin="SDA" pad="15"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25070,22 +24941,22 @@ Basic 0.1" spaced jumper. Use with breakaway headers.</description>
 </device>
 <device name="L" package="SO16L">
 <connects>
-<connect gate="G$1" pin="/INT" pad="13"/>
-<connect gate="G$1" pin="A0" pad="1"/>
-<connect gate="G$1" pin="A1" pad="2"/>
-<connect gate="G$1" pin="A2" pad="3"/>
-<connect gate="G$1" pin="P0" pad="4"/>
-<connect gate="G$1" pin="P1" pad="5"/>
-<connect gate="G$1" pin="P2" pad="6"/>
-<connect gate="G$1" pin="P3" pad="7"/>
-<connect gate="G$1" pin="P4" pad="9"/>
-<connect gate="G$1" pin="P5" pad="10"/>
-<connect gate="G$1" pin="P6" pad="11"/>
-<connect gate="G$1" pin="P7" pad="12"/>
-<connect gate="G$1" pin="SCL" pad="14"/>
-<connect gate="G$1" pin="SDA" pad="15"/>
 <connect gate="PWR" pin="GND" pad="16"/>
 <connect gate="PWR" pin="VCC" pad="8"/>
+<connect gate="U" pin="/INT" pad="13"/>
+<connect gate="U" pin="A0" pad="1"/>
+<connect gate="U" pin="A1" pad="2"/>
+<connect gate="U" pin="A2" pad="3"/>
+<connect gate="U" pin="P0" pad="4"/>
+<connect gate="U" pin="P1" pad="5"/>
+<connect gate="U" pin="P2" pad="6"/>
+<connect gate="U" pin="P3" pad="7"/>
+<connect gate="U" pin="P4" pad="9"/>
+<connect gate="U" pin="P5" pad="10"/>
+<connect gate="U" pin="P6" pad="11"/>
+<connect gate="U" pin="P7" pad="12"/>
+<connect gate="U" pin="SCL" pad="14"/>
+<connect gate="U" pin="SDA" pad="15"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25093,22 +24964,22 @@ Basic 0.1" spaced jumper. Use with breakaway headers.</description>
 </device>
 <device name="DW" package="SO-16DW">
 <connects>
-<connect gate="G$1" pin="/INT" pad="13"/>
-<connect gate="G$1" pin="A0" pad="1"/>
-<connect gate="G$1" pin="A1" pad="2"/>
-<connect gate="G$1" pin="A2" pad="3"/>
-<connect gate="G$1" pin="P0" pad="4"/>
-<connect gate="G$1" pin="P1" pad="5"/>
-<connect gate="G$1" pin="P2" pad="6"/>
-<connect gate="G$1" pin="P3" pad="7"/>
-<connect gate="G$1" pin="P4" pad="9"/>
-<connect gate="G$1" pin="P5" pad="10"/>
-<connect gate="G$1" pin="P6" pad="11"/>
-<connect gate="G$1" pin="P7" pad="12"/>
-<connect gate="G$1" pin="SCL" pad="14"/>
-<connect gate="G$1" pin="SDA" pad="15"/>
 <connect gate="PWR" pin="GND" pad="8"/>
 <connect gate="PWR" pin="VCC" pad="16"/>
+<connect gate="U" pin="/INT" pad="13"/>
+<connect gate="U" pin="A0" pad="1"/>
+<connect gate="U" pin="A1" pad="2"/>
+<connect gate="U" pin="A2" pad="3"/>
+<connect gate="U" pin="P0" pad="4"/>
+<connect gate="U" pin="P1" pad="5"/>
+<connect gate="U" pin="P2" pad="6"/>
+<connect gate="U" pin="P3" pad="7"/>
+<connect gate="U" pin="P4" pad="9"/>
+<connect gate="U" pin="P5" pad="10"/>
+<connect gate="U" pin="P6" pad="11"/>
+<connect gate="U" pin="P7" pad="12"/>
+<connect gate="U" pin="SCL" pad="14"/>
+<connect gate="U" pin="SDA" pad="15"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25116,22 +24987,22 @@ Basic 0.1" spaced jumper. Use with breakaway headers.</description>
 </device>
 <device name="ADW" package="SO-16DW">
 <connects>
-<connect gate="G$1" pin="/INT" pad="13"/>
-<connect gate="G$1" pin="A0" pad="1"/>
-<connect gate="G$1" pin="A1" pad="2"/>
-<connect gate="G$1" pin="A2" pad="3"/>
-<connect gate="G$1" pin="P0" pad="4"/>
-<connect gate="G$1" pin="P1" pad="5"/>
-<connect gate="G$1" pin="P2" pad="6"/>
-<connect gate="G$1" pin="P3" pad="7"/>
-<connect gate="G$1" pin="P4" pad="9"/>
-<connect gate="G$1" pin="P5" pad="10"/>
-<connect gate="G$1" pin="P6" pad="11"/>
-<connect gate="G$1" pin="P7" pad="12"/>
-<connect gate="G$1" pin="SCL" pad="14"/>
-<connect gate="G$1" pin="SDA" pad="15"/>
 <connect gate="PWR" pin="GND" pad="8"/>
 <connect gate="PWR" pin="VCC" pad="16"/>
+<connect gate="U" pin="/INT" pad="13"/>
+<connect gate="U" pin="A0" pad="1"/>
+<connect gate="U" pin="A1" pad="2"/>
+<connect gate="U" pin="A2" pad="3"/>
+<connect gate="U" pin="P0" pad="4"/>
+<connect gate="U" pin="P1" pad="5"/>
+<connect gate="U" pin="P2" pad="6"/>
+<connect gate="U" pin="P3" pad="7"/>
+<connect gate="U" pin="P4" pad="9"/>
+<connect gate="U" pin="P5" pad="10"/>
+<connect gate="U" pin="P6" pad="11"/>
+<connect gate="U" pin="P7" pad="12"/>
+<connect gate="U" pin="SCL" pad="14"/>
+<connect gate="U" pin="SDA" pad="15"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25140,14 +25011,7 @@ Basic 0.1" spaced jumper. Use with breakaway headers.</description>
 </devices>
 </deviceset>
 <deviceset name="CONNECTOR-M06" prefix="CON" uservalue="yes">
-<description>&lt;b&gt;Header 6&lt;/b&gt;&lt;br&gt;
-Standard 6-pin 0.1" header. Use with straight break away headers (SKU : PRT-00116), right angle break away headers (PRT-00553), swiss pins (PRT-00743), machine pins (PRT-00117), and female headers (PRT-00115). Molex polarized connector foot print use with SKU : PRT-08094 with associated crimp pins and housings.&lt;p&gt;
-
-
-
-NOTES ON THE VARIANTS LOCK and LOCK_LONGPADS...
-This footprint was designed to help hold the alignment of a through-hole component (i.e.  6-pin header) while soldering it into place. You may notice that each hole has been shifted either up or down by 0.005 of an inch from it's more standard position (which is a perfectly straight line).  This slight alteration caused the pins (the squares in the middle) to touch the edges of the holes.  Because they are alternating, it causes a "brace" to hold the component in place.  0.005 has proven to be the perfect amount of "off-center" position when using our standard breakaway headers. Although looks a little odd when you look at the bare footprint, once you have a header in there, the alteration is very hard to notice.  Also,if you push a header all the way into place, it is covered up entirely on the bottom side.  This idea of altering the position of holes to aid alignment 
-will be further integrated into the Sparkfun Library for other footprints.  It can help hold any component with 3 or more connection pins.</description>
+<description>Header 6  Standard 6-pin 0.1" header</description>
 <gates>
 <gate name="J" symbol="M06" x="-2.54" y="0"/>
 </gates>
@@ -25495,17 +25359,17 @@ will be further integrated into the Sparkfun Library for other footprints.  It c
 </devices>
 </deviceset>
 <deviceset name="NPN" prefix="Q" uservalue="yes">
-<description>&lt;b&gt;Transistor NPN&lt;/b&gt;
+<description>Transistor NPN
 BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double check BCE configuration again layout.</description>
 <gates>
-<gate name="G$1" symbol="NPN-1" x="0" y="0"/>
+<gate name="Q" symbol="NPN-1" x="0" y="0"/>
 </gates>
 <devices>
 <device name="-SOT23" package="SOT23">
 <connects>
-<connect gate="G$1" pin="B" pad="1"/>
-<connect gate="G$1" pin="C" pad="3"/>
-<connect gate="G$1" pin="E" pad="2"/>
+<connect gate="Q" pin="B" pad="1"/>
+<connect gate="Q" pin="C" pad="3"/>
+<connect gate="Q" pin="E" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25514,9 +25378,9 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 </device>
 <device name="-SOT23-3" package="SOT23-3">
 <connects>
-<connect gate="G$1" pin="B" pad="1"/>
-<connect gate="G$1" pin="C" pad="3"/>
-<connect gate="G$1" pin="E" pad="2"/>
+<connect gate="Q" pin="B" pad="1"/>
+<connect gate="Q" pin="C" pad="3"/>
+<connect gate="Q" pin="E" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25524,9 +25388,9 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 </device>
 <device name="-TO92-INLINE" package="TO-92">
 <connects>
-<connect gate="G$1" pin="B" pad="2"/>
-<connect gate="G$1" pin="C" pad="3"/>
-<connect gate="G$1" pin="E" pad="1"/>
+<connect gate="Q" pin="B" pad="2"/>
+<connect gate="Q" pin="C" pad="3"/>
+<connect gate="Q" pin="E" pad="1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25534,9 +25398,9 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 </device>
 <device name="-SOT223" package="SOT223">
 <connects>
-<connect gate="G$1" pin="B" pad="1"/>
-<connect gate="G$1" pin="C" pad="2"/>
-<connect gate="G$1" pin="E" pad="3"/>
+<connect gate="Q" pin="B" pad="1"/>
+<connect gate="Q" pin="C" pad="2"/>
+<connect gate="Q" pin="E" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25544,9 +25408,9 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 </device>
 <device name="-SOT89" package="SOT89">
 <connects>
-<connect gate="G$1" pin="B" pad="1"/>
-<connect gate="G$1" pin="C" pad="2"/>
-<connect gate="G$1" pin="E" pad="3"/>
+<connect gate="Q" pin="B" pad="1"/>
+<connect gate="Q" pin="C" pad="2"/>
+<connect gate="Q" pin="E" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25554,9 +25418,9 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 </device>
 <device name="-TO220H" package="TO220">
 <connects>
-<connect gate="G$1" pin="B" pad="1"/>
-<connect gate="G$1" pin="C" pad="2"/>
-<connect gate="G$1" pin="E" pad="3"/>
+<connect gate="Q" pin="B" pad="1"/>
+<connect gate="Q" pin="C" pad="2"/>
+<connect gate="Q" pin="E" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25564,9 +25428,9 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 </device>
 <device name="-TO220V" package="TO220CS">
 <connects>
-<connect gate="G$1" pin="B" pad="1"/>
-<connect gate="G$1" pin="C" pad="2"/>
-<connect gate="G$1" pin="E" pad="3"/>
+<connect gate="Q" pin="B" pad="1"/>
+<connect gate="Q" pin="C" pad="2"/>
+<connect gate="Q" pin="E" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25574,9 +25438,9 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 </device>
 <device name="-MS-013" package="TO-92-MS013">
 <connects>
-<connect gate="G$1" pin="B" pad="2"/>
-<connect gate="G$1" pin="C" pad="3"/>
-<connect gate="G$1" pin="E" pad="1"/>
+<connect gate="Q" pin="B" pad="2"/>
+<connect gate="Q" pin="C" pad="3"/>
+<connect gate="Q" pin="E" pad="1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25585,7 +25449,7 @@ BJT configuration in SOT23 package. MMBT2222 is the common NPN we use. Double ch
 </devices>
 </deviceset>
 <deviceset name="DIODE" prefix="D" uservalue="yes">
-<description>&lt;b&gt;Diode&lt;/b&gt;
+<description>Diode
 These are standard reverse protection diodes and small signal diodes. SMA package can handle up to about 1A. SOD-323 can handle about 200mA. What the SOD-323 package when ordering, there are some mfgs out there that are 5-pin packages.</description>
 <gates>
 <gate name="D1" symbol="DIODE" x="0" y="0"/>
@@ -25666,7 +25530,7 @@ These are standard reverse protection diodes and small signal diodes. SMA packag
 </devices>
 </deviceset>
 <deviceset name="DIODE-BAV199" prefix="D" uservalue="yes">
-<description>&lt;B&gt;DIODE&lt;/B&gt;&lt;p&gt;
+<description>DIODE
 low-leakage double diode</description>
 <gates>
 <gate name="D1" symbol="KA2KA" x="0" y="0"/>
@@ -25685,7 +25549,7 @@ low-leakage double diode</description>
 </devices>
 </deviceset>
 <deviceset name="DIODE-BAT54" prefix="D">
-<description>&lt;b&gt;Schottky Diodes&lt;/b&gt;&lt;p&gt;
+<description>Schottky Diodes
 Source: Fairchild .. BAT54.pdf</description>
 <gates>
 <gate name="D1" symbol="SCHOTTKY" x="0" y="0"/>
@@ -25703,8 +25567,7 @@ Source: Fairchild .. BAT54.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="OPTO-6N137" prefix="OPTO">
-<description>&lt;b&gt;High Speed OPTO COUPLER&lt;/b&gt;&lt;br&gt;
-Logic Gate output</description>
+<description>High Speed OPTO COUPLER Logic Gate output</description>
 <gates>
 <gate name="A" symbol="137" x="0" y="0"/>
 </gates>
@@ -25738,7 +25601,7 @@ Logic Gate output</description>
 </devices>
 </deviceset>
 <deviceset name="SWITCH-10-XX" prefix="SW" uservalue="yes">
-<description>&lt;b&gt;OMRON SWITCH&lt;/b&gt;</description>
+<description>OMRON SWITCH</description>
 <gates>
 <gate name="1" symbol="TS2" x="0" y="0"/>
 </gates>
@@ -25757,9 +25620,7 @@ Logic Gate output</description>
 </devices>
 </deviceset>
 <deviceset name="DIODE-BAV23A" prefix="D" uservalue="yes">
-<description>Two small signal silicon diodes connected anode to anode.&lt;br&gt;
-Connections to all three nodes available.&lt;br&gt;
-Mouser 771-BAV23A,215</description>
+<description>Two small signal silicon diodes connected anode to anode. Connections to all three nodes available. Mouser 771-BAV23A,215</description>
 <gates>
 <gate name="D1" symbol="BAV23A" x="0" y="0"/>
 </gates>
@@ -25798,20 +25659,20 @@ Mouser 771-BAV23A,215</description>
 </devices>
 </deviceset>
 <deviceset name="LM317LD" prefix="U">
-<description>&lt;b&gt;LOW CURRENT 1.2 TO 37V ADJUSTABLE VOLTAGE REGULATOR&lt;/b&gt;&lt;p&gt;
+<description>LOW CURRENT 1.2 TO 37V ADJUSTABLE VOLTAGE REGULATOR
 Source: http://pdf.alldatasheet.com</description>
 <gates>
-<gate name="G$1" symbol="LM317LD" x="0" y="0"/>
+<gate name="VR" symbol="LM317LD" x="0" y="0"/>
 </gates>
 <devices>
 <device name="" package="SO08">
 <connects>
-<connect gate="G$1" pin="ADJ" pad="4"/>
-<connect gate="G$1" pin="VI" pad="1"/>
-<connect gate="G$1" pin="VO" pad="2"/>
-<connect gate="G$1" pin="VO@1" pad="3"/>
-<connect gate="G$1" pin="VO@2" pad="6"/>
-<connect gate="G$1" pin="VO@3" pad="7"/>
+<connect gate="VR" pin="ADJ" pad="4"/>
+<connect gate="VR" pin="VI" pad="1"/>
+<connect gate="VR" pin="VO" pad="2"/>
+<connect gate="VR" pin="VO@1" pad="3"/>
+<connect gate="VR" pin="VO@2" pad="6"/>
+<connect gate="VR" pin="VO@3" pad="7"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25858,43 +25719,31 @@ Source: http://pdf.alldatasheet.com</description>
 </devices>
 </deviceset>
 <deviceset name="MCP2515" prefix="U">
-<description>Microchip MCP2515
-Stand-Alone CAN Controller With SPI Interface
-
-Microchip Technology?s MCP2515 is a stand-alone 
-Controller Area Network (CAN) controller that implements
- the CAN specification, version 2.0B. It is capable of 
-transmitting and receiving both standard and extended 
-data and remote frames. The MCP2515 has two 
-acceptance masks and six acceptance filters that 
-are used to filter out unwanted messages, thereby 
-reducing the host MCUs overhead. The MCP2515 
-interfaces with microcontrollers (MCUs) via an
- industry standard Serial Peripheral Interface (SPI).</description>
+<description>Microchip MCP2515 Stand-Alone CAN Controller With SPI Interface</description>
 <gates>
-<gate name="G$1" symbol="MCP2515" x="0" y="0"/>
+<gate name="U1" symbol="MCP2515" x="0" y="0"/>
 </gates>
 <devices>
 <device name="-P" package="DIL18">
 <connects>
-<connect gate="G$1" pin="/CS" pad="16"/>
-<connect gate="G$1" pin="/INT" pad="12"/>
-<connect gate="G$1" pin="/RESET" pad="17"/>
-<connect gate="G$1" pin="/RX0BF" pad="11"/>
-<connect gate="G$1" pin="/RX1BF" pad="10"/>
-<connect gate="G$1" pin="/TX0RTS" pad="4"/>
-<connect gate="G$1" pin="/TX1RTS" pad="5"/>
-<connect gate="G$1" pin="/TX2RTS" pad="6"/>
-<connect gate="G$1" pin="CLKOUT/SOF" pad="3"/>
-<connect gate="G$1" pin="MISO" pad="15"/>
-<connect gate="G$1" pin="MOSI" pad="14"/>
-<connect gate="G$1" pin="OSC1" pad="8"/>
-<connect gate="G$1" pin="OSC2" pad="7"/>
-<connect gate="G$1" pin="RXCAN" pad="2"/>
-<connect gate="G$1" pin="SCK" pad="13"/>
-<connect gate="G$1" pin="TXCAN" pad="1"/>
-<connect gate="G$1" pin="VDD" pad="18"/>
-<connect gate="G$1" pin="VSS" pad="9"/>
+<connect gate="U1" pin="/CS" pad="16"/>
+<connect gate="U1" pin="/INT" pad="12"/>
+<connect gate="U1" pin="/RESET" pad="17"/>
+<connect gate="U1" pin="/RX0BF" pad="11"/>
+<connect gate="U1" pin="/RX1BF" pad="10"/>
+<connect gate="U1" pin="/TX0RTS" pad="4"/>
+<connect gate="U1" pin="/TX1RTS" pad="5"/>
+<connect gate="U1" pin="/TX2RTS" pad="6"/>
+<connect gate="U1" pin="CLKOUT/SOF" pad="3"/>
+<connect gate="U1" pin="MISO" pad="15"/>
+<connect gate="U1" pin="MOSI" pad="14"/>
+<connect gate="U1" pin="OSC1" pad="8"/>
+<connect gate="U1" pin="OSC2" pad="7"/>
+<connect gate="U1" pin="RXCAN" pad="2"/>
+<connect gate="U1" pin="SCK" pad="13"/>
+<connect gate="U1" pin="TXCAN" pad="1"/>
+<connect gate="U1" pin="VDD" pad="18"/>
+<connect gate="U1" pin="VSS" pad="9"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25902,24 +25751,24 @@ interfaces with microcontrollers (MCUs) via an
 </device>
 <device name="-SO" package="SO-18W">
 <connects>
-<connect gate="G$1" pin="/CS" pad="16"/>
-<connect gate="G$1" pin="/INT" pad="12"/>
-<connect gate="G$1" pin="/RESET" pad="17"/>
-<connect gate="G$1" pin="/RX0BF" pad="11"/>
-<connect gate="G$1" pin="/RX1BF" pad="10"/>
-<connect gate="G$1" pin="/TX0RTS" pad="4"/>
-<connect gate="G$1" pin="/TX1RTS" pad="5"/>
-<connect gate="G$1" pin="/TX2RTS" pad="6"/>
-<connect gate="G$1" pin="CLKOUT/SOF" pad="3"/>
-<connect gate="G$1" pin="MISO" pad="15"/>
-<connect gate="G$1" pin="MOSI" pad="14"/>
-<connect gate="G$1" pin="OSC1" pad="8"/>
-<connect gate="G$1" pin="OSC2" pad="7"/>
-<connect gate="G$1" pin="RXCAN" pad="2"/>
-<connect gate="G$1" pin="SCK" pad="13"/>
-<connect gate="G$1" pin="TXCAN" pad="1"/>
-<connect gate="G$1" pin="VDD" pad="18"/>
-<connect gate="G$1" pin="VSS" pad="9"/>
+<connect gate="U1" pin="/CS" pad="16"/>
+<connect gate="U1" pin="/INT" pad="12"/>
+<connect gate="U1" pin="/RESET" pad="17"/>
+<connect gate="U1" pin="/RX0BF" pad="11"/>
+<connect gate="U1" pin="/RX1BF" pad="10"/>
+<connect gate="U1" pin="/TX0RTS" pad="4"/>
+<connect gate="U1" pin="/TX1RTS" pad="5"/>
+<connect gate="U1" pin="/TX2RTS" pad="6"/>
+<connect gate="U1" pin="CLKOUT/SOF" pad="3"/>
+<connect gate="U1" pin="MISO" pad="15"/>
+<connect gate="U1" pin="MOSI" pad="14"/>
+<connect gate="U1" pin="OSC1" pad="8"/>
+<connect gate="U1" pin="OSC2" pad="7"/>
+<connect gate="U1" pin="RXCAN" pad="2"/>
+<connect gate="U1" pin="SCK" pad="13"/>
+<connect gate="U1" pin="TXCAN" pad="1"/>
+<connect gate="U1" pin="VDD" pad="18"/>
+<connect gate="U1" pin="VSS" pad="9"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25927,24 +25776,24 @@ interfaces with microcontrollers (MCUs) via an
 </device>
 <device name="-ST" package="TSSOP20">
 <connects>
-<connect gate="G$1" pin="/CS" pad="18"/>
-<connect gate="G$1" pin="/INT" pad="13"/>
-<connect gate="G$1" pin="/RESET" pad="19"/>
-<connect gate="G$1" pin="/RX0BF" pad="12"/>
-<connect gate="G$1" pin="/RX1BF" pad="11"/>
-<connect gate="G$1" pin="/TX0RTS" pad="4"/>
-<connect gate="G$1" pin="/TX1RTS" pad="5"/>
-<connect gate="G$1" pin="/TX2RTS" pad="7"/>
-<connect gate="G$1" pin="CLKOUT/SOF" pad="3"/>
-<connect gate="G$1" pin="MISO" pad="17"/>
-<connect gate="G$1" pin="MOSI" pad="16"/>
-<connect gate="G$1" pin="OSC1" pad="9"/>
-<connect gate="G$1" pin="OSC2" pad="8"/>
-<connect gate="G$1" pin="RXCAN" pad="2"/>
-<connect gate="G$1" pin="SCK" pad="14"/>
-<connect gate="G$1" pin="TXCAN" pad="1"/>
-<connect gate="G$1" pin="VDD" pad="20"/>
-<connect gate="G$1" pin="VSS" pad="10"/>
+<connect gate="U1" pin="/CS" pad="18"/>
+<connect gate="U1" pin="/INT" pad="13"/>
+<connect gate="U1" pin="/RESET" pad="19"/>
+<connect gate="U1" pin="/RX0BF" pad="12"/>
+<connect gate="U1" pin="/RX1BF" pad="11"/>
+<connect gate="U1" pin="/TX0RTS" pad="4"/>
+<connect gate="U1" pin="/TX1RTS" pad="5"/>
+<connect gate="U1" pin="/TX2RTS" pad="7"/>
+<connect gate="U1" pin="CLKOUT/SOF" pad="3"/>
+<connect gate="U1" pin="MISO" pad="17"/>
+<connect gate="U1" pin="MOSI" pad="16"/>
+<connect gate="U1" pin="OSC1" pad="9"/>
+<connect gate="U1" pin="OSC2" pad="8"/>
+<connect gate="U1" pin="RXCAN" pad="2"/>
+<connect gate="U1" pin="SCK" pad="14"/>
+<connect gate="U1" pin="TXCAN" pad="1"/>
+<connect gate="U1" pin="VDD" pad="20"/>
+<connect gate="U1" pin="VSS" pad="10"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25957,19 +25806,19 @@ interfaces with microcontrollers (MCUs) via an
 
 High-Speed CAN Transceiver</description>
 <gates>
-<gate name="G$1" symbol="MCP2551" x="0" y="0"/>
+<gate name="U1" symbol="MCP2551" x="0" y="0"/>
 </gates>
 <devices>
 <device name="-P" package="DIL08">
 <connects>
-<connect gate="G$1" pin="CANH" pad="7"/>
-<connect gate="G$1" pin="CANL" pad="6"/>
-<connect gate="G$1" pin="RS" pad="8"/>
-<connect gate="G$1" pin="RXD" pad="4"/>
-<connect gate="G$1" pin="TXD" pad="1"/>
-<connect gate="G$1" pin="VDD" pad="3"/>
-<connect gate="G$1" pin="VREF" pad="5"/>
-<connect gate="G$1" pin="VSS" pad="2"/>
+<connect gate="U1" pin="CANH" pad="7"/>
+<connect gate="U1" pin="CANL" pad="6"/>
+<connect gate="U1" pin="RS" pad="8"/>
+<connect gate="U1" pin="RXD" pad="4"/>
+<connect gate="U1" pin="TXD" pad="1"/>
+<connect gate="U1" pin="VDD" pad="3"/>
+<connect gate="U1" pin="VREF" pad="5"/>
+<connect gate="U1" pin="VSS" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25977,14 +25826,14 @@ High-Speed CAN Transceiver</description>
 </device>
 <device name="-SN" package="SO-08">
 <connects>
-<connect gate="G$1" pin="CANH" pad="7"/>
-<connect gate="G$1" pin="CANL" pad="6"/>
-<connect gate="G$1" pin="RS" pad="8"/>
-<connect gate="G$1" pin="RXD" pad="4"/>
-<connect gate="G$1" pin="TXD" pad="1"/>
-<connect gate="G$1" pin="VDD" pad="3"/>
-<connect gate="G$1" pin="VREF" pad="5"/>
-<connect gate="G$1" pin="VSS" pad="2"/>
+<connect gate="U1" pin="CANH" pad="7"/>
+<connect gate="U1" pin="CANL" pad="6"/>
+<connect gate="U1" pin="RS" pad="8"/>
+<connect gate="U1" pin="RXD" pad="4"/>
+<connect gate="U1" pin="TXD" pad="1"/>
+<connect gate="U1" pin="VDD" pad="3"/>
+<connect gate="U1" pin="VREF" pad="5"/>
+<connect gate="U1" pin="VSS" pad="2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -25993,7 +25842,7 @@ High-Speed CAN Transceiver</description>
 </devices>
 </deviceset>
 <deviceset name="R-POTENTIOMETER" prefix="R" uservalue="yes">
-<description>&lt;b&gt;Potentiometer&lt;/b&gt;</description>
+<description>Potentiometer</description>
 <gates>
 <gate name="1" symbol="POTEURO" x="5.08" y="0"/>
 </gates>
@@ -26091,17 +25940,17 @@ High-Speed CAN Transceiver</description>
 </devices>
 </deviceset>
 <deviceset name="RESONATOR" prefix="RES">
-<description>&lt;b&gt;Resonator&lt;/b&gt;
+<description>Resonator
 Small SMD resonator. This is the itty bitty 10/20MHz resonators with built in caps. CSTCE10M0G55 and CSTCE20M0V53. Footprint has been reviewed closely but hasn't been tested yet.</description>
 <gates>
-<gate name="G$1" symbol="RESONATOR" x="0" y="0"/>
+<gate name="X1" symbol="RESONATOR" x="0" y="0"/>
 </gates>
 <devices>
 <device name="SMD" package="RESONATOR-SMD">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="X1" pin="1" pad="1"/>
+<connect gate="X1" pin="2" pad="2"/>
+<connect gate="X1" pin="3" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -26109,9 +25958,9 @@ Small SMD resonator. This is the itty bitty 10/20MHz resonators with built in ca
 </device>
 <device name="PTH" package="RESONATOR-PTH">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="X1" pin="1" pad="1"/>
+<connect gate="X1" pin="2" pad="2"/>
+<connect gate="X1" pin="3" pad="3"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -26120,7 +25969,7 @@ Small SMD resonator. This is the itty bitty 10/20MHz resonators with built in ca
 </devices>
 </deviceset>
 <deviceset name="SWITCH-SPST" prefix="SW" uservalue="yes">
-<description>&lt;b&gt;SPST Switch&lt;/b&gt;
+<description>SPST Switch
 Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <gates>
 <gate name="1" symbol="TOGGLE" x="-2.54" y="0"/>
@@ -26200,27 +26049,27 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </deviceset>
 <deviceset name="LED-DISPLAY-YSD-439A" prefix="LED">
 <gates>
-<gate name="G$1" symbol="LED-DISPLAY" x="-2.54" y="0"/>
+<gate name="U1" symbol="LED-DISPLAY" x="-2.54" y="0"/>
 </gates>
 <devices>
 <device name="" package="YSM-439AXXA-35">
 <connects>
-<connect gate="G$1" pin="A" pad="A"/>
-<connect gate="G$1" pin="B" pad="B"/>
-<connect gate="G$1" pin="C" pad="C"/>
-<connect gate="G$1" pin="D" pad="D"/>
-<connect gate="G$1" pin="D1" pad="D1"/>
-<connect gate="G$1" pin="D2" pad="D2"/>
-<connect gate="G$1" pin="D3" pad="D3"/>
-<connect gate="G$1" pin="D4" pad="D4"/>
-<connect gate="G$1" pin="DP" pad="DP"/>
-<connect gate="G$1" pin="E" pad="E"/>
-<connect gate="G$1" pin="F" pad="F"/>
-<connect gate="G$1" pin="G" pad="G"/>
-<connect gate="G$1" pin="L12" pad="L12"/>
-<connect gate="G$1" pin="L12C" pad="L12C"/>
-<connect gate="G$1" pin="L3" pad="L3"/>
-<connect gate="G$1" pin="L3C" pad="L3C"/>
+<connect gate="U1" pin="A" pad="A"/>
+<connect gate="U1" pin="B" pad="B"/>
+<connect gate="U1" pin="C" pad="C"/>
+<connect gate="U1" pin="D" pad="D"/>
+<connect gate="U1" pin="D1" pad="D1"/>
+<connect gate="U1" pin="D2" pad="D2"/>
+<connect gate="U1" pin="D3" pad="D3"/>
+<connect gate="U1" pin="D4" pad="D4"/>
+<connect gate="U1" pin="DP" pad="DP"/>
+<connect gate="U1" pin="E" pad="E"/>
+<connect gate="U1" pin="F" pad="F"/>
+<connect gate="U1" pin="G" pad="G"/>
+<connect gate="U1" pin="L12" pad="L12"/>
+<connect gate="U1" pin="L12C" pad="L12C"/>
+<connect gate="U1" pin="L3" pad="L3"/>
+<connect gate="U1" pin="L3C" pad="L3C"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -26231,15 +26080,15 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 <deviceset name="INDUCTOR-ZJYS51R5">
 <description>TDK ZJYS51R5-2P  Common Mode Filter</description>
 <gates>
-<gate name="G$1" symbol="ZJYS51R5" x="0" y="0"/>
+<gate name="U1" symbol="ZJYS51R5" x="0" y="0"/>
 </gates>
 <devices>
 <device name="-2P" package="ZJYS">
 <connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-<connect gate="G$1" pin="3" pad="3"/>
-<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="U1" pin="1" pad="1"/>
+<connect gate="U1" pin="2" pad="2"/>
+<connect gate="U1" pin="3" pad="3"/>
+<connect gate="U1" pin="4" pad="4"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -26322,7 +26171,7 @@ Simple slide switch. Spark Fun Electronics SKU : COM-00102</description>
 </devices>
 </deviceset>
 <deviceset name="STAND-OFF" prefix="STANDOFF">
-<description>&lt;b&gt;#4 Stand Off&lt;/b&gt;&lt;p&gt;
+<description>#4 Stand Off
 This is the mechanical footprint for a #4 phillips button head screw. Use the keepout ring to avoid running the screw head into surrounding components. SKU : PRT-00447</description>
 <gates>
 <gate name="HOLE" symbol="STAND-OFF" x="0" y="0"/>
@@ -26341,7 +26190,7 @@ This is the mechanical footprint for a #4 phillips button head screw. Use the ke
 </devices>
 </deviceset>
 <deviceset name="SWITCH-(ON)" prefix="SW" uservalue="yes">
-<description>&lt;b&gt;OMRON SWITCH&lt;/b&gt;</description>
+<description>OMRON SWITCH</description>
 <gates>
 <gate name="S" symbol="SPST-(ON)" x="0" y="0"/>
 </gates>
@@ -26393,7 +26242,7 @@ This is the mechanical footprint for a #4 phillips button head screw. Use the ke
 </devices>
 </deviceset>
 <deviceset name="R-SIL-G04R" prefix="R" uservalue="yes">
-<description>&lt;b&gt;SIL RESISTOR&lt;/b&gt;</description>
+<description>SIL RESISTOR</description>
 <gates>
 <gate name="A" symbol="R4" x="0" y="0"/>
 </gates>
@@ -26418,7 +26267,7 @@ This is the mechanical footprint for a #4 phillips button head screw. Use the ke
 </devices>
 </deviceset>
 <deviceset name="RELAY-G2R2" prefix="K">
-<description>&lt;b&gt;RELAY&lt;/b&gt;&lt;p&gt;
+<description>RELAY
 2 x switch, Omron</description>
 <gates>
 <gate name="1" symbol="K" x="0" y="0" addlevel="must"/>
@@ -26496,7 +26345,7 @@ As MOSFET drivers, the TC4426A/4427A/4428A can easily switch 1000 pF gate capaci
 </devices>
 </deviceset>
 <deviceset name="CONNECTOR-MSTBA2-ORIG" prefix="CON">
-<description>&lt;b&gt;PHOENIX&lt;/b&gt;</description>
+<description>PHOENIX</description>
 <gates>
 <gate name="-1" symbol="SK" x="0" y="5.08" addlevel="always"/>
 <gate name="-2" symbol="SKV" x="0" y="0" addlevel="always"/>
@@ -26519,7 +26368,7 @@ As MOSFET drivers, the TC4426A/4427A/4428A can easily switch 1000 pF gate capaci
 </devices>
 </deviceset>
 <deviceset name="*555" prefix="U">
-<description>&lt;b&gt;TIMER&lt;/b&gt;</description>
+<description>TIMER</description>
 <gates>
 <gate name="A" symbol="555" x="0" y="2.54"/>
 </gates>
@@ -26563,7 +26412,7 @@ As MOSFET drivers, the TC4426A/4427A/4428A can easily switch 1000 pF gate capaci
 </devices>
 </deviceset>
 <deviceset name="*556" prefix="U">
-<description>Dual &lt;b&gt;TIMER&lt;/b&gt;</description>
+<description>Dual TIMER</description>
 <gates>
 <gate name="A" symbol="555" x="0" y="2.54" swaplevel="1"/>
 <gate name="B" symbol="556" x="27.94" y="0"/>
@@ -26619,7 +26468,7 @@ As MOSFET drivers, the TC4426A/4427A/4428A can easily switch 1000 pF gate capaci
 </devices>
 </deviceset>
 <deviceset name="LM324" prefix="U">
-<description>&lt;b&gt;OP AMP&lt;/b&gt;</description>
+<description>OP AMP</description>
 <gates>
 <gate name="A" symbol="OPAMP" x="15.24" y="10.16" swaplevel="1"/>
 <gate name="B" symbol="OPAMP" x="43.18" y="10.16" swaplevel="1"/>
@@ -26673,8 +26522,7 @@ As MOSFET drivers, the TC4426A/4427A/4428A can easily switch 1000 pF gate capaci
 </devices>
 </deviceset>
 <deviceset name="LM339" prefix="U">
-<description>&lt;b&gt;Low Power Low Offset Voltage Quad Comparators&lt;/b&gt;&lt;p&gt;
-with open collector; LM139/LM239/LM339/LM2901/LM3302&lt;br&gt;</description>
+<description>Low Power Low Offset Voltage Quad Comparators with open collector; LM139/LM239/LM339/LM2901/LM3302</description>
 <gates>
 <gate name="P" symbol="PWR+G" x="20.32" y="12.7" addlevel="request"/>
 <gate name="A" symbol="COMPARATOR-OC" x="20.32" y="12.7"/>
@@ -26728,7 +26576,7 @@ with open collector; LM139/LM239/LM339/LM2901/LM3302&lt;br&gt;</description>
 </devices>
 </deviceset>
 <deviceset name="LM311" prefix="U">
-<description>&lt;b&gt;COMPARATOR&lt;/b&gt;</description>
+<description>COMPARATOR</description>
 <gates>
 <gate name="A" symbol="LM311" x="5.08" y="0"/>
 </gates>
@@ -26766,7 +26614,7 @@ with open collector; LM139/LM239/LM339/LM2901/LM3302&lt;br&gt;</description>
 </devices>
 </deviceset>
 <deviceset name="OPTO-6N138/6N139" prefix="OPTO">
-<description>&lt;b&gt;MOTOROLA OPTO COUPLER&lt;/b&gt;</description>
+<description>MOTOROLA OPTO COUPLER</description>
 <gates>
 <gate name="G$1" symbol="138" x="0" y="0"/>
 </gates>
@@ -26792,7 +26640,7 @@ with open collector; LM139/LM239/LM339/LM2901/LM3302&lt;br&gt;</description>
 </devices>
 </deviceset>
 <deviceset name="OPTO-4N*?M" prefix="OPTO">
-<description>&lt;b&gt;General Purpose 6-Pin Phototransistor Optocouplers&lt;/b&gt;&lt;p&gt;
+<description>General Purpose 6-Pin Phototransistor Optocouplers
 Source: http://www.fairchildsemi.com/ds/4N/4N35-M.pdf</description>
 <gates>
 <gate name="G$1" symbol="OK-B" x="0" y="0"/>
@@ -26960,7 +26808,7 @@ Source: http://www.fairchildsemi.com/ds/4N/4N35-M.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="74*06" prefix="IC">
-<description>Hex &lt;b&gt;INVERTER&lt;/b&gt;, open collector high-voltage output</description>
+<description>Hex INVERTER, open collector high-voltage output</description>
 <gates>
 <gate name="A" symbol="7405" x="17.78" y="0" swaplevel="1"/>
 <gate name="B" symbol="7405" x="17.78" y="-12.7" swaplevel="1"/>
@@ -27039,7 +26887,7 @@ Source: http://www.fairchildsemi.com/ds/4N/4N35-M.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="74*244" prefix="IC">
-<description>Octal &lt;b&gt;BUFFER&lt;/b&gt; and &lt;b&gt;LINE DRIVER&lt;/b&gt;, 3-state</description>
+<description>Octal BUFFER and LINE DRIVER, 3-state</description>
 <gates>
 <gate name="A" symbol="74244" x="30.48" y="10.16" swaplevel="1"/>
 <gate name="B" symbol="74244" x="30.48" y="-17.78" swaplevel="1"/>
@@ -27133,7 +26981,7 @@ Source: http://www.fairchildsemi.com/ds/4N/4N35-M.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="74HC4053" prefix="IC">
-<description>Triple 2-channel &lt;b&gt;ANALOG MULTIPLEXER&lt;/b&gt;</description>
+<description>Triple 2-channel ANALOG MULTIPLEXER</description>
 <gates>
 <gate name="A" symbol="4053" x="20.32" y="0"/>
 <gate name="P" symbol="PWR+VEE" x="-5.08" y="0" addlevel="request"/>
@@ -27188,7 +27036,7 @@ Source: http://www.fairchildsemi.com/ds/4N/4N35-M.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="PCA9555" prefix="U">
-<description>&lt;b&gt;16-bit I2C and SMBus I/O port with interrupt&lt;/b&gt;&lt;p&gt;
+<description>16-bit I2C and SMBus I/O port with interrupt
 Source: PCA9555_5.pdf</description>
 <gates>
 <gate name="G$1" symbol="PCA9555" x="0" y="0"/>
@@ -27377,7 +27225,7 @@ Source: PCA9555_5.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="MC33269?*" prefix="U">
-<description>&lt;b&gt;Adjustable Output Low Dropout Voltage Regulator&lt;/b&gt; 800 mA&lt;p&gt;
+<description>Adjustable Output Low Dropout Voltage Regulator 800 mA
 Source: http://www.onsemi.com/pub/Collateral/MC33269-D.PDF</description>
 <gates>
 <gate name="G$1" symbol="317" x="0" y="0"/>
@@ -27412,7 +27260,7 @@ Source: http://www.onsemi.com/pub/Collateral/MC33269-D.PDF</description>
 </devices>
 </deviceset>
 <deviceset name="74*139" prefix="IC">
-<description>Dual 2-line to 4-line &lt;b&gt;DECODER/DEMULTIPLEXER&lt;/b&gt;</description>
+<description>Dual 2-line to 4-line DECODER/DEMULTIPLEXER</description>
 <gates>
 <gate name="A" symbol="74139" x="20.32" y="0" swaplevel="1"/>
 <gate name="B" symbol="74139" x="20.32" y="-20.32" swaplevel="1"/>
@@ -27494,7 +27342,7 @@ Source: http://www.onsemi.com/pub/Collateral/MC33269-D.PDF</description>
 </devices>
 </deviceset>
 <deviceset name="MEGA8-P" prefix="U">
-<description>&lt;b&gt;MICROCONTROLLER&lt;/b&gt;&lt;p&gt;
+<description>MICROCONTROLLER
 8 Kbytes FLASH, 1 kbytes SRAM, 512 bytes EEPROM, USART, 4-channel 10 bit ADC, 2-channel 8 bit ADC&lt;br&gt;
 Pin compatible with Atmega48, ATMega88, ATMega168&lt;br&gt;
 Source: avr.lbr</description>
@@ -27602,7 +27450,7 @@ Source: avr.lbr</description>
 </devices>
 </deviceset>
 <deviceset name="CONNECTOR-M04" prefix="CON" uservalue="yes">
-<description>&lt;b&gt;Header 4&lt;/b&gt;
+<description>Header 4
 Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-00116), right angle break away headers (PRT-00553), swiss pins (PRT-00743), machine pins (PRT-00117), and female headers (PRT-00115). Molex polarized connector foot print use with SKU : PRT-08231 with associated crimp pins and housings. 1MM SMD Version SKU: PRT-10208</description>
 <gates>
 <gate name="J" symbol="M04" x="-2.54" y="0"/>
@@ -27798,7 +27646,7 @@ Standard 4-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 </devices>
 </deviceset>
 <deviceset name="CONNECTOR-M05" prefix="CON" uservalue="yes">
-<description>&lt;b&gt;Header 5&lt;/b&gt;
+<description>Header 5
 Standard 5-pin 0.1" header. Use with straight break away headers (SKU : PRT-00116), right angle break away headers (PRT-00553), swiss pins (PRT-00743), machine pins (PRT-00117), and female headers (PRT-00115). Molex polarized connector foot print use with SKU : PRT-08230 with associated crimp pins and housings.</description>
 <gates>
 <gate name="G$1" symbol="M05" x="-2.54" y="0"/>
@@ -27903,7 +27751,7 @@ Standard 5-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 </devices>
 </deviceset>
 <deviceset name="CONNECTOR-M07" prefix="CON" uservalue="yes">
-<description>&lt;b&gt;Header 7&lt;/b&gt;
+<description>Header 7
 Standard 7-pin 0.1" header. Use with straight break away headers (SKU : PRT-00116), right angle break away headers (PRT-00553), swiss pins (PRT-00743), machine pins (PRT-00117), and female headers (PRT-00115).  NOTES ON THE VARIANTS LOCK and LOCK_LONGPADS... This footprint was designed to help hold the alignment of a through-hole component (i.e. 7-pin header) while soldering it into place. You may notice that each hole has been shifted either up or down by 0.005 of an inch from it's more standard position (which is usually a perfectly straight line). This slight alteration caused the pins (the squares in the middle) to touch the edges of the holes. Because they are alternating, it causes a "brace" to hold the header in place. 0.005 has proven to be the perfect amount of "off-center" position when using our standard breakaway headers. Although looks a little odd when you look at the bare footprint, once you have a header in there, the alteration is very hard to notice. Also, if you push a header all the way into place, it is covered up entirely on the bottom side. This idea of altering the position of holes to aid alignment will be further integrated into the Sparkfun Library for other footprints. It can help hold any component with 3 or more connection pins.</description>
 <gates>
 <gate name="G$1" symbol="M07" x="-2.54" y="0"/>
@@ -27982,7 +27830,7 @@ Standard 7-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 </devices>
 </deviceset>
 <deviceset name="CONNECTOR-M10" prefix="CON">
-<description>&lt;b&gt;Header 10&lt;/b&gt;
+<description>Header 10
 Standard 10-pin 0.1" header. Use with straight break away headers (SKU : PRT-00116), right angle break away headers (PRT-00553), swiss pins (PRT-00743), machine pins (PRT-00117), and female headers (PRT-00115).</description>
 <gates>
 <gate name="G$1" symbol="M10" x="0" y="7.62"/>
@@ -28112,7 +27960,7 @@ Standard 10-pin 0.1" header. Use with straight break away headers (SKU : PRT-001
 </devices>
 </deviceset>
 <deviceset name="CONNECTOR-M12" prefix="CON">
-<description>&lt;b&gt;Header 12&lt;/b&gt;
+<description>Header 12
 Standard 12-pin 0.1" header. Use with straight break away headers (SKU : PRT-00116), right angle break away headers (PRT-00553), swiss pins (PRT-00743), machine pins (PRT-00117), and female headers (PRT-00115).</description>
 <gates>
 <gate name="G$1" symbol="M12" x="0" y="0"/>
@@ -28269,7 +28117,7 @@ Standard 12-pin 0.1" header. Use with straight break away headers (SKU : PRT-001
 </devices>
 </deviceset>
 <deviceset name="PIC-ICSP-MINI" prefix="ICSP">
-<description>&lt;b&gt;PIC-ICSP-Mini&lt;/b&gt;
+<description>PIC-ICSP-Mini
 Miniature 5-pin connection for temporary programming of PICs. Use this device in your design to save space. Program the PIC with this adapter Spark Fun Electronics SKU : BOB-00194</description>
 <gates>
 <gate name="G$1" symbol="PIC-ISCP-MINI" x="0" y="0"/>
@@ -28342,7 +28190,7 @@ Miniature 5-pin connection for temporary programming of PICs. Use this device in
 </devices>
 </deviceset>
 <deviceset name="ENCODER_2LED" prefix="U">
-<description>&lt;H3&gt;Illuminated Rotary Encoder w/ 2 LEDs&lt;/h3&gt;</description>
+<description>Illuminated Rotary Encoder w/ 2 LEDs</description>
 <gates>
 <gate name="G$1" symbol="ENCODER_LED_2-1" x="0" y="0"/>
 </gates>
@@ -28378,9 +28226,7 @@ Miniature 5-pin connection for temporary programming of PICs. Use this device in
 </devices>
 </deviceset>
 <deviceset name="ENCODER_SW_RGB" prefix="SW" uservalue="yes">
-<description>&lt;h3&gt;Illuminated Rotary Encoder w/ RGB LED and select switch&lt;/h3&gt;
-
-EC12PLRGBSDVBF-D: http://top-up.so-buy.com/front/bin/ptdetail.phtml?Part=EC12PLRGBSDVBF-D</description>
+<description>Illuminated Rotary Encoder w/ RGB LED and select switch</description>
 <gates>
 <gate name="ENC" symbol="ENCODER_SW_RGB" x="0" y="0"/>
 </gates>
@@ -28593,8 +28439,7 @@ EC12PLRGBSDVBF-D: http://top-up.so-buy.com/front/bin/ptdetail.phtml?Part=EC12PLR
 </devices>
 </deviceset>
 <deviceset name="LEDMATRIX" prefix="LED">
-<description>MAX7219 dot matrix module&lt;br&gt;
-&lt;a href="http://www.ebay.com/itm/10pcs-MAX7219-dot-matrix-module-Arduino-microcontroller-module-DIY-KIT-M67-/351218529526?ssPageName=ADME:X:RTQ:US:1123"&gt;eBay: 10 pcs for $17.00&lt;/A&gt;</description>
+<description>MAX7219 dot matrix module http://www.ebay.com/itm/10pcs-MAX7219-dot-matrix-module-Arduino-microcontroller-module-DIY-KIT-M67-/351218529526</description>
 <gates>
 <gate name="1" symbol="LEDMATRIX" x="0" y="0"/>
 </gates>
@@ -28683,7 +28528,7 @@ EC12PLRGBSDVBF-D: http://top-up.so-buy.com/front/bin/ptdetail.phtml?Part=EC12PLR
 </devices>
 </deviceset>
 <deviceset name="CTC-4P3T" prefix="S">
-<description>&lt;b&gt;ROTARY SWITCH&lt;/b&gt;&lt;p&gt;
+<description>ROTARY SWITCH
 C&amp;K</description>
 <gates>
 <gate name="G$1" symbol="DS-A403" x="0" y="0"/>
@@ -28738,7 +28583,7 @@ C&amp;K</description>
 </devices>
 </deviceset>
 <deviceset name="ELMA-01-4X3" prefix="S">
-<description>&lt;b&gt;Rotary Switches Type 01&lt;/b&gt;&lt;p&gt;
+<description>Rotary Switches Type 01
 Source: http://www.elma.com/files/products/rotary_components/pdfs/rotary_switches_type_01_002.pdf</description>
 <gates>
 <gate name="G$1" symbol="DS-A403" x="0" y="0"/>
@@ -28770,7 +28615,7 @@ Source: http://www.elma.com/files/products/rotary_components/pdfs/rotary_switche
 </devices>
 </deviceset>
 <deviceset name="SRRM265900" prefix="S">
-<description>&lt;b&gt;12-position General-purpose Vertical Type Rotary Switch&lt;/b&gt;&lt;p&gt;
+<description>12-position General-purpose Vertical Type Rotary Switch
 2 Pole 6 Positions&lt;br&gt;
 Source: ALPS - SRRM.pdf</description>
 <gates>
@@ -29021,7 +28866,7 @@ Source: ALPS - SRRM.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="CONNECTOR-M16" prefix="X" uservalue="yes">
-<description>&lt;b&gt;KK 156 HEADER&lt;/b&gt;&lt;p&gt;
+<description>KK 156 HEADER
 Source: http://www.molex.com/pdm_docs/sd/026604100_sd.pdf</description>
 <gates>
 <gate name="-1" symbol="MV" x="0" y="0" addlevel="always" swaplevel="1"/>
@@ -29167,7 +29012,7 @@ Source: http://www.molex.com/pdm_docs/sd/026604100_sd.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="MSTBA3" prefix="X">
-<description>&lt;b&gt;PHOENIX&lt;/b&gt;</description>
+<description>PHOENIX</description>
 <gates>
 <gate name="-1" symbol="SK" x="0" y="5.08" addlevel="always"/>
 <gate name="-2" symbol="SK" x="0" y="0" addlevel="always"/>
@@ -29335,7 +29180,7 @@ Source: http://www.molex.com/pdm_docs/sd/026604100_sd.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="L293DD" prefix="IC">
-<description>&lt;b&gt;PUSH-PULL FOUR CHANNEL DRIVER WITH DIODES&lt;/b&gt;&lt;p&gt;
+<description>PUSH-PULL FOUR CHANNEL DRIVER WITH DIODES
 Source: http://www.st.com/stonline/books/pdf/docs/1330.pdf</description>
 <gates>
 <gate name="G$1" symbol="L293DD" x="0" y="0"/>
@@ -29390,7 +29235,7 @@ Source: http://www.st.com/stonline/books/pdf/docs/1330.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="PICOFUSE" prefix="F" uservalue="yes">
-<description>&lt;B&gt;PICOFUSE&lt;/B&gt;&lt;p&gt;
+<description>PICOFUSE
 19275, Wickmann</description>
 <gates>
 <gate name="1" symbol="FUSE" x="0" y="0"/>
@@ -29489,7 +29334,7 @@ Source: http://www.st.com/stonline/books/pdf/docs/1330.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="LAMP" prefix="LMP" uservalue="yes">
-<description>&lt;B&gt;LED HOLDER&lt;/B&gt;</description>
+<description>LED HOLDER</description>
 <gates>
 <gate name="G$1" symbol="LAMP" x="0" y="0"/>
 </gates>
@@ -29607,7 +29452,7 @@ Source: http://www.st.com/stonline/books/pdf/docs/1330.pdf</description>
 </deviceset>
 <deviceset name="FIDUCIAL">
 <description>For use by pick and place machines to calibrate the vision/machine, 1mm
-&lt;p&gt;By microbuilder.eu&lt;/p&gt;</description>
+By microbuilder.eu&lt;/p&gt;</description>
 <gates>
 <gate name="G$1" symbol="DOT" x="0" y="0"/>
 </gates>
@@ -29620,7 +29465,7 @@ Source: http://www.st.com/stonline/books/pdf/docs/1330.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="+3V3" prefix="+3V3">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<description>SUPPLY SYMBOL</description>
 <gates>
 <gate name="G$1" symbol="+3V3" x="0" y="0"/>
 </gates>
@@ -29633,7 +29478,7 @@ Source: http://www.st.com/stonline/books/pdf/docs/1330.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="+5V" prefix="P+">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<description>SUPPLY SYMBOL</description>
 <gates>
 <gate name="1" symbol="+5V" x="0" y="0"/>
 </gates>
@@ -29646,7 +29491,7 @@ Source: http://www.st.com/stonline/books/pdf/docs/1330.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="+12V" prefix="P+">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<description>SUPPLY SYMBOL</description>
 <gates>
 <gate name="1" symbol="+12V" x="0" y="0"/>
 </gates>
@@ -29659,7 +29504,7 @@ Source: http://www.st.com/stonline/books/pdf/docs/1330.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="AGND" prefix="AGND">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<description>SUPPLY SYMBOL</description>
 <gates>
 <gate name="VR1" symbol="AGND" x="0" y="0"/>
 </gates>
@@ -29672,7 +29517,7 @@ Source: http://www.st.com/stonline/books/pdf/docs/1330.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="GND" prefix="GND">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<description>SUPPLY SYMBOL</description>
 <gates>
 <gate name="1" symbol="GND" x="0" y="0"/>
 </gates>
@@ -29685,7 +29530,7 @@ Source: http://www.st.com/stonline/books/pdf/docs/1330.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="VCC" prefix="P+">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<description>SUPPLY SYMBOL</description>
 <gates>
 <gate name="VCC" symbol="VCC" x="0" y="0"/>
 </gates>
@@ -29698,7 +29543,7 @@ Source: http://www.st.com/stonline/books/pdf/docs/1330.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="VCCIO" prefix="VCC">
-<description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
+<description>SUPPLY SYMBOL</description>
 <gates>
 <gate name="G$1" symbol="VCCIO" x="0" y="0"/>
 </gates>
@@ -29732,7 +29577,7 @@ Source: http://www.st.com/stonline/books/pdf/docs/1330.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="CONNECTOR-M08" prefix="J" uservalue="yes">
-<description>&lt;b&gt;Header 8&lt;/b&gt;
+<description>Header 8
 Standard 8-pin 0.1" header. Use with straight break away headers (SKU : PRT-00116), right angle break away headers (PRT-00553), swiss pins (PRT-00743), machine pins (PRT-00117), and female headers (PRT-00115).</description>
 <gates>
 <gate name="G$1" symbol="M08" x="-2.54" y="0"/>
@@ -30025,7 +29870,7 @@ Standard 8-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 </devices>
 </deviceset>
 <deviceset name="MA04-2" prefix="SV" uservalue="yes">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
+<description>PIN HEADER</description>
 <gates>
 <gate name="G$1" symbol="MA04-2" x="0" y="0"/>
 </gates>
@@ -30053,8 +29898,7 @@ Standard 8-pin 0.1" header. Use with straight break away headers (SKU : PRT-0011
 </devices>
 </deviceset>
 <deviceset name="MAX73XX" prefix="IC" uservalue="yes">
-<description>&lt;b&gt;16-Port I/O Expander with LED Intensity Control, Interrupt, and Hot-Insertion Protection&lt;/p&gt;
-Source: http://datasheets.maxim-ic.com/en/ds/MAX7313.pdf</description>
+<description>16-Port I/O Expander with LED Intensity Control, Interrupt, and Hot-Insertion Protection </description>
 <gates>
 <gate name="U1" symbol="MAX7313AEG" x="0" y="0"/>
 </gates>
@@ -30160,8 +30004,7 @@ Source: http://datasheets.maxim-ic.com/en/ds/MAX7313.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="MAX7313ATG" prefix="IC">
-<description>&lt;b&gt;16-Port I/O Expander with LED Intensity Control, Interrupt, and Hot-Insertion Protection&lt;/p&gt;
-Source: http://datasheets.maxim-ic.com/en/ds/MAX7313.pdf</description>
+<description>16-Port I/O Expander with LED Intensity Control, Interrupt, and Hot-Insertion Protection</description>
 <gates>
 <gate name="G$1" symbol="MAX7313" x="0" y="0"/>
 </gates>
@@ -30412,7 +30255,7 @@ Source: http://datasheets.maxim-ic.com/en/ds/MAX7313.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="NE555" prefix="IC" uservalue="yes">
-<description>&lt;b&gt;General purpose bipolar Timer&lt;/b&gt;</description>
+<description>General purpose bipolar Timer</description>
 <gates>
 <gate name="G$1" symbol="NE555" x="60.96" y="-27.94"/>
 </gates>
@@ -30508,7 +30351,7 @@ Source: http://datasheets.maxim-ic.com/en/ds/MAX7313.pdf</description>
 </devices>
 </deviceset>
 <deviceset name="TL331" prefix="IC">
-<description>&lt;b&gt;SINGLE DIFFERENTIAL COMPARATOR&lt;/b&gt;&lt;p&gt;
+<description>SINGLE DIFFERENTIAL COMPARATOR
 Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data sheet &lt;/a&gt;</description>
 <gates>
 <gate name="G$1" symbol="OPAMP+GN" x="0" y="0"/>
@@ -30529,7 +30372,7 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 </devices>
 </deviceset>
 <deviceset name="MSTBA5" prefix="X">
-<description>&lt;b&gt;PHOENIX&lt;/b&gt;</description>
+<description>PHOENIX</description>
 <gates>
 <gate name="-1" symbol="SK" x="0" y="17.78" addlevel="always"/>
 <gate name="-2" symbol="SK" x="0" y="12.7" addlevel="always"/>
@@ -30876,7 +30719,7 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 </devices>
 </deviceset>
 <deviceset name="LED-APA102" prefix="LED">
-<description>&lt;b&gt;SparkFun Accessories SMD LED - RGB APA102-2020&lt;/b&gt;&lt;p&gt;
+<description>SparkFun Accessories SMD LED - RGB APA102-2020
 Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/COM-14608.pdf"&gt; Datasheet &lt;/a&gt;</description>
 <gates>
 <gate name="G$1" symbol="COM-14608" x="0" y="0"/>

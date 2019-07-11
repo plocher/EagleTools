@@ -4,7 +4,7 @@ from fab.SiteConfiguration import * # local config details
 from xml.dom.minidom import parse
 import xml.dom.minidom
 import re
-from fab import CHMTfeeders
+# from fab import CHMTPickNPlace
 
 """
 sort based on alphanumeric order
@@ -74,6 +74,36 @@ def loadBoard(boardname, palettes):
             #print("Layer[{}] = palettes[{}][{}] = {}".format(lnum, 0, litem, palettes[0][litem]))
             layers[lnum] = palettes[1][litem]
     return (X, packages, layers)
+
+def loadLibrary(libname):
+    packages = {}
+    symbols  = {}
+
+
+    # Open XML document using minidom parser
+    DOMTree = xml.dom.minidom.parse(libname)
+    X = DOMTree.documentElement
+
+    for P in X.getElementsByTagName("package"):
+        me = {}
+        me["name"]        = P.getAttribute("name")
+        me["description"] = ''
+        D = P.getElementsByTagName("description")
+        if D:
+            me["description"] = " ".join(t.nodeValue for t in D[0].childNodes if t.nodeType == t.TEXT_NODE)
+        me["description"] = me["description"].replace('\n', '<br>')
+        me["smd"] = False   # default
+        smd = P.getElementsByTagName("smd")
+        if (smd):
+            me["smd"] = True
+        (me["xmin"], me["ymin"], me["xmax"], me["ymax"]) = getSymbolBounds(P,10000,10000,-10000,-10000)
+        packages[me["name"].lower()] = me
+        print "Package: {}: {} - bounds: ({},{}) ({},{})".format(me['name'],me['description'], me["xmin"], me["ymin"], me["xmax"], me["ymax"])
+
+        #for node in P.childNodes:
+            #print("\tChild: {}".format(node.nodeName)
+
+    return (X, packages, symbols)
 
 
 def getSymbolBounds(E, xmin, ymin, xmax, ymax):

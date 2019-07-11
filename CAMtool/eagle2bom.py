@@ -12,7 +12,7 @@ from fab.SiteConfiguration import *
 
 import argparse
 import StringIO
-from fab import CHMTfeeders, EAGLEboard
+from fab import CHMTPickNPlace, EagleCAD
 import os.path
 
 
@@ -69,7 +69,7 @@ def outputParts(parts, smt, pth):
 ! Quantity
 ! Feeder
 """)
-    for pn in sorted(partcounts.iterkeys(), key=EAGLEboard.natural_sort_key):
+    for pn in sorted(partcounts.iterkeys(), key=EagleCAD.natural_sort_key):
         count = partcounts[pn]['cnt']
         list  = partcounts[pn]['list']
         f     = partcounts[pn]['feed']
@@ -82,7 +82,7 @@ def outputParts(parts, smt, pth):
             and not pn.startswith("fidicual-") \
             and list :
 
-            if f == CHMTfeeders.SKIP:
+            if f == CHMTPickNPlace.SKIP:
                 if pth:
                     output.write('|-\n')
                     sep='| '
@@ -90,7 +90,7 @@ def outputParts(parts, smt, pth):
                         output.write('{}{}'.format(sep, p['name']))
                         sep = ', '
                     output.write("\n| {} \n| {} \n| {}x \n| {}\n".format(p['value'], p['package'], count, 'PTH'))
-            elif f == CHMTfeeders.NOTFOUND:
+            elif f == CHMTPickNPlace.NOTFOUND:
                 if smt:
                     output.write('|-\n')
                     sep='| '
@@ -171,10 +171,10 @@ if not args.smt and not args.pth:
 
 if (args.download or not os.path.isfile(feederfile) ):
     print "Downloading feederfile: ", feederfile
-    CHMTfeeders.downloadFeederFile(feederfile, args.key)
+    CHMTPickNPlace.downloadFeederFile(feederfile, args.key)
 
-(feeder, component) = CHMTfeeders.loadFeeders(feederfile)
-palettes = EAGLEboard.getLayers(rcfile)
+(feeder, component) = CHMTPickNPlace.loadFeeders(feederfile)
+palettes = EagleCAD.getLayers(rcfile)
 
 for f in args.PCBfile:
     if len(args.PCBfile) > 1:
@@ -194,9 +194,9 @@ for f in args.PCBfile:
 
         outfilename = os.path.join(outdir, bn)
 
-    (eagleBoard, packages, layers) = EAGLEboard.loadBoard(f, palettes)
-    parts    = EAGLEboard.getSMDParts(eagleBoard, packages, component, feeder)
-    used     = EAGLEboard.getUsedComponents(parts, feeder)
+    (eagleBoard, packages, layers) = EagleCAD.loadBoard(f, palettes)
+    parts    = EagleCAD.getSMDParts(eagleBoard, packages, component, feeder)
+    used     = EagleCAD.getUsedComponents(parts, feeder)
 
     content = outputParts(parts, args.smt, args.pth)
     if args.outdir == '-':

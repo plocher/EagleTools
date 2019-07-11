@@ -14,7 +14,7 @@ import os
 import datetime
 import argparse
 import StringIO
-from fab import CHMTfeeders, EAGLEboard
+from fab import CHMTPickNPlace, EagleCAD
 
 """
 Output routines to create a SVG file
@@ -57,7 +57,7 @@ def outputStations(used, feeder, component):
     stacknumber = 0
     output.write("Table,No.,ID,DeltX,DeltY,FeedRates,Note,Height,Speed,Status,SizeX,SizeY,HeightTake,DelayTake,nPullStripSpeed\n")
     for p,v in enumerate(used):
-        f = feeder[CHMTfeeders.getFeederForComponent(v, component)]
+        f = feeder[CHMTPickNPlace.getFeederForComponent(v, component)]
 
         output.write("Station, "
               "{stack:d}, {fnum:d}, {fXoff:0.2f}, {fYoff:0.2f}, "
@@ -66,19 +66,19 @@ def outputStations(used, feeder, component):
               "{sizeX:0.2f}, {sizeY:0.2f}, "
               "{pickHeight:0.2f}, {pickDelay:0.2f}, {pullSpeed:d}\n".format(
             stack=stacknumber,
-            fnum=int(f[CHMTfeeders.feedernum]),
-            fXoff=float(f[CHMTfeeders.feederXoff]),
-            fYoff=float(f[CHMTfeeders.feederYoff]),
-            pullDist=int(f[CHMTfeeders.pulldist]),
-            name=f[CHMTfeeders.partname],
-            placeHeight=float(f[CHMTfeeders.placeheight]),
-            placeSpeed=int(f[CHMTfeeders.placespeed]),
-            options=f[CHMTfeeders.options],
-            sizeX=float(f[CHMTfeeders.partsizeX]),
-            sizeY=float(f[CHMTfeeders.partsizeY]),
-            pickHeight=float(f[CHMTfeeders.pickheight]),
-            pickDelay=float(f[CHMTfeeders.pickdelay]),
-            pullSpeed=int(f[CHMTfeeders.pullspeed])))
+            fnum=int(f[CHMTPickNPlace.feedernum]),
+            fXoff=float(f[CHMTPickNPlace.feederXoff]),
+            fYoff=float(f[CHMTPickNPlace.feederYoff]),
+            pullDist=int(f[CHMTPickNPlace.pulldist]),
+            name=f[CHMTPickNPlace.partname],
+            placeHeight=float(f[CHMTPickNPlace.placeheight]),
+            placeSpeed=int(f[CHMTPickNPlace.placespeed]),
+            options=f[CHMTPickNPlace.options],
+            sizeX=float(f[CHMTPickNPlace.partsizeX]),
+            sizeY=float(f[CHMTPickNPlace.partsizeY]),
+            pickHeight=float(f[CHMTPickNPlace.pickheight]),
+            pickDelay=float(f[CHMTPickNPlace.pickdelay]),
+            pullSpeed=int(f[CHMTPickNPlace.pullspeed])))
 
         stacknumber = stacknumber + 1
     output.write("\n")
@@ -93,10 +93,10 @@ def outputParts(parts):
     #EComponent, 0, 1, 1, 17, 19.05, 38.10, 90.00, 0.50, 2, 0, LED1, R - 0603, 0.00
     count = 0
     output.write("Table, No., ID, PHead, STNo., DeltX, DeltY, Angle, Height, Skip, Speed, Explain, Note, Delay\n")
-    for pn in sorted(parts.iterkeys(), key=EAGLEboard.natural_sort_key):
+    for pn in sorted(parts.iterkeys(), key=EagleCAD.natural_sort_key):
         p = parts[pn]
         fnum = p['feeder']
-        if fnum == CHMTfeeders.SKIP or fnum == CHMTfeeders.NOTFOUND:
+        if fnum == CHMTPickNPlace.SKIP or fnum == CHMTPickNPlace.NOTFOUND:
             continue
         f = feeder[fnum]
 
@@ -104,13 +104,13 @@ def outputParts(parts):
               "{num:d}, {id:d}, {head:d}, {fnum:d}, "
               "{cX:0.2f}, {cY:0.2f}, {angle:0.2f}, {height:0.2f}, "
               "{skip:d}, {speed:d}, {name}, {note}, {dly:0.2f}\n".format(
-            num=count, id=count+1, head=int(f[CHMTfeeders.head]), fnum=int(f[CHMTfeeders.feedernum]),
-            cX=float(p['x']), cY=float(p['y']), angle=p['rot'], height=float(f[CHMTfeeders.pickheight]),
-            skip=int(f[CHMTfeeders.options]),
-            speed=int(f[CHMTfeeders.pullspeed]),
+            num=count, id=count+1, head=int(f[CHMTPickNPlace.head]), fnum=int(f[CHMTPickNPlace.feedernum]),
+            cX=float(p['x']), cY=float(p['y']), angle=p['rot'], height=float(f[CHMTPickNPlace.pickheight]),
+            skip=int(f[CHMTPickNPlace.options]),
+            speed=int(f[CHMTPickNPlace.pullspeed]),
             name=p['name'],
-            note=f[CHMTfeeders.partname],
-            dly=float(f[CHMTfeeders.pickdelay])
+            note=f[CHMTPickNPlace.partname],
+            dly=float(f[CHMTPickNPlace.pickdelay])
         ))
         count = count + 1
     output.write("\n")
@@ -156,9 +156,9 @@ if args.feederfile:
     feederfile = args.feederfile
 
 if (args.download):
-    CHMTfeeders.downloadFeederFile(feederfile, args.key)
+    CHMTPickNPlace.downloadFeederFile(feederfile, args.key)
 
-(feeder, component) = CHMTfeeders.loadFeeders(feederfile)
+(feeder, component) = CHMTPickNPlace.loadFeeders(feederfile)
 
 for f in args.PCBfile:
     if len(args.PCBfile) > 1:
@@ -178,14 +178,14 @@ for f in args.PCBfile:
 
         outfilename = os.path.join(outdir, bn)
 
-    palettes = EAGLEboard.getLayers("/Users/jplocher/.eaglerc")
-    (eagleBoard, packages, layers) = EAGLEboard.loadBoard(f, palettes)
-    parts    = EAGLEboard.getSMDParts(eagleBoard, packages, component, feeder)
-    used     = EAGLEboard.getUsedComponents(parts, feeder)
+    palettes = EagleCAD.getLayers("/Users/jplocher/.eaglerc")
+    (eagleBoard, packages, layers) = EagleCAD.loadBoard(f, palettes)
+    parts    = EagleCAD.getSMDParts(eagleBoard, packages, component, feeder)
+    used     = EagleCAD.getUsedComponents(parts, feeder)
 
 
     # get max board dimensions
-    (x1,y1,x2,y2) = EAGLEboard.getBoardDimensions(eagleBoard)
+    (x1,y1,x2,y2) = EagleCAD.getBoardDimensions(eagleBoard)
 
     #print "dimensions: (x1:{} y1:{}), (x2:{},y2:{})".format(x1,y1,x2,y2)
 
@@ -205,7 +205,7 @@ for f in args.PCBfile:
         # 2. add symbols to the defs section
         dwg.defs.add(symbol)
         # 3. important: define viewbox of the symbol!
-        (x1,y1, x2,y2) = EAGLEboard.getSymbolBounds(P, 10000, 10000, -10000, -10000)
+        (x1,y1, x2,y2) = EagleCAD.getSymbolBounds(P, 10000, 10000, -10000, -10000)
         symbol.viewbox(x1,y1, x2,y2)
         # 4. add symbol to the container
         for wire in P.getElementsByTagName("wire"):
