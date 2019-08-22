@@ -1,5 +1,10 @@
 #!/usr/bin/python
+
 """
+Author: John Plocher, 2019
+URL:    www.SPCoast.com
+License: Python Software Foundation License
+
 Inspired by Sparkfun's CHMT ULP tutorial
 (https://www.sparkfun.com/sparkx/blog/2591)
 
@@ -14,7 +19,10 @@ The Google Doc format is expanded and reordered from the Sparkfun original
    www.SPCoast.com
 
 """
-from fab.SiteConfiguration import * # local config details
+
+__version__ = "0.1"
+
+import CAMTool.fab.SiteConfiguration as config # local config details
 
 import csv
 import urllib2
@@ -168,10 +176,10 @@ def downloadFeederFile(feederfilename, key):
     # The ID from a 'Anyone with the link can view' shared level spreadsheet
     # This spreadsheet contains configurations for each different reel of components
     if key is None or key == '':
-        key = spreadsheet_key
+        key = config.spreadsheet_key
 
     if feederfilename is None or feederfilename == '':
-        feederfilename = defaultfeederfile
+        feederfilename = config.defaultfeederfile
     print("Downloading feeder data from the Google ..."),
 
     # This is the public spreadsheet that contains all our feeder data

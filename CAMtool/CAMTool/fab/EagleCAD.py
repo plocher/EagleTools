@@ -1,10 +1,19 @@
+#!/usr/bin/python
 
-from fab.SiteConfiguration import * # local config details
+"""
+Author: John Plocher, 2019
+URL:    www.SPCoast.com
+License: Python Software Foundation License
+"""
+
+__version__ = "0.1"
+
+# from CAMTool.fab.SiteConfiguration import * # local config details
+from CAMTool.fab import CHMTPickNPlace
 
 from xml.dom.minidom import parse
 import xml.dom.minidom
 import re
-# from fab import CHMTPickNPlace
 
 """
 sort based on alphanumeric order
@@ -98,7 +107,7 @@ def loadLibrary(libname):
             me["smd"] = True
         (me["xmin"], me["ymin"], me["xmax"], me["ymax"]) = getSymbolBounds(P,10000,10000,-10000,-10000)
         packages[me["name"].lower()] = me
-        print "Package: {}: {} - bounds: ({},{}) ({},{})".format(me['name'],me['description'], me["xmin"], me["ymin"], me["xmax"], me["ymax"])
+        print("Package: {}: {} - bounds: ({},{}) ({},{})".format(me['name'],me['description'], me["xmin"], me["ymin"], me["xmax"], me["ymax"]))
 
         #for node in P.childNodes:
             #print("\tChild: {}".format(node.nodeName)
@@ -194,7 +203,7 @@ def getSMDParts(eagleBoard, packages, component, feeder):
             me['rot']     = e.getAttribute("rot")
             me['smashed'] = e.getAttribute("smashed")
             me['smd']     = True  # corrected later if not...
-            me['feeder']  = CHMTfeeders.SKIP
+            me['feeder']  = CHMTPickNPlace.SKIP
 
             id = me['value'].lower() + "-" + me['package'].lower()
             me['id']      = id
@@ -206,8 +215,8 @@ def getSMDParts(eagleBoard, packages, component, feeder):
                 me['smd'] = False
                 continue
 
-            c = CHMTfeeders.getFeederForComponent(id, component)
-            if c != CHMTfeeders.SKIP:
+            c = CHMTPickNPlace.getFeederForComponent(id, component)
+            if c != CHMTPickNPlace.SKIP:
                 me['feeder'] = c
 
                 # Normalize rotation...
@@ -215,6 +224,8 @@ def getSMDParts(eagleBoard, packages, component, feeder):
                 # the CHMT tapes are mounted 90 degrees from the board
                 if me['rot'] == '':
                     me['rot'] = 'R0'
+                if me['rot'].startswith('MR'):
+                    angle = int(me['rot'].lstrip('MR')) # TODO: Do I need to +180 ?
                 if me['rot'].startswith('R'):
                     angle = int(me['rot'].lstrip('R'))
                 else:
@@ -223,14 +234,14 @@ def getSMDParts(eagleBoard, packages, component, feeder):
 
                 # However, some feeders/FPs are not horizontal (trays...)
                 # so we correct on a component by component basis
-                angle = angle + int(feeder[c][CHMTfeeders.rotation])
+                angle = angle + int(feeder[c][CHMTPickNPlace.rotation])
                 if (angle > 180):
                     angle -= 360
                 me['rot'] = angle
 
                 #print "SMD: {name:<10} {id} feeder: {feed}".format(name= e.getAttribute("name"), id= id, feed=component[id])
             else:
-                me['feeder'] = CHMTfeeders.NOTFOUND
+                me['feeder'] = CHMTPickNPlace.NOTFOUND
                 # print "Note: Could not find feeder for part {} (ret={})".format(id, c)
         return parts
 
@@ -241,11 +252,11 @@ If a design's part doesn't have an assigned feeder, assume it isn't used.
 def getUsedComponents(parts, feeder):
     used = {}
     for p in sorted(parts.iterkeys()):
-        if parts[p]['feeder'] == CHMTfeeders.SKIP:
+        if parts[p]['feeder'] == CHMTPickNPlace.SKIP:
             continue
-        if parts[p]['feeder'] == CHMTfeeders.NOTFOUND:
+        if parts[p]['feeder'] == CHMTPickNPlace.NOTFOUND:
             continue
-        pn = feeder[parts[p]['feeder']][CHMTfeeders.partname]
+        pn = feeder[parts[p]['feeder']][CHMTPickNPlace.partname]
         if pn not in used:
             used[pn] = []
         used[pn].append(p)

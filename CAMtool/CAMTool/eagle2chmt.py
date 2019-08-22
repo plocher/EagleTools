@@ -1,5 +1,10 @@
 #!/usr/bin/python
+
 """
+Author: John Plocher, 2019
+URL:    www.SPCoast.com
+License: Python Software Foundation License
+
 Inspired by Sparkfun's CHMT ULP tutorial
 (https://www.sparkfun.com/sparkx/blog/2591)
 
@@ -7,12 +12,9 @@ This is a stand alone script that can be run from a Makefile without invoking ea
 The Google Doc forat is expanded and reordered from the Sparkfun original - feel free to look at / borrow the one
 referenced here with the default key
 
-  -John Plocher
-   July 2018
-   www.SPCoast.com
 
 """
-from fab.SiteConfiguration import *
+import CAMTool.fab.SiteConfiguration as config
 
 import os
 import datetime
@@ -211,84 +213,89 @@ optional arguments:
 
 """
 
+def main():
+    parser = argparse.ArgumentParser(description='Create a CHMT pick-n-place job from an EAGLEcad PCB board file.',
+				     formatter_class=argparse.RawDescriptionHelpFormatter,
+				     epilog="""
+    Feederfile has the structure:
+       Tape Size,Feeder Number,Component,Feeder XOffset,Feeder YOffset,...
+       ...PickHeight,PickDelay,PullSpeed,Pull Distance,Place Height,Place Speed,...
+       ...Head,Part Rotation,Place Component,Check Vacuum,Use Vision,...
+       ...Size X,Size Y,Centroid Correction X,Centroid Correction Y,Aliases,...
+       ...Stock Notes,Inventory Notes,Used On
 
-parser = argparse.ArgumentParser(description='Create a CHMT pick-n-place job from an EAGLEcad PCB board file.',
-                                 formatter_class=argparse.RawDescriptionHelpFormatter,
-                                 epilog="""
-Feederfile has the structure:
-   Tape Size,Feeder Number,Component,Feeder XOffset,Feeder YOffset,...
-   ...PickHeight,PickDelay,PullSpeed,Pull Distance,Place Height,Place Speed,...
-   ...Head,Part Rotation,Place Component,Check Vacuum,Use Vision,...
-   ...Size X,Size Y,Centroid Correction X,Centroid Correction Y,Aliases,...
-   ...Stock Notes,Inventory Notes,Used On
 
+       Tape Size is 8mm, 12mm...
+       Component is the name of the component as (value-package)
+       Pull Distance is the tape spacing between components: 2-4-8-12-16-24
+       Part Rotation is the difference between the eagle library footprint and the orientation on the tape
+       Place Component is Y or N if you want to skip placing this component
+       Aliases is a ':' delimited list of altername component ids
+       Stock Notes,Inventory Notes,Used On are all ignored comment fields
 
-   Tape Size is 8mm, 12mm...
-   Component is the name of the component as (value-package)
-   Pull Distance is the tape spacing between components: 2-4-8-12-16-24
-   Part Rotation is the difference between the eagle library footprint and the orientation on the tape
-   Place Component is Y or N if you want to skip placing this component
-   Aliases is a ':' delimited list of altername component ids
-   Stock Notes,Inventory Notes,Used On are all ignored comment fields
+    """)
+    parser.add_argument('PCBfile', metavar='pcbfile', type=str, nargs='+',
+			help='an EAGLEcad .brd file to process')
+    parser.add_argument("--eagleRC",    help="Eagle rc file with palette definitions")
+    parser.add_argument("--feederfile", help="csv file with feeder component assignments")
+    parser.add_argument("--outdir",     help="output directory (default is <PCBfile>.bom.txt)")
+    parser.add_argument("--download",   action="store_true", help="download a fresh feeder file from Google Sheets?")
+    parser.add_argument("--key",        help="Google Sheets document access key")
 
-""")
-parser.add_argument('PCBfile', metavar='pcbfile', type=str, nargs='+',
-                    help='an EAGLEcad .brd file to process')
-parser.add_argument("--eagleRC",    help="Eagle rc file with palette definitions")
-parser.add_argument("--feederfile", help="csv file with feeder component assignments")
-parser.add_argument("--outdir",     help="output directory (default is <PCBfile>.bom.txt)")
-parser.add_argument("--download",   action="store_true", help="download a fresh feeder file from Google Sheets?")
-parser.add_argument("--key",        help="Google Sheets document access key")
+    args = parser.parse_args()
 
-args = parser.parse_args()
+    feederfile = config.defaultfeederfile
+    if args.feederfile:
+	    feederfile = args.feederfile
 
-feederfile = defaultfeederfile
-if args.feederfile:
-    feederfile = args.feederfile
+    rcfile = config.defaulteaglerc
+    if args.eagleRC:
+	    rcfile = args.eagleRC
 
-rcfile = defaulteaglerc
-if args.eagleRC:
-    rcfile = args.eagleRC
+    if (args.download or not os.path.isfile(feederfile) ):
+	    print "DL feederfile: ", feederfile
+	    CHMTPickNPlace.downloadFeederFile(feederfile, args.key)
 
-if (args.download or not os.path.isfile(feederfile) ):
-    print "DL feederfile: ", feederfile
-    CHMTPickNPlace.downloadFeederFile(feederfile, args.key)
+    (feeder, component) = CHMTPickNPlace.loadFeeders(feederfile)
+    palettes = EagleCAD.getLayers(rcfile)
 
-(feeder, component) = CHMTPickNPlace.loadFeeders(feederfile)
-palettes = EagleCAD.getLayers(rcfile)
+    for f in args.PCBfile:
+    	if len(args.PCBfile) > 1:
+    	    print "Processing {}".format(f)
 
-for f in args.PCBfile:
-    if len(args.PCBfile) > 1:
-        print "Processing {}".format(f)
+    	outfilename = os.path.splitext(os.path.basename(f))[0] + ".dpv"
+    	outdir = os.path.dirname(f)
 
-    outfilename = os.path.splitext(os.path.basename(f))[0] + ".dpv"
-    outdir = os.path.dirname(f)
-
-    if args.outdir:
-        if args.outdir == '@':
-            outdir = defaultDPVdir
-        elif args.outdir == "-":
-            pass
-        else:
-            outdir = args.outdir
+        if args.outdir:
+            if args.outdir == '@':
+                outdir = config.defaultBOMdir
+            elif args.outdir == "-":
+                pass
+            else:
+                outdir = args.outdir
+                
         bn = os.path.basename(outfilename)
-
         outfilename = os.path.join(outdir, bn)
 
-    (eagleBoard, packages, layers) = EagleCAD.loadBoard(f, palettes)
-    parts    = EagleCAD.getSMDParts(eagleBoard, packages, component, feeder)
-    used     = EagleCAD.getUsedComponents(parts, feeder)
+    	(eagleBoard, packages, layers) = EagleCAD.loadBoard(f, palettes)
+    	parts    = EagleCAD.getSMDParts(eagleBoard, packages, component, feeder)
+    	used     = EagleCAD.getUsedComponents(parts, feeder)
 
-    content = ""
-    content = content + outputHeader(f)
-    content = content + outputStations(used, feeder, component)
-    content = content + outputBatch()
-    content = content + outputParts(parts)
-    content = content + outputICTray()
-    content = content + outputPCBCalibrate()
-    content = content + outputFiducials()
-    content = content + outputCalibrationFactor()
+    	content = ""
+    	content = content + outputHeader(f)
+    	content = content + outputStations(used, feeder, component)
+    	content = content + outputBatch()
+    	content = content + outputParts(parts)
+    	content = content + outputICTray()
+    	content = content + outputPCBCalibrate()
+    	content = content + outputFiducials()
+    	content = content + outputCalibrationFactor()
 
-    outfile = open(outfilename, "w")
-    outfile.write(content)
-    outfile.close()
+    	outfile = open(outfilename, "w")
+    	outfile.write(content)
+    	outfile.close()
+
+
+if __name__ == "__main__":
+    main()
+

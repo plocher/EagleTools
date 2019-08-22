@@ -1,4 +1,9 @@
+#!/usr/bin/python
+
 """
+Author: John Plocher, 2019
+URL:    www.SPCoast.com
+License: Python Software Foundation License
 
 eagle2gerbers
 
@@ -28,7 +33,7 @@ eagle2gerbers
     next time you place a fab order.
 """
 
-from fab.SiteConfiguration import *
+import CAMTool.fab.SiteConfiguration as config
 
 import os
 import os.path
@@ -45,8 +50,8 @@ import shutil
 
 PARTS_BOARD = 'run generate_mediawiki_partlist; RUN PartList'
 PARTS_SCH   = 'EXPORT partlist {}'
-GENGERBER   = '{EAGLEAPP} -X- -X+ -dGERBER_RS274X'.format(EAGLEAPP=EAGLEAPP)
-GENDRILLS   = '{EAGLEAPP} -X- -X+ -dEXCELLON_24'.format(EAGLEAPP=EAGLEAPP)
+GENGERBER   = '{EAGLEAPP} -X- -X+ -dGERBER_RS274X'.format(EAGLEAPP=config.EAGLEAPP)
+GENDRILLS   = '{EAGLEAPP} -X- -X+ -dEXCELLON_24'.format(EAGLEAPP=config.EAGLEAPP)
 
 
 ARCHIVEDIR  = 'Archive'
@@ -65,6 +70,7 @@ Ensure file naming patterns are consistent by generating them in one place
 #  Gerber Bottom Overlay (silkscreen layer):    *.GBO
 #  Gerber Bottom Soldermask (soldermask layer): *.GBS
 #  Gerber Milling Layer:                        *.GML
+#  Gerber Board Outline:                        *.GKO
 #  Gerber Top solderPaste (smt solder layer):   *.GTP
 # and
 #  Excellon Drill File:                         *.TXT
@@ -78,6 +84,7 @@ def genGerberFilenameList(project):
     FileList['GTO'] = "{}.GTO".format(project)
 
     FileList['GML'] = "{}.GML".format(project)
+    FileList['GKO'] = "{}.GKO".format(project)
 
     FileList['GBO'] = "{}.GBO".format(project)
     FileList['GBP'] = "{}.GBP".format(project)
@@ -96,10 +103,12 @@ def genEagleFilenameList(args):
 
 def genArchivesFileList(args):
     FileList = {}
-    FileList['tefn']       = '{}.eagle.tar'  .format(args.project)
+    FileList['tefn']       = '{}.eagle.tar'  .format(args.project)       # Tar Eagle File Name
     FileList['zefn']       = '{}.eagle.zip'  .format(args.project)
+    FileList['tgfna']      = '{}_array.gerbers.tar'.format(args.project) # Tar Gerbers File Name - Array
+    FileList['zgfna']      = '{}_array.gerbers.zip'.format(args.project)
     FileList['tgfn']       = '{}.gerbers.tar'.format(args.project)
-    FileList['zgfn']       = '{}.gerbers.zip'.format(args.project)
+    FileList['zgfn']       = '{}.gerbers.zip'.format(args.project)       # Zip Gerber File Name
     return FileList
 
 
@@ -171,10 +180,14 @@ def generateGerbersFromEagle(args):
     board      = blist['board']
     boardArray = blist['boardArray']
     schematic  = blist['schematic']
+
     tefn       = blist['tefn']
-    zefn       = blist['zefn']
     tgfn       = blist['tgfn']
+    tgfna      = blist['tgfna']
+
+    zefn       = blist['zefn']
     zgfn       = blist['zgfn']
+    zgfna      = blist['zgfna']
 
 
     if not os.path.isfile(board):
@@ -241,68 +254,82 @@ def generateGerbersFromEagle(args):
         # These files, zipped together, are the only files you need to have a PCB made at nearly any fab house.
 
         # Copper layers
-        callCommand(args, FileList['GTL'], board, GENGERBER, 'Dimension Top     Pads Vias')
-        callCommand(args, FileList['GBL'], board, GENGERBER, 'Dimension Bottom  Pads Vias')
+        callCommand(args, FileList['GTL'], b, GENGERBER, 'Dimension Top     Pads Vias')
+        callCommand(args, FileList['GBL'], b, GENGERBER, 'Dimension Bottom  Pads Vias')
 
         # Solder Mask
-        callCommand(args, FileList['GTS'], board, GENGERBER, 'Dimension tStop')
-        callCommand(args, FileList['GBS'], board, GENGERBER, 'Dimension bStop')
+        callCommand(args, FileList['GTS'], b, GENGERBER, 'Dimension tStop')
+        callCommand(args, FileList['GBS'], b, GENGERBER, 'Dimension bStop')
 
         # Solder Paste
-        callCommand(args, FileList['GTP'], board, GENGERBER, 'Dimension tCream')
-        callCommand(args, FileList['GBP'], board, GENGERBER, 'Dimension bCream')
+        callCommand(args, FileList['GTP'], b, GENGERBER, 'Dimension tCream')
+        callCommand(args, FileList['GBP'], b, GENGERBER, 'Dimension bCream')
 
         # Board Outline and Milling instructions
-        callCommand(args, FileList['GML'], board, GENGERBER, 'Dimension Milling')
+        callCommand(args, FileList['GML'], b, GENGERBER, 'Dimension Milling')
+        # Board Outline only
+        callCommand(args, FileList['GKO'], b, GENGERBER, 'Dimension')
 
         # Drills and holes
-        callCommand(args, FileList['TXT'], board, GENDRILLS, 'Dimension Drills Holes')
+        callCommand(args, FileList['TXT'], b, GENDRILLS, 'Dimension Drills Holes')
 
         # Silk Screen layers
-        if b == board :	# singleton
-            callCommand(args, FileList['GTO'], board, GENGERBER, 'Dimension tPlace Document tDocu tNames')
-            callCommand(args, FileList['GBO'], board, GENGERBER, 'Dimension bplace          bDocu bNames')
+        if b == board : # singleton
+            callCommand(args, FileList['GTO'], b, GENGERBER, 'Dimension tPlace tDocu tNames')
+            callCommand(args, FileList['GBO'], b, GENGERBER, 'Dimension bplace bDocu bNames')
         else: # boardArray
-            callCommand(args, FileList['GTO'], board, GENGERBER, 'Dimension tPlace Document tDocu 125')
-            callCommand(args, FileList['GBO'], board, GENGERBER, 'Dimension bplace          bDocu 126')
-
+            callCommand(args, FileList['GTO'], b, GENGERBER, 'Dimension tPlace tDocu 125')
+            callCommand(args, FileList['GBO'], b, GENGERBER, 'Dimension bplace bDocu 126')
+        
         # now, make archives of the CAM files and the gerbers we just generated
         if not args.tar:
+            if b == board :     # singleton
+                fn = zgfn
+                # only create a single archive of sch plus all .brds
+                if args.verbose:
+                    print('Archive CAD: Zip: {}'.format(zefn))
+                with ZipFile(zefn, 'w') as zip:
+                    for f in [schematic, board, boardArray]:
+                        if os.path.isfile(f):
+                            if args.verbose:
+                                print('\t{}'.format(f))
+                            zip.write(f)
+            else:
+                fn = zgfna
+
             if args.verbose:
-                print('Archive: Zip: {}'.format(zgfn))
-            with ZipFile(zgfn, 'w') as zip:
+                print('Archive Gerbers: Zip: {}'.format(fn))
+            with ZipFile(fn, 'w') as zip: # TODO: Need to make archive of _array in addition to singleton...
                 for n, f in FileList.iteritems():
                     if os.path.isfile(f):
                         if args.verbose:
                             print('\t{}'.format(f))
                         zip.write(f)
 
-            if args.verbose:
-                print('Archive: Zip: {}'.format(zefn))
-            with ZipFile(zefn, 'w') as zip:
-                for f in [schematic, board, boardArray]:
-                    if os.path.isfile(f):
-                        if args.verbose:
-                            print('\t{}'.format(f))
-                        zip.write(f)
         else:
+            if b == board :     # singleton
+                fn = tgfn
+                # only create a single archive of sch plus all .brds
+                if args.verbose:
+                    print('Archive CAD: Tar: {}'.format(tefn))
+                with tarfile.open(tefn, 'w') as tar:
+                    for f in [schematic, board, boardArray]:
+                        if os.path.isfile(f):
+                            if args.verbose:
+                                print('\t{}'.format(f))
+                            tar.add(f)
+            else:
+                fn = tgfna
+
             if args.verbose:
-                print('Archive: Tar: {}'.format(tgfn))
-            with tarfile.open(tgfn, 'w') as tar:
+                print('Archive Gerbers: Tar: {}'.format(fn))
+            with tarfile.open(fn, 'w') as tar:
                 for n, f in FileList.iteritems():
                     if os.path.isfile(f):
                         if args.verbose:
                             print('\t{}'.format(f))
                         tar.add(f)
 
-            if args.verbose:
-                print('Archive: Tar: {}'.format(tefn))
-            with tarfile.open(tefn, 'w') as tar:
-                for f in [schematic, board, boardArray]:
-                    if os.path.isfile(f):
-                        if args.verbose:
-                            print('\t{}'.format(f))
-                        tar.add(f)
 
     return modified
 
@@ -324,10 +351,10 @@ def generateImagesFromEagle(args):
     genparts   = PARTS_SCH.format(partsfile)
 
     # EagleCAD commands
-    IMAGE_SCH  ="SET PALETTE WHITE; DISPLAY {layer};                    EXPORT image {png} 300".format(layer=D_SCHEMATIC, png=pngsch)
-    IMAGE_BOARD="SET PALETTE WHITE; DISPLAY {layer}; RATSNEST; RIPUP @; EXPORT image {png} 300".format(layer=D_NORMAL,    png=pngbrd)
-    IMAGE_BSILK="SET PALETTE WHITE; DISPLAY {layer}; RATSNEST;          EXPORT image {png} 300".format(layer=D_BSILK,     png=pngbot)
-    IMAGE_TSILK="SET PALETTE WHITE; DISPLAY {layer}; RATSNEST;          EXPORT image {png} 300".format(layer=D_TSILK,     png=pngtop)
+    IMAGE_SCH  ="SET PALETTE WHITE; DISPLAY {layer};                    EXPORT image {png} 300".format(layer=config.D_SCHEMATIC, png=pngsch)
+    IMAGE_BOARD="SET PALETTE WHITE; DISPLAY {layer}; RATSNEST; RIPUP @; EXPORT image {png} 300".format(layer=config.D_NORMAL,    png=pngbrd)
+    IMAGE_BSILK="SET PALETTE WHITE; DISPLAY {layer}; RATSNEST;          EXPORT image {png} 300".format(layer=config.D_BSILK,     png=pngbot)
+    IMAGE_TSILK="SET PALETTE WHITE; DISPLAY {layer}; RATSNEST;          EXPORT image {png} 300".format(layer=config.D_TSILK,     png=pngtop)
 
     FileList = [pngsch, pngbrd, pngtop, pngbot]
 
@@ -358,7 +385,7 @@ def generateImagesFromEagle(args):
             ECMD="SET CONFIRM OFF;{};undo;{};undo;quit;"
             ECMD=ECMD.format(IMAGE_SCH, genparts)
 
-            os.system("{EAGLE} -C \"{cmd}\" {file}".format(EAGLE=EAGLEAPP, cmd=ECMD, file=schematic))
+            os.system("{EAGLE} -C \"{cmd}\" {file}".format(EAGLE=config.EAGLEAPP, cmd=ECMD, file=schematic))
 
     for b in [board, boardArray]:
         if not os.path.isfile(b):
@@ -372,7 +399,7 @@ def generateImagesFromEagle(args):
                 ECMD="SET CONFIRM OFF;{};undo;{};undo;{};undo;{};undo;quit;"
                 ECMD=ECMD.format(PARTS_BOARD, IMAGE_BOARD, IMAGE_BSILK,IMAGE_TSILK)
 
-                os.system("{EAGLE} -C \"{cmd}\" {board}".format(EAGLE=EAGLEAPP, cmd=ECMD, board=b))
+                os.system("{EAGLE} -C \"{cmd}\" {board}".format(EAGLE=config.EAGLEAPP, cmd=ECMD, board=b))
     return modified
 
 
@@ -391,7 +418,7 @@ def isNeeded(file, base_time):
 
 def generateFabFiles(args):
     def callCommand(args, command, board):
-        command = "python {COMMAND} --feederfile=/tmp/PnP-feeders {BOARD}".format(COMMAND=command, BOARD=board)
+        command = "{COMMAND} --feederfile=/tmp/PnP-feeders {BOARD}".format(COMMAND=command, BOARD=board)
         if args.verbose:
             print('% {}'.format(command))
         os.system(command)
@@ -413,11 +440,11 @@ def generateFabFiles(args):
         base_time = getCADtime(schematic, b)
 
         if isNeeded(blist['dpv'], base_time):
-            callCommand(args, eagle2chmt, b)
+            callCommand(args, config.eagle2chmt, b)
         if isNeeded(blist['svg'], base_time):
-            callCommand(args, eagle2svg,  b)
+            callCommand(args, config.eagle2svg,  b)
         if isNeeded(blist['bom'], base_time):
-            callCommand(args, eagle2bom,  b)
+            callCommand(args, config.eagle2bom,  b)
 
 def generateArchive(args):
     DATE       = datetime.datetime.today().strftime('%F-%T')
@@ -433,15 +460,15 @@ def generateArchive(args):
 
     if os.path.islink(l):
         if args.verbose:
-            print('rm {}'.format(l))
+            print('% rm {}'.format(l))
         os.remove(l)
 
     if args.verbose:
-        print('mkdir {}'.format(d))
+        print('% mkdir {}'.format(d))
     os.mkdir(d, 0o755)
 
     if args.verbose:
-        print('ln -s {} {}'.format(GERBERDIR, l))
+        print('% ln -s {} {}'.format(GERBERDIR, l))
     os.symlink(GERBERDIR, l)
 
     for dict in [ genEagleFilenameList(args),
@@ -450,83 +477,127 @@ def generateArchive(args):
         for n, f in dict.iteritems():
             if os.path.isfile(f):
                 if args.verbose:
-                    print('cp {} {}'.format(f, d))
+                    print('% cp {} {}'.format(f, d))
                 shutil.copy(f, d)
 
-    for n, f in genGerberFilenameList(args.project).iteritems():
-        if os.path.isfile(f):
-            if args.verbose:
-                print('rm {} {}'.format(f, d))
-            os.remove(f)
+    blist = genBoardFilenameList(args)
+    board = blist['board']
+    boardArray = blist['boardArray']
 
-"""
-main()
+    if board.endswith('.brd'):
+        (board, ext) = os.path.splitext(board)
+    if boardArray.endswith('.brd'):
+        (boardArray, ext) = os.path.splitext(boardArray)
 
-usage: eagle2CAM.py [-h] [--noarchive] [--picknplace] [--order]
-                    [--directory DIRECTORY] [--tar] [--leave] [--verbose]
-                    [--force] [--project PROJECT]
+    for d in [ genGerberFilenameList(board), genGerberFilenameList(boardArray) ]:
+        for n, f in d.iteritems():
+            if os.path.isfile(f):
+                if args.verbose:
+                    print('% rm {}'.format(f))
+                os.remove(f)
 
-optional arguments:
-  -h, --help            show this help message and exit
-  --noarchive, -n       Do not archive CAD files (default is to archive)
-  --picknplace, -p      Generate Pick and Place .dpv files for CharmHigh
-  --order, -o           copy gerber archive to orders directory
-  --directory DIRECTORY, -D DIRECTORY
-                        orders directory (default is
-                        /Users/plocher/Dropbox/eagle/Seeed-
-                        Orders/CurrentOrder)
-  --tar, -t             create tar file for gerbers (default is zip)
-  --leave, -l           Do not clean up unneeded files (default is to clean)
-  --verbose, -v         Verbose flag
-  --force, -f           Force rebuild flag
-  --project PROJECT, -P PROJECT
-                        Project name
-
-"""
-
-somethingChanged = False
-
-parser = argparse.ArgumentParser()
-parser.add_argument('--noarchive', '-n',  action='store_true', help='Do not archive CAD files (default is to archive)')
-parser.add_argument('--picknplace','-p',  action='store_true', help='Generate Pick and Place .dpv files for CharmHigh')
-parser.add_argument('--order',     '-o',  action='store_true', help='copy gerber archive to orders directory')
-parser.add_argument('--directory', '-D', help='orders directory (default is {})'.format(DefaultOrdersDirectory))
-parser.add_argument('--tar',       '-t',  action='store_true', help='create tar file for gerbers (default is zip)')
-parser.add_argument('--leave',     '-l',  action='store_true', help='Do not clean up unneeded files (default is to clean)')
-parser.add_argument('--verbose',   '-v',  action='store_true', help='Verbose flag')
-parser.add_argument('--force',     '-f',  action='store_true', help='Force rebuild flag')
-parser.add_argument('--project',   '-P',                       help='Project name')
-
-args = parser.parse_args()
-
-generate_DESCRIPTION(args)
-somethingChanged |= generateImagesFromEagle(args)
-somethingChanged |= generateGerbersFromEagle(args)
-
-generateFabFiles(args)
-
-if somethingChanged and not args.noarchive: # == default is to archive things...
-    generateArchive(args)
-
-if somethingChanged and args.order:
-    d = DefaultOrdersDirectory
+def copyFiles2Order(args):
+    blist = genBoardFilenameList(args)
+    d = config.DefaultOrdersDirectory
     if args.directory and os.path.exists(args.directory):
         d = args.directory
+        
     if not os.path.exists(d):
-        print "** Orders directory '{}' does not exist!\n".format(d)
+        print "** Orders directory '{}' does not exist!\n".format(d)        
     else:
-        print 'TODO: Order stuff'
-        pass
-        # copy Gerbers ZIP/TAR to d
+        s = args.stamp
+        if s is None:
+            s=''
+        else:
+            s = '-{}'.format(s)
+            
+        for f in [blist['zgfn'], blist['zgfna'], blist['tgfn'], blist['tgfna']]:
+            (name, ext) = os.path.splitext(f)
+            (name, gerbers) = os.path.splitext(name)
+            ext = '{}{}'.format(gerbers, ext)
+            
+            dest = "{}{}-10x10-GREEN{}".format(name, s, ext)
+            dest = os.path.join(d, dest)
+            if os.path.isfile(f):
+                if args.verbose:
+                    print('% cp {} {}'.format(f, dest))
+                shutil.copy(f, dest)
 
-if not args.leave:
-    # get rid of unnecessary files
-    for f in [ "GBP", "job", "dri", "gpi", "pro",
-               "b##", "b#1", "b#2", "b#3", "b#4", "b#5", "b#6", "b#7", "b#8", "b#9",
-               "s##", "s#1", "s#2", "s#3", "s#4", "s#5", "s#6", "s#7", "s#8", "s#9" ]:
-        fn = "{NAME}.{EXT}".format(NAME=args.project, EXT=f)
-        if os.path.isfile(fn):
-            if args.verbose:
-                print('rm {}'.format(fn))
-            os.remove(fn)
+def main():
+    """
+    main()
+
+    usage: eagle2CAM.py [-h] [--noarchive] [--picknplace] [--order]
+                        [--directory DIRECTORY] [--tar] [--leave] [--verbose]
+                        [--force] [--project PROJECT]
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      --noarchive, -n       Do not archive CAD files (default is to archive)
+      --picknplace, -p      Generate Pick and Place .dpv files for CharmHigh
+      --order, -o           copy gerber archive to orders directory
+      --directory DIRECTORY, -D DIRECTORY
+                            orders directory (default is
+                            /Users/plocher/Dropbox/eagle/Seeed-
+                            Orders/CurrentOrder)
+      --tar, -t             create tar file for gerbers (default is zip)
+      --leave, -l           Do not clean up unneeded files (default is to clean)
+      --stamp VER, -s VER   Verbose flag
+      --verbose, -v         Verbose flag
+      --force, -f           Force rebuild flag
+      --project PROJECT, -P PROJECT
+                            Project name
+
+    """
+
+    somethingChanged = False
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--noarchive', '-n',  action='store_true', help='Do not archive CAD files (default is to archive)')
+    parser.add_argument('--picknplace','-p',  action='store_true', help='Generate Pick and Place .dpv files for CharmHigh')
+    parser.add_argument('--order',     '-o',  action='store_true', help='copy gerber archive to orders directory')
+    parser.add_argument('--directory', '-D',  help='orders directory (default is {})'.format(config.DefaultOrdersDirectory))
+    parser.add_argument('--stamp',     '-s',                       help='version stamp (default is none)')
+    parser.add_argument('--tar',       '-t',  action='store_true', help='create tar file for gerbers (default is zip)')
+    parser.add_argument('--leave',     '-l',  action='store_true', help='Do not clean up unneeded files (default is to clean)')
+    parser.add_argument('--verbose',   '-v',  action='store_true', help='Verbose flag')
+    parser.add_argument('--force',     '-f',  action='store_true', help='Force rebuild flag')
+    parser.add_argument('--project',   '-P',                       help='Project name')
+
+    args = parser.parse_args()
+
+    generate_DESCRIPTION(args)
+    somethingChanged |= generateImagesFromEagle(args)
+    somethingChanged |= generateGerbersFromEagle(args)
+
+    generateFabFiles(args)
+
+    if somethingChanged and not args.noarchive: # == default is to archive things...
+        generateArchive(args)
+
+    if somethingChanged and args.order:
+        copyFiles2Order(args)   # copy Gerbers ZIP/TAR to d
+
+    blist = genBoardFilenameList(args)
+    board = blist['board']
+    boardArray = blist['boardArray']
+
+    if board.endswith('.brd'):
+        (board, ext) = os.path.splitext(board)
+    if boardArray.endswith('.brd'):
+        (boardArray, ext) = os.path.splitext(boardArray)
+    if not args.leave:
+        # get rid of unnecessary files
+        for b in [board, boardArray]:
+            for f in [ "GBP", "job", "dri", "gpi", "pro",
+                       "b##", "b#1", "b#2", "b#3", "b#4", "b#5", "b#6", "b#7", "b#8", "b#9",
+                       "s##", "s#1", "s#2", "s#3", "s#4", "s#5", "s#6", "s#7", "s#8", "s#9" ]:
+                fn = "{NAME}.{EXT}".format(NAME=b, EXT=f)
+                if os.path.isfile(fn):
+                    if args.verbose:
+                        print('% rm {}'.format(fn))
+                    os.remove(fn)
+
+if __name__ == "__main__":
+    main()
 

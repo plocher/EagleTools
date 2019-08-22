@@ -261,6 +261,7 @@ int i,j,k,cmn,new_layer;
 
 real xx1,yy1,xx2,yy2,xc,yc,xx3,yy3,wid,dia,dril,dx,dy,size,isol;
 real vh, vw;
+real x0, x1, y0, y1;
 
 string font[],mirror[],style[],shap[],spin[],onoff[],pour[];
 
@@ -312,6 +313,14 @@ output(fileLocation)
     } // end Board
     
     // Copy signals
+	
+	//   (x0, y1)                                  (x1, y1)
+	//   (orgx, orgy + (j)*deltay)      ...        (orgx + (i)*deltax, orgy + (j)*deltay)
+	//    .                                           .
+	//    .                                           .
+	//    .                                           .
+	//   (orgx,orgy)                    ...         (orgx + (i)*deltax, orgy)
+	//   (x0,y0)                                    (x0, y1)
 
     for(i=1;i<=nx;i++)
     {
@@ -334,8 +343,7 @@ output(fileLocation)
 	    }
 
 	    // V-Score Horizontal - only between board instances
-	    //if (i == 1 && j > 1 && ny > 1)
-	    if (i == 1)
+	    if (i == 1 && j > 1 && ny > 1)
 	    {
 		printf("change layer %d;\n",46); // Milling
 		printf("change style %s;\n","CONTINUOUS");
@@ -343,13 +351,28 @@ output(fileLocation)
 		printf("change size 40;\n");
 		printf("text 'V-Score' R%f (%f %f);\n", 90.0, orgx - 100, orgy + (j-1)*deltay);
 	    }
-	    if (i == nx) // add a final one at the top of the array - not everyone will want this...
+	    if (0 == 1 && i == nx && j == ny) // add a final one at the top of the array - not everyone will want this...
 	    {
 		printf("change layer %d;\n",46); // Milling
 		printf("change style %s;\n","CONTINUOUS");
 		printf("wire '%s%s%d%d' %f (%f %f) (%f %f);\n","Vscore","auto",i,j, 0.0, orgx - 100, orgy + (j)*deltay, orgx + vw, orgy + (j)*deltay); // V-SCORE
 		printf("change size 40;\n");
 		printf("text 'V-Score' R%f (%f %f);\n", 90.0, orgx - 100, orgy + (j)*deltay);
+		}
+	    if (i == nx && j == ny) // add a DIM line around the array
+		{
+		x0=orgx;
+		y0=orgy;
+		x1=orgx + (i)*deltax;
+		y1=orgy + (j)*deltay;
+		printf("change layer %d;\n",20); // DIMension
+		printf("change style %s;\n","CONTINUOUS");
+		printf("set Wire_Bend 0;\n");
+		printf("wire '%s' %f (%f %f) (%f %f) (%f %f);\n", "BoardOutline",   10.0, x0, y0, x1, y1, x0, y0); // DIMENSION 
+		//printf("wire '%s' %f (%f %f) (%f %f);\n", "BoardBottom", 10.0, x0, y0, x1, y0); // DIMENSION right
+		//printf("wire '%s' %f (%f %f) (%f %f);\n", "BoardRight",  10.0, x1, y0, x1, y1); // DIMENSION right
+		//printf("wire '%s' %f (%f %f) (%f %f);\n", "BoardTop",    10.0, x1, y1, x0, y1); // DIMENSION top
+		//printf("wire '%s' %f (%f %f) (%f %f);\n", "BoardLeft",   10.0, x0, y1, x0, y0); // DIMENSION left
 	    }
 
 
@@ -384,6 +407,7 @@ output(fileLocation)
                         yy1= u2mil(t.y)+dy;
                         size= u2mil(t.size);              
 
+			// TODO: substitute newlines in t.value with '\n'
                         printf("change layer %d;\n",new_layer);
                         printf("change size %f;\n",size);
                         printf("text '%s' R%f (%f %f);\n",t.value, t.angle,xx1,yy1);
