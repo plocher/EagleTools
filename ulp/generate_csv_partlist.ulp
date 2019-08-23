@@ -1,0 +1,66 @@
+#usage "<b>Generate a verbose parts list for BPM/Mounting use later</b>\n"
+"<author>Author: John Plocher</author>"
+
+// THIS PROGRAM IS PROVIDED AS IS AND WITHOUT WARRANTY OF ANY KIND, EXPRESSED OR IMPLIED
+
+// ============================================================================================
+
+if (board) board(B) {
+	//By default a ULP looks for files in the \eagle\bin directory.
+	//Let's look in the directory where the ULP lives
+
+	//Based on Fudgy's code: http://www.amarketplaceofideas.com/simple-eagle-pcb-ulp-user-language-program-tutorial-to-show-the-path-of-the-ulp.htm
+	string ULP_Path = argv[0];
+
+	//Remove the ulp filename from argv[0]
+	int pos = strrchr(argv[0], '/');
+	if (pos >= 0) {
+		ULP_Path = strsub(argv[0], 0, pos + 1);
+	}
+
+    string fileName;
+    fileName = filesetext(B.name, ".parts.csv");
+
+    output(fileName) {
+        printf("# %s, %s, %s, %s, %s, %s, %s, %s\n",
+            "name",
+            "smd?",
+            "value",
+            "package",
+            "component",
+            "x", "y", "angle");
+
+        B.elements(E) if (E.populate) {
+
+          string componentName = strlwr(E.value) + '-' + strlwr(E.package.name);
+
+          int isSmd = 0,
+              xmax = -2147483648,
+              xmin = 2147483647,
+              ymax = xmax,
+              ymin = xmin;
+
+          E.package.contacts(C) {
+            if (C.smd && C.smd.layer == 1) {
+              isSmd = 1;
+
+              if (C.x > xmax) xmax = C.x;
+              if (C.y > ymax) ymax = C.y;
+              if (C.x < xmin) xmin = C.x;
+              if (C.y < ymin) ymin = C.y;
+            }
+          }
+          printf("%s, %s, %s, %s, %s, %.2f, %.2f, %.2f\n",
+                 E.name,
+                 isSmd ? "SMD" : "PTH",
+                 E.value, E.package.name, componentName,
+                 u2mm((xmin + xmax) / 2), u2mm((ymin + ymax) / 2),
+                 E.angle);
+        }
+    }
+} else {
+  dlgMessageBox("\n    Start this ULP in a Board    \n");
+  exit (0);
+}
+
+

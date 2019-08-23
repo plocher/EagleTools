@@ -1,0 +1,26 @@
+#usage "<b>Export a partlist as a MediaWiki markup table</b> - John Plocher\n"
+
+if (board) board(B) {
+    string fileName = filesetext(B.name, ".parts.wiki");
+    if (fileName == "") exit(0);
+
+    output(fileName) {
+	printf("==Parts List==\n");
+	printf("<blockquote>\n");
+	printf("{| class=\"wikitable\"\n");
+	printf("! Part\n");
+	printf("! Value\n");
+	printf("! Package\n");
+	printf("! Library\n");
+
+	B.elements(E) {
+	    printf("|-\n");
+	    printf("| %s\n", E.name);
+	    printf("| %s\n", E.value);
+	    printf("| %s\n", E.package.name);
+	    printf("| %s\n", E.package.library);
+	}
+	printf("|}\n");
+	printf("</blockquote>\n");
+    }
+}
