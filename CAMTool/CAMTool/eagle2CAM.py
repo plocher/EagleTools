@@ -33,8 +33,11 @@ eagle2gerbers
     next time you place a fab order.
 """
 
+import ConfigParser
+from pkg_resources import Requirement, resource_filename
 import CAMTool.fab.SiteConfiguration as config
 
+import sys
 import os
 import os.path
 import argparse
@@ -42,20 +45,6 @@ import datetime
 from zipfile import ZipFile
 import tarfile
 import shutil
-
-
-#
-# It also creates a  and a *.bom file to describe what it does
-
-
-PARTS_BOARD = 'run generate_mediawiki_partlist; RUN PartList'
-PARTS_SCH   = 'EXPORT partlist {}'
-GENGERBER   = '{EAGLEAPP} -X- -X+ -dGERBER_RS274X'.format(EAGLEAPP=config.EAGLEAPP)
-GENDRILLS   = '{EAGLEAPP} -X- -X+ -dEXCELLON_24'.format(EAGLEAPP=config.EAGLEAPP)
-
-
-ARCHIVEDIR  = 'Archive'
-ALINK       = 'Current'
 
 
 """
@@ -76,6 +65,13 @@ Ensure file naming patterns are consistent by generating them in one place
 #  Excellon Drill File:                         *.TXT
 
 """
+
+def boardfilename(project):
+    return "{}.brd"        .format(project)
+
+def schematicfilename(project):
+    return "{}.sch"        .format(project)
+
 def genGerberFilenameList(project):
     FileList = {}
     FileList['GTL'] = "{}.GTL".format(project)
@@ -94,58 +90,69 @@ def genGerberFilenameList(project):
     FileList['TXT'] = "{}.TXT".format(project)
     return FileList
 
-def genEagleFilenameList(args):
+def genEagleFilenameList(project):
     FileList = {}
-    FileList['board']      = "{}.brd"        .format(args.project)
-    FileList['boardArray'] = "{}_array.brd"  .format(args.project)
-    FileList['schematic']  = "{}.sch"        .format(args.project)
+    FileList['board']       = boardfilename(project)   # + .brd
+    FileList['boardArray']  = boardfilename("{}_array"  .format(project))   # + .brd
+    FileList['boardScript'] = boardfilename("{}_array.scr"  .format(project))
+    FileList['schematic']   = schematicfilename(project)   # + .sch
     return FileList
 
-def genArchivesFileList(args):
+def genArchivesFileList(project):
     FileList = {}
-    FileList['tefn']       = '{}.eagle.tar'  .format(args.project)       # Tar Eagle File Name
-    FileList['zefn']       = '{}.eagle.zip'  .format(args.project)
-    FileList['tgfna']      = '{}_array.gerbers.tar'.format(args.project) # Tar Gerbers File Name - Array
-    FileList['zgfna']      = '{}_array.gerbers.zip'.format(args.project)
-    FileList['tgfn']       = '{}.gerbers.tar'.format(args.project)
-    FileList['zgfn']       = '{}.gerbers.zip'.format(args.project)       # Zip Gerber File Name
+    FileList['tefn']       = '{}.eagle.tar'  .format(project)       # Tar Eagle File Name
+    FileList['zefn']       = '{}.eagle.zip'  .format(project)
+    FileList['tgfna']      = '{}_array.gerbers.tar'.format(project) # Tar Gerbers File Name - Array
+    FileList['zgfna']      = '{}_array.gerbers.zip'.format(project)
+    FileList['tgfn']       = '{}.gerbers.tar'.format(project)
+    FileList['zgfn']       = '{}.gerbers.zip'.format(project)       # Zip Gerber File Name
     return FileList
 
 
-def genPickNPlaceList(args):
+def genPickNPlaceList(project):
     FileList = {}
     # pick-n-place control file (*.DPV)
-    FileList['dpv']        = "{}.dpv"        .format(args.project)
+    FileList['dpv']        = "{}.dpv"        .format(project)
 
     return FileList
 
 
-def genDerivedFileList(args):
+def genDerivedFileList(project):
     FileList = {}
 
     # Info file / Bill Of Materials
-    FileList['bom']        = "{}.bom"        .format(args.project)
+    FileList['bom']        = "{}.bom.md"     .format(project)
+    FileList['csv']        = "{}.parts.csv"  .format(project) # from generate_csv_partlist.ulp
     # Board Image (experimental)
-    FileList['svg']        = "{}.svg"        .format(args.project)
+    FileList['svg']        = "{}.svg"        .format(project)
 
-    FileList['partsfile']  = "{}.parts.txt"  .format(args.project)
-    FileList['pngsch']     = "{}.sch.png"    .format(args.project)
-    FileList['pngbrd']     = "{}.brd.png"    .format(args.project)
-    FileList['pngbot']     = "{}.bot.brd.png".format(args.project)
-    FileList['pngtop']     = "{}.top.brd.png".format(args.project)
+    FileList['pngsch']     = "{}.sch.png"    .format(project)
+    FileList['pngbrd']     = "{}.brd.png"    .format(project)
+    FileList['pngbot']     = "{}.bot.brd.png".format(project)
+    FileList['pngtop']     = "{}.top.brd.png".format(project)
 
     return FileList
 
-def genBoardFilenameList(args):
+
+def genTempFileList(project):
     FileList = {}
-    for n, f in genEagleFilenameList(args).iteritems():
+    for f in ["GBP", "job", "dri", "gpi", "pro",
+              "b##", "b#1", "b#2", "b#3", "b#4", "b#5", "b#6", "b#7", "b#8", "b#9",
+              "s##", "s#1", "s#2", "s#3", "s#4", "s#5", "s#6", "s#7", "s#8", "s#9"]:
+        fn = "{NAME}.{EXT}".format(NAME=project, EXT=f)
+        FileList[f] = fn
+
+
+def genBoardFilenameList(args, project):
+    FileList = {}
+    for n, f in genEagleFilenameList(project).iteritems():
         FileList[n] = f
-    for n, f in genDerivedFileList(args).iteritems():
+    for n, f in genDerivedFileList(project).iteritems():
         FileList[n] = f
-    for n, f in genArchivesFileList(args).iteritems():
+    for n, f in genArchivesFileList(project).iteritems():
         FileList[n] = f
     if args.picknplace:
-        for n, f in genPickNPlaceList(args).iteritems():
+        for n, f in genPickNPlaceList(project).iteritems():
             FileList[n] = f
     return FileList
 
@@ -174,30 +181,33 @@ def generateGerbersFromEagle(args):
             print('% {}'.format(command))
         os.system(command)
 
+    GENGERBER   = args.config.get('EagleTools', 'GENGERBER')
+    GENDRILLS   = args.config.get('EagleTools', 'GENDRILLS')
+    ARCHIVEDIR  = args.config.get('EagleTools', 'ARCHIVEDIR')
+    ALINK       = args.config.get('EagleTools', 'ALINK')
 
-    blist = genBoardFilenameList(args)
+    singletonbase = args.project
+    panelbase     = "{}_array".format(args.project)
 
-    board      = blist['board']
-    boardArray = blist['boardArray']
-    schematic  = blist['schematic']
+    singleton = boardfilename(singletonbase)
+    panel     = boardfilename(panelbase)
+    schematic = schematicfilename(singletonbase)
 
-    tefn       = blist['tefn']
-    tgfn       = blist['tgfn']
-    tgfna      = blist['tgfna']
-
-    zefn       = blist['zefn']
-    zgfn       = blist['zgfn']
-    zgfna      = blist['zgfna']
-
-
-    if not os.path.isfile(board):
-        if not os.path.isfile(boardArray):
-            raise Exception('# ERROR: Can not create gerbers without a brd file ({} or {})...'.format(board, boardArray))
+    if not os.path.isfile(singleton):
+        if not os.path.isfile(panel):
+            s='# ERROR: Can not create gerbers without a brd file ({} or {})...'
+            raise Exception(s.format(singleton, panel))
 
     modified  = False
-    for b in [board, boardArray]:
+    for project in [singletonbase, panelbase]:
+
+        blist = genBoardFilenameList(args, project)
+        b     = boardfilename(project)
+
         if not os.path.isfile(b):
             continue
+
+        FileList = genGerberFilenameList(project)
 
         needed = False
 
@@ -216,35 +226,30 @@ def generateGerbersFromEagle(args):
      
             """
             foundarchive = False
-            for d in [ '.', os.path.join(ARCHIVEDIR, ALINK) ]:
-                for a in [ tgfn, zgfn ]:
-                    fullname = os.path.join(d, a)
-                    if os.path.isfile(fullname):
-                        foundarchive = True
-                        tar_modified_time = os.stat(fullname).st_mtime
-                        if base_time > tar_modified_time:
-                            if args.verbose:
-                                print "** Gerber Archive is older than CAD files\n"
-                            needed = True
+            if not args.noarchive:
+                for d in [ '.', os.path.join(ARCHIVEDIR, ALINK) ]:
+                    for a in [ blist['tgfn'], blist['zgfn'] ]:
+                        fullname = os.path.join(d, a)
+                        if os.path.isfile(fullname):
+                            foundarchive = True
+                            tar_modified_time = os.stat(fullname).st_mtime
+                            if base_time > tar_modified_time:
+                                if args.verbose:
+                                    print "** Archive Dir content is older than current CAD files\n"
+                                needed = True
 
             if not foundarchive:
                 if args.verbose:
-                    print "** Gerber Archive not found\n"
+                    if not args.noarchive:
+                        print "** Archive not found\n"
                 needed = True
-
-        if b.endswith('.brd'):
-            (bfile, ext) = os.path.splitext(b)
-        else:
-            bfile = b
-
-        FileList = genGerberFilenameList(bfile)
 
         if not needed:
             continue
 
         modified = True
 
-        # clean out old, derived files so EagleCad doesn't ask to overwrite them
+        # clean out old gerber files so EagleCad doesn't ask to overwrite them
         for n,f in FileList.iteritems():
             if os.path.isfile(f):
                 os.remove(f)
@@ -254,152 +259,174 @@ def generateGerbersFromEagle(args):
         # These files, zipped together, are the only files you need to have a PCB made at nearly any fab house.
 
         # Copper layers
-        callCommand(args, FileList['GTL'], b, GENGERBER, 'Dimension Top     Pads Vias')
-        callCommand(args, FileList['GBL'], b, GENGERBER, 'Dimension Bottom  Pads Vias')
+        callCommand(args, FileList['GTL'], b, GENGERBER, args.config.get('EagleTools', 'L_GTL'))
+        callCommand(args, FileList['GBL'], b, GENGERBER, args.config.get('EagleTools', 'L_GBL'))
 
         # Solder Mask
-        callCommand(args, FileList['GTS'], b, GENGERBER, 'Dimension tStop')
-        callCommand(args, FileList['GBS'], b, GENGERBER, 'Dimension bStop')
+        callCommand(args, FileList['GTS'], b, GENGERBER, args.config.get('EagleTools', 'L_GTS'))
+        callCommand(args, FileList['GBS'], b, GENGERBER, args.config.get('EagleTools', 'L_GBS'))
 
         # Solder Paste
-        callCommand(args, FileList['GTP'], b, GENGERBER, 'Dimension tCream')
-        callCommand(args, FileList['GBP'], b, GENGERBER, 'Dimension bCream')
+        callCommand(args, FileList['GTP'], b, GENGERBER, args.config.get('EagleTools', 'L_GTP'))
+        callCommand(args, FileList['GBP'], b, GENGERBER, args.config.get('EagleTools', 'L_GBP'))
 
         # Board Outline and Milling instructions
-        callCommand(args, FileList['GML'], b, GENGERBER, 'Dimension Milling')
+        callCommand(args, FileList['GML'], b, GENGERBER, args.config.get('EagleTools', 'L_GML'))
         # Board Outline only
-        callCommand(args, FileList['GKO'], b, GENGERBER, 'Dimension')
+        callCommand(args, FileList['GKO'], b, GENGERBER, args.config.get('EagleTools', 'L_GKO'))
 
         # Drills and holes
-        callCommand(args, FileList['TXT'], b, GENDRILLS, 'Dimension Drills Holes')
+        callCommand(args, FileList['TXT'], b, GENDRILLS, args.config.get('EagleTools', 'L_TXT'))
 
         # Silk Screen layers
-        if b == board : # singleton
-            callCommand(args, FileList['GTO'], b, GENGERBER, 'Dimension tPlace tDocu tNames')
-            callCommand(args, FileList['GBO'], b, GENGERBER, 'Dimension bplace bDocu bNames')
-        else: # boardArray
-            callCommand(args, FileList['GTO'], b, GENGERBER, 'Dimension tPlace tDocu 125')
-            callCommand(args, FileList['GBO'], b, GENGERBER, 'Dimension bplace bDocu 126')
-        
-        # now, make archives of the CAM files and the gerbers we just generated
-        if not args.tar:
-            if b == board :     # singleton
-                fn = zgfn
-                # only create a single archive of sch plus all .brds
-                if args.verbose:
-                    print('Archive CAD: Zip: {}'.format(zefn))
-                with ZipFile(zefn, 'w') as zip:
-                    for f in [schematic, board, boardArray]:
-                        if os.path.isfile(f):
-                            if args.verbose:
-                                print('\t{}'.format(f))
-                            zip.write(f)
-            else:
-                fn = zgfna
+        if b == singleton:
+            callCommand(args, FileList['GTO'], b, GENGERBER, args.config.get('EagleTools', 'L_GTO'))
+            callCommand(args, FileList['GBO'], b, GENGERBER, args.config.get('EagleTools', 'L_GBO'))
+        else:  # panel
+            callCommand(args, FileList['GTO'], b, GENGERBER, args.config.get('EagleTools', 'LA_GTO'))
+            callCommand(args, FileList['GBO'], b, GENGERBER, args.config.get('EagleTools', 'LA_GBO'))
 
+        # Gerbers for fabrication
+        if args.tar:
             if args.verbose:
-                print('Archive Gerbers: Zip: {}'.format(fn))
-            with ZipFile(fn, 'w') as zip: # TODO: Need to make archive of _array in addition to singleton...
+                print('Archive Gerbers: Tar: {}'.format(blist['tgfn']))
+            with tarfile.open(blist['tgfn'], 'w') as tar:
+                for n, f in FileList.iteritems():
+                    if os.path.isfile(f):
+                        if args.verbose:
+                            print('\t{}'.format(f))
+                        tar.add(f)
+        else:
+            if args.verbose:
+                print('Archive Gerbers: Zip: {}'.format(blist['zgfn']))
+            with ZipFile(blist['zgfn'], 'w') as zip:
                 for n, f in FileList.iteritems():
                     if os.path.isfile(f):
                         if args.verbose:
                             print('\t{}'.format(f))
                         zip.write(f)
 
-        else:
-            if b == board :     # singleton
-                fn = tgfn
-                # only create a single archive of sch plus all .brds
-                if args.verbose:
-                    print('Archive CAD: Tar: {}'.format(tefn))
-                with tarfile.open(tefn, 'w') as tar:
-                    for f in [schematic, board, boardArray]:
-                        if os.path.isfile(f):
-                            if args.verbose:
-                                print('\t{}'.format(f))
-                            tar.add(f)
-            else:
-                fn = tgfna
-
+    # now, make archives of the CAM files and the gerbers we just generated
+    # Sources:  archive the sch, brd, _array.brd and _array_scr files together
+    if args.tar:
+        if b == singleton:
             if args.verbose:
-                print('Archive Gerbers: Tar: {}'.format(fn))
-            with tarfile.open(fn, 'w') as tar:
-                for n, f in FileList.iteritems():
+                print('Archive CAD sources: Tar: {}'.format(blist['tefn']))
+            with tarfile.open(blist['tefn'], 'w') as tar:
+                for f in [schematic, singleton, panel, blist['boardScript']]:
                     if os.path.isfile(f):
                         if args.verbose:
-                            print('\t{}'.format(f))
+                            print('\tAdd {}'.format(f))
                         tar.add(f)
-
-
+    else:
+        if b == singleton:
+            # only create a single archive of sch
+            if args.verbose:
+                print('Archive CAD sources: Zip: {}'.format(blist["zefn"]))
+            with ZipFile(blist["zefn"], 'w') as zip:
+                for f in [schematic, singleton, panel, blist['boardScript']]:
+                    if os.path.isfile(f):
+                        if args.verbose:
+                            print('\tAdd {}'.format(f))
+                        zip.write(f)
     return modified
 
 
 def generateImagesFromEagle(args):
-    blist = genBoardFilenameList(args)
-
-    board      = blist['board']
-    boardArray = blist['boardArray']
-    schematic  = blist['schematic']
-    partsfile  = blist['partsfile']
-    pngsch     = blist['pngsch']
-    pngbrd     = blist['pngbrd']
-    pngbot     = blist['pngbot']
-    pngtop     = blist['pngtop']
-
-    modified = False
-
-    genparts   = PARTS_SCH.format(partsfile)
 
     # EagleCAD commands
-    IMAGE_SCH  ="SET PALETTE WHITE; DISPLAY {layer};                    EXPORT image {png} 300".format(layer=config.D_SCHEMATIC, png=pngsch)
-    IMAGE_BOARD="SET PALETTE WHITE; DISPLAY {layer}; RATSNEST; RIPUP @; EXPORT image {png} 300".format(layer=config.D_NORMAL,    png=pngbrd)
-    IMAGE_BSILK="SET PALETTE WHITE; DISPLAY {layer}; RATSNEST;          EXPORT image {png} 300".format(layer=config.D_BSILK,     png=pngbot)
-    IMAGE_TSILK="SET PALETTE WHITE; DISPLAY {layer}; RATSNEST;          EXPORT image {png} 300".format(layer=config.D_TSILK,     png=pngtop)
+    PARTS_BOARD=args.config.get('EagleTools', 'PARTS_BOARD') # generate_csv_partlist.ulp
 
-    FileList = [pngsch, pngbrd, pngtop, pngbot]
 
+    singletonbase = args.project
+    panelbase = "{}_array".format(args.project)
+
+    schematic = schematicfilename(singletonbase)
     needed = False
-    base_time = None
+    modified = False
 
     if args.force:
         needed = True
         if args.verbose:
             print "** FORCE {}\n".format(args.project)
 
-    if not needed:
-        for f in FileList:
-            if not os.path.isfile(f):
-                if args.verbose:
-                    print "** Need to generate {}".format(f)
-                needed = True
-            else:
-                if base_time is None or base_time > os.stat(f).st_mtime:
-                    base_time = os.stat(f).st_mtime
-
+    # generate image of schematic ...
     if os.path.isfile(schematic):
-        if needed or base_time < os.stat(schematic).st_mtime:
+        base_time = None
+
+        blist = genBoardFilenameList(args, singletonbase)
+
+        dependent_list = [blist['pngsch']]
+        for dependent in dependent_list:
+            if os.path.isfile(dependent):
+                d_time = os.stat(dependent).st_mtime
+                if base_time > d_time:
+                    base_time = d_time
+            else:
+                needed = True
+
+        if needed or base_time is None or base_time < os.stat(schematic).st_mtime:
             modified = True
-            for f in [pngsch, blist['partsfile'] ]:
-                if os.path.isfile(f):
-                    os.remove(f)
-            ECMD="SET CONFIRM OFF;{};undo;{};undo;quit;"
-            ECMD=ECMD.format(IMAGE_SCH, genparts)
+            for dependent in dependent_list:
+                if os.path.isfile(dependent):
+                    os.remove(dependent)
+            IMAGE_SCH = "script SPCoastlayers.scr; script defaultcolors.scr; SET PALETTE WHITE; DISPLAY {layer}; EXPORT image {png} 300".format(
+                layer=args.config.get('EagleTools', 'D_SCHEMATIC'),
+                png=blist['pngsch'])
 
-            os.system("{EAGLE} -C \"{cmd}\" {file}".format(EAGLE=config.EAGLEAPP, cmd=ECMD, file=schematic))
+            ECMD="SET CONFIRM OFF;{};undo;quit;".format(IMAGE_SCH)
 
-    for b in [board, boardArray]:
+            c="{EAGLE} -C \"{cmd}\" {file}".format(EAGLE=args.config.get('EagleTools', 'EAGLEAPP'), cmd=ECMD, file=schematic)
+            if args.verbose:
+                print("+ {}".format(c))
+            os.system(c)
+
+    needed = False
+    if args.force:
+        needed = True
+    # ... and for the board (and _array.brd, if exists)
+    for project in [singletonbase, panelbase]:
+        base_time = None
+
+        blist = genBoardFilenameList(args, project)
+        b = boardfilename(project)
+
         if not os.path.isfile(b):
-            continue;
-        if os.path.isfile(b):
-            if needed or base_time < os.stat(b).st_mtime:
-                modified = True
-                for f in [ pngbrd, pngbot, pngtop ]:
-                    if os.path.isfile(f):
-                        os.remove(f)
-                ECMD="SET CONFIRM OFF;{};undo;{};undo;{};undo;{};undo;quit;"
-                ECMD=ECMD.format(PARTS_BOARD, IMAGE_BOARD, IMAGE_BSILK,IMAGE_TSILK)
+            continue
 
-                os.system("{EAGLE} -C \"{cmd}\" {board}".format(EAGLE=config.EAGLEAPP, cmd=ECMD, board=b))
+        dependent_list = [ blist['pngbrd'], blist['pngbot'], blist['pngtop'] ]
+
+        for dependent in dependent_list:
+            if os.path.isfile(dependent):
+                d_time = os.stat(dependent).st_mtime
+                if base_time > d_time:
+                    base_time = d_time
+            else:
+                needed = True
+
+        if needed or base_time is None or base_time < os.stat(schematic).st_mtime:
+            modified = True
+            for dependent in dependent_list:
+                if os.path.isfile(dependent):
+                    os.remove(dependent)
+
+            IMAGE_BOARD = "script SPCoastlayers.scr; script defaultcolors.scr; SET PALETTE WHITE; DISPLAY {layer}; RATSNEST; RIPUP @; EXPORT image {png} 300".format(
+                layer=args.config.get('EagleTools', 'D_NORMAL'),
+                png=blist['pngbrd'])
+            IMAGE_BSILK = "DISPLAY {layer}; RATSNEST;          EXPORT image {png} 300".format(
+                layer=args.config.get('EagleTools', 'D_BSILK'),
+                png=blist['pngbot'])
+            IMAGE_TSILK = "DISPLAY {layer}; RATSNEST;          EXPORT image {png} 300".format(
+                layer=args.config.get('EagleTools', 'D_TSILK'),
+                png=blist['pngtop'])
+
+            ECMD="SET CONFIRM OFF;{};undo;{};undo;undo;{};undo;{};undo;quit;"
+            ECMD=ECMD.format(PARTS_BOARD, IMAGE_BOARD, IMAGE_BSILK,IMAGE_TSILK)
+
+            c="{EAGLE} -C \"{cmd}\" {board}".format(EAGLE=args.config.get('EagleTools', 'EAGLEAPP'), cmd=ECMD, board=b)
+            if args.verbose:
+                print("+ {}".format(c))
+            os.system(c)
     return modified
 
 
@@ -423,33 +450,59 @@ def generateFabFiles(args):
             print('% {}'.format(command))
         os.system(command)
 
-    blist = genBoardFilenameList(args)
+    singletonbase = args.project
+    panelbase     = "{}_array".format(args.project)
 
-    board      = blist['board']
-    schematic  = blist['schematic']
-    boardArray = blist['boardArray']
+    singleton = boardfilename(singletonbase)
+    panel     = boardfilename(panelbase)
+    schematic = schematicfilename(singletonbase)
 
-    if not os.path.isfile(board):
-        if not os.path.isfile(boardArray):
-            s='# ERROR: Can not create fab files without a brd file ({} or {})...'.format(board, boardArray)
-            raise Exception(s)
+    if not os.path.isfile(singleton):
+        if not os.path.isfile(panel):
+            s='# ERROR: Can not create fab files without a brd file ({} or {})...'
+            raise Exception(s.format(singleton, panel))
 
-    for b in [board, boardArray]:
+    for project in [singletonbase, panelbase]:
+
+        blist = genBoardFilenameList(args, project)
+        b = boardfilename(project)
+
         if not os.path.isfile(b):
-            continue;
+            continue
+
         base_time = getCADtime(schematic, b)
 
-        if isNeeded(blist['dpv'], base_time):
-            callCommand(args, config.eagle2chmt, b)
+        if args.picknplace:
+            if isNeeded(blist['dpv'], base_time):
+                callCommand(args, args.config.get('EagleTools', 'eagle2chmt'), b)
         if isNeeded(blist['svg'], base_time):
-            callCommand(args, config.eagle2svg,  b)
+            callCommand(args, args.config.get('EagleTools', 'eagle2svg'),  b)
         if isNeeded(blist['bom'], base_time):
-            callCommand(args, config.eagle2bom,  b)
+            callCommand(args, args.config.get('EagleTools', 'eagle2bom'),  b)
+
+
+def clean(args):
+    singletonbase = args.project
+    panelbase = "{}_array".format(args.project)
+
+    for project in [singletonbase, panelbase]:
+        if not args.leave:
+            for d in [genGerberFilenameList(project), genTempFileList(project)]:
+                for n, f in d.iteritems():
+                    if os.path.isfile(f):
+                        if args.verbose:
+                            print('% rm {}'.format(f))
+                        os.remove(f)
+
+
+
 
 def generateArchive(args):
     DATE       = datetime.datetime.today().strftime('%F-%T')
     GERBERDIR  = 'Gerbers.{}.{}'.format(args.project, DATE)
-
+    ARCHIVEDIR  = args.config.get('EagleTools', 'ARCHIVEDIR')
+    ALINK       = args.config.get('EagleTools', 'ALINK')
+    
     l = os.path.join(ARCHIVEDIR, ALINK)
     d = os.path.join(ARCHIVEDIR, GERBERDIR)
 
@@ -471,51 +524,76 @@ def generateArchive(args):
         print('% ln -s {} {}'.format(GERBERDIR, l))
     os.symlink(GERBERDIR, l)
 
-    for dict in [ genEagleFilenameList(args),
-               genArchivesFileList(args),
-               genDerivedFileList(args) ]:
-        for n, f in dict.iteritems():
-            if os.path.isfile(f):
-                if args.verbose:
-                    print('% cp {} {}'.format(f, d))
-                shutil.copy(f, d)
+    singletonbase = args.project
+    panelbase = "{}_array".format(args.project)
 
-    blist = genBoardFilenameList(args)
-    board = blist['board']
-    boardArray = blist['boardArray']
+    singleton = boardfilename(singletonbase)
+    panel = boardfilename(panelbase)
 
-    if board.endswith('.brd'):
-        (board, ext) = os.path.splitext(board)
-    if boardArray.endswith('.brd'):
-        (boardArray, ext) = os.path.splitext(boardArray)
+    if not os.path.isfile(singleton):
+        if not os.path.isfile(panel):
+            s='# ERROR: Can not create fab files without a brd file ({} or {})...'
+            raise Exception(s.format(singleton, panel))
 
-    for d in [ genGerberFilenameList(board), genGerberFilenameList(boardArray) ]:
-        for n, f in d.iteritems():
-            if os.path.isfile(f):
-                if args.verbose:
-                    print('% rm {}'.format(f))
-                os.remove(f)
+    for project in [singletonbase, panelbase]:
+        for dict in [genEagleFilenameList(project),
+                     genArchivesFileList(project),
+                     genDerivedFileList(project)]:
+            for n, f in dict.iteritems():
+                if os.path.isfile(f):
+                    if args.verbose:
+                        print('% cp {} {}'.format(f, d))
+                    shutil.copy(f, d)
+    if not args.leave:
+        clean()
 
 def copyFiles2Order(args):
-    blist = genBoardFilenameList(args)
-    d = config.DefaultOrdersDirectory
-    if args.directory and os.path.exists(args.directory):
-        d = args.directory
-        
+    d = args.config.get('EagleTools', 'DefaultOrdersDirectory')
+    d = os.path.expanduser(d)
+    if args.directory:
+        ad = os.path.expanduser(args.directory)
+        if os.path.exists(ad):
+            d = ad
+
     if not os.path.exists(d):
-        print "** Orders directory '{}' does not exist!\n".format(d)        
-    else:
+        print("** Orders directory '{}' does not exist! ".format(d),)
+        dparent = os.path.dirname(d)
+        if os.path.exists(dparent):
+            print("Creating it...")
+            os.mkdir(d)
+        else:
+            print("Error: Can't create it, not copying files.")
+            return
+
+    singletonbase = args.project
+    panelbase     = "{}_array".format(args.project)
+
+    desired_files=[]
+    for project in [singletonbase, panelbase]:
+
+        blist = genBoardFilenameList(args, project)
+        b     = boardfilename(project)
+
+        if not os.path.isfile(b):
+            continue
+
+        if os.path.isfile(blist['tgfn']):
+            desired_files.append(blist['tgfn'])
+        if os.path.isfile(blist['zgfn']):
+            desired_files.append(blist['zgfn'])
+
+    if len(desired_files) > 0:
         s = args.stamp
         if s is None:
             s=''
         else:
             s = '-{}'.format(s)
-            
-        for f in [blist['zgfn'], blist['zgfna'], blist['tgfn'], blist['tgfna']]:
+
+        for f in desired_files:
             (name, ext) = os.path.splitext(f)
             (name, gerbers) = os.path.splitext(name)
             ext = '{}{}'.format(gerbers, ext)
-            
+
             dest = "{}{}-10x10-GREEN{}".format(name, s, ext)
             dest = os.path.join(d, dest)
             if os.path.isfile(f):
@@ -552,20 +630,39 @@ def main():
 
     somethingChanged = False
 
+    cfile = os.path.expanduser(config.DefaultConfigFile)
+    if not os.path.isfile(cfile):
+        print "First time usage: Creating {} with default contents - edit and customize before using!".format(cfile)
+        examplefn = resource_filename(Requirement.parse('CAMTool'),"CAMTool/EagleTools.cfg")
+        configuration = ConfigParser.ConfigParser()
+        configuration.read(examplefn)        
+        with open(cfile, 'wb') as configfile:
+            configuration.write(configfile)
+        sys.exit(0)
+    
+    configuration = ConfigParser.ConfigParser()
+    configuration.read(cfile)
+    
     parser = argparse.ArgumentParser()
     parser.add_argument('--noarchive', '-n',  action='store_true', help='Do not archive CAD files (default is to archive)')
     parser.add_argument('--picknplace','-p',  action='store_true', help='Generate Pick and Place .dpv files for CharmHigh')
     parser.add_argument('--order',     '-o',  action='store_true', help='copy gerber archive to orders directory')
-    parser.add_argument('--directory', '-D',  help='orders directory (default is {})'.format(config.DefaultOrdersDirectory))
+    parser.add_argument('--directory', '-D',  help='orders directory (default is {})'.format(configuration.get('EagleTools', 'DefaultOrdersDirectory')))
     parser.add_argument('--stamp',     '-s',                       help='version stamp (default is none)')
     parser.add_argument('--tar',       '-t',  action='store_true', help='create tar file for gerbers (default is zip)')
     parser.add_argument('--leave',     '-l',  action='store_true', help='Do not clean up unneeded files (default is to clean)')
     parser.add_argument('--verbose',   '-v',  action='store_true', help='Verbose flag')
     parser.add_argument('--force',     '-f',  action='store_true', help='Force rebuild flag')
     parser.add_argument('--project',   '-P',                       help='Project name')
+    parser.add_argument('--configfile','-c',                       help='Config file (default is {})'.format(config.DefaultConfigFile))
 
     args = parser.parse_args()
+    args.config = configuration
+    
+    if args.configfile is not None:
+        configuration.read(args.configfile)    
 
+    
     generate_DESCRIPTION(args)
     somethingChanged |= generateImagesFromEagle(args)
     somethingChanged |= generateGerbersFromEagle(args)
@@ -577,26 +674,6 @@ def main():
 
     if somethingChanged and args.order:
         copyFiles2Order(args)   # copy Gerbers ZIP/TAR to d
-
-    blist = genBoardFilenameList(args)
-    board = blist['board']
-    boardArray = blist['boardArray']
-
-    if board.endswith('.brd'):
-        (board, ext) = os.path.splitext(board)
-    if boardArray.endswith('.brd'):
-        (boardArray, ext) = os.path.splitext(boardArray)
-    if not args.leave:
-        # get rid of unnecessary files
-        for b in [board, boardArray]:
-            for f in [ "GBP", "job", "dri", "gpi", "pro",
-                       "b##", "b#1", "b#2", "b#3", "b#4", "b#5", "b#6", "b#7", "b#8", "b#9",
-                       "s##", "s#1", "s#2", "s#3", "s#4", "s#5", "s#6", "s#7", "s#8", "s#9" ]:
-                fn = "{NAME}.{EXT}".format(NAME=b, EXT=f)
-                if os.path.isfile(fn):
-                    if args.verbose:
-                        print('% rm {}'.format(fn))
-                    os.remove(fn)
 
 if __name__ == "__main__":
     main()

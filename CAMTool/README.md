@@ -6,6 +6,10 @@ Making a panelized PCB design in EagleCAD 7.7
 
   * I cloned a copy of this repo on the same filesystem as my EagleCad projects workspace, and added the resulting paths to EagleCad's controlpanel OPTIONS->DIRECTORIES...
 
+  * In a terminal window navigate to the CAMTool directory and run setup.py to install the CAM automation scripts:
+    * python setup.py
+
+
   * Set up your own custom directory structure in the Eagle Control Panel, and add your desired directories to OPTIONS->DIRECTORIES.
 The order matters - put your directory first, before the one in $EAGLEDIR, to make EagleCad look for your custom scripts before it looks for the  Default ones:
 

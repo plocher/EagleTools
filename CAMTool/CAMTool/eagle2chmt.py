@@ -14,13 +14,17 @@ referenced here with the default key
 
 
 """
-import CAMTool.fab.SiteConfiguration as config
 
+import ConfigParser
+from pkg_resources import Requirement, resource_filename
+import CAMTool.fab.SiteConfiguration as config
+from fab import CHMTPickNPlace, EagleCAD
+
+import sys
 import os
 import datetime
 import argparse
 import StringIO
-from fab import CHMTPickNPlace, EagleCAD
 import os.path
 
 
@@ -112,7 +116,7 @@ def outputBatch():
     return contents
 
 
-def outputParts(parts):
+def outputParts(parts, feeder):
     output = StringIO.StringIO()
     #EComponent, 0, 1, 1, 17, 19.05, 38.10, 90.00, 0.50, 2, 0, LED1, R - 0603, 0.00
     count = 0
@@ -214,6 +218,19 @@ optional arguments:
 """
 
 def main():
+    cfile = os.path.expanduser(config.DefaultConfigFile)
+    if not os.path.isfile(cfile):
+        print "First time usage: Creating {} with default contents - edit and customize before using!".format(cfile)
+        examplefn = resource_filename(Requirement.parse('CAMTool'),"CAMTool/EagleTools.cfg")
+        configuration = ConfigParser.ConfigParser()
+        configuration.read(examplefn)        
+        with open(cfile, 'wb') as configfile:
+            configuration.write(configfile)
+        sys.exit(0)
+    
+    configuration = ConfigParser.ConfigParser()
+    configuration.read(cfile)
+    
     parser = argparse.ArgumentParser(description='Create a CHMT pick-n-place job from an EAGLEcad PCB board file.',
 				     formatter_class=argparse.RawDescriptionHelpFormatter,
 				     epilog="""
@@ -243,18 +260,19 @@ def main():
     parser.add_argument("--key",        help="Google Sheets document access key")
 
     args = parser.parse_args()
-
-    feederfile = config.defaultfeederfile
+    args.config = configuration
+    
+    feederfile = args.config.get('EagleTools', 'defaultfeederfile')
     if args.feederfile:
 	    feederfile = args.feederfile
 
-    rcfile = config.defaulteaglerc
+    rcfile = args.config.get('EagleTools', 'defaulteaglerc')
     if args.eagleRC:
 	    rcfile = args.eagleRC
 
     if (args.download or not os.path.isfile(feederfile) ):
 	    print "DL feederfile: ", feederfile
-	    CHMTPickNPlace.downloadFeederFile(feederfile, args.key)
+	    CHMTPickNPlace.downloadFeederFile(args, feederfile, args.key)
 
     (feeder, component) = CHMTPickNPlace.loadFeeders(feederfile)
     palettes = EagleCAD.getLayers(rcfile)
@@ -268,7 +286,7 @@ def main():
 
         if args.outdir:
             if args.outdir == '@':
-                outdir = config.defaultBOMdir
+                outdir = args.config.get('EagleTools', 'defaultBOMdir')
             elif args.outdir == "-":
                 pass
             else:
@@ -285,7 +303,7 @@ def main():
     	content = content + outputHeader(f)
     	content = content + outputStations(used, feeder, component)
     	content = content + outputBatch()
-    	content = content + outputParts(parts)
+    	content = content + outputParts(parts, feeder)
     	content = content + outputICTray()
     	content = content + outputPCBCalibrate()
     	content = content + outputFiducials()

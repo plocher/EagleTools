@@ -14,7 +14,11 @@ setup(
 		'eagleLib2TOC = CAMTool.eagleLib2TOC:main',
 	    ]
     },
-		
+    package_data = {
+        # If any package contains *.config files, include them:
+        'CAMTool': ['*.cfg'],
+    },
+	
     # metadata to display on PyPI
     
     author="John Plocher",

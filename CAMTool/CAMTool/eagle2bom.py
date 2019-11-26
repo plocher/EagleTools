@@ -12,13 +12,28 @@ Generate a parts BOM used in an Eagle project
    www.SPCoast.com
 
 """
-
+import ConfigParser
+from pkg_resources import Requirement, resource_filename
 import CAMTool.fab.SiteConfiguration as config
+from CAMTool.fab import CHMTPickNPlace, EagleCAD
 
+import sys
 import argparse
 import StringIO
-from CAMTool.fab import CHMTPickNPlace, EagleCAD
 import os.path
+import re
+
+
+def sorted_nicely(l):
+    """ Sorts the given iterable in the way that is expected.
+
+    Required arguments:
+    l -- The iterable to be sorted.
+
+    """
+    convert = lambda text: int(text) if text.isdigit() else text
+    alphanum_key = lambda key: [convert(c) for c in re.split('([0-9]+)', key)]
+    return sorted(l, key=alphanum_key)
 
 
 def try_int(s):
@@ -40,8 +55,79 @@ def natcmp(a, b):
     return cmp(natsort_key(a), natsort_key(b))
 
 
-
 def outputParts(parts, smt, pth):
+    return outputPartsMD(parts, smt, pth)
+
+def outputPartsMD(parts, smt, pth):
+    output = StringIO.StringIO()
+    partcounts = {}
+
+    # by part name, with common values collected together...
+    for pn in sorted(parts.iterkeys(), key=EagleCAD.natural_sort_key):
+        p = parts[pn]
+        # p['id'] == part value - package
+        if p['id'] in partcounts:
+            partcounts[p['id']]['cnt'] += 1
+            partcounts[p['id']]['list'].append(p)
+
+        else:
+            partcounts[p['id']] = {}
+            partcounts[p['id']]['cnt'] = 1
+            partcounts[p['id']]['list'] = []
+            partcounts[p['id']]['p'] = p
+            partcounts[p['id']]['list'].append(p)
+
+            if 'feeder' in p:
+                partcounts[p['id']]['feed'] = p['feeder']
+
+
+    output.write("{:.partlist}\n")  # CSS styling class...
+    output.write("| Parts | Value | Package | Quantity | Library | Type/Feeder\n")
+
+    for pn in sorted(partcounts.iterkeys(), key=EagleCAD.natural_sort_key):
+
+        count = partcounts[pn]['cnt']
+        list  = partcounts[pn]['list']
+        f     = partcounts[pn]['feed']
+        p     = partcounts[pn]['p']
+
+        if      not pn.startswith("#-") \
+            and not pn.startswith("target-") \
+            and not pn.startswith("no_load-") \
+            and not pn.startswith("mount-") \
+            and not pn.startswith("fidicual-") \
+            and list :
+
+            if f == CHMTPickNPlace.SKIP:
+                if pth:
+                    output.write('|-\n')
+                    sep='| '
+                    for p in sorted(list, cmp=natcmp, key=lambda i: i['name']):
+                        output.write('{}{}'.format(sep, p['name']))
+                        sep = ', '
+                    output.write(" | {} | {} | {}x | {} | {}\n".format(p['value'], p['package'], count, p['library'], 'PTH'))
+            elif f == CHMTPickNPlace.NOTFOUND:
+                if smt:
+                    output.write('|-\n')
+                    sep='| '
+                    for p in sorted(list, cmp=natcmp, key=lambda i: i['name']):
+                        output.write('{}{}'.format(sep, p['name']))
+                        sep = ', '
+                    output.write(" | {} | {} | {}x | {} | {}\n".format(p['value'], p['package'], count, p['library'], 'NONE'))
+            else:
+                if smt:
+                    output.write('|-\n')
+                    sep='| '
+                    for p in sorted(list, cmp=natcmp, key=lambda i: i['name']):
+                        output.write('{}{}'.format(sep, p['name']))
+                        sep = ', '
+                    output.write(" | {} | {} | {}x | {} | {}\n".format(p['value'], p['package'], count, p['library'], f))
+
+    contents = output.getvalue()
+    output.close()
+    return contents
+
+def outputPartsWiki(parts, smt, pth):
     output = StringIO.StringIO()
     partcounts = {}
 
@@ -118,8 +204,6 @@ def outputParts(parts, smt, pth):
     output.close()
     return contents
 
-
-
 def main():
     """
     main() 
@@ -129,8 +213,8 @@ def main():
             pcbfile [pcbfile ...]
 
     Create a parts list BOM from an EAGLEcad PCB board file(s).
-    The BOM file will be named <pcbfile_basename>.bom.wiki and
-    will be in MediaWiki table format
+    The BOM file will be named <pcbfile_basename>.bom.md and
+    will be in markdown table format
 
     positional arguments:
       pcbfile               an EAGLEcad .brd file to process
@@ -148,7 +232,19 @@ def main():
 
     """
 
-
+    cfile = os.path.expanduser(config.DefaultConfigFile)
+    if not os.path.isfile(cfile):
+        print "First time usage: Creating {} with default contents - edit and customize before using!".format(cfile)
+        examplefn = resource_filename(Requirement.parse('CAMTool'),"CAMTool/EagleTools.cfg")
+        configuration = ConfigParser.ConfigParser()
+        configuration.read(examplefn)        
+        with open(cfile, 'wb') as configfile:
+            configuration.write(configfile)
+        sys.exit(0)
+    
+    configuration = ConfigParser.ConfigParser()
+    configuration.read(cfile)
+    
     parser = argparse.ArgumentParser(description='Create a parts list BOM from an EAGLEcad PCB board file(s).\n'
                          'The BOM file will be named <pcbfile_basename>.bom.wiki and\n'
                          'will be in MediaWiki table format',
@@ -166,12 +262,12 @@ def main():
     
 
     args = parser.parse_args()
-
-    feederfile = config.defaultfeederfile
+    args.config = configuration
+    feederfile = args.config.get('EagleTools', 'defaultfeederfile')
     if args.feederfile:
         feederfile = args.feederfile
 
-    rcfile = config.defaulteaglerc
+    rcfile = args.config.get('EagleTools', 'defaulteaglerc')
     if args.eagleRC:
         rcfile = args.eagleRC
 
@@ -180,7 +276,7 @@ def main():
 
     if (args.download or not os.path.isfile(feederfile) ):
         print "Downloading feederfile: ", feederfile
-        CHMTPickNPlace.downloadFeederFile(feederfile, args.key)
+        CHMTPickNPlace.downloadFeederFile(args, feederfile, args.key)
 
     (feeder, component) = CHMTPickNPlace.loadFeeders(feederfile)
     palettes = EagleCAD.getLayers(rcfile)
@@ -189,12 +285,12 @@ def main():
         if args.verbose or len(args.PCBfile) > 1:
             print "Processing {}".format(f)
 
-        outfilename = os.path.splitext(os.path.basename(f))[0] + ".bom.wiki"
+        outfilename = os.path.splitext(os.path.basename(f))[0] + ".bom.md"
         outdir = os.path.dirname(f)
 
         if args.outdir:
             if args.outdir == '@':
-                outdir = config.defaultBOMdir
+                outdir = args.config.get('EagleTools', 'defaultBOMdir')
             elif args.outdir == "-":
                 pass
             else:

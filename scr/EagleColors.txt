@@ -1,0 +1,38 @@
+1 Top Tracks, top side					4
+16 Bottom Tracks, bottom side				2
+17 Pads Pads (through-hole)				23
+18 Vias Vias (through-hole)				29
+19 Unrouted Airwires (rubberbands)			6
+20 Dimension Board outlines (circles for holes)		15
+21 tPlace Silk screen, top side				19
+22 bPlace Silk screen, bottom side			17
+23 tOrigins Origins, top side				30
+24 bOrigins Origins, bottom side			15
+25 tNames Service print, top side			63
+26 bNames Service print, bottom side			15
+27 tValues Component VALUE, top side			56
+28 bValues Component VALUE, bottom side			7
+29 tStop Solder stop mask, top side			
+30 bStop Solder stop mask, bottom side
+31 tCream Solder cream, top side
+32 bCream Solder cream, bottom side
+33 tFinish Finish, top side
+34 bFinish Finish, bottom side
+35 tGlue Glue mask, top side
+36 bGlue Glue mask, bottom side
+37 tTest Test and adjustment inf., top side
+38 bTest Test and adjustment inf. bottom side
+39 tKeepout Nogo areas for components, top side
+40 bKeepout Nogo areas for components, bottom side
+41 tRestrict Nogo areas for tracks, top side
+42 bRestrict Nogo areas for tracks, bottom side
+43 vRestrict Nogo areas for via-holes
+44 Drills Conducting through-holes			16
+45 Holes Non-conducting holes				28
+46 Milling Milling					28
+47 Measures Measures					21
+48 Document General documentation			24
+49 Reference Reference marks				48
+51 tDocu Part documentation, top side			24
+52 bDocu Part documentation, bottom side		48
+

@@ -38,7 +38,7 @@ int NeedConfirmation = 0;  // set to '1' to enable confirmation dialog popup
 //int nb_sig_cmn=0;
 int b=0;
 int accept=0;
-int nx, ny;
+int nx = 1, ny = 1;
 real deltax, deltay, orgx, orgy;
 //string cmn_sig[];
 string suffix="x";
@@ -122,6 +122,27 @@ board(B)
             }
 
         }
+    }
+    // if no DIM layers, repeat with milling layers...
+    if (xdist + ydist == 0) {
+	B.wires(w)
+	{
+	    // check if MILLING layer
+	    if(w.layer == 46 )
+	    {
+		dsize = u2mil(w.x1-w.x2);
+		if(dsize > 0)
+		{
+		    xdist += dsize;
+		}
+		dsize = u2mil(w.y1-w.y2);
+		if( dsize > 0 )
+		{
+		    ydist += dsize;
+		}
+
+	    }
+	}
     }
     sprintf(sSize, "Approx Board Size: (%f, %f) %s", xdist, ydist, sUnits);
 
@@ -257,6 +278,22 @@ if(accept == 4)
 	exit(0);
 }
 
+// substitute newlines in t.value with two character sequence '\' 'n'
+string escapeNewlines(string s)
+{
+    int x = 0;
+    string result = "";
+
+    for (x = 0; s[x]; ++x) {
+	if (s[x] == '\n') {
+	    result += "\\n";
+	} else {
+	    result += s[x];
+	}
+    }
+    return result;
+}
+
 int i,j,k,cmn,new_layer;
 
 real xx1,yy1,xx2,yy2,xc,yc,xx3,yy3,wid,dia,dril,dx,dy,size,isol;
@@ -369,10 +406,7 @@ output(fileLocation)
 		printf("change style %s;\n","CONTINUOUS");
 		printf("set Wire_Bend 0;\n");
 		printf("wire '%s' %f (%f %f) (%f %f) (%f %f);\n", "BoardOutline",   10.0, x0, y0, x1, y1, x0, y0); // DIMENSION 
-		//printf("wire '%s' %f (%f %f) (%f %f);\n", "BoardBottom", 10.0, x0, y0, x1, y0); // DIMENSION right
-		//printf("wire '%s' %f (%f %f) (%f %f);\n", "BoardRight",  10.0, x1, y0, x1, y1); // DIMENSION right
-		//printf("wire '%s' %f (%f %f) (%f %f);\n", "BoardTop",    10.0, x1, y1, x0, y1); // DIMENSION top
-		//printf("wire '%s' %f (%f %f) (%f %f);\n", "BoardLeft",   10.0, x0, y1, x0, y0); // DIMENSION left
+		printf("set Wire_Bend 2;\n");
 	    }
 
 
@@ -407,10 +441,9 @@ output(fileLocation)
                         yy1= u2mil(t.y)+dy;
                         size= u2mil(t.size);              
 
-			// TODO: substitute newlines in t.value with '\n'
                         printf("change layer %d;\n",new_layer);
                         printf("change size %f;\n",size);
-                        printf("text '%s' R%f (%f %f);\n",t.value, t.angle,xx1,yy1);
+                        printf("text '%s' R%f (%f %f);\n",escapeNewlines(t.value), t.angle,xx1,yy1);
                         
                     }     /* E.package.texts(t) */
                     
@@ -634,7 +667,7 @@ output(fileLocation)
                             printf("change align top right;\n");
                             break;
                     }
-                    printf("text '%s' %sR%f (%f %f);\n",t.value, mirror[t.mirror],t.angle,xx1,yy1);
+                    printf("text '%s' %sR%f (%f %f);\n",escapeNewlines(t.value), mirror[t.mirror],t.angle,xx1,yy1);
                 } // end b.texts
                 
                 // Copy all signals

@@ -171,12 +171,12 @@ def loadFeeders(feederfilename):
 
 
 
-def downloadFeederFile(feederfilename, key):
+def downloadFeederFile(args, feederfilename, key):
     # Borrowed from SparkFun's CHMT ulp...
     # The ID from a 'Anyone with the link can view' shared level spreadsheet
     # This spreadsheet contains configurations for each different reel of components
     if key is None or key == '':
-        key = config.spreadsheet_key
+        key = args.config.get('google', 'spreadsheet_key')
 
     if feederfilename is None or feederfilename == '':
         feederfilename = config.defaultfeederfile

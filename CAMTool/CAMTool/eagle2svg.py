@@ -9,14 +9,17 @@ Take an Eagle BRD file and render it as a SVG
 Limits:  Some Eagle part numbers (names with embedded commas) are illegal XML tag names and cause the xml parser to throw errors
 """
 
+import ConfigParser
+from pkg_resources import Requirement, resource_filename
+from CAMTool.fab import CHMTPickNPlace, EagleCAD
 import CAMTool.fab.SiteConfiguration as config
 
+import sys
 import svgwrite
 import os
 import datetime
 import argparse
 import StringIO
-from CAMTool.fab import CHMTPickNPlace, EagleCAD
 
 """
 Output routines to create a SVG file
@@ -141,19 +144,32 @@ def main():
 
     """
 
-
+    cfile = os.path.expanduser(config.DefaultConfigFile)
+    if not os.path.isfile(cfile):
+        print "First time usage: Creating {} with default contents - edit and customize before using!".format(cfile)
+        examplefn = resource_filename(Requirement.parse('CAMTool'),"CAMTool/EagleTools.cfg")
+        configuration = ConfigParser.ConfigParser()
+        configuration.read(examplefn)        
+        with open(cfile, 'wb') as configfile:
+            configuration.write(configfile)
+        sys.exit(0)
+    
+    configuration = ConfigParser.ConfigParser()
+    configuration.read(cfile)
+    
     parser = argparse.ArgumentParser(description='Create a SVG rendering from an EAGLEcad PCB board file.',
                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('PCBfile', metavar='pcbfile', type=str, nargs='+',
             help='an EAGLEcad .brd file to process')
     parser.add_argument("--feederfile", help="csv file with feeder component assignments")
-    parser.add_argument("--outdir",     help="output directory (default is <PCBfile>.bom.txt)")
+    parser.add_argument("--outdir",     help="output directory (default is ./<PCBfile>.brd.svg)")
     parser.add_argument("--download",   action="store_true", help="download a fresh feeder file from Google Sheets?")
     parser.add_argument("--key",        help="Google Sheets document access key")
 
     args = parser.parse_args()
-
-    feederfile = config.defaultfeederfile
+    args.config = configuration
+    
+    feederfile = args.config.get('EagleTools', 'defaultfeederfile')
     if args.feederfile:
         feederfile = args.feederfile
 
@@ -166,12 +182,12 @@ def main():
         if len(args.PCBfile) > 1:
             print "Processing {}\n".format(f)
 
-        outfilename = os.path.splitext(os.path.basename(f))[0] + ".svg"
+        outfilename = os.path.splitext(os.path.basename(f))[0] + ".brd.svg"
         outdir = os.path.dirname(f)
 
         if args.outdir:
             if args.outdir == '@':
-                outdir = config.defaultBOMdir
+                outdir = args.config.get('EagleTools', 'defaultSVGdir')
             elif args.outdir == "-":
                 pass
             else:
@@ -244,22 +260,40 @@ def main():
                 x    = float(e.getAttribute("x"))
                 y    = float(e.getAttribute("y"))
                 r    = e.getAttribute("rot")
+                # [S][M]Rnnn
+                #
+                #     S    sets the Spin flag, which disable keeping texts readable from the bottom or right side of the drawing (only available in a board context)
+                #     M    sets the Mirror flag, which mirrors the object about the y-axis
+                #     Rnnn sets the Rotation to the given value, which may be in the range 0.0...359.9 (at a resolution of 0.1 degrees) in a board context, or one of 0, 90, 180 or 270 in a schematic context (angles may be given as negative values, which will be converted to the corresponding positive value)
+                #
+                #     The key letters S, M and R may be given in upper- or lowercase, and there must be at least R followed by a number.
+                #     If the Mirror flag is set in an element as well as in a text within the element's package, they cancel each other out. The same applies to the Spin flag.
+                #     Examples:
+                #
+                #     R0      no rotation
+                #     R90     rotated 90 counterclockwise
+                #     R-90    rotated 90 clockwise (will be converted to 270)
+                #     MR0     mirrored about the y-axis
+                #     SR0     spin texts
+                #     SMR33.3 rotated 33.3 counterclockwise, mirrored and spin texts
+
                 if not r or r == '':
                     angle=0
+                elif r.startswith('MSR'):
+                    angle = int(r.lstrip('MSR'))  # TODO: Do I need to += 180?
+                elif r.startswith('SMR'):
+                    angle = int(r.lstrip('SMR'))  # TODO: Do I need to += 180?
                 elif r.startswith('MR'):
-                    angle = int(r.lstrip('MR'))  # TODO: Do I need to += 180?
+                    angle = int(r.lstrip('MR'))   # TODO: Do I need to += 180?
+                elif r.startswith('SR'):
+                    angle = int(r.lstrip('SR'))   # TODO: Do I need to += 180?
                 elif r.startswith('R'):
                     angle = int(r.lstrip('R'))
                 else:
                     angle = int(r)
-                """
-                print("looking for {}...".format(pkg))
-                print("packages[]={}".format(packages))
-                print("packages[{}]={}".format(pkg, packages[pkg]))
-                print symbols
-                """
-                # rot="rotate({} {} {})".format(180, x+(packages[pkg]['xmax'] - packages[pkg]['xmin'])/2, y+(packages[pkg]['ymax'] - packages[pkg]['ymin'])/2);
+
                 rot="rotate({} {} {})".format(angle, x, y)
+
                 dwg.add( dwg.use(symbols[pkg], transform=rot, insert=(x + packages[pkg]['xmin'], y + packages[pkg]['ymin']), size=(packages[pkg]['xmax'] - packages[pkg]['xmin'], packages[pkg]['ymax'] - packages[pkg]['ymin'])))
 
         for E in eagleBoard.getElementsByTagName("plain"):
