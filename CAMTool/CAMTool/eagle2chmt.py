@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 """
 Author: John Plocher, 2019
@@ -15,16 +15,16 @@ referenced here with the default key
 
 """
 
-import ConfigParser
+import configparser
 from pkg_resources import Requirement, resource_filename
 import CAMTool.fab.SiteConfiguration as config
-from fab import CHMTPickNPlace, EagleCAD
+from .fab import CHMTPickNPlace, EagleCAD
 
 import sys
 import os
 import datetime
 import argparse
-import StringIO
+import io
 import os.path
 
 
@@ -43,7 +43,7 @@ def outputHeader(filename):
     fn    = os.path.splitext(os.path.basename(filename))[0]
     # File header
 
-    output = StringIO.StringIO()
+    output = io.StringIO()
 
     output.write("separated\n");
     output.write("FILE,{}.dpv\n".format(fn))
@@ -58,7 +58,7 @@ def outputHeader(filename):
     return contents
 
 def outputStations(used, feeder, component):
-    output = StringIO.StringIO()
+    output = io.StringIO()
     stacknumber = 0
     output.write("Table,No.,ID,DeltX,DeltY,FeedRates,Note,Height,Speed,Status,SizeX,SizeY,HeightTake,DelayTake,nPullStripSpeed\n")
     for p,v in enumerate(used):
@@ -87,7 +87,7 @@ def outputStations(used, feeder, component):
 
 
 def outputBatch():
-    output = StringIO.StringIO()
+    output = io.StringIO()
     #    Batch takes multiple copies of the same board and mounts them into the machine at the same time.
     #    This is different from an array where you have one PCB with X number of design copies in a panel
     #    Reference from outputHeader():
@@ -117,11 +117,11 @@ def outputBatch():
 
 
 def outputParts(parts, feeder):
-    output = StringIO.StringIO()
+    output = io.StringIO()
     #EComponent, 0, 1, 1, 17, 19.05, 38.10, 90.00, 0.50, 2, 0, LED1, R - 0603, 0.00
     count = 0
     output.write("Table, No., ID, PHead, STNo., DeltX, DeltY, Angle, Height, Skip, Speed, Explain, Note, Delay\n")
-    for pn in sorted(parts.iterkeys(), key=EagleCAD.natural_sort_key):
+    for pn in sorted(iter(parts.keys()), key=EagleCAD.natural_sort_key):
         p = parts[pn]
         fnum = p['feeder']
         if fnum == CHMTPickNPlace.SKIP or fnum == CHMTPickNPlace.NOTFOUND:
@@ -152,7 +152,7 @@ def outputParts(parts, feeder):
 
 #    Add any IC tray info
 def outputICTray():
-    output = StringIO.StringIO()
+    output = io.StringIO()
     output.write("Table,No.,ID,CenterX,CenterY,IntervalX,IntervalY,NumX,NumY,Start\n")
     contents = output.getvalue()
     output.close()
@@ -160,7 +160,7 @@ def outputICTray():
 
 
 def outputPCBCalibrate():
-    output = StringIO.StringIO()
+    output = io.StringIO()
     #   Flags to say what type and if calibration of the board has been done
     output.write("\n")
     output.write("Table,No.,nType,nAlg,nFinished\n")
@@ -174,7 +174,7 @@ def outputPCBCalibrate():
 
 
 def outputFiducials():
-    output = StringIO.StringIO()
+    output = io.StringIO()
     #   Adds the fiducials or mark information about this board or panel
     #   TODO - Should we pull in the marks from the PCB file? It might make better
     #   sense to have user do this manually as it will be pretty specific.
@@ -188,7 +188,7 @@ def outputFiducials():
 
 
 def outputCalibrationFactor():
-    output = StringIO.StringIO()
+    output = io.StringIO()
     #   Add the calibration factor. This is all the offsets calculated when the
     #   PCB is calibrated. We don't have to set anything here because the program
     #   will calculate things after user calibrates the PCB.
@@ -220,15 +220,15 @@ optional arguments:
 def main():
     cfile = os.path.expanduser(config.DefaultConfigFile)
     if not os.path.isfile(cfile):
-        print "First time usage: Creating {} with default contents - edit and customize before using!".format(cfile)
+        print("First time usage: Creating {} with default contents - edit and customize before using!".format(cfile))
         examplefn = resource_filename(Requirement.parse('CAMTool'),"CAMTool/EagleTools.cfg")
-        configuration = ConfigParser.ConfigParser()
+        configuration = configparser.ConfigParser()
         configuration.read(examplefn)        
         with open(cfile, 'wb') as configfile:
             configuration.write(configfile)
         sys.exit(0)
     
-    configuration = ConfigParser.ConfigParser()
+    configuration = configparser.ConfigParser()
     configuration.read(cfile)
     
     parser = argparse.ArgumentParser(description='Create a CHMT pick-n-place job from an EAGLEcad PCB board file.',
@@ -271,7 +271,7 @@ def main():
 	    rcfile = args.eagleRC
 
     if (args.download or not os.path.isfile(feederfile) ):
-	    print "DL feederfile: ", feederfile
+	    print("DL feederfile: ", feederfile)
 	    CHMTPickNPlace.downloadFeederFile(args, feederfile, args.key)
 
     (feeder, component) = CHMTPickNPlace.loadFeeders(feederfile)
@@ -279,7 +279,7 @@ def main():
 
     for f in args.PCBfile:
     	if len(args.PCBfile) > 1:
-    	    print "Processing {}".format(f)
+    	    print("Processing {}".format(f))
 
     	outfilename = os.path.splitext(os.path.basename(f))[0] + ".dpv"
     	outdir = os.path.dirname(f)

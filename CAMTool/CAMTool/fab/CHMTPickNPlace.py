@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 """
 Author: John Plocher, 2019
@@ -25,7 +25,7 @@ __version__ = "0.1"
 import CAMTool.fab.SiteConfiguration as config # local config details
 
 import csv
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 
 
 SKIP       = -1
@@ -123,7 +123,7 @@ def loadFeeders(feederfilename):
             if num == "":
                 continue
             me = {}
-            for k,v in idx.items():
+            for k,v in list(idx.items()):
                 me[k] = row[v]
 
             me[place]       = True if me[place]     == "Y" else False
@@ -145,7 +145,7 @@ def loadFeeders(feederfilename):
 
             feeders[num] = me
 
-    for fidx in sorted(feeders.iterkeys()):
+    for fidx in sorted(feeders.keys()):
         f = feeders[fidx]
         name = f[partname].lower()
         ts   = f[tapesize].lower()
@@ -185,7 +185,7 @@ def downloadFeederFile(args, feederfilename, key):
     # This is the public spreadsheet that contains all our feeder data
     # I'm too tired to use OAuth at the moment
     url = 'https://docs.google.com/spreadsheet/ccc?key=' + key + '&output=csv'
-    response = urllib2.urlopen(url)
+    response = urllib.request.urlopen(url)
     data = response.read()
 
     print("Writing to {} ...".format(feederfilename)),

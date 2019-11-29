@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 """
 Author: John Plocher, 2019
 URL:    www.SPCoast.com
@@ -10,8 +10,8 @@ Generate a TOC for an EAGLE CAD library
 from CAMTool.fab.SiteConfiguration import *
 
 import argparse
-import StringIO
-from fab import EagleCAD
+import io
+from .fab import EagleCAD
 import os.path
 
 
@@ -26,7 +26,7 @@ def try_int(s):
 def natsort_key(s):
     "Used internally to get a tuple by which s is sorted."
     import re
-    return map(try_int, re.findall(r'(\d+|\D+)', s))
+    return list(map(try_int, re.findall(r'(\d+|\D+)', s)))
 
 
 def natcmp(a, b):
@@ -35,7 +35,7 @@ def natcmp(a, b):
 
 
 def outputTOC(args, eagleLibrary, packages, symbols):
-    output = StringIO.StringIO()
+    output = io.StringIO()
 
     output.write("""
 ==Library TOC List==
@@ -102,7 +102,7 @@ def main():
 
     for f in args.Library:
 	if len(args.Library) > 1:
-	    print "Processing {}".format(f)
+	    print("Processing {}".format(f))
 
 	outfilename = os.path.splitext(os.path.basename(f))[0] + ".bom.wiki"
 	outdir = os.path.dirname(f)
@@ -123,7 +123,7 @@ def main():
 
 	content = outputTOC(args, eagleLibrary, packages, symbols)
 	if args.outdir == '-':
-	    print content
+	    print(content)
 	else:
 	    with open(outfilename, "w") as outfile:
 		outfile.write(content)

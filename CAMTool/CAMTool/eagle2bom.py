@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 """
 Author: John Plocher, 2019
@@ -12,14 +12,14 @@ Generate a parts BOM used in an Eagle project
    www.SPCoast.com
 
 """
-import ConfigParser
+import configparser
 from pkg_resources import Requirement, resource_filename
 import CAMTool.fab.SiteConfiguration as config
 from CAMTool.fab import CHMTPickNPlace, EagleCAD
 
 import sys
 import argparse
-import StringIO
+import io
 import os.path
 import re
 
@@ -47,7 +47,7 @@ def try_int(s):
 def natsort_key(s):
     "Used internally to get a tuple by which s is sorted."
     import re
-    return map(try_int, re.findall(r'(\d+|\D+)', s))
+    return list(map(try_int, re.findall(r'(\d+|\D+)', s)))
 
 
 def natcmp(a, b):
@@ -59,11 +59,11 @@ def outputParts(parts, smt, pth):
     return outputPartsMD(parts, smt, pth)
 
 def outputPartsMD(parts, smt, pth):
-    output = StringIO.StringIO()
+    output = io.StringIO()
     partcounts = {}
 
     # by part name, with common values collected together...
-    for pn in sorted(parts.iterkeys(), key=EagleCAD.natural_sort_key):
+    for pn in sorted(iter(parts.keys()), key=EagleCAD.natural_sort_key):
         p = parts[pn]
         # p['id'] == part value - package
         if p['id'] in partcounts:
@@ -84,7 +84,7 @@ def outputPartsMD(parts, smt, pth):
     output.write("{:.partlist}\n")  # CSS styling class...
     output.write("| Parts | Value | Package | Quantity | Library | Type/Feeder\n")
 
-    for pn in sorted(partcounts.iterkeys(), key=EagleCAD.natural_sort_key):
+    for pn in sorted(iter(partcounts.keys()), key=EagleCAD.natural_sort_key):
 
         count = partcounts[pn]['cnt']
         list  = partcounts[pn]['list']
@@ -128,11 +128,11 @@ def outputPartsMD(parts, smt, pth):
     return contents
 
 def outputPartsWiki(parts, smt, pth):
-    output = StringIO.StringIO()
+    output = io.StringIO()
     partcounts = {}
 
     # by part name, with common values collected together...
-    for pn in parts.iterkeys():
+    for pn in parts.keys():
         p = parts[pn]
         # p['id'] == part value - package
         if p['id'] in partcounts:
@@ -160,7 +160,7 @@ def outputPartsWiki(parts, smt, pth):
 ! Quantity
 ! Feeder
 """)
-    for pn in sorted(partcounts.iterkeys(), key=EagleCAD.natural_sort_key):
+    for pn in sorted(iter(partcounts.keys()), key=EagleCAD.natural_sort_key):
         count = partcounts[pn]['cnt']
         list  = partcounts[pn]['list']
         f     = partcounts[pn]['feed']
@@ -234,15 +234,15 @@ def main():
 
     cfile = os.path.expanduser(config.DefaultConfigFile)
     if not os.path.isfile(cfile):
-        print "First time usage: Creating {} with default contents - edit and customize before using!".format(cfile)
+        print("First time usage: Creating {} with default contents - edit and customize before using!".format(cfile))
         examplefn = resource_filename(Requirement.parse('CAMTool'),"CAMTool/EagleTools.cfg")
-        configuration = ConfigParser.ConfigParser()
+        configuration = configparser.ConfigParser()
         configuration.read(examplefn)        
         with open(cfile, 'wb') as configfile:
             configuration.write(configfile)
         sys.exit(0)
     
-    configuration = ConfigParser.ConfigParser()
+    configuration = configparser.ConfigParser()
     configuration.read(cfile)
     
     parser = argparse.ArgumentParser(description='Create a parts list BOM from an EAGLEcad PCB board file(s).\n'
@@ -275,7 +275,7 @@ def main():
         args.smt = args.pth = True
 
     if (args.download or not os.path.isfile(feederfile) ):
-        print "Downloading feederfile: ", feederfile
+        print("Downloading feederfile: ", feederfile)
         CHMTPickNPlace.downloadFeederFile(args, feederfile, args.key)
 
     (feeder, component) = CHMTPickNPlace.loadFeeders(feederfile)
@@ -283,7 +283,7 @@ def main():
 
     for f in args.PCBfile:
         if args.verbose or len(args.PCBfile) > 1:
-            print "Processing {}".format(f)
+            print("Processing {}".format(f))
 
         outfilename = os.path.splitext(os.path.basename(f))[0] + ".bom.md"
         outdir = os.path.dirname(f)
@@ -305,7 +305,7 @@ def main():
 
         content = outputParts(parts, args.smt, args.pth)
         if args.outdir == '-':
-            print content
+            print(content)
         else:
             with open(outfilename, "w") as outfile:
                 outfile.write(outputParts(parts, args.smt, args.pth))

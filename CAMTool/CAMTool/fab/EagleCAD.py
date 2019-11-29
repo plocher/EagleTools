@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 """
 Author: John Plocher, 2019
@@ -251,7 +251,7 @@ If a design's part doesn't have an assigned feeder, assume it isn't used.
 """
 def getUsedComponents(parts, feeder):
     used = {}
-    for p in sorted(parts.iterkeys()):
+    for p in sorted(parts.keys()):
         if parts[p]['feeder'] == CHMTPickNPlace.SKIP:
             continue
         if parts[p]['feeder'] == CHMTPickNPlace.NOTFOUND:

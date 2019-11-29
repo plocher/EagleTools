@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 """
 Author: John Plocher, 2019
 URL:    www.SPCoast.com
@@ -9,7 +9,7 @@ Take an Eagle BRD file and render it as a SVG
 Limits:  Some Eagle part numbers (names with embedded commas) are illegal XML tag names and cause the xml parser to throw errors
 """
 
-import ConfigParser
+import configparser
 from pkg_resources import Requirement, resource_filename
 from CAMTool.fab import CHMTPickNPlace, EagleCAD
 import CAMTool.fab.SiteConfiguration as config
@@ -19,7 +19,7 @@ import svgwrite
 import os
 import datetime
 import argparse
-import StringIO
+import io
 
 """
 Output routines to create a SVG file
@@ -47,7 +47,7 @@ def outputHeader(filename):
     fn    = os.path.splitext(os.path.basename(filename))[0]
     # File header
 
-    output = StringIO.StringIO()
+    output = io.StringIO()
 
     output.write(date)
     output.write(time)
@@ -58,7 +58,7 @@ def outputHeader(filename):
 
 # list of symbols...
 def outputStations(used, feeder, component):
-    output = StringIO.StringIO()
+    output = io.StringIO()
     stacknumber = 0
     output.write("Table,No.,ID,DeltX,DeltY,FeedRates,Note,Height,Speed,Status,SizeX,SizeY,HeightTake,DelayTake,nPullStripSpeed\n")
     for p,v in enumerate(used):
@@ -93,15 +93,15 @@ def outputStations(used, feeder, component):
 
 
 # actual parts
-def outputParts(parts):
-    output = StringIO.StringIO()
+def outputParts(feeder, parts):
+    output = io.StringIO()
     #EComponent, 0, 1, 1, 17, 19.05, 38.10, 90.00, 0.50, 2, 0, LED1, R - 0603, 0.00
     count = 0
     output.write("Table, No., ID, PHead, STNo., DeltX, DeltY, Angle, Height, Skip, Speed, Explain, Note, Delay\n")
-    for pn in sorted(parts.iterkeys(), key=EagleCAD.natural_sort_key):
+    for pn in sorted(iter(parts.keys()), key=EagleCAD.natural_sort_key):
         p = parts[pn]
         fnum = p['feeder']
-        if fnum == CHMTPickNPlace.SKIP or fnum == fab.CHMTPickNPlace.NOTFOUND:
+        if fnum == CHMTPickNPlace.SKIP or fnum == CHMTPickNPlace.NOTFOUND:
             continue
         f = feeder[fnum]
 
@@ -109,7 +109,7 @@ def outputParts(parts):
               "{num:d}, {id:d}, {head:d}, {fnum:d}, "
               "{cX:0.2f}, {cY:0.2f}, {angle:0.2f}, {height:0.2f}, "
               "{skip:d}, {speed:d}, {name}, {note}, {dly:0.2f}\n".format(
-            num=count, id=count+1, head=int(f[CHMTPickNPlace.head]), fnum=int(f[fab.CHMTPickNPlace.feedernum]),
+            num=count, id=count+1, head=int(f[CHMTPickNPlace.head]), fnum=int(f[CHMTPickNPlace.feedernum]),
             cX=float(p['x']), cY=float(p['y']), angle=p['rot'], height=float(f[CHMTPickNPlace.pickheight]),
             skip=int(f[CHMTPickNPlace.options]),
             speed=int(f[CHMTPickNPlace.pullspeed]),
@@ -146,15 +146,15 @@ def main():
 
     cfile = os.path.expanduser(config.DefaultConfigFile)
     if not os.path.isfile(cfile):
-        print "First time usage: Creating {} with default contents - edit and customize before using!".format(cfile)
+        print("First time usage: Creating {} with default contents - edit and customize before using!".format(cfile))
         examplefn = resource_filename(Requirement.parse('CAMTool'),"CAMTool/EagleTools.cfg")
-        configuration = ConfigParser.ConfigParser()
+        configuration = configparser.ConfigParser()
         configuration.read(examplefn)        
         with open(cfile, 'wb') as configfile:
             configuration.write(configfile)
         sys.exit(0)
     
-    configuration = ConfigParser.ConfigParser()
+    configuration = configparser.ConfigParser()
     configuration.read(cfile)
     
     parser = argparse.ArgumentParser(description='Create a SVG rendering from an EAGLEcad PCB board file.',
@@ -180,7 +180,7 @@ def main():
 
     for f in args.PCBfile:
         if len(args.PCBfile) > 1:
-            print "Processing {}\n".format(f)
+            print("Processing {}\n".format(f))
 
         outfilename = os.path.splitext(os.path.basename(f))[0] + ".brd.svg"
         outdir = os.path.dirname(f)
@@ -205,7 +205,7 @@ def main():
         # get max board dimensions
         (x1,y1,x2,y2) = EagleCAD.getBoardDimensions(eagleBoard)
 
-        #print "dimensions: (x1:{} y1:{}), (x2:{},y2:{})".format(x1,y1,x2,y2)
+        #print("dimensions: (x1:{} y1:{}), (x2:{},y2:{})".format(x1,y1,x2,y2))
 
         dwg = svgwrite.Drawing(outfilename, size=(x2-x1, y2-y1), debug=True)
         dwg.defs.add(dwg.style(STYLES))

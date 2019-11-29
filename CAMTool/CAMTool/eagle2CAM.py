@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 """
 Author: John Plocher, 2019
@@ -33,7 +33,7 @@ eagle2gerbers
     next time you place a fab order.
 """
 
-import ConfigParser
+import configparser
 from pkg_resources import Requirement, resource_filename
 import CAMTool.fab.SiteConfiguration as config
 
@@ -145,14 +145,14 @@ def genTempFileList(project):
 
 def genBoardFilenameList(args, project):
     FileList = {}
-    for n, f in genEagleFilenameList(project).iteritems():
+    for n, f in genEagleFilenameList(project).items():
         FileList[n] = f
-    for n, f in genDerivedFileList(project).iteritems():
+    for n, f in genDerivedFileList(project).items():
         FileList[n] = f
-    for n, f in genArchivesFileList(project).iteritems():
+    for n, f in genArchivesFileList(project).items():
         FileList[n] = f
     if args.picknplace:
-        for n, f in genPickNPlaceList(project).iteritems():
+        for n, f in genPickNPlaceList(project).items():
             FileList[n] = f
     return FileList
 
@@ -214,7 +214,7 @@ def generateGerbersFromEagle(args):
         if args.force:
             needed = True
             if args.verbose:
-                print "** FORCE regeneration of gerbers for {}\n".format(args.project)
+                print("** FORCE regeneration of gerbers for {}\n".format(args.project))
 
         if not needed:
             base_time = getCADtime(schematic, b)
@@ -235,13 +235,13 @@ def generateGerbersFromEagle(args):
                             tar_modified_time = os.stat(fullname).st_mtime
                             if base_time > tar_modified_time:
                                 if args.verbose:
-                                    print "** Archive Dir content is older than current CAD files\n"
+                                    print("** Archive Dir content is older than current CAD files\n")
                                 needed = True
 
             if not foundarchive:
                 if args.verbose:
                     if not args.noarchive:
-                        print "** Archive not found\n"
+                        print("** Archive not found\n")
                 needed = True
 
         if not needed:
@@ -250,7 +250,7 @@ def generateGerbersFromEagle(args):
         modified = True
 
         # clean out old gerber files so EagleCad doesn't ask to overwrite them
-        for n,f in FileList.iteritems():
+        for n,f in FileList.items():
             if os.path.isfile(f):
                 os.remove(f)
 
@@ -291,7 +291,7 @@ def generateGerbersFromEagle(args):
             if args.verbose:
                 print('Archive Gerbers: Tar: {}'.format(blist['tgfn']))
             with tarfile.open(blist['tgfn'], 'w') as tar:
-                for n, f in FileList.iteritems():
+                for n, f in FileList.items():
                     if os.path.isfile(f):
                         if args.verbose:
                             print('\t{}'.format(f))
@@ -300,7 +300,7 @@ def generateGerbersFromEagle(args):
             if args.verbose:
                 print('Archive Gerbers: Zip: {}'.format(blist['zgfn']))
             with ZipFile(blist['zgfn'], 'w') as zip:
-                for n, f in FileList.iteritems():
+                for n, f in FileList.items():
                     if os.path.isfile(f):
                         if args.verbose:
                             print('\t{}'.format(f))
@@ -335,8 +335,25 @@ def generateGerbersFromEagle(args):
 def generateImagesFromEagle(args):
 
     # EagleCAD commands
-    PARTS_BOARD=args.config.get('EagleTools', 'PARTS_BOARD') # generate_csv_partlist.ulp
+    PARTS_BOARD=args.config.get('EagleTools', 'PARTS_BOARD')
+    if PARTS_BOARD is None or PARTS_BOARD == '':
+        PARTS_BOARD = 'OPTIMIZE'
 
+    IMAGE_BOARD=args.config.get('EagleTools', 'IMAGE_BOARD')
+    if IMAGE_BOARD is None or IMAGE_BOARD == '':
+        IMAGE_BOARD = 'OPTIMIZE'
+
+    IMAGE_SCH=args.config.get('EagleTools', 'IMAGE_SCH')
+    if IMAGE_SCH is None or IMAGE_SCH == '':
+        IMAGE_SCH = 'OPTIMIZE'
+
+    IMAGE_BSILK=args.config.get('EagleTools', 'IMAGE_BSILK')
+    if IMAGE_BSILK is None or IMAGE_BSILK == '':
+        IMAGE_BSILK = 'OPTIMIZE'
+
+    IMAGE_TSILK=args.config.get('EagleTools', 'IMAGE_TSILK')
+    if IMAGE_TSILK is None or IMAGE_TSILK == '':
+        IMAGE_TSILK = 'OPTIMIZE'
 
     singletonbase = args.project
     panelbase = "{}_array".format(args.project)
@@ -348,7 +365,7 @@ def generateImagesFromEagle(args):
     if args.force:
         needed = True
         if args.verbose:
-            print "** FORCE {}\n".format(args.project)
+            print("** FORCE {}\n".format(args.project))
 
     # generate image of schematic ...
     if os.path.isfile(schematic):
@@ -410,20 +427,23 @@ def generateImagesFromEagle(args):
                 if os.path.isfile(dependent):
                     os.remove(dependent)
 
-            IMAGE_BOARD = "script SPCoastlayers.scr; script defaultcolors.scr; SET PALETTE WHITE; DISPLAY {layer}; RATSNEST; RIPUP @; EXPORT image {png} 300".format(
-                layer=args.config.get('EagleTools', 'D_NORMAL'),
-                png=blist['pngbrd'])
-            IMAGE_BSILK = "DISPLAY {layer}; RATSNEST;          EXPORT image {png} 300".format(
-                layer=args.config.get('EagleTools', 'D_BSILK'),
-                png=blist['pngbot'])
-            IMAGE_TSILK = "DISPLAY {layer}; RATSNEST;          EXPORT image {png} 300".format(
-                layer=args.config.get('EagleTools', 'D_TSILK'),
-                png=blist['pngtop'])
+            IMAGE_BOARD = IMAGE_BOARD.format(
+                                                layer=args.config.get('EagleTools', 'D_NORMAL'),
+                                                png=blist['pngbrd'])
+            IMAGE_BSILK = IMAGE_BSILK.format(
+                                                layer=args.config.get('EagleTools', 'D_BSILK'),
+                                                png=blist['pngbot'])
+            IMAGE_TSILK = IMAGE_TSILK.format(
+                                                layer=args.config.get('EagleTools', 'D_TSILK'),
+                                                png=blist['pngtop'])
 
             ECMD="SET CONFIRM OFF;{};undo;{};undo;undo;{};undo;{};undo;quit;"
             ECMD=ECMD.format(PARTS_BOARD, IMAGE_BOARD, IMAGE_BSILK,IMAGE_TSILK)
 
-            c="{EAGLE} -C \"{cmd}\" {board}".format(EAGLE=args.config.get('EagleTools', 'EAGLEAPP'), cmd=ECMD, board=b)
+            c = "{EAGLE} -C \"{cmd}\" {board}".format(
+                                                EAGLE=args.config.get('EagleTools', 'EAGLEAPP'),
+                                                cmd=ECMD,
+                                                board=b)
             if args.verbose:
                 print("+ {}".format(c))
             os.system(c)
@@ -488,7 +508,7 @@ def clean(args):
     for project in [singletonbase, panelbase]:
         if not args.leave:
             for d in [genGerberFilenameList(project), genTempFileList(project)]:
-                for n, f in d.iteritems():
+                for n, f in d.items():
                     if os.path.isfile(f):
                         if args.verbose:
                             print('% rm {}'.format(f))
@@ -539,7 +559,7 @@ def generateArchive(args):
         for dict in [genEagleFilenameList(project),
                      genArchivesFileList(project),
                      genDerivedFileList(project)]:
-            for n, f in dict.iteritems():
+            for n, f in dict.items():
                 if os.path.isfile(f):
                     if args.verbose:
                         print('% cp {} {}'.format(f, d))
@@ -601,6 +621,35 @@ def copyFiles2Order(args):
                     print('% cp {} {}'.format(f, dest))
                 shutil.copy(f, dest)
 
+def testconfig(args):
+    # EagleCAD commands
+    PARTS_BOARD = args.config.get('EagleTools', 'PARTS_BOARD')
+    if PARTS_BOARD is None or PARTS_BOARD == '':
+        PARTS_BOARD = 'OPTIMIZE'
+
+    IMAGE_BOARD = args.config.get('EagleTools', 'IMAGE_BOARD')
+    if IMAGE_BOARD is None or IMAGE_BOARD == '':
+        IMAGE_BOARD = 'OPTIMIZE'
+
+    IMAGE_SCH = args.config.get('EagleTools', 'IMAGE_SCH')
+    if IMAGE_SCH is None or IMAGE_SCH == '':
+        IMAGE_SCH = 'OPTIMIZE'
+
+    IMAGE_BSILK = args.config.get('EagleTools', 'IMAGE_BSILK')
+    if IMAGE_BSILK is None or IMAGE_BSILK == '':
+        IMAGE_BSILK = 'OPTIMIZE'
+
+    IMAGE_TSILK = args.config.get('EagleTools', 'IMAGE_TSILK')
+    if IMAGE_TSILK is None or IMAGE_TSILK == '':
+        IMAGE_TSILK = 'OPTIMIZE'
+
+    print("PARTS_BOARD: {s}".format(s=PARTS_BOARD))
+    print("IMAGE_BOARD: {s}".format(s=IMAGE_BOARD))
+    print("IMAGE_SCH: {s}".format(s=IMAGE_SCH))
+    print("IMAGE_BSILK: {s}".format(s=IMAGE_BSILK))
+    print("IMAGE_TSILK: {s}".format(s=IMAGE_TSILK))
+
+
 def main():
     """
     main()
@@ -632,15 +681,15 @@ def main():
 
     cfile = os.path.expanduser(config.DefaultConfigFile)
     if not os.path.isfile(cfile):
-        print "First time usage: Creating {} with default contents - edit and customize before using!".format(cfile)
+        print("First time usage: Creating {} with default contents - edit and customize before using!".format(cfile))
         examplefn = resource_filename(Requirement.parse('CAMTool'),"CAMTool/EagleTools.cfg")
-        configuration = ConfigParser.ConfigParser()
+        configuration = configparser.ConfigParser()
         configuration.read(examplefn)        
         with open(cfile, 'wb') as configfile:
             configuration.write(configfile)
         sys.exit(0)
     
-    configuration = ConfigParser.ConfigParser()
+    configuration = configparser.ConfigParser()
     configuration.read(cfile)
     
     parser = argparse.ArgumentParser()
@@ -662,7 +711,8 @@ def main():
     if args.configfile is not None:
         configuration.read(args.configfile)    
 
-    
+    # testconfig(args)
+
     generate_DESCRIPTION(args)
     somethingChanged |= generateImagesFromEagle(args)
     somethingChanged |= generateGerbersFromEagle(args)
