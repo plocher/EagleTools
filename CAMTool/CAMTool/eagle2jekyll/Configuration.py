@@ -1,3 +1,8 @@
+"""
+This should move into a configparser structure..
+"""
+__version__ = "0.1"
+
 class Configuration(object):
     def __init__(self, program):
         self.program                     = program

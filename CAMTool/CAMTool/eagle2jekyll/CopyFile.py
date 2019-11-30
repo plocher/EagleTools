@@ -1,3 +1,11 @@
+"""
+    Copy a file from the source location to the correct jekyll publishing location
+    return the "url" name of the copied file
+
+"""
+__version__ = "0.1"
+
+
 import os
 import sys
 import shutil

@@ -17,6 +17,7 @@ setup(
 		'eagle2chmt   = CAMTool.eagle2chmt:main',
 		'eagle2svg    = CAMTool.eagle2svg:main',
 		'eagleLib2TOC = CAMTool.eagleLib2TOC:main',
+		'eagle2jekyll = CAMTool.eagle2jekyll.eagle2jekyll:main',
 	    ]
     },
     package_data = {

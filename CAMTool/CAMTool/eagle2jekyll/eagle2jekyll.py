@@ -5,11 +5,11 @@ import sys
 import argparse
 from pathlib import Path
 import io
-from Configuration import *
-from CopyFile import *
+from .Configuration import *
+from .CopyFile import *
 from git import Git
 import re
-#import ConfigParser
+#import configparser
 
 
 def sorted_nicely( l ):
@@ -490,8 +490,7 @@ def processEagle(args):
     processEagleParent(args, args.project, all_files)
     processEagleChild(args, args.project, tag, all_files)
 
-
-if __name__ == "__main__":
+def main():
     conf = Configuration("test")
     error = False
     
@@ -567,7 +566,8 @@ if __name__ == "__main__":
     if not args.show:
         Path(conf.lastupload).touch()
 
-
+if __name__ == "__main__":
+    main()
 
 
 
