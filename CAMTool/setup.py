@@ -6,7 +6,7 @@ with open("CAMtool/README.md", "r") as fh:
 
 setup(
     name="CAMTool",
-    version="0.14",
+    version="0.15",
 
     packages=find_packages(),
 	
