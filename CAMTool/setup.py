@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
-with open("CAMtool/README.md", "r") as fh:
+with open("README.md", "r") as fh:
     long_description = fh.read()
 
 
 setup(
     name="CAMTool",
-    version="0.16",
+    version="0.17",
 
     packages=find_packages(),
 	
