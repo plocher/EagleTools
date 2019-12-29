@@ -17,6 +17,7 @@ from pkg_resources import Requirement, resource_filename
 import CAMTool.fab.SiteConfiguration as config
 from CAMTool.fab import CHMTPickNPlace, EagleCAD
 
+from natsort import natsorted
 import sys
 import argparse
 import io
@@ -54,6 +55,10 @@ def natcmp(a, b):
     "Natural string comparison, case sensitive."
     return cmp(natsort_key(a), natsort_key(b))
 
+def natural_sort(l):
+    convert      = lambda i: int(i['name']) if i['name'].isdigit() else i['name'].lower()
+    alphanum_key = lambda key: [ convert(c) for c in re.split('([0-9]+)', key) ]
+    return sorted(l, key = alphanum_key)
 
 def outputParts(parts, smt, pth):
     return outputPartsMD(parts, smt, pth)
@@ -102,7 +107,7 @@ def outputPartsMD(parts, smt, pth):
                 if pth:
                     output.write('|-\n')
                     sep='| '
-                    for p in sorted(list, cmp=natcmp, key=lambda i: i['name']):
+                    for p in natsorted(list, key=lambda i: i['name']):
                         output.write('{}{}'.format(sep, p['name']))
                         sep = ', '
                     output.write(" | {} | {} | {}x | {} | {}\n".format(p['value'], p['package'], count, p['library'], 'PTH'))
@@ -110,7 +115,7 @@ def outputPartsMD(parts, smt, pth):
                 if smt:
                     output.write('|-\n')
                     sep='| '
-                    for p in sorted(list, cmp=natcmp, key=lambda i: i['name']):
+                    for p in natsorted(list, key=lambda i: i['name']):
                         output.write('{}{}'.format(sep, p['name']))
                         sep = ', '
                     output.write(" | {} | {} | {}x | {} | {}\n".format(p['value'], p['package'], count, p['library'], 'NONE'))
@@ -118,7 +123,7 @@ def outputPartsMD(parts, smt, pth):
                 if smt:
                     output.write('|-\n')
                     sep='| '
-                    for p in sorted(list, cmp=natcmp, key=lambda i: i['name']):
+                    for p in natsorted(list, key=lambda i: i['name']):
                         output.write('{}{}'.format(sep, p['name']))
                         sep = ', '
                     output.write(" | {} | {} | {}x | {} | {}\n".format(p['value'], p['package'], count, p['library'], f))

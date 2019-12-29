@@ -126,8 +126,10 @@ def genDerivedFileList(project):
     # Board Image (experimental)
     FileList['svg']        = "{}.svg"        .format(project)
 
-    FileList['pngsch']     = "{}.sch.png"    .format(project)
+    FileList['pngsch']     = "{}.sch.png"    .format(project)  # TODO: Needs to be _array as well...
     FileList['pngbrd']     = "{}.brd.png"    .format(project)
+
+
     FileList['pngbot']     = "{}.bot.brd.png".format(project)
     FileList['pngtop']     = "{}.top.brd.png".format(project)
 
@@ -207,7 +209,7 @@ def generateGerbersFromEagle(args):
         if not os.path.isfile(b):
             continue
 
-        FileList = genGerberFilenameList(project)
+        GerberList = genGerberFilenameList(project)
 
         needed = False
 
@@ -250,7 +252,7 @@ def generateGerbersFromEagle(args):
         modified = True
 
         # clean out old gerber files so EagleCad doesn't ask to overwrite them
-        for n,f in FileList.items():
+        for n,f in GerberList.items():
             if os.path.isfile(f):
                 os.remove(f)
 
@@ -259,39 +261,39 @@ def generateGerbersFromEagle(args):
         # These files, zipped together, are the only files you need to have a PCB made at nearly any fab house.
 
         # Copper layers
-        callCommand(args, FileList['GTL'], b, GENGERBER, args.config.get('EagleTools', 'L_GTL'))
-        callCommand(args, FileList['GBL'], b, GENGERBER, args.config.get('EagleTools', 'L_GBL'))
+        callCommand(args, GerberList['GTL'], b, GENGERBER, args.config.get('EagleTools', 'L_GTL'))
+        callCommand(args, GerberList['GBL'], b, GENGERBER, args.config.get('EagleTools', 'L_GBL'))
 
         # Solder Mask
-        callCommand(args, FileList['GTS'], b, GENGERBER, args.config.get('EagleTools', 'L_GTS'))
-        callCommand(args, FileList['GBS'], b, GENGERBER, args.config.get('EagleTools', 'L_GBS'))
+        callCommand(args, GerberList['GTS'], b, GENGERBER, args.config.get('EagleTools', 'L_GTS'))
+        callCommand(args, GerberList['GBS'], b, GENGERBER, args.config.get('EagleTools', 'L_GBS'))
 
         # Solder Paste
-        callCommand(args, FileList['GTP'], b, GENGERBER, args.config.get('EagleTools', 'L_GTP'))
-        callCommand(args, FileList['GBP'], b, GENGERBER, args.config.get('EagleTools', 'L_GBP'))
+        callCommand(args, GerberList['GTP'], b, GENGERBER, args.config.get('EagleTools', 'L_GTP'))
+        callCommand(args, GerberList['GBP'], b, GENGERBER, args.config.get('EagleTools', 'L_GBP'))
 
         # Board Outline and Milling instructions
-        callCommand(args, FileList['GML'], b, GENGERBER, args.config.get('EagleTools', 'L_GML'))
+        callCommand(args, GerberList['GML'], b, GENGERBER, args.config.get('EagleTools', 'L_GML'))
         # Board Outline only
-        callCommand(args, FileList['GKO'], b, GENGERBER, args.config.get('EagleTools', 'L_GKO'))
+        callCommand(args, GerberList['GKO'], b, GENGERBER, args.config.get('EagleTools', 'L_GKO'))
 
         # Drills and holes
-        callCommand(args, FileList['TXT'], b, GENDRILLS, args.config.get('EagleTools', 'L_TXT'))
+        callCommand(args, GerberList['TXT'], b, GENDRILLS, args.config.get('EagleTools', 'L_TXT'))
 
         # Silk Screen layers
         if b == singleton:
-            callCommand(args, FileList['GTO'], b, GENGERBER, args.config.get('EagleTools', 'L_GTO'))
-            callCommand(args, FileList['GBO'], b, GENGERBER, args.config.get('EagleTools', 'L_GBO'))
+            callCommand(args, GerberList['GTO'], b, GENGERBER, args.config.get('EagleTools', 'L_GTO'))
+            callCommand(args, GerberList['GBO'], b, GENGERBER, args.config.get('EagleTools', 'L_GBO'))
         else:  # panel
-            callCommand(args, FileList['GTO'], b, GENGERBER, args.config.get('EagleTools', 'LA_GTO'))
-            callCommand(args, FileList['GBO'], b, GENGERBER, args.config.get('EagleTools', 'LA_GBO'))
+            callCommand(args, GerberList['GTO'], b, GENGERBER, args.config.get('EagleTools', 'LA_GTO'))
+            callCommand(args, GerberList['GBO'], b, GENGERBER, args.config.get('EagleTools', 'LA_GBO'))
 
         # Gerbers for fabrication
         if args.tar:
             if args.verbose:
                 print('Archive Gerbers: Tar: {}'.format(blist['tgfn']))
             with tarfile.open(blist['tgfn'], 'w') as tar:
-                for n, f in FileList.items():
+                for n, f in GerberList.items():
                     if os.path.isfile(f):
                         if args.verbose:
                             print('\t{}'.format(f))
@@ -300,7 +302,7 @@ def generateGerbersFromEagle(args):
             if args.verbose:
                 print('Archive Gerbers: Zip: {}'.format(blist['zgfn']))
             with ZipFile(blist['zgfn'], 'w') as zip:
-                for n, f in FileList.items():
+                for n, f in GerberList.items():
                     if os.path.isfile(f):
                         if args.verbose:
                             print('\t{}'.format(f))
@@ -377,7 +379,7 @@ def generateImagesFromEagle(args):
         for dependent in dependent_list:
             if os.path.isfile(dependent):
                 d_time = os.stat(dependent).st_mtime
-                if base_time > d_time:
+                if base_time is None or base_time > d_time:
                     base_time = d_time
             else:
                 needed = True
@@ -416,7 +418,7 @@ def generateImagesFromEagle(args):
         for dependent in dependent_list:
             if os.path.isfile(dependent):
                 d_time = os.stat(dependent).st_mtime
-                if base_time > d_time:
+                if base_time is None or base_time > d_time:
                     base_time = d_time
             else:
                 needed = True
@@ -427,18 +429,21 @@ def generateImagesFromEagle(args):
                 if os.path.isfile(dependent):
                     os.remove(dependent)
 
-            IMAGE_BOARD = IMAGE_BOARD.format(
+            i_board = IMAGE_BOARD.format(
                                                 layer=args.config.get('EagleTools', 'D_NORMAL'),
                                                 png=blist['pngbrd'])
-            IMAGE_BSILK = IMAGE_BSILK.format(
+            i_bsilk = IMAGE_BSILK.format(
                                                 layer=args.config.get('EagleTools', 'D_BSILK'),
                                                 png=blist['pngbot'])
-            IMAGE_TSILK = IMAGE_TSILK.format(
+            i_tsilk = IMAGE_TSILK.format(
+                                                layer=args.config.get('EagleTools', 'D_TSILK'),
+                                                png=blist['pngtop'])
+            i_parts = PARTS_BOARD.format(
                                                 layer=args.config.get('EagleTools', 'D_TSILK'),
                                                 png=blist['pngtop'])
 
             ECMD="SET CONFIRM OFF;{};undo;{};undo;undo;{};undo;{};undo;quit;"
-            ECMD=ECMD.format(PARTS_BOARD, IMAGE_BOARD, IMAGE_BSILK,IMAGE_TSILK)
+            ECMD=ECMD.format(i_parts, i_board, i_bsilk,i_tsilk)
 
             c = "{EAGLE} -C \"{cmd}\" {board}".format(
                                                 EAGLE=args.config.get('EagleTools', 'EAGLEAPP'),

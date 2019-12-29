@@ -110,7 +110,7 @@ def loadFeeders(feederfilename):
     feeders = {}
     components = {}
 
-    with open(feederfilename, 'rb') as feedercsv:
+    with open(feederfilename, 'r') as feedercsv:
         feedereader = csv.reader(feedercsv)
         for row in feedereader:
             if row[idx[tapesize]] == tapesize:

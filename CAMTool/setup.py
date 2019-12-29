@@ -17,7 +17,7 @@ setup(
 		'eagle2chmt   = CAMTool.eagle2chmt:main',
 		'eagle2svg    = CAMTool.eagle2svg:main',
 		'eagleLib2TOC = CAMTool.eagleLib2TOC:main',
-		'eagle2jekyll = CAMTool.eagle2jekyll.eagle2jekyll:main',
+		'convert2jekyll = CAMTool.convert2jekyll.convert2jekyll:main',
 	    ]
     },
     package_data = {
@@ -26,7 +26,8 @@ setup(
     },
 
     install_requires = [
-    	'svgwrite>=1.3.0'
+    	'svgwrite>=1.3.0',
+        'GitPython>=3.0.1'
     ],
 
     # metadata to display on PyPI

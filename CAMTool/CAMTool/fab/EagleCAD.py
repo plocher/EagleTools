@@ -36,7 +36,7 @@ def getLayers(eaglercfile):
                          "0x(?P<color>[0-9A-Fa-f]+) # hex alpha + RGB color
                          """, re.VERBOSE)
     palettes = {}
-    with open(eaglercfile, 'rb') as rcfile:
+    with open(eaglercfile, 'r') as rcfile:
         for line in rcfile:
             match = pattern.match(line)
             if match:

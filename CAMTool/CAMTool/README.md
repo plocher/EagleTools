@@ -1,30 +1,44 @@
 Making a panelized PCB design in EagleCAD 7.7
 =========================================
 
+TL;DR - use the EagleTools eagle.scr script to add a Panelize" menu to your board editor
 
-  * In order for these tools to work for all your projects, EageCad needs to be able to find these ulp, scr and lbr files.  By default, Eagle's library is part of the Eagle installation package, and should be treated as "read-only" so that upgrades don't overwrite/lose your changes; this means you should set up your own script library (and the rest...) as part of your eagle workspace.
-
-  * I cloned a copy of this repo on the same filesystem as my EagleCad projects workspace, and added the resulting paths to EagleCad's controlpanel OPTIONS->DIRECTORIES...
-
-  * In a terminal window navigate to the CAMTool directory and run setup.py to install the CAM automation scripts:
-    * python setup.py
+The menu encapsulates much of what follows.
 
 
-  * Set up your own custom directory structure in the Eagle Control Panel, and add your desired directories to OPTIONS->DIRECTORIES.
-The order matters - put your directory first, before the one in $EAGLEDIR, to make EagleCad look for your custom scripts before it looks for the  Default ones:
 
-    * Directories.Scr = "$HOME/Dropbox/EagleTools/scr:$HOME/Dropbox/eagle/library/scr:$EAGLEDIR/scr"
-    * Directories.Cam = "$HOME/Dropbox/EagleTools/cam:$HOME/Dropbox/eagle/library/cam:$EAGLEDIR/cam"
-    * Directories.Dru = "$HOME/Dropbox/EagleTools/dru:$HOME/Dropbox/eagle/library/dru:$EAGLEDIR/dru"
-    * Directories.Lbr = "$HOME/Dropbox/EagleTools/parts:$HOME/Dropbox/eagle/library/lib:$EAGLEDIR/lbr"
-    * Directories.Ulp = "$HOME/Dropbox/EagleTools/ulp:$HOME/Dropbox/eagle/library/ulp:$EAGLEDIR/ulp"
-    * Directories.Epf = "$HOME/Dropbox/eagle"
-    * Directories.Doc = "$EAGLEDIR/doc"
+## Install EagleTools
+In order for these tools to work for all your projects, EageCad needs to be able to find these ulp, scr and lbr files.
+By default, Eagle's library is part of the Eagle installation package, and should be treated as "read-only" so that 
+upgrades don't overwrite/lose your changes; this means you should set up your own script library (and the rest...) 
+as part of your eagle workspace.
+
+  * "git clone" a copy of this repo on the parent directory of your EagleCad projects, and add the resulting paths 
+    to EagleCad's controlpanel OPTIONS->DIRECTORIES...
+
+  * Set up a custom directory structure in the Eagle Control Panel, and add these directories to 
+    OPTIONS->DIRECTORIES.  The order matters - put the EagleTools directory first, before the one in $EAGLEDIR, 
+    to make EagleCad look for these custom scripts before it looks for the  Default ones.
+    Assume EagleTools is in *$HOME/Dropbox/EagleTools*, and your eagle projects are in *$HOME/Dropbox/eagle*,
+    you might use the following preferences:
+
+    | Files of type   | Directories |
+    | ----            | :---- |
+    | Documentation | $EAGLEDIR/doc|
+    | Libraries  | $HOME/Dropbox/EagleTools/parts:$HOME/Dropbox/eagle/library/lib:$EAGLEDIR/lbr|
+    | Design Rules | $HOME/Dropbox/EagleTools/dru:$HOME/Dropbox/eagle/library/dru:$EAGLEDIR/dru|
+    | User Language Programs | $HOME/Dropbox/EagleTools/ulp:$HOME/Dropbox/eagle/library/ulp:$EAGLEDIR/ulp|
+    | Scripts | $HOME/Dropbox/EagleTools/scr:$HOME/Dropbox/eagle/library/scr:$EAGLEDIR/scr|
+    | CAM Jobs | $HOME/Dropbox/EagleTools/cam:$HOME/Dropbox/eagle/library/cam:$EAGLEDIR/cam|
+    | Projects | $HOME/Dropbox/eagle|
 
       * (Windows uses a ';' semicolon between directory names, Mac and Linux (as above) use a ':' colon...)
 
 
 
+  * In a terminal window navigate to the CAMTool directory and run setup.py to install the CAM automation scripts:
+    * python setup.py
+    
 Save (or merge) scr/eagle.scr to the top of your Eagle Projects directory (as defined in the Eagle Control Panel's OPTIONS->DIRECTORIES->PROJECTS setting).  The important bits are the menu settings to invoke the various ULPs.
 
 Add ulp/make-panel.ulp to your OPTIONS->DIRECTORIES->User Languane Programs directory

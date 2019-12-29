@@ -21,14 +21,18 @@ class Configuration(object):
         self.ARDUINO_LIB_HOME            = "/Applications/Arduino.app/Contents/Java/hardware/arduino/avr/libraries/"
         self.ARDUINO_USER_LIB_HOME       = "/Users/plocher/Dropbox/Arduino/libraries/"
 
-        self.JEKYLL_URL_PAGES_DIR        = "/pages/"           # absolute URL base for project pages
-        self.JEKYLL_URL_VERSIONS_DIR     = "/versions/"        # ... for project versions
 
         #self.JEKYLL_GITHUB_PUBLISH_DIR   = None
         #self.JEKYLL_PUBLISH_PAGES_DIR    = "docs/pages/"       # relative to parent dir of project..
         #self.JEKYLL_PUBLISH_VERSIONS_DIR = "docs/_versions/"
 
-        self.JEKYLL_GITHUB_PUBLISH_DIR   = "/Users/plocher/Dropbox/eagle/plocher.github.io/" # or None if local to repo
         self.JEKYLL_PUBLISH_PAGES_DIR    = "pages/"            # relative to JEKYLL_GITHUB_PUBLISH_DIR
-        self.JEKYLL_PUBLISH_VERSIONS_DIR = "_versions/"
+        self.JEKYLL_URL_PAGES_DIR        = "/pages/"           # absolute URL base for project pages
 
+        self.JEKYLL_GITHUB_PUBLISH_DIR_EAGLE   = "/Users/plocher/Dropbox/eagle/SPCoast.github.io/" # or None if local to repo
+        self.JEKYLL_LOCAL_PUBLISH_DIR_EAGLE    = "_versions/"
+        self.JEKYLL_URL_PUBLISH_DIR_EAGLE      = "/versions/"        # ... for project versions
+
+        self.JEKYLL_GITHUB_PUBLISH_DIR_ARDUINO = "/Users/plocher/Dropbox/eagle/SPCoast.github.io/" # or None if local to repo
+        self.JEKYLL_LOCAL_PUBLISH_DIR_ARDUINO  = "_sketches/"
+        self.JEKYLL_URL_PUBLISH_DIR_ARDUINO    = "/sketches/"        # ... for project versions

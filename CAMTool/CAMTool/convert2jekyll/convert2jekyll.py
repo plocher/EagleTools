@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # test program for jekyll content generation
-import os
-import sys
+
+
 import argparse
 from pathlib import Path
 import io
@@ -54,18 +54,26 @@ def processTODO(args):
     print("TODO()")
     return ""
 
-def processEagleParent(args, projectname, all_files):
+def processArduino(args):
+    #repo = Git("./")
+
+    all_files = os.listdir(".")
+    #tag = repo.describe()
+    tag="1.0"
+    #print("Tag={}".format(tag))
+
+    #processArduino(args, tag, args.project, all_files)
+
+
+
+
     if args.verbose or args.show:
-        print("processEagleParent({})".format(projectname))
+        print("processArduino({})".format(args.project))
 
-    if os.path.isfile('@PRIVATE'):
-        print("Note: Project is private, will not be published")
-        return None
-
-    outfilename = '{project}.md'.format(project=projectname)
+    outfilename = '{project}.md'.format(project=args.project)
     outfilename = os.path.join(args.conf.JEKYLL_PUBLISH_PAGES_DIR, outfilename)
 
-    pubdir = conf.JEKYLL_GITHUB_PUBLISH_DIR
+    pubdir = args.conf.JEKYLL_GITHUB_PUBLISH_DIR_EAGLE
     if pubdir:
         outfilename = os.path.join(pubdir, outfilename)
 
@@ -74,7 +82,8 @@ def processEagleParent(args, projectname, all_files):
     d = os.path.dirname(d)
 
     if not os.path.isdir(d):
-        print("+mkdir -p {dir}".format(dir=d))
+        if args.verbose or args.show:
+            print("+mkdir -p {dir}".format(dir=d))
         if not args.show:
             os.makedirs(d)
 
@@ -93,10 +102,10 @@ def processEagleParent(args, projectname, all_files):
     overview = '    '
 
     output.write('---\n')
-    output.write('iseagle: true\n')
+    output.write('isarduino: true\n')
     output.write('sidebar: spcoast_sidebar\n')
-    output.write('title: {}\n'.format(projectname))
-    output.write('project: {}\n'.format(projectname))
+    output.write('title: {}\n'.format(args.project))
+    output.write('project: {}\n'.format(args.project))
 
     if os.path.isfile("INFO"):
         #print("use INFO...");
@@ -140,7 +149,242 @@ def processEagleParent(args, projectname, all_files):
             # print("use Defaults...")
 
     if need_layout:
+        output.write('layout: arduino\n')
+    if need_tags:
+        output.write('tags: [SPCoast, arduino]\n')
+
+    output.write('tagline: {}\n'.format(tagline))
+    output.write('overview: >\n{}\n'.format(overview))
+
+    sep = 'images:\n'
+    for filename in sorted_nicely(all_files):
+        root, ext = os.path.splitext(filename)
+        if ext.lower() in ['.png', '.jpg', '.gif']:
+            args.queue.copy(args.project, None, filename)
+            tag = root
+
+            s = "{sep}  - image_path: {dir}{project}/{filename}\n    title: {tag}\n"
+            output.write(s.format(sep=sep, dir=args.conf.JEKYLL_URL_PUBLISH_DIR_ARDUINO,
+                                  project=args.project,
+                                  filename=filename,
+                                  tag=tag))
+            sep = ""
+    sep = 'artifacts:\n'
+    for filename in sorted_nicely(all_files):
+        # print("parent artifact: file: {}".format(filename))
+        skip = False
+        root, ext = os.path.splitext(filename)
+
+        if (ext is None or ext == ''):
+            #print("   ... skipping - no extension")
+            skip = True
+        if ext.lower() in ['.png', '.jpg', '.gif', '.md', '.swp']:
+            skip = True
+        if ext.lower() in ['.b#1', '.b#2', '.b#3', '.b#4', '.b#5', '.b#6', '.b#7', '.b#8', '.b#9']:
+            skip = True
+        if ext.lower() in ['.s#1', '.s#2', '.s#3', '.s#4', '.s#5', '.s#6', '.s#7', '.s#8', '.s#9']:
+            skip = True
+
+        if not skip:
+            args.queue.copy(args.project, None, filename)
+            pretext = 'download'
+            tag = root
+            posttext = ''
+
+            if ext.lower() == '.pdf':
+                posttext = 'Documentation'
+                tag=filename
+            elif ext.lower() == '.ino':
+                posttext = 'Arduino Sketch'
+                tag = filename
+            elif ext.lower() == '.pde':
+                posttext = 'Arduino Sketch'
+                tag = filename
+            elif ext.lower() == '.cpp':
+                posttext = 'Arduino Sketch C++ helper code'
+                tag = filename
+            elif ext.lower() == '.c':
+                posttext = 'Arduino Sketch C helper code'
+                tag = filename
+            elif ext.lower() == '.h':
+                posttext = 'Arduino Sketch header file'
+                tag = filename
+            elif ext.lower() == '.docx':
+                posttext = 'Word Document'
+                tag=filename
+            elif ext.lower() == '.xlsx':
+                posttext = 'Spreadsheet'
+                tag=filename
+            #print("   ... ADD: {} {}".format(tag, posttext))
+
+            s = "{sep}  - path: {dir}{project}/{filename}\n"
+            s = s + "    tag: {tag}\n    type: {pretext}\n    post: {posttext}\n"
+            s = s.format(sep=sep, dir=args.conf.JEKYLL_URL_PUBLISH_DIR_ARDUINO,
+                                  project=args.project,
+                                  pretext=pretext,
+                                  tag=tag,
+                                  posttext=posttext,
+                                  filename=filename,
+                                  file=root)
+            output.write(s)
+            sep = ""
+    # TODO: Add links to any source files - followed by their syntax highlighted content
+    # output.write('permalink: {}.html\n'.format(args.project))
+    output.write('---\n')
+
+    if os.path.isfile('doc.md'):    # first!
+        with open("doc.md", 'r') as content_file:
+            output.write("\n")
+            output.write("## {}\n\n".format("Documentation"))
+            output.write(content_file.read())
+
+    for filename in sorted_nicely(all_files):
+        skip = False
+        root, ext = os.path.splitext(filename)
+        if ext.lower() in ['.md']:
+            if filename == "doc.md":
+                skip = True
+            if filename == "README.md":         # only for github
+                skip = True
+            if filename == "LICENSE.md":        # last
+                skip = True
+            if filename == "LICENSE":           # skip verbose version
+                skip = True
+            if not skip:
+                with open(filename, 'r') as content_file:
+                    output.write("\n")
+                    output.write("## {}\n\n".format(root))
+                    output.write(content_file.read())
+
+        elif ext.lower() in ['.ino', '.pde', '.h', '.c', '.cpp']:
+            with open(filename, 'r') as content_file:
+                output.write("\n")
+                output.write("## {}\n\n~~~ cpp\n".format(root))
+                output.write(content_file.read())
+                output.write(" \n~~~\n")
+
+        elif ext.lower() in ['.py']:
+            with open(filename, 'r') as content_file:
+                output.write("\n")
+                output.write("## {}\n\n~~~ python\n".format(root))
+                output.write(content_file.read())
+                output.write(" \n~~~\n")
+
+
+    if os.path.isfile('LICENSE.md'):
+        # Add LICENSE file at end
+        with open("LICENSE.md", 'r') as content_file:
+            output.write("\n\n----\n")
+            output.write("\n")
+            output.write(content_file.read())
+
+    if args.show:
+        content = output.getvalue()
+        print('# create {}'.format(outfilename))
+        if args.verbose:
+            print('====Contents====')
+            print(content)
+            print('================')
+    else:
+        output.close()
+
+    return ""
+
+def processEagleParent(args, projectname, version, all_files):
+    if args.verbose or args.show:
+        print("processEagleParent({})".format(projectname))
+
+    outfilename = '{project}.md'.format(project=projectname)
+    outfilename = os.path.join(args.conf.JEKYLL_PUBLISH_PAGES_DIR, outfilename)
+    # parent pages go into .../pages
+    # child pages go into .../_versions/VERSION/
+
+    pubdir = args.conf.JEKYLL_GITHUB_PUBLISH_DIR_EAGLE
+    if pubdir:
+        outfilename = os.path.join(pubdir, outfilename)
+
+    # check if any destination dirs need to be created
+    d = outfilename
+    d = os.path.dirname(d)
+
+    if not os.path.isdir(d):
+        print("+mkdir -p {dir}".format(dir=d))
+        if not args.show:
+            os.makedirs(d)
+
+    if args.show:
+        output = io.StringIO()
+    else:
+        output = open(outfilename, "w")
+
+    need_tagline = True
+    need_overview = True
+    need_tags = True
+    need_layout = True
+    need_graphic = True
+
+    # defaults
+    tagline  = 'description not provided'
+    overview = '    '
+
+    output.write('---\n')
+    output.write('iseagle: true\n')
+    output.write('sidebar: spcoast_sidebar\n')
+    output.write('title: {}\n'.format(projectname))
+    output.write('project: {}\n'.format(projectname))
+
+    if os.path.isfile("INFO"):
+        #print("use INFO...");
+        if os.path.isfile("INFO"):
+            with open("INFO", 'r') as content_file:
+                for line in content_file:
+                    if line.startswith("title:") or line.startswith("project:"):
+                        continue
+                    if line.startswith("tags:"):
+                        need_tags = False
+                    if line.startswith("image_path:"):
+                        need_graphic = False
+                    if line.startswith("layout:"):
+                        need_layout = False
+                    if line.startswith("tagline:"):
+                        need_tagline = False
+                    if line.startswith("overview:"):
+                        need_overview = False
+
+                    output.write(line)
+    if need_tagline or need_overview:
+        if os.path.isfile('DESCRIPTION'):  # exists...
+            #print("use DESCRIPTION")
+            with open('DESCRIPTION', 'r') as description_file:
+                description = description_file.readlines()
+                if description:  # ... and has content
+                    tagline = description[0][:-1]
+                    need_tagline = False
+                if len(description) > 1:
+                    need_overview = False
+                    overview = ''
+                    raw = ''
+                    skipfirst = True
+                    for s in description:
+                        if skipfirst:
+                            skipfirst = False
+                            continue
+                        overview = overview + '    ' + s
+                        raw = raw + s
+                    overview = overview[:-1]  # remove the final newline (gets added back when output later)
+        else:
+            pass
+            # print("use Defaults...")
+
+    if need_layout:
         output.write('layout: eagle\n')
+    if need_graphic:
+        graphicname = "{project}.top.brd.png".format(version=version, project=projectname)
+        graphicname2 = "{project}-{version}.top.brd.png".format(version=version, project=projectname)
+        if os.path.isfile(graphicname):
+            output.write('image_path: {version}/{graphicname}\n'.format(version=version, graphicname=graphicname2))
+        else:
+            output.write('Ximage_path: {version}/{graphicname}\n'.format(version=version, graphicname=graphicname2))
     if need_tags:
         output.write('tags: [SPCoast, eagle]\n')
 
@@ -160,7 +404,7 @@ def processEagleParent(args, projectname, all_files):
                 tag = root
 
                 s = "{sep}  - image_path: {dir}{project}/{filename}\n    title: {tag}\n"
-                output.write(s.format(sep=sep, dir=args.conf.JEKYLL_URL_VERSIONS_DIR,
+                output.write(s.format(sep=sep, dir=args.conf.JEKYLL_URL_PUBLISH_DIR_EAGLE,
                                       project=projectname,
                                       filename=filename,
                                       tag=tag))
@@ -181,6 +425,10 @@ def processEagleParent(args, projectname, all_files):
                            '.md',  '.dri', '.gpi', '.svg', '',
                            '.png', '.jpg', '.sch', '.dpv']:
             #print("   ... skipping - ext {} matches".format(ext))
+            skip = True
+        if ext.lower() in ['.b#1', '.b#2', '.b#3', '.b#4', '.b#5', '.b#6', '.b#7', '.b#8', '.b#9']:
+            skip = True
+        if ext.lower() in ['.s#1', '.s#2', '.s#3', '.s#4', '.s#5', '.s#6', '.s#7', '.s#8', '.s#9']:
             skip = True
 
         for ending in ['.eagle.tar', '.eagle.zip', '.gerbers.tar', '.gerbers.zip', '.parts.csv']:
@@ -219,7 +467,7 @@ def processEagleParent(args, projectname, all_files):
 
             s = "{sep}  - path: {dir}{project}/{filename}\n"
             s = s + "    tag: {tag}\n    type: {pretext}\n    post: {posttext}\n"
-            s = s.format(sep=sep, dir=args.conf.JEKYLL_URL_VERSIONS_DIR,
+            s = s.format(sep=sep, dir=args.conf.JEKYLL_URL_PUBLISH_DIR_EAGLE,
                                   project=projectname,
                                   pretext=pretext,
                                   tag=tag,
@@ -295,9 +543,9 @@ def processEagleChild(args, projectname, version, all_files):
 
     outfilename = '{version}.md'.format(version=version)
     outfilename = os.path.join(projectname, outfilename)
-    outfilename = os.path.join(args.conf.JEKYLL_PUBLISH_VERSIONS_DIR, outfilename)
+    outfilename = os.path.join(args.conf.JEKYLL_LOCAL_PUBLISH_DIR_EAGLE, outfilename)  # _versions/xxx
 
-    pubdir = conf.JEKYLL_GITHUB_PUBLISH_DIR
+    pubdir = args.conf.JEKYLL_GITHUB_PUBLISH_DIR_EAGLE
     if pubdir:
         outfilename = os.path.join(pubdir, outfilename)
     else:
@@ -399,7 +647,7 @@ def processEagleChild(args, projectname, version, all_files):
             s = "{sep}  - image_path: {dest}\n    title: {tag}\n"
             #s = "{sep}  - image_path: {dir}{project}/{version}/{filename}\n    title: {tag}\n"
             s = s.format(sep=sep, dest=dest,
-                                  dir=args.conf.JEKYLL_URL_VERSIONS_DIR,
+                                  dir=args.conf.JEKYLL_URL_PUBLISH_DIR_EAGLE,
                                   project=projectname,
                                   version=version,
                                   filename=filename,
@@ -443,7 +691,7 @@ def processEagleChild(args, projectname, version, all_files):
                 s = "{sep}  - path: {dest}\n"
                 s = s + "    tag: {tag}\n    type: {pretext}\n    post: {posttext}\n"
                 s = s.format(sep=sep, dest=dest,
-                                      dir=args.conf.JEKYLL_URL_VERSIONS_DIR,
+                                      dir=args.conf.JEKYLL_URL_PUBLISH_DIR_EAGLE,
                                       project=projectname,
                                       version=version,
                                       pretext=pretext,
@@ -487,7 +735,7 @@ def processEagle(args):
     tag = repo.describe()
     #print("Tag={}".format(tag))
 
-    processEagleParent(args, args.project, all_files)
+    processEagleParent(args, args.project, tag, all_files)
     processEagleChild(args, args.project, tag, all_files)
 
 def main():
@@ -506,16 +754,16 @@ def main():
                         help="Show what would be done, but don't change anything.")
     parser.add_argument("-n", "--name", dest="project", nargs=1, default=None,
                         help="Project Name (defaults to directory name)")
-    parser.add_argument("-t", "--type", dest="projecttype", default=None, choices=['eagle', 'cad', 'script', 'cp'])
+    parser.add_argument("-t", "--type", dest="projecttype", default=None, choices=['eagle', 'ino'])
     args = parser.parse_args()
     args.conf = conf
     
-    autoconf = Location();
+    autoconf = Location()
     autoconf.add("eagle",         conf.sourceDirIsEagle,           processEagle)
     autoconf.add("expresspcb",    conf.sourceDirIsExpressPCB,      processTODO)
     autoconf.add("lib",           conf.sourceDirIsArduinoLibrary,  processTODO)
     autoconf.add("controlpoint",  conf.sourceDirIsControlPoint,    processTODO)
-    autoconf.add("arduino",       conf.sourceDirIsArduino,         processTODO)
+    autoconf.add("ino",           conf.sourceDirIsArduino,         processArduino)
     autoconf.add("cad",           conf.sourceDirIsCAD,             processTODO)
     autoconf.add("script",        conf.sourceDirIsScript,          processTODO)
     autoconf.add("doc",           conf.sourceDirIsWikiDoc,         processTODO)

@@ -232,8 +232,8 @@ def main():
     configuration.read(cfile)
     
     parser = argparse.ArgumentParser(description='Create a CHMT pick-n-place job from an EAGLEcad PCB board file.',
-				     formatter_class=argparse.RawDescriptionHelpFormatter,
-				     epilog="""
+                     formatter_class=argparse.RawDescriptionHelpFormatter,
+                     epilog="""
     Feederfile has the structure:
        Tape Size,Feeder Number,Component,Feeder XOffset,Feeder YOffset,...
        ...PickHeight,PickDelay,PullSpeed,Pull Distance,Place Height,Place Speed,...
@@ -252,7 +252,7 @@ def main():
 
     """)
     parser.add_argument('PCBfile', metavar='pcbfile', type=str, nargs='+',
-			help='an EAGLEcad .brd file to process')
+            help='an EAGLEcad .brd file to process')
     parser.add_argument("--eagleRC",    help="Eagle rc file with palette definitions")
     parser.add_argument("--feederfile", help="csv file with feeder component assignments")
     parser.add_argument("--outdir",     help="output directory (default is <PCBfile>.bom.txt)")
@@ -264,25 +264,25 @@ def main():
     
     feederfile = args.config.get('EagleTools', 'defaultfeederfile')
     if args.feederfile:
-	    feederfile = args.feederfile
+        feederfile = args.feederfile
 
     rcfile = args.config.get('EagleTools', 'defaulteaglerc')
     if args.eagleRC:
-	    rcfile = args.eagleRC
+        rcfile = args.eagleRC
 
     if (args.download or not os.path.isfile(feederfile) ):
-	    print("DL feederfile: ", feederfile)
-	    CHMTPickNPlace.downloadFeederFile(args, feederfile, args.key)
+        print("DL feederfile: ", feederfile)
+        CHMTPickNPlace.downloadFeederFile(args, feederfile, args.key)
 
     (feeder, component) = CHMTPickNPlace.loadFeeders(feederfile)
     palettes = EagleCAD.getLayers(rcfile)
 
     for f in args.PCBfile:
-    	if len(args.PCBfile) > 1:
-    	    print("Processing {}".format(f))
+        if len(args.PCBfile) > 1:
+            print("Processing {}".format(f))
 
-    	outfilename = os.path.splitext(os.path.basename(f))[0] + ".dpv"
-    	outdir = os.path.dirname(f)
+        outfilename = os.path.splitext(os.path.basename(f))[0] + ".dpv"
+        outdir = os.path.dirname(f)
 
         if args.outdir:
             if args.outdir == '@':
@@ -295,23 +295,23 @@ def main():
         bn = os.path.basename(outfilename)
         outfilename = os.path.join(outdir, bn)
 
-    	(eagleBoard, packages, layers) = EagleCAD.loadBoard(f, palettes)
-    	parts    = EagleCAD.getSMDParts(eagleBoard, packages, component, feeder)
-    	used     = EagleCAD.getUsedComponents(parts, feeder)
+        (eagleBoard, packages, layers) = EagleCAD.loadBoard(f, palettes)
+        parts    = EagleCAD.getSMDParts(eagleBoard, packages, component, feeder)
+        used     = EagleCAD.getUsedComponents(parts, feeder)
 
-    	content = ""
-    	content = content + outputHeader(f)
-    	content = content + outputStations(used, feeder, component)
-    	content = content + outputBatch()
-    	content = content + outputParts(parts, feeder)
-    	content = content + outputICTray()
-    	content = content + outputPCBCalibrate()
-    	content = content + outputFiducials()
-    	content = content + outputCalibrationFactor()
+        content = ""
+        content = content + outputHeader(f)
+        content = content + outputStations(used, feeder, component)
+        content = content + outputBatch()
+        content = content + outputParts(parts, feeder)
+        content = content + outputICTray()
+        content = content + outputPCBCalibrate()
+        content = content + outputFiducials()
+        content = content + outputCalibrationFactor()
 
-    	outfile = open(outfilename, "w")
-    	outfile.write(content)
-    	outfile.close()
+        outfile = open(outfilename, "w")
+        outfile.write(content)
+        outfile.close()
 
 
 if __name__ == "__main__":
