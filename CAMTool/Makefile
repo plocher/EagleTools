@@ -20,5 +20,7 @@ develop:
 testpublish:
 		@echo "Publishing to PiPi: v${VERSION} => v${NEXTMINOR}"; \
 		sed -i '' -e "s/version=..*$$/version=\\\"${NEXTMINOR}\\\",/" setup.py; \
+		python3 setup.py build
 		python3 setup.py sdist bdist_wheel; \
 		python3 -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*${NEXTMINOR}*
+		@echo "Published to PiPi: v${VERSION} => v${NEXTMINOR}"; \

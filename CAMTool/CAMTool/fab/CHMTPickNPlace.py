@@ -56,7 +56,6 @@ aliases    = 'Aliases'
 stocknotes = 'Stock Notes'
 inventory  = 'Inventory Notes'
 reference  = 'Used On'
-reference  = 'Used On'
 
 options    = 'Options'
 
@@ -192,8 +191,6 @@ def downloadFeederFile(args, feederfilename, key):
 
     with open(feederfilename, "wb") as code:
         code.write(data)
-
-    print("Done")
 
 
 def getFeederForComponent(partName, components):

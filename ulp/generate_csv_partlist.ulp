@@ -22,13 +22,13 @@ if (board) board(B) {
     fileName = filesetext(B.name, ".parts.csv");
 
     output(fileName) {
-        printf("# %s, %s, %s, %s, %s, %s, %s, %s\n",
+        printf("# %s, %s, %s, %s, %s, %s, %s, %s, %s\n",
             "name",
             "smd?",
             "value",
             "package",
             "component",
-            "x", "y", "angle");
+            "x", "y", "angle", "YXAngle");
 
         B.elements(E) if (E.populate) {
 
@@ -40,6 +40,10 @@ if (board) board(B) {
               ymax = xmax,
               ymin = xmin;
 
+          real YXAngle = -E.angle + 90.0;
+          if (YXAngle == -180.00) YXAngle +=  360.00;
+          if (YXAngle >=  360.00) YXAngle -=  360.00;
+
           E.package.contacts(C) {
             if (C.smd && C.smd.layer == 1) {
               isSmd = 1;
@@ -50,12 +54,12 @@ if (board) board(B) {
               if (C.y < ymin) ymin = C.y;
             }
           }
-          printf("%s, %s, %s, %s, %s, %.2f, %.2f, %.2f\n",
+          printf("%s, %s, %s, %s, %s, %.2f, %.2f, %.2f, %.2f\n",
                  E.name,
                  isSmd ? "SMD" : "PTH",
                  E.value, E.package.name, componentName,
                  u2mm((xmin + xmax) / 2), u2mm((ymin + ymax) / 2),
-                 E.angle);
+                 E.angle, YXAngle);
         }
     }
 } else {

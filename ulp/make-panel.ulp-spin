@@ -52,6 +52,7 @@ string fileExt=".scr"; // file extension
 //int rows, cols;
 real xspacing, yspacing;
 int bAddValues=0;
+int bFlipY=0;
 
 int iUnits;
 string sUnits;
@@ -203,22 +204,25 @@ int result = dlgDialog("Enter the variables")
         dlgCell(6,0) dlgLabel("Bottom Text Layer" );
         dlgCell(6,1,6,4) dlgComboBox(layer_names, selectedBottomLayer) {};
 
-        // dlgCell(7,0) dlgLabel("Add values?");
-        // dlgCell(7,1) dlgCheckBox("", bAddValues);
+        dlgCell(7,0) dlgLabel("Add values?");
+        dlgCell(7,1) dlgCheckBox("", bAddValues);
         
-        dlgCell(8,0) dlgLabel("File Name:");
-        dlgCell(8,1, 8,3) dlgStringEdit(fileName);
-        dlgCell(8,4) dlgPushButton("...")
+        dlgCell(8,0) dlgLabel("Flip alternate rows?");
+        dlgCell(8,1) dlgCheckBox("", bFlipY);
+        
+        dlgCell(9,0) dlgLabel("File Name:");
+        dlgCell(9,1, 9,3) dlgStringEdit(fileName);
+        dlgCell(9,4) dlgPushButton("...")
         {
             fileLocation = dlgFileSave("File Name", fileLocation, "*"+fileExt);
             filePath = filedir(fileLocation);
             fileName =filename(fileLocation);
         }
-        dlgCell(9,0) dlgLabel("File Path:");
-        dlgCell(9,1, 9,4) dlgStringEdit(filePath);
+        dlgCell(10,0) dlgLabel("File Path:");
+        dlgCell(10,1, 10,4) dlgStringEdit(filePath);
 
-        dlgCell(10,1, 10,2) dlgPushButton("+Ok") dlgAccept(1);
-        dlgCell(10,3, 10,4) dlgPushButton("-Cancel") dlgReject(0);
+        dlgCell(11,1, 11,2) dlgPushButton("+Ok") dlgAccept(1);
+        dlgCell(11,3, 11,4) dlgPushButton("-Cancel") dlgReject(0);
     }
 };
 
@@ -250,8 +254,8 @@ if (NeedConfirmation)
 	    //ComSigArr = strjoin(cmn_sig, '\n');
 	    
 	    sprintf(EntryResults,
-	    "Array Size - %d x %d\n\Origin(%f, %f)\nSpacing(%f, %f)\nTop Text Layer - %s (%d)\nBottom Text Layer - %s (%d)\nAdd Values - %d\nFile Location: %s",
-	nx, ny, orgx, orgy, xspacing, yspacing, layer_names[selectedTopLayer], layer_numbers[selectedTopLayer], layer_names[selectedBottomLayer],layer_numbers[selectedBottomLayer],bAddValues, fileLocation);
+	    "Array Size - %d x %d\n\Origin(%f, %f)\nSpacing(%f, %f)\nTop Text Layer - %s (%d)\nBottom Text Layer - %s (%d)\nAdd Values - %d\nFlipY - %d\nFile Location: %s",
+	nx, ny, orgx, orgy, xspacing, yspacing, layer_names[selectedTopLayer], layer_numbers[selectedTopLayer], layer_names[selectedBottomLayer],layer_numbers[selectedBottomLayer],bAddValues, bFlipY, fileLocation);
 	    
 	    accept= dlgDialog("Entry Results")
 	    {
@@ -426,27 +430,24 @@ output(fileLocation)
                     E.package.name,E.package.library,E.name,suffix,i,j,
                     spin[E.spin],mirror[E.mirror],E.angle,xx1,yy1);
 
-                    // if(E.value!="" && bAddValues) {
-                    if(E.value!="") {
-                        printf("value %s%s%d%d '%s';\n", E.name,suffix,i,j, E.value);
-                    }
+                    if(E.value!="" && bAddValues)
+                        printf("value '%s' (%f %f);\n",E.value,xx1,yy1);
                     
                     // Cycle through all package texts on layers 25/26
                     // Place text on selected layer
                     E.package.texts(t) 
                     {
-                        if ((t.layer==25) || (t.layer==26)) {
-			    if(t.layer==25) new_layer=selectedTopLayer;
-			    if(t.layer==26) new_layer=selectedBottomLayer;
+                        if((t.layer!=25) && (t.layer!=26)) continue;
+                        if(t.layer==25) new_layer=selectedTopLayer;
+                        if(t.layer==26) new_layer=selectedBottomLayer;
 
-			    xx1= u2mil(t.x)+dx;
-			    yy1= u2mil(t.y)+dy;
-			    size= u2mil(t.size);              
+                        xx1= u2mil(t.x)+dx;
+                        yy1= u2mil(t.y)+dy;
+                        size= u2mil(t.size);              
 
-			    printf("change layer %d;\n",new_layer);
-			    printf("change size %f;\n",size);
-			    printf("text '%s' R%f (%f %f);\n",escapeNewlines(t.value), t.angle,xx1,yy1);
-			}
+                        printf("change layer %d;\n",new_layer);
+                        printf("change size %f;\n",size);
+                        printf("text '%s' R%f (%f %f);\n",escapeNewlines(t.value), t.angle,xx1,yy1);
                         
                     }     /* E.package.texts(t) */
                     

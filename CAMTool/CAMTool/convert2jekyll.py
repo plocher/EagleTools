@@ -5,11 +5,35 @@
 import argparse
 from pathlib import Path
 import io
-from .Configuration import *
-from .CopyFile import *
+import os
+import sys
 from git import Git
 import re
 #import configparser
+
+
+
+
+# test.py
+print(__name__)
+
+try:
+    # Trying to find module in the parent package
+    from jekyll.Configuration import Configuration as Configuration
+    from jekyll.CopyFile import CopyFile as CopyFile
+    #print("Relative import OK")
+except ImportError:
+    #print('Relative import failed')
+
+    try:
+        # Trying to find module on sys.path
+        import CAMTool.jekyll.Configuration as Configuration
+        import CAMTool.jekyll.CopyFile as CopyFile
+        #print("Absolute import OK")
+
+    except ModuleNotFoundError:
+        print('Absolute import failed: Relative import failed: [CAMTool.]jekyll.* Module not found')
+
 
 
 def sorted_nicely( l ):
@@ -738,8 +762,9 @@ def processEagle(args):
     processEagleParent(args, args.project, tag, all_files)
     processEagleChild(args, args.project, tag, all_files)
 
+
 def main():
-    conf = Configuration("test")
+    conf = Configuration.Configuration("test")
     error = False
     
     parser = argparse.ArgumentParser(description='Generate project artifacts and copy them to the GitHub Jekyll docs repository.  Run this program in a project directory whenever you want to publish a (new or updated) design.')
@@ -786,7 +811,7 @@ def main():
         parser.print_help()
         sys.exit("incorrect usage")
 
-    args.queue = CopyFile(conf, args)
+    args.queue = CopyFile.CopyFile(conf, args)
     
     # /Users/plocher/Downloads/Dropbox/eagle/shields/RailroadShield
     # |------------ d e l e t e ------------|

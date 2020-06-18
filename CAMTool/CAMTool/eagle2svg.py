@@ -174,7 +174,7 @@ def main():
         feederfile = args.feederfile
 
     if (args.download):
-        CHMTPickNPlace.downloadFeederFile(feederfile, args.key)
+        CHMTPickNPlace.downloadFeederFile(args, feederfile, args.key)
 
     (feeder, component) = CHMTPickNPlace.loadFeeders(feederfile)
 
