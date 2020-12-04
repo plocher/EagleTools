@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="CAMTool",
-    version="0.32",
+    version="0.35",
 
     packages=find_packages(),
 
@@ -27,7 +27,7 @@ setup(
 
     install_requires = [
         'svgwrite>=1.3.0',
-        'GitPython>=3.0.1'
+        'GitPython>=3.1.1'
     ],
 
     # metadata to display on PyPI

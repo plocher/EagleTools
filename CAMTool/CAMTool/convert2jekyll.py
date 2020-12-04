@@ -15,7 +15,7 @@ import re
 
 
 # test.py
-print(__name__)
+# print(__name__)
 
 try:
     # Trying to find module in the parent package
@@ -266,14 +266,13 @@ def processArduino(args):
         skip = False
         root, ext = os.path.splitext(filename)
         if ext.lower() in ['.md']:
-            if filename == "doc.md":
+            if filename.lower() == "doc.md":
                 skip = True
             if filename == "README.md":         # only for github
                 skip = True
-            if filename == "LICENSE.md":        # last
+            if filename == "LICENSE" or filename == "LICENSE.md":        # explicitly added last
                 skip = True
-            if filename == "LICENSE":           # skip verbose version
-                skip = True
+
             if not skip:
                 with open(filename, 'r') as content_file:
                     output.write("\n")
@@ -350,32 +349,38 @@ def processEagleParent(args, projectname, version, all_files):
     # defaults
     tagline  = 'description not provided'
     overview = '    '
+    iseagle  = 'true'
+    if os.path.isfile("INFO"):
+        with open("INFO", 'r') as content_file:
+            for line in content_file:
+                if line.startswith("status:") and (line.count('obsolete') is not 0):
+                    iseagle = 'obsolete'
+
 
     output.write('---\n')
-    output.write('iseagle: true\n')
+    output.write('iseagle: {}\n'.format(iseagle))
     output.write('sidebar: spcoast_sidebar\n')
     output.write('title: {}\n'.format(projectname))
     output.write('project: {}\n'.format(projectname))
 
     if os.path.isfile("INFO"):
-        #print("use INFO...");
-        if os.path.isfile("INFO"):
-            with open("INFO", 'r') as content_file:
-                for line in content_file:
-                    if line.startswith("title:") or line.startswith("project:"):
-                        continue
-                    if line.startswith("tags:"):
-                        need_tags = False
-                    if line.startswith("image_path:"):
-                        need_graphic = False
-                    if line.startswith("layout:"):
-                        need_layout = False
-                    if line.startswith("tagline:"):
-                        need_tagline = False
-                    if line.startswith("overview:"):
-                        need_overview = False
+        with open("INFO", 'r') as content_file:
+            for line in content_file:
+                if line.startswith("title:") or line.startswith("project:"):
+                    continue
+                if line.startswith("tags:"):
+                    need_tags = False
+                if line.startswith("image_path:"):
+                    need_graphic = False
+                if line.startswith("layout:"):
+                    need_layout = False
+                if line.startswith("tagline:"):
+                    need_tagline = False
+                if line.startswith("overview:"):
+                    need_overview = False
 
-                    output.write(line)
+                output.write(line)
+
     if need_tagline or need_overview:
         if os.path.isfile('DESCRIPTION'):  # exists...
             #print("use DESCRIPTION")
@@ -403,12 +408,23 @@ def processEagleParent(args, projectname, version, all_files):
     if need_layout:
         output.write('layout: eagle\n')
     if need_graphic:
-        graphicname = "{project}.top.brd.png".format(version=version, project=projectname)
-        graphicname2 = "{project}-{version}.top.brd.png".format(version=version, project=projectname)
-        if os.path.isfile(graphicname):
-            output.write('image_path: {version}/{graphicname}\n'.format(version=version, graphicname=graphicname2))
-        else:
-            output.write('Ximage_path: {version}/{graphicname}\n'.format(version=version, graphicname=graphicname2))
+        found=False
+        for path, name in [ ("{version}/", "{project}-{version}-Graphic.png".format(project=projectname, version=version)),
+                            ("",           "{project}-Graphic.png"          .format(project=projectname, version=version)),
+                            ("{version}/", "{project}-{version}.top.brd.png".format(project=projectname, version=version)),
+                            ("",           "{project}.top.brd.png"          .format(project=projectname, version=version)),
+                         ]:
+            if name in all_files:
+                output.write('image_path: {version}{graphicname}\n'.format(version=path, graphicname=name))
+                found=True
+                break;
+        if not found:
+            graphicname = "{project}.top.brd.png".format(version=version, project=projectname)
+            graphicname2 = "{project}-{version}.top.brd.png".format(version=version, project=projectname)
+            if os.path.isfile(graphicname):
+                output.write('image_path: {version}/{graphicname}\n'.format(version=version, graphicname=graphicname2))
+            else:
+                output.write('Ximage_path: {version}/{graphicname}\n'.format(version=version, graphicname=graphicname2))
     if need_tags:
         output.write('tags: [SPCoast, eagle]\n')
 
@@ -514,21 +530,24 @@ def processEagleParent(args, projectname, version, all_files):
 
     for filename in sorted_nicely(all_files):
         root, ext = os.path.splitext(filename)
+        skip = False
         if ext.lower() in ['.md']:
-            if filename.lower == "doc.md":
-                continue
-            if filename == "README.md":         # only for github
-                continue
-            if filename == "LICENSE.md":        # last
-                continue
+            if "doc.md" == filename.lower():
+                skip = True
+            if "README.md" == filename:         # only for github
+                skip = True
+            if "LICENSE.md" == filename:        # last
+                skip = True
             if filename.endswith(".bom.md"):    # handled in child tab...
-                continue
-            content_file = open(filename, 'r')
-            if content_file:
-                output.write("\n")
-                output.write("## {}\n\n".format(root))
-                output.write(content_file.read())
-                content_file.close()
+                skip = True
+
+            if skip is False:
+                content_file = open(filename, 'r')
+                if content_file:
+                    output.write("\n")
+                    output.write("## {}\n\n".format(root))
+                    output.write(content_file.read())
+                    content_file.close()
 
         # show Arduino sketches unless already wrapped in a .md file
         elif ext.lower() in ['.ino'] and not os.path.isfile("{}.md".format(filename)):

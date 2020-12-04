@@ -15,9 +15,9 @@ DefaultConfigFile = '~/EagleTools.cfg'
 #
 # spreadsheet_key   = '1HuY1-9Z5yyQwUiivPqE5rH7m6A_Cvw6qmvkwXvpyZ-k'  # - this is the default public key for John's
 #                                                                     # feeder config Google Sheet
-# defaultBOMdir     = '/Users/plocher/Dropbox/eagle/BOMs/'
-# defaultDPVdir     = '/Users/plocher/Dropbox/eagle/DPVs/'
-# defaulteaglerc    = '/Users/plocher/.eaglerc'
+# defaultBOMdir     = '/Users/jplocher/Dropbox/eagle/BOMs/'
+# defaultDPVdir     = '/Users/jplocher/Dropbox/eagle/DPVs/'
+# defaulteaglerc    = '/Users/jplocher/.eaglerc'
 # defaultfeederfile = './feeders.csv'
 #
 # eagle2chmt        = "eagle2chmt"

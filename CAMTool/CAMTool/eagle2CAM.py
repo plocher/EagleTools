@@ -670,7 +670,7 @@ def main():
       --order, -o           copy gerber archive to orders directory
       --directory DIRECTORY, -D DIRECTORY
                             orders directory (default is
-                            /Users/plocher/Dropbox/eagle/Seeed-
+                            /Users/jplocher/Dropbox/eagle/Seeed-
                             Orders/CurrentOrder)
       --tar, -t             create tar file for gerbers (default is zip)
       --leave, -l           Do not clean up unneeded files (default is to clean)

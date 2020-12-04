@@ -28,7 +28,7 @@ if (board) board(B) {
             "value",
             "package",
             "component",
-            "x", "y", "angle", "YXAngle");
+            "x", "y", "Eagle-Angle", "YX-Angle");
 
         B.elements(E) if (E.populate) {
 
@@ -40,9 +40,13 @@ if (board) board(B) {
               ymax = xmax,
               ymin = xmin;
 
-          real YXAngle = -E.angle + 90.0;
-          if (YXAngle == -180.00) YXAngle +=  360.00;
-          if (YXAngle >=  360.00) YXAngle -=  360.00;
+          real Eangle = E.angle;
+          real YXAngle = 0.0;
+
+          if ((Eangle  >    0) && (Eangle <=  180))  YXAngle = -Eangle;
+          if ((Eangle  >  180) && (Eangle <   360))  YXAngle =  Eangle - 180;
+          if (YXAngle >=  360)  YXAngle -=  360;
+          if (YXAngle <= -360)  YXAngle +=  360;
 
           E.package.contacts(C) {
             if (C.smd && C.smd.layer == 1) {
@@ -54,7 +58,7 @@ if (board) board(B) {
               if (C.y < ymin) ymin = C.y;
             }
           }
-          printf("%s, %s, %s, %s, %s, %.2f, %.2f, %.2f, %.2f\n",
+          printf("%s,%s,%s,%s,%s,%.2f,%.2f,%.2f,%.2f\n",
                  E.name,
                  isSmd ? "SMD" : "PTH",
                  E.value, E.package.name, componentName,

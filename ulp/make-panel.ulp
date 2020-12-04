@@ -436,17 +436,17 @@ output(fileLocation)
                     E.package.texts(t) 
                     {
                         if ((t.layer==25) || (t.layer==26)) {
-			    if(t.layer==25) new_layer=selectedTopLayer;
-			    if(t.layer==26) new_layer=selectedBottomLayer;
+                            if(t.layer==25) new_layer=selectedTopLayer;
+                            if(t.layer==26) new_layer=selectedBottomLayer;
 
-			    xx1= u2mil(t.x)+dx;
-			    yy1= u2mil(t.y)+dy;
-			    size= u2mil(t.size);              
+                            xx1= u2mil(t.x)+dx;
+                            yy1= u2mil(t.y)+dy;
+                            size= u2mil(t.size);
 
-			    printf("change layer %d;\n",new_layer);
-			    printf("change size %f;\n",size);
-			    printf("text '%s' R%f (%f %f);\n",escapeNewlines(t.value), t.angle,xx1,yy1);
-			}
+                            printf("change layer %d;\n",new_layer);
+                            printf("change size %f;\n",size);
+                            printf("text '%s' R%f (%f %f);\n",escapeNewlines(t.value), t.angle,xx1,yy1);
+                        }
                         
                     }     /* E.package.texts(t) */
                     
