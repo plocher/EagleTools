@@ -153,7 +153,7 @@ board(B)
     index = 0;
     B.layers(Layer)
     {
-        if(Layer.used || Layer.number == defaultTopLayer || Layer.number == defaultBottomLayer)
+        if(Layer.used || Layer.number == 25 || Layer.number == 26 || Layer.number == defaultTopLayer || Layer.number == defaultBottomLayer)
         {
             layer_names[index] = Layer.name;
             if(Layer.number == defaultTopLayer)
@@ -341,8 +341,10 @@ output(fileLocation)
         B.layers(E)
         {
             if(E.number<100) continue;
-            printf("layer ?? -%d;\n",E.number);  // if layer exists, the next line's command will fail, so remove it first.
-            printf("layer %d '%s';\n",E.number, E.name);
+            if (E.number != layer_numbers[selectedTopLayer] && E.number != layer_numbers[selectedBottomLayer]) {
+                printf("layer ?? -%d;\n",E.number);  // if layer exists, the next line's command will fail, so remove it first.
+                printf("layer %d '%s';\n",E.number, E.name);
+            }
             printf("set color_layer %d %d;\n",E.number, E.color);
 
         } // end Layers
@@ -436,8 +438,8 @@ output(fileLocation)
                     E.package.texts(t) 
                     {
                         if ((t.layer==25) || (t.layer==26)) {
-                            if(t.layer==25) new_layer=selectedTopLayer;
-                            if(t.layer==26) new_layer=selectedBottomLayer;
+                            if(t.layer==25) new_layer=layer_numbers[selectedTopLayer];
+                            if(t.layer==26) new_layer=layer_numbers[selectedBottomLayer];
 
                             xx1= u2mil(t.x)+dx;
                             yy1= u2mil(t.y)+dy;
