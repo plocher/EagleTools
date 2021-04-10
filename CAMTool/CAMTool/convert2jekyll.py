@@ -88,11 +88,8 @@ def processArduino(args):
 
     #processArduino(args, tag, args.project, all_files)
 
-
-
-
     if args.verbose or args.show:
-        print("processArduino({})".format(args.project))
+        print("+processArduino({})".format(args.project))
 
     outfilename = '{project}.md'.format(project=args.project)
     outfilename = os.path.join(args.conf.JEKYLL_PUBLISH_PAGES_DIR, outfilename)
@@ -202,7 +199,7 @@ def processArduino(args):
         if (ext is None or ext == ''):
             #print("   ... skipping - no extension")
             skip = True
-        if ext.lower() in ['.png', '.jpg', '.gif', '.md', '.swp']:
+        if ext.lower() in ['.png', '.jpg', '.gif', '.md', '.swp', '.html']:
             skip = True
         if ext.lower() in ['.b#1', '.b#2', '.b#3', '.b#4', '.b#5', '.b#6', '.b#7', '.b#8', '.b#9']:
             skip = True
@@ -256,33 +253,42 @@ def processArduino(args):
     # output.write('permalink: {}.html\n'.format(args.project))
     output.write('---\n')
 
-    if os.path.isfile('doc.md'):    # first!
-        with open("doc.md", 'r') as content_file:
-            output.write("\n")
-            output.write("## {}\n\n".format("Documentation"))
-            output.write(content_file.read())
+    # put these files first...
+    didit=False
+    for fn in ['doc.md', '{}.md'.format(args.project), 'status.html']:
+        if os.path.isfile(fn):
+            with open(fn, 'r') as content_file:
+                output.write("\n")
+                if not didit:
+                    output.write("## {}\n\n".format("Documentation"))
+                    didit=True
+                output.write(content_file.read())
 
     for filename in sorted_nicely(all_files):
         skip = False
         root, ext = os.path.splitext(filename)
-        if ext.lower() in ['.md']:
+        if ext.lower() in ['.md', '.html']:
             if filename.lower() == "doc.md":
+                skip = True
+            if filename.lower() == "status.html":
+                skip = True
+            if filename.lower() == '{}.md'.format(args.project):
                 skip = True
             if filename == "README.md":         # only for github
                 skip = True
-            if filename == "LICENSE" or filename == "LICENSE.md":        # explicitly added last
+            if filename == "LICENSE.md":        # explicitly added last
                 skip = True
 
             if not skip:
                 with open(filename, 'r') as content_file:
                     output.write("\n")
-                    output.write("## {}\n\n".format(root))
+                    output.write("## {}  INC INC INC\n\n".format(root))
                     output.write(content_file.read())
 
         elif ext.lower() in ['.ino', '.pde', '.h', '.c', '.cpp']:
             with open(filename, 'r') as content_file:
                 output.write("\n")
-                output.write("## {}\n\n~~~ cpp\n".format(root))
+                output.write("## {} SOURCE \n\n~~~ cpp\n".format(root))
                 output.write(content_file.read())
                 output.write(" \n~~~\n")
 
@@ -312,6 +318,251 @@ def processArduino(args):
         output.close()
 
     return ""
+
+
+'''
+A Control Point
+which contains
+    an arduino sketch
+    codeline documentation
+    wiring documentation
+'''
+def processCP(args):
+    all_files = os.listdir(".")
+
+    if args.verbose or args.show:
+        print("+processCP({})".format(args.project))
+
+    outfilename = '{project}.md'.format(project=args.project)
+    outfilename = os.path.join(args.conf.JEKYLL_PUBLISH_PAGES_DIR, outfilename)
+
+    pubdir = args.conf.JEKYLL_GITHUB_PUBLISH_DIR_EAGLE
+    if pubdir:
+        outfilename = os.path.join(pubdir, outfilename)
+
+    print("processCP({})".format(outfilename))
+
+    # check if any destination dirs need to be created
+    d = outfilename
+    d = os.path.dirname(d)
+
+    if not os.path.isdir(d):
+        if args.verbose or args.show:
+            print("+mkdir -p {dir}".format(dir=d))
+        if not args.show:
+            os.makedirs(d)
+
+    if args.show:
+        output = io.StringIO()
+    else:
+        output = open(outfilename, "w")
+
+    need_tagline = True
+    need_overview = True
+    need_tags = True
+    need_layout = True
+
+    # defaults
+    tagline  = 'description not provided'
+    overview = '    '
+
+    output.write('---\n')
+    output.write('iscontrolpoint: true\n')
+    output.write('sidebar: spcoast_sidebar\n')
+    output.write('title: {}\n'.format(args.project))
+    output.write('project: {}\n'.format(args.project))
+
+    if os.path.isfile("INFO"):
+        #print("use INFO...");
+        if os.path.isfile("INFO"):
+            with open("INFO", 'r') as content_file:
+                for line in content_file:
+                    if line.startswith("title:") or line.startswith("project:"):
+                        continue
+                    if line.startswith("tags:"):
+                        need_tags = False
+                    if line.startswith("layout:"):
+                        need_layout = False
+                    if line.startswith("tagline:"):
+                        need_tagline = False
+                    if line.startswith("overview:"):
+                        need_overview = False
+
+                    output.write(line)
+    if need_tagline or need_overview:
+        if os.path.isfile('DESCRIPTION'):  # exists...
+            #print("use DESCRIPTION")
+            with open('DESCRIPTION', 'r') as description_file:
+                description = description_file.readlines()
+                if description:  # ... and has content
+                    tagline = description[0][:-1]
+                    need_tagline = False
+                if len(description) > 1:
+                    need_overview = False
+                    overview = ''
+                    raw = ''
+                    skipfirst = True
+                    for s in description:
+                        if skipfirst:
+                            skipfirst = False
+                            continue
+                        overview = overview + '    ' + s
+                        raw = raw + s
+                    overview = overview[:-1]  # remove the final newline (gets added back when output later)
+        else:
+            pass
+            # print("use Defaults...")
+
+    if need_layout:
+        output.write('layout: arduino\n')
+    if need_tags:
+        output.write('tags: [SPCoast, arduino]\n')
+
+    output.write('tagline: {}\n'.format(tagline))
+    output.write('overview: >\n{}\n'.format(overview))
+
+    sep = 'images:\n'
+    for filename in sorted_nicely(all_files):
+        root, ext = os.path.splitext(filename)
+        if ext.lower() in ['.png', '.jpg', '.gif']:
+            args.queue.copy(args.project, None, filename)
+            tag = root
+
+            s = "{sep}  - image_path: {dir}{project}/{filename}\n    title: {tag}\n"
+            output.write(s.format(sep=sep, dir=args.conf.JEKYLL_URL_PUBLISH_DIR_ARDUINO,
+                                  project=args.project,
+                                  filename=filename,
+                                  tag=tag))
+            sep = ""
+    sep = 'artifacts:\n'
+    for filename in sorted_nicely(all_files):
+        # print("parent artifact: file: {}".format(filename))
+        skip = False
+        root, ext = os.path.splitext(filename)
+
+        if (ext is None or ext == ''):
+            #print("   ... skipping - no extension")
+            skip = True
+        if ext.lower() in ['.png', '.jpg', '.gif', '.md', '.swp', '.html']:
+            skip = True
+        if ext.lower() in ['.b#1', '.b#2', '.b#3', '.b#4', '.b#5', '.b#6', '.b#7', '.b#8', '.b#9']:
+            skip = True
+        if ext.lower() in ['.s#1', '.s#2', '.s#3', '.s#4', '.s#5', '.s#6', '.s#7', '.s#8', '.s#9']:
+            skip = True
+
+        if not skip:
+            args.queue.copy(args.project, None, filename)
+            pretext = 'download'
+            tag = root
+            posttext = ''
+
+            if ext.lower() == '.pdf':
+                posttext = 'Documentation'
+                tag=filename
+            elif ext.lower() == '.ino':
+                posttext = 'Arduino Sketch'
+                tag = filename
+            elif ext.lower() == '.pde':
+                posttext = 'Arduino Sketch'
+                tag = filename
+            elif ext.lower() == '.cpp':
+                posttext = 'Arduino Sketch C++ helper code'
+                tag = filename
+            elif ext.lower() == '.c':
+                posttext = 'Arduino Sketch C helper code'
+                tag = filename
+            elif ext.lower() == '.h':
+                posttext = 'Arduino Sketch header file'
+                tag = filename
+            elif ext.lower() == '.docx':
+                posttext = 'Word Document'
+                tag=filename
+            elif ext.lower() == '.xlsx':
+                posttext = 'Spreadsheet'
+                tag=filename
+            #print("   ... ADD: {} {}".format(tag, posttext))
+
+            s = "{sep}  - path: {dir}{project}/{filename}\n"
+            s = s + "    tag: {tag}\n    type: {pretext}\n    post: {posttext}\n"
+            s = s.format(sep=sep, dir=args.conf.JEKYLL_URL_PUBLISH_DIR_ARDUINO,
+                                  project=args.project,
+                                  pretext=pretext,
+                                  tag=tag,
+                                  posttext=posttext,
+                                  filename=filename,
+                                  file=root)
+            output.write(s)
+            sep = ""
+    # TODO: Add links to any source files - followed by their syntax highlighted content
+    # output.write('permalink: {}.html\n'.format(args.project))
+    output.write('---\n')
+
+    # put these files first...
+    didit=False
+    for fn in ['doc.md', '{}.md'.format(args.project), 'status.html']:
+        if os.path.isfile(fn):
+            with open(fn, 'r') as content_file:
+                output.write("\n")
+                if not didit:
+                    output.write("## {}\n\n".format("Documentation"))
+                    didit=True
+                output.write(content_file.read())
+
+    for filename in sorted_nicely(all_files):
+        skip = False
+        root, ext = os.path.splitext(filename)
+        if ext.lower() in ['.md', '.html']:
+            if filename.lower() == "doc.md":
+                skip = True
+            if filename.lower() == "status.html":
+                skip = True
+            if filename.lower() == '{}.md'.format(args.project):
+                skip = True
+            if filename == "README.md":         # only for github
+                skip = True
+            if filename == "LICENSE.md":        # explicitly added last
+                skip = True
+
+            if not skip:
+                with open(filename, 'r') as content_file:
+                    output.write("\n")
+                    output.write("## {}  INC INC INC\n\n".format(root))
+                    output.write(content_file.read())
+
+        elif ext.lower() in ['.ino', '.pde', '.h', '.c', '.cpp']:
+            with open(filename, 'r') as content_file:
+                output.write("\n")
+                output.write("## {} SOURCE \n\n~~~ cpp\n".format(root))
+                output.write(content_file.read())
+                output.write(" \n~~~\n")
+
+        elif ext.lower() in ['.py']:
+            with open(filename, 'r') as content_file:
+                output.write("\n")
+                output.write("## {}\n\n~~~ python\n".format(root))
+                output.write(content_file.read())
+                output.write(" \n~~~\n")
+
+
+    if os.path.isfile('LICENSE.md'):
+        # Add LICENSE file at end
+        with open("LICENSE.md", 'r') as content_file:
+            output.write("\n\n----\n")
+            output.write("\n")
+            output.write(content_file.read())
+
+    if args.show:
+        content = output.getvalue()
+        print('# create {}'.format(outfilename))
+        if args.verbose:
+            print('====Contents====')
+            print(content)
+            print('================')
+    else:
+        output.close()
+
+    return ""
+
 
 def processEagleParent(args, projectname, version, all_files):
     if args.verbose or args.show:
@@ -798,7 +1049,7 @@ def main():
                         help="Show what would be done, but don't change anything.")
     parser.add_argument("-n", "--name", dest="project", nargs=1, default=None,
                         help="Project Name (defaults to directory name)")
-    parser.add_argument("-t", "--type", dest="projecttype", default=None, choices=['eagle', 'ino'])
+    parser.add_argument("-t", "--type", dest="projecttype", default=None, choices=['eagle', 'ino', 'controlpoint', 'cp'])
     args = parser.parse_args()
     args.conf = conf
     
@@ -806,7 +1057,8 @@ def main():
     autoconf.add("eagle",         conf.sourceDirIsEagle,           processEagle)
     autoconf.add("expresspcb",    conf.sourceDirIsExpressPCB,      processTODO)
     autoconf.add("lib",           conf.sourceDirIsArduinoLibrary,  processTODO)
-    autoconf.add("controlpoint",  conf.sourceDirIsControlPoint,    processTODO)
+    autoconf.add("controlpoint",  conf.sourceDirIsControlPoint,    processCP)
+    autoconf.add("cp",            conf.sourceDirIsControlPoint,    processCP)
     autoconf.add("ino",           conf.sourceDirIsArduino,         processArduino)
     autoconf.add("cad",           conf.sourceDirIsCAD,             processTODO)
     autoconf.add("script",        conf.sourceDirIsScript,          processTODO)
