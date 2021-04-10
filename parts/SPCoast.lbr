@@ -15167,7 +15167,7 @@ defects, or other reproductive harm.</text>
 <wire x1="50" y1="102.87" x2="50" y2="93.65" width="0.127" layer="46"/>
 <wire x1="50" y1="6.35" x2="50" y2="-3.81" width="0.127" layer="46"/>
 </package>
-<package name="MOUNTINGHOLE">
+<package name="MOUNTINGHOLE-S">
 <hole x="0" y="0" drill="3.6"/>
 <circle x="0" y="0" radius="2.286" width="0.6096" layer="1"/>
 <circle x="0" y="0" radius="3.048" width="0.8128" layer="41"/>
@@ -19599,6 +19599,13 @@ C&amp;K</description>
 <smd name="2" x="1.927" y="-0.9" dx="1.778" dy="0.762" layer="1"/>
 <smd name="3" x="1.927" y="0.9" dx="1.778" dy="0.762" layer="1"/>
 <smd name="4" x="-1.927" y="0.9" dx="1.778" dy="0.762" layer="1"/>
+</package>
+<package name="MOUNTINGHOLE-L">
+<hole x="0" y="0" drill="4.5"/>
+<circle x="0" y="0" radius="2.6" width="0.6096" layer="1"/>
+<circle x="0" y="0" radius="3" width="0.8128" layer="41"/>
+<circle x="0" y="0" radius="3" width="0.8128" layer="42"/>
+<circle x="0" y="0" radius="2.6" width="0.6096" layer="16"/>
 </package>
 </packages>
 <symbols>
@@ -35851,7 +35858,12 @@ Source: &lt;a href="http://www.ti.com/lit/ds/symlink/tl331-q1.pdf"&gt; Data shee
 <gate name="MT1" symbol="MOUNTINGHOLE" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="MOUNTINGHOLE">
+<device name="S" package="MOUNTINGHOLE-S">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="L" package="MOUNTINGHOLE-L">
 <technologies>
 <technology name=""/>
 </technologies>
