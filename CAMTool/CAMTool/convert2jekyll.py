@@ -276,13 +276,15 @@ def processArduino(args):
                 skip = True
             if filename == "README.md":         # only for github
                 skip = True
+            if filename == "Notes.md":          # explicitly added next to last
+                skip = True
             if filename == "LICENSE.md":        # explicitly added last
                 skip = True
 
             if not skip:
                 with open(filename, 'r') as content_file:
                     output.write("\n")
-                    output.write("## {}  INC INC INC\n\n".format(root))
+                    output.write("## {}\n\n".format(root))
                     output.write(content_file.read())
 
         elif ext.lower() in ['.ino', '.pde', '.h', '.c', '.cpp']:
@@ -299,6 +301,13 @@ def processArduino(args):
                 output.write(content_file.read())
                 output.write(" \n~~~\n")
 
+
+    if os.path.isfile('Notes.md'):
+        # Add Notes file 
+        with open("Notes.md", 'r') as content_file:
+            output.write("\n\n----\n")
+            output.write("\n")
+            output.write(content_file.read())
 
     if os.path.isfile('LICENSE.md'):
         # Add LICENSE file at end
@@ -604,7 +613,7 @@ def processEagleParent(args, projectname, version, all_files):
     if os.path.isfile("INFO"):
         with open("INFO", 'r') as content_file:
             for line in content_file:
-                if line.startswith("status:") and (line.count('obsolete') is not 0):
+                if line.startswith("status:") and (line.count('obsolete') != 0):
                     iseagle = 'obsolete'
 
 
@@ -660,22 +669,28 @@ def processEagleParent(args, projectname, version, all_files):
         output.write('layout: eagle\n')
     if need_graphic:
         found=False
+        print("Need Graphic!\n")
         for path, name in [ ("{version}/", "{project}-{version}-Graphic.png".format(project=projectname, version=version)),
                             ("",           "{project}-Graphic.png"          .format(project=projectname, version=version)),
                             ("{version}/", "{project}-{version}.top.brd.png".format(project=projectname, version=version)),
                             ("",           "{project}.top.brd.png"          .format(project=projectname, version=version)),
                          ]:
             if name in all_files:
-                output.write('image_path: {version}{graphicname}\n'.format(version=path, graphicname=name))
+                s='image_path: {version}{graphicname}\n'.format(version=path, graphicname=name)
+                output.write(s)
+                print("    Found: {}\n".format(s))
                 found=True
                 break;
         if not found:
             graphicname = "{project}.top.brd.png".format(version=version, project=projectname)
             graphicname2 = "{project}-{version}.top.brd.png".format(version=version, project=projectname)
             if os.path.isfile(graphicname):
-                output.write('image_path: {version}/{graphicname}\n'.format(version=version, graphicname=graphicname2))
+                s='image_path: {version}/{graphicname}\n'.format(version=version, graphicname=graphicname2)
             else:
-                output.write('Ximage_path: {version}/{graphicname}\n'.format(version=version, graphicname=graphicname2))
+                s='Ximage_path: {version}/{graphicname}\n'.format(version=version, graphicname=graphicname2)
+            print("    NOT Found, forcing {}\n".format(s))
+            output.write(s)
+
     if need_tags:
         output.write('tags: [SPCoast, eagle]\n')
 
@@ -1034,6 +1049,7 @@ def processEagle(args):
 
 
 def main():
+    print("DEBUG ON\n")
     conf = Configuration.Configuration("test")
     error = False
     

@@ -690,7 +690,7 @@ def main():
         examplefn = resource_filename(Requirement.parse('CAMTool'),"CAMTool/EagleTools.cfg")
         configuration = configparser.ConfigParser()
         configuration.read(examplefn)        
-        with open(cfile, 'wb') as configfile:
+        with open(cfile, 'w') as configfile:
             configuration.write(configfile)
         sys.exit(0)
     

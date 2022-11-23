@@ -22,6 +22,10 @@ class CopyFile(object):
             self.pubdir = self.conf.JEKYLL_GITHUB_PUBLISH_DIR_ARDUINO
             self.copydir = self.conf.JEKYLL_LOCAL_PUBLISH_DIR_ARDUINO
             self.urldir  = self.conf.JEKYLL_URL_PUBLISH_DIR_ARDUINO
+        elif args.projecttype == "cp" or args.projecttype == "controlpoint":
+            self.pubdir = self.conf.JEKYLL_GITHUB_PUBLISH_DIR_CP
+            self.copydir = self.conf.JEKYLL_LOCAL_PUBLISH_DIR_CP
+            self.urldir = self.conf.JEKYLL_URL_PUBLISH_DIR_CP
         else:
             sys.exit("CopyFile Error: args.projecttype {} is not implemented!\n".format(args.projecttype))
 

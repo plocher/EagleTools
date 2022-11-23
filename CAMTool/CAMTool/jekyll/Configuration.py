@@ -10,9 +10,9 @@ class Configuration(object):
 
         # source tree locations
         self.sourceDirIsEagle            = "/Users/jplocher/Dropbox/eagle/"
-        self.sourceDirIsControlPoint     = "/Users/jplocher/Dropbox/workspace/ArduinoPoint/"
-        self.sourceDirIsArduino          = "/Users/jplocher/Dropbox/Arduino/"
+        self.sourceDirIsControlPoint     = "/Users/jplocher/Dropbox/Arduino/SPCoast/"
         self.sourceDirIsArduinoLibrary   = "/Users/jplocher/Dropbox/Arduino/libraries"
+        self.sourceDirIsArduino          = "/Users/jplocher/Dropbox/Arduino/"
         self.sourceDirIsCAD              = "/Users/jplocher/Dropbox/CAD/"
         self.sourceDirIsScript           = "/Users/jplocher/Dropbox/Scripts/"
         self.sourceDirIsWikiDoc          = "/Users/jplocher/Dropbox/WikiDocs/"
@@ -35,4 +35,8 @@ class Configuration(object):
 
         self.JEKYLL_GITHUB_PUBLISH_DIR_ARDUINO = "/Users/jplocher/Dropbox/eagle/SPCoast.github.io/" # or None if local to repo
         self.JEKYLL_LOCAL_PUBLISH_DIR_ARDUINO  = "_sketches/"
-        self.JEKYLL_URL_PUBLISH_DIR_ARDUINO    = "/sketches/"        # ... for project versions
+        self.JEKYLL_URL_PUBLISH_DIR_ARDUINO    = "/sketches/"
+
+        self.JEKYLL_GITHUB_PUBLISH_DIR_CP      = "/Users/jplocher/Dropbox/eagle/SPCoast.github.io/" # or None if local to repo
+        self.JEKYLL_LOCAL_PUBLISH_DIR_CP       = "_controlpoints/"
+        self.JEKYLL_URL_PUBLISH_DIR_CP         = "/_controlpoints/"
